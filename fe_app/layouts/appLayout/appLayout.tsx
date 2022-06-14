@@ -9,7 +9,7 @@ interface AppLayoutProps {
 
 const AppLayout = ({ children }: AppLayoutProps) => {
   return (
-    <Box width="100vw" height="100vh">
+    <Box height="100vh">
       <Header />
       <Box p={5}>{children}</Box>
     </Box>

@@ -10,10 +10,16 @@ import {
   Button,
   Avatar,
 } from "@chakra-ui/react";
+import { useMoralis } from "react-moralis";
 
 const LoggedInDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef: MutableRefObject<any> = useRef();
+  const { logout } = useMoralis();
+
+  const logOut = async () => {
+    await logout();
+  };
 
   return (
     <>
@@ -38,6 +44,9 @@ const LoggedInDrawer = () => {
           <DrawerBody>
             <Button width="100%" colorScheme="yellow">
               Buy Crypto
+            </Button>
+            <Button onClick={logOut} width="100%" colorScheme="red">
+              log out
             </Button>
           </DrawerBody>
         </DrawerContent>

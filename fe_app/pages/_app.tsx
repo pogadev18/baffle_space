@@ -1,10 +1,10 @@
 import type { AppProps } from "next/app";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { MoralisProvider } from "react-moralis";
 
 import "reset-css";
 
 import AppLayout from "@/layouts/appLayout";
-import { MoralisProvider } from "react-moralis";
 
 const theme = extendTheme({
   colors: {
@@ -37,15 +37,14 @@ const theme = extendTheme({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-  
-      <AppLayout>
-        <MoralisProvider
-          appId="5dswsn9TVNh2cvI4QiLxxSVsXGLiLWlAMgyPYglA"
-          serverUrl="https://tuiddhnu8ojx.usemoralis.com:2053/server"
-    >
-            <Component {...pageProps} />
-        </MoralisProvider>
-      </AppLayout>
+      <MoralisProvider
+        appId={process.env.MORALIS_APP_ID!}
+        serverUrl={process.env.MORALIS_SERVER_URL!}
+      >
+        <AppLayout>
+          <Component {...pageProps} />
+        </AppLayout>
+      </MoralisProvider>
     </ChakraProvider>
   );
 }
