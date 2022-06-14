@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/layout";
 import { Button, Heading, useDisclosure } from "@chakra-ui/react";
+import { useMoralis } from "react-moralis";
 
 import Logo from "@/components/logoImage";
 import RulesModal from "@/components//rulesModal";
@@ -7,6 +8,22 @@ import LoggedInDrawer from "@/components/loggedInDrawer";
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    authenticate,
+    isAuthenticated,
+    isAuthenticating,
+    user,
+    account,
+    logout,
+  } = useMoralis();
+
+  // TODO: watch this tutorial -> https://www.youtube.com/watch?v=FaTyOg7ickc
+
+  const login = async () => {
+    if (!isAuthenticated) {
+      await authenticate({ signingMessage: "Log in using Moralis" });
+    }
+  };
 
   return (
     <header>
@@ -36,8 +53,18 @@ const Header = () => {
           <Button colorScheme="gray" onClick={onOpen}>
             reguli
           </Button>
-          {/*<Button colorScheme="yellow">login</Button>*/}
-          <LoggedInDrawer />
+
+          {isAuthenticated ? (
+            <LoggedInDrawer />
+          ) : (
+            <Button
+              isLoading={isAuthenticating}
+              onClick={login}
+              colorScheme="yellow"
+            >
+              login
+            </Button>
+          )}
         </Box>
       </Box>
       <RulesModal isOpen={isOpen} onClose={onClose} />

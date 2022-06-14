@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { MoralisProvider } from "react-moralis";
 
 import "reset-css";
 
@@ -36,9 +37,14 @@ const theme = extendTheme({
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <AppLayout>
-        <Component {...pageProps} />
-      </AppLayout>
+      <MoralisProvider
+        appId={process.env.MORALIS_APP_ID!}
+        serverUrl={process.env.MORALIS_SERVER_URL!}
+      >
+        <AppLayout>
+          <Component {...pageProps} />
+        </AppLayout>
+      </MoralisProvider>
     </ChakraProvider>
   );
 }
