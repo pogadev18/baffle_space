@@ -1,29 +1,15 @@
 import { Box } from "@chakra-ui/layout";
 import { Button, Heading, useDisclosure } from "@chakra-ui/react";
 import { useMoralis } from "react-moralis";
+import Link from "next/link";
 
 import Logo from "@/components/logoImage";
 import RulesModal from "@/components//rulesModal";
-import LoggedInDrawer from "@/components/loggedInDrawer";
+// import LoggedInDrawer from "@/components/loggedInDrawer";
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const {
-    authenticate,
-    isAuthenticated,
-    isAuthenticating,
-    user,
-    account,
-    logout,
-  } = useMoralis();
-
-  // TODO: watch this tutorial -> https://www.youtube.com/watch?v=FaTyOg7ickc
-
-  const login = async () => {
-    if (!isAuthenticated) {
-      await authenticate({ signingMessage: "Log in using Moralis" });
-    }
-  };
+  const { isAuthenticated } = useMoralis();
 
   return (
     <header>
@@ -37,7 +23,7 @@ const Header = () => {
         <Box display="flex" alignItems="center" gap="1rem" cursor="pointer">
           <Logo width="3rem" height="3rem" />
           <Heading as="h2" size="xl">
-            NACHOS
+            nachos
             <Box
               sx={{
                 fontSize: "1rem",
@@ -55,15 +41,11 @@ const Header = () => {
           </Button>
 
           {isAuthenticated ? (
-            <LoggedInDrawer />
+            <p>my profile</p>
           ) : (
-            <Button
-              isLoading={isAuthenticating}
-              onClick={login}
-              colorScheme="yellow"
-            >
-              login
-            </Button>
+            <Link href="/login">
+              <a>Login</a>
+            </Link>
           )}
         </Box>
       </Box>
