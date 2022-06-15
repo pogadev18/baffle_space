@@ -9,7 +9,7 @@ import RulesModal from "@/components//rulesModal";
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isAuthenticated } = useMoralis();
+  const { isAuthenticated, logout } = useMoralis();
 
   return (
     <header>
@@ -41,7 +41,9 @@ const Header = () => {
           </Button>
 
           {isAuthenticated ? (
-            <p>my profile</p>
+            <Link href="/profile">
+              <a>my profile</a>
+            </Link>
           ) : (
             <Link href="/login">
               <a>Login</a>
