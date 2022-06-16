@@ -1,27 +1,29 @@
 import { Box } from "@chakra-ui/layout";
 import { Button, Heading, useDisclosure } from "@chakra-ui/react";
 import { useMoralis } from "react-moralis";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 import Logo from "@/components/logoImage";
 import RulesModal from "@/components//rulesModal";
-import LoggedInDrawer from "@/components/loggedInDrawer";
+import AlertComponent from "@/components/alert";
+import { AlertStatusValues } from "@/utils/interfaces/alertStatuses";
+
+const { Error } = AlertStatusValues;
 
 const Header = () => {
+  const router = useRouter();
+
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const {
-    authenticate,
-    isAuthenticated,
-    isAuthenticating,
-    user,
-    account,
-    logout,
-  } = useMoralis();
+  const { isAuthenticated, authenticate, isAuthenticating, authError } =
+    useMoralis();
 
-  // TODO: watch this tutorial -> https://www.youtube.com/watch?v=FaTyOg7ickc
-
-  const login = async () => {
+  const handleLogin = async () => {
     if (!isAuthenticated) {
-      await authenticate({ signingMessage: "Log in using Moralis" });
+      await authenticate({
+        signingMessage: "Log in using Moralis",
+      });
+      router.push("/register");
     }
   };
 
@@ -37,7 +39,7 @@ const Header = () => {
         <Box display="flex" alignItems="center" gap="1rem" cursor="pointer">
           <Logo width="3rem" height="3rem" />
           <Heading as="h2" size="xl">
-            NACHOS
+            nachos
             <Box
               sx={{
                 fontSize: "1rem",
@@ -54,15 +56,25 @@ const Header = () => {
             reguli
           </Button>
 
+          {authError && (
+            <AlertComponent
+              status={Error}
+              title="Something went wrong"
+              description={authError.message}
+            />
+          )}
+
           {isAuthenticated ? (
-            <LoggedInDrawer />
+            <Link href="/profile">
+              <a>my profile</a>
+            </Link>
           ) : (
             <Button
-              isLoading={isAuthenticating}
-              onClick={login}
+              onClick={handleLogin}
               colorScheme="yellow"
+              isLoading={isAuthenticating}
             >
-              login
+              Autentificare cu MetaMask
             </Button>
           )}
         </Box>
