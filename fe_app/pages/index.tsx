@@ -6,8 +6,11 @@ import ItemCard from "@/components/itemCard";
 import { mockedItems } from "../constants/mockedData";
 
 import { CardItemProps } from "@/utils/interfaces/cardItem";
+import { useMoralis } from "react-moralis";
 
 const Home: NextPage = () => {
+  const { user } = useMoralis();
+
   return (
     <Grid templateColumns="repeat(3, 1fr)" gap={6}>
       {mockedItems.map((item: CardItemProps) => {

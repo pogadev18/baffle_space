@@ -2,14 +2,30 @@ import { Box } from "@chakra-ui/layout";
 import { Button, Heading, useDisclosure } from "@chakra-ui/react";
 import { useMoralis } from "react-moralis";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import Logo from "@/components/logoImage";
 import RulesModal from "@/components//rulesModal";
-// import LoggedInDrawer from "@/components/loggedInDrawer";
+import AlertComponent from "@/components/alert";
+import { AlertStatusValues } from "@/utils/interfaces/alertStatuses";
+
+const { Error } = AlertStatusValues;
 
 const Header = () => {
+  const router = useRouter();
+
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isAuthenticated, logout } = useMoralis();
+  const { isAuthenticated, authenticate, isAuthenticating, authError } =
+    useMoralis();
+
+  const handleLogin = async () => {
+    if (!isAuthenticated) {
+      await authenticate({
+        signingMessage: "Log in using Moralis",
+      });
+      router.push("/register");
+    }
+  };
 
   return (
     <header>
@@ -40,14 +56,26 @@ const Header = () => {
             reguli
           </Button>
 
+          {authError && (
+            <AlertComponent
+              status={Error}
+              title="Something went wrong"
+              description={authError.message}
+            />
+          )}
+
           {isAuthenticated ? (
             <Link href="/profile">
               <a>my profile</a>
             </Link>
           ) : (
-            <Link href="/login">
-              <a>Login</a>
-            </Link>
+            <Button
+              onClick={handleLogin}
+              colorScheme="yellow"
+              isLoading={isAuthenticating}
+            >
+              Autentificare cu MetaMask
+            </Button>
           )}
         </Box>
       </Box>

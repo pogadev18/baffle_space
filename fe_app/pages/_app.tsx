@@ -11,6 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export type NextApplicationPage<P = any, IP = P> = NextPage<P, IP> & {
   requireAuth?: boolean;
+  specialLayout?: boolean;
 };
 
 type AppProps = {
@@ -25,16 +26,22 @@ function MyApp({ Component, pageProps }: AppProps) {
         appId={process.env.MORALIS_APP_ID!}
         serverUrl={process.env.MORALIS_SERVER_URL!}
       >
-        <AppLayout>
-          {Component.requireAuth ? (
-            <AuthGuard>
+        {Component.requireAuth ? (
+          <AuthGuard>
+            <AppLayout>
               <Component {...pageProps} />
-            </AuthGuard>
-          ) : (
+            </AppLayout>
+          </AuthGuard>
+        ) : Component.specialLayout ? (
+          <AuthGuard>
             <Component {...pageProps} />
-          )}
-          <ToastContainer />
-        </AppLayout>
+          </AuthGuard>
+        ) : (
+          <AppLayout>
+            <Component {...pageProps} />
+          </AppLayout>
+        )}
+        <ToastContainer />
       </MoralisProvider>
     </ChakraProvider>
   );

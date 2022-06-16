@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useMoralis } from "react-moralis";
 import { Spinner } from "@chakra-ui/react";
 
@@ -10,7 +10,7 @@ const AuthGuard = ({ children }: { children: JSX.Element }) => {
 
   useEffect(() => {
     if (!isAuthenticating && !isAuthUndefined) {
-      //auth is initialized and there is no user
+      // auth is initialized and there is no user
       if (!user) {
         router.push("/");
       }

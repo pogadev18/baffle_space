@@ -21,6 +21,8 @@
       "@/assets/*": ["assets/*"],
       "@/utils/*": ["utils/*"],
       "@/theme/*": ["theme/*"],
+      "@/firebase/*": ["firebase/*"],
+      "@/hooks/*": ["hooks/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
