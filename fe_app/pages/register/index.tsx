@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Formik, Form, FormikProps } from "formik";
 import { addDoc } from "@firebase/firestore";
 import { Button, Input, Text, Spinner } from "@chakra-ui/react";
@@ -18,8 +18,13 @@ import {
 const Register = () => {
   const { user: moralisUser, isAuthUndefined } = useMoralis();
   const router = useRouter();
+  const [isPageLoading, setIsPageLoading] = useState(true);
+
   const moralisUserWalletAddress: string =
     !isAuthUndefined && moralisUser?.attributes?.ethAddress;
+
+  const moralisUsernameID: string =
+    !isAuthUndefined && moralisUser?.attributes?.username;
   const { firebaseUsers, usersCollectionRef } = useReadFirebaseUsers();
 
   useEffect(() => {
@@ -30,7 +35,8 @@ const Register = () => {
 
       if (isUserWalletInFirebase) {
         router.push("/");
-        return;
+      } else {
+        setIsPageLoading(false);
       }
     }
   }, [isAuthUndefined, moralisUserWalletAddress, firebaseUsers]);
@@ -41,23 +47,21 @@ const Register = () => {
     addDoc(usersCollectionRef, {
       wallet_address: moralisUserWalletAddress,
       email,
+      uid: moralisUsernameID,
     });
     router.push("/");
     notify();
   };
 
-  if (!isAuthUndefined)
-    return (
-      <Spinner
-        thickness="4px"
-        speed="0.65s"
-        emptyColor="gray.200"
-        color="blue.500"
-        size="xl"
-      />
-    );
-
-  return (
+  return isPageLoading ? (
+    <Spinner
+      thickness="4px"
+      speed="0.65s"
+      emptyColor="gray.200"
+      color="blue.500"
+      size="xl"
+    />
+  ) : (
     <Box width={500} margin="auto">
       <Text fontSize="2xl" mt={10} mb={5}>
         Acum că te-ai logat cu MetaMask, mai avem nevoie de email-ul tău pentru
