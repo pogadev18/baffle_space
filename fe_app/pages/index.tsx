@@ -2,9 +2,7 @@ import type { NextPage } from "next";
 import { Grid, GridItem } from "@chakra-ui/react";
 
 import ItemCard from "@/components/itemCard";
-
 import { mockedItems } from "@/constants/mockedData";
-
 import { CardItemProps } from "@/utils/interfaces/cardItem";
 
 const Home: NextPage = () => {

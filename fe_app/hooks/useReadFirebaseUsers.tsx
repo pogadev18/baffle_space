@@ -16,7 +16,7 @@ const useReadFirebaseUsers = () => {
     };
 
     readUsers();
-  }, [usersCollectionRef]);
+  }, []);
 
   return { firebaseUsers, usersCollectionRef };
 };

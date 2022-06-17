@@ -9,8 +9,8 @@ import { useRouter } from "next/router";
 import useReadFirebaseUsers from "@/hooks/useReadFirebaseUsers";
 import LoadingSpinner from "@/components/LoadingSpinner";
 
-import { useAppDispatch } from "@/store/hook";
-import { confirmIsOnRegisterProcess } from "@/store/slices/registerProcessSlice";
+// import { useAppDispatch } from "@/store/hook";
+// import { confirmIsOnRegisterProcess } from "@/store/slices/registerProcessSlice";
 
 import {
   RegisterFormValues,
@@ -18,19 +18,20 @@ import {
   validationSchema,
   notify,
 } from "./utils";
+import Link from "next/link";
 
 const Register = () => {
   const { user: moralisUser, isAuthUndefined } = useMoralis();
   const router = useRouter();
   const [isPageLoading, setIsPageLoading] = useState(true);
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
+  const { firebaseUsers, usersCollectionRef } = useReadFirebaseUsers();
 
   const moralisUserWalletAddress: string =
     !isAuthUndefined && moralisUser?.attributes?.ethAddress;
 
   const moralisUsernameID: string =
     !isAuthUndefined && moralisUser?.attributes?.username;
-  const { firebaseUsers, usersCollectionRef } = useReadFirebaseUsers();
 
   useEffect(() => {
     if (!isAuthUndefined) {
@@ -42,11 +43,11 @@ const Register = () => {
         router.push("/");
       } else {
         // set a flag on local storage if the user is coming from this page
-        dispatch(confirmIsOnRegisterProcess());
+        // dispatch(confirmIsOnRegisterProcess());
         setIsPageLoading(false);
       }
     }
-  }, [isAuthUndefined, moralisUserWalletAddress, firebaseUsers]);
+  }, [isAuthUndefined, moralisUserWalletAddress]);
 
   const handleSubmit = async (values: RegisterFormValues) => {
     const { email } = values;
@@ -68,6 +69,7 @@ const Register = () => {
         Acum că te-ai logat cu MetaMask, mai avem nevoie de email-ul tău pentru
         a te ține la curent cu statusul tombolei.
       </Text>
+
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}

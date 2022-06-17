@@ -24,12 +24,12 @@ type AppProps = {
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ChakraProvider theme={theme}>
-      <MoralisProvider
-        appId={process.env.MORALIS_APP_ID!}
-        serverUrl={process.env.MORALIS_SERVER_URL!}
-      >
-        <Provider store={store}>
+    <Provider store={store}>
+      <ChakraProvider theme={theme}>
+        <MoralisProvider
+          appId={process.env.MORALIS_APP_ID!}
+          serverUrl={process.env.MORALIS_SERVER_URL!}
+        >
           {Component.requireAuth ? (
             <AuthGuard>
               <AppLayout>
@@ -46,9 +46,9 @@ function MyApp({ Component, pageProps }: AppProps) {
             </AppLayout>
           )}
           <ToastContainer />
-        </Provider>
-      </MoralisProvider>
-    </ChakraProvider>
+        </MoralisProvider>
+      </ChakraProvider>
+    </Provider>
   );
 }
 
