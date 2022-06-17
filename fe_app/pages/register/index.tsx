@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { Formik, Form, FormikProps } from "formik";
 import { addDoc } from "@firebase/firestore";
-import { Button, Input, Text, Spinner } from "@chakra-ui/react";
+import { Button, Input, Text } from "@chakra-ui/react";
 import { Box, Stack } from "@chakra-ui/layout";
 import { useMoralis } from "react-moralis";
 import { useRouter } from "next/router";
 
 import useReadFirebaseUsers from "@/hooks/useReadFirebaseUsers";
+import LoadingSpinner from "@/components/LoadingSpinner";
+
+import { useAppDispatch } from "@/store/hook";
+import { confirmIsOnRegisterProcess } from "@/store/slices/registerProcessSlice";
 
 import {
   RegisterFormValues,
@@ -19,6 +23,7 @@ const Register = () => {
   const { user: moralisUser, isAuthUndefined } = useMoralis();
   const router = useRouter();
   const [isPageLoading, setIsPageLoading] = useState(true);
+  const dispatch = useAppDispatch();
 
   const moralisUserWalletAddress: string =
     !isAuthUndefined && moralisUser?.attributes?.ethAddress;
@@ -36,6 +41,8 @@ const Register = () => {
       if (isUserWalletInFirebase) {
         router.push("/");
       } else {
+        // set a flag on local storage if the user is coming from this page
+        dispatch(confirmIsOnRegisterProcess());
         setIsPageLoading(false);
       }
     }
@@ -54,13 +61,7 @@ const Register = () => {
   };
 
   return isPageLoading ? (
-    <Spinner
-      thickness="4px"
-      speed="0.65s"
-      emptyColor="gray.200"
-      color="blue.500"
-      size="xl"
-    />
+    <LoadingSpinner />
   ) : (
     <Box width={500} margin="auto">
       <Text fontSize="2xl" mt={10} mb={5}>
