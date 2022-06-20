@@ -1,22 +1,24 @@
 import { useEffect, useState } from "react";
-import { collection, DocumentData, getDocs } from "@firebase/firestore";
+import { collection, DocumentData } from "@firebase/firestore";
+import { useCollection } from "react-firebase-hooks/firestore";
 
 import { db } from "@/firebase/firebase-config";
 
 const useReadFirebaseUsers = () => {
   const usersCollectionRef = collection(db, "users");
-  const [firebaseUsers, setFirebaseUsers] = useState<DocumentData[]>([]);
+  const [users, usersLoading, usersError] = useCollection(
+    usersCollectionRef,
+    {}
+  );
+  const [firebaseUsers, setFirebaseUsers] = useState<DocumentData[]>();
 
   useEffect(() => {
-    const readUsers = async () => {
-      const usersDoc = await getDocs(usersCollectionRef);
-      const dataFromUsersDoc = await usersDoc;
-      const users = dataFromUsersDoc.docs.map((data) => data.data());
-      setFirebaseUsers(users);
-    };
+    if (!usersLoading && users) {
+      setFirebaseUsers(users.docs.map((doc) => doc.data()));
+    }
+  }, [usersLoading]);
 
-    readUsers();
-  }, []);
+  console.log("userss from hook", firebaseUsers);
 
   return { firebaseUsers, usersCollectionRef };
 };
