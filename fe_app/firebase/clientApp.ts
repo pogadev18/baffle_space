@@ -1,8 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "@firebase/firestore";
-// import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from "firebase/firestore";
 
-const firebaseConfig = {
+const clientCredentials = {
   apiKey: process.env.FIREBASE_API_KEY,
   authDomain: process.env.FIREBASE_AUTH_DOMAIN,
   projectId: process.env.FIREBASE_PROJECT_ID,
@@ -12,6 +11,5 @@ const firebaseConfig = {
   measurementId: process.env.FIREBASE_MEASUREMENT_ID,
 };
 
-const app = initializeApp(firebaseConfig);
+const app = initializeApp(clientCredentials);
 export const db = getFirestore(app);
-// const analytics = getAnalytics(app);

@@ -23,6 +23,8 @@
       "@/theme/*": ["theme/*"],
       "@/firebase/*": ["firebase/*"],
       "@/hooks/*": ["hooks/*"],
+      "@/constants/*": ["constants/*"],
+      "@/store/*": ["store/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
