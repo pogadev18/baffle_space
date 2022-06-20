@@ -1,24 +1,18 @@
-import { Carousel } from "react-responsive-carousel";
-import { Box } from "@chakra-ui/layout";
-import { Button, Heading, Text, Badge } from "@chakra-ui/react";
+import { Carousel } from 'react-responsive-carousel';
+import { Box } from '@chakra-ui/layout';
+import { Button, Heading, Text, Badge } from '@chakra-ui/react';
+import Image from 'next/image';
 
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import { CardItemProps } from "@/utils/interfaces/cardItem";
+import { CardItemProps } from '@/utils/interfaces/cardItem';
 
-const ItemCard = ({
-  id,
-  name,
-  images,
-  price,
-  ticketPrice,
-  ticketsLeft,
-}: CardItemProps) => {
+const ItemCard = ({ name, images, price, ticketPrice, ticketsLeft }: CardItemProps) => {
   return (
-    <Box sx={{ border: "1px solid #ddd" }} borderRadius="lg" boxShadow="lg">
+    <Box sx={{ border: '1px solid #ddd' }} borderRadius="lg" boxShadow="lg">
       <Carousel showStatus={false} showThumbs={false}>
         {images.map((image) => (
-          <img key={image} src={image} alt="Cat" />
+          <Image key={image} src={image} alt="Cat" />
         ))}
       </Carousel>
 

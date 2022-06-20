@@ -1,10 +1,10 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 // import { Formik, Form, FormikProps } from "formik";
 // import { addDoc } from "@firebase/firestore";
 // import { Button, Input, Text } from "@chakra-ui/react";
 // import { Box, Stack } from "@chakra-ui/layout";
 // import { useMoralis } from "react-moralis";
-import { useRouter } from "next/router";
+import { useRouter } from 'next/router';
 //
 // import useReadFirebaseUsers from "@/hooks/useReadFirebaseUsers";
 // import LoadingSpinner from "@/components/LoadingSpinner";
@@ -20,7 +20,7 @@ const Register = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/");
+    router.push('/');
   }, []);
   return <p>.</p>;
   //   const { user: moralisUser, isAuthUndefined } = useMoralis();

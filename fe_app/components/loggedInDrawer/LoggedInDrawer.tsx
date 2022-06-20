@@ -1,4 +1,4 @@
-import { useRef, MutableRefObject } from "react";
+import { useRef, MutableRefObject } from 'react';
 import {
   Drawer,
   DrawerBody,
@@ -9,8 +9,8 @@ import {
   useDisclosure,
   Button,
   Avatar,
-} from "@chakra-ui/react";
-import { useMoralis } from "react-moralis";
+} from '@chakra-ui/react';
+import { useMoralis } from 'react-moralis';
 
 const LoggedInDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -24,18 +24,9 @@ const LoggedInDrawer = () => {
   return (
     <>
       <Button variant="link" ref={btnRef} colorScheme="teal" onClick={onOpen}>
-        <Avatar
-          cursor="pointer"
-          name="Ryan Florence"
-          src="https://bit.ly/ryan-florence"
-        />
+        <Avatar cursor="pointer" name="Ryan Florence" src="https://bit.ly/ryan-florence" />
       </Button>
-      <Drawer
-        isOpen={isOpen}
-        placement="right"
-        onClose={onClose}
-        finalFocusRef={btnRef}
-      >
+      <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />

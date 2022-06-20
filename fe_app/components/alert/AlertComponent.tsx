@@ -5,10 +5,10 @@ import {
   AlertDescription,
   CloseButton,
   useDisclosure,
-} from "@chakra-ui/react";
-import { Box } from "@chakra-ui/layout";
+} from '@chakra-ui/react';
+import { Box } from '@chakra-ui/layout';
 
-import { AlertStatusValues } from "@/utils/interfaces/alertStatuses";
+import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
 
 interface AlertComponentProps {
   status: AlertStatusValues;
@@ -16,11 +16,7 @@ interface AlertComponentProps {
   description: string;
 }
 
-const AlertComponent = ({
-  status,
-  title,
-  description,
-}: AlertComponentProps) => {
+const AlertComponent = ({ status, title, description }: AlertComponentProps) => {
   const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
 
   return isOpen ? (

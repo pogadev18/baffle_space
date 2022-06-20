@@ -1,2 +1,3 @@
-import AlertComponent from "./AlertComponent";
+import AlertComponent from './AlertComponent';
+
 export default AlertComponent;

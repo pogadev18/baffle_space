@@ -1,7 +1,7 @@
-import { ReactNode } from "react";
-import { Box } from "@chakra-ui/layout";
+import { ReactNode } from 'react';
+import { Box } from '@chakra-ui/layout';
 
-import Header from "@/components/header";
+import Header from '@/components/header';
 
 interface AppLayoutProps {
   children: ReactNode;
