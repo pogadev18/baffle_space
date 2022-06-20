@@ -9,22 +9,17 @@ import { useRouter } from "next/router";
 import useReadFirebaseUsers from "@/hooks/useReadFirebaseUsers";
 import LoadingSpinner from "@/components/LoadingSpinner";
 
-// import { useAppDispatch } from "@/store/hook";
-// import { confirmIsOnRegisterProcess } from "@/store/slices/registerProcessSlice";
-
 import {
   RegisterFormValues,
   initialValues,
   validationSchema,
   notify,
 } from "./utils";
-import Link from "next/link";
 
 const Register = () => {
   const { user: moralisUser, isAuthUndefined } = useMoralis();
   const router = useRouter();
   const [isPageLoading, setIsPageLoading] = useState(true);
-  // const dispatch = useAppDispatch();
   const { firebaseUsers, usersCollectionRef } = useReadFirebaseUsers();
 
   const moralisUserWalletAddress: string =

@@ -1,31 +1,57 @@
+import { useEffect } from "react";
 import { Box } from "@chakra-ui/layout";
 import { Button, Heading, useDisclosure } from "@chakra-ui/react";
 import { useMoralis } from "react-moralis";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { addDoc } from "@firebase/firestore";
 
 import Logo from "@/components/logoImage";
 import RulesModal from "@/components//rulesModal";
 import AlertComponent from "@/components/alert";
+
 import { AlertStatusValues } from "@/utils/interfaces/alertStatuses";
+import useReadFirebaseUsers from "@/hooks/useReadFirebaseUsers";
 
 const { Error } = AlertStatusValues;
 
 const Header = () => {
-  const router = useRouter();
-
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isAuthenticated, authenticate, isAuthenticating, authError } =
-    useMoralis();
+  const {
+    isAuthenticated,
+    authenticate,
+    isAuthenticating,
+    authError,
+    user: moralisUser,
+    isAuthUndefined,
+  } = useMoralis();
+  const usersCollectionRef = useReadFirebaseUsers().usersCollectionRef;
+
+  // moralis user data
+  const moralisUserWalletAddress: string =
+    !isAuthUndefined && moralisUser?.attributes?.ethAddress;
+  const moralisUsernameID: string =
+    !isAuthUndefined && moralisUser?.attributes?.username;
 
   const handleLogin = async () => {
     if (!isAuthenticated) {
       await authenticate({
         signingMessage: "Log in using Moralis",
       });
-      router.push("/register");
     }
   };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      const importUserDataInFirestore = async () => {
+        await addDoc(usersCollectionRef, {
+          wallet_address: moralisUserWalletAddress,
+          uid: moralisUsernameID,
+        });
+      };
+
+      importUserDataInFirestore();
+    }
+  }, [isAuthenticated]);
 
   return (
     <header>
