@@ -1,21 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Box } from "@chakra-ui/layout";
 import { Button, Heading, useDisclosure } from "@chakra-ui/react";
 import { useMoralis } from "react-moralis";
 import Link from "next/link";
+import { collection } from "firebase/firestore";
+import { useCollection } from "react-firebase-hooks/firestore";
 import { addDoc } from "@firebase/firestore";
 
 import Logo from "@/components/logoImage";
 import RulesModal from "@/components//rulesModal";
 import AlertComponent from "@/components/alert";
 
+import { db } from "@/firebase/clientApp";
 import { AlertStatusValues } from "@/utils/interfaces/alertStatuses";
-import useReadFirebaseUsers from "@/hooks/useReadFirebaseUsers";
-import useLoggedInUser from "@/hooks/useLoggedInUser";
 
 const { Error } = AlertStatusValues;
 
 const Header = () => {
+  const [users, usersLoading, usersError] = useCollection(
+    collection(db, "users"),
+    {
+      snapshotListenOptions: { includeMetadataChanges: true },
+    }
+  );
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const {
     isAuthenticated,
@@ -25,8 +33,7 @@ const Header = () => {
     user: moralisUser,
     isAuthUndefined,
   } = useMoralis();
-  const { firebaseUsers, usersCollectionRef } = useReadFirebaseUsers();
-  const { loggedInUser } = useLoggedInUser();
+  // const { loggedInUser } = useLoggedInUser();
   const moralisUserWalletAddress: string =
     !isAuthUndefined && moralisUser?.attributes?.ethAddress;
   const moralisUsernameID: string =
@@ -41,22 +48,22 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (isAuthenticated && firebaseUsers) {
-      console.log("users in component >>", firebaseUsers);
-      // const userAlreadyInFirestore = firebaseUsers.find(
-      //   (user) => user.uid === moralisUsernameID
-      // );
-      // console.log("userAlreadyInFirestore >>>", userAlreadyInFirestore);
-      //
-      // const importUserDataInFirestore = async () => {
-      //   await addDoc(usersCollectionRef, {
-      //     wallet_address: moralisUserWalletAddress,
-      //     uid: moralisUsernameID,
-      //   });
-      // };
-      // if (!userAlreadyInFirestore) importUserDataInFirestore();
+    if (isAuthenticated && !usersLoading && users) {
+      const firebaseUsers = users.docs.map((user) => user.data());
+      const userAlreadyInFirestore = !!firebaseUsers.find(
+        (user) => user.uid === moralisUsernameID
+      );
+
+      const importUserDataInFirestore = async () => {
+        await addDoc(collection(db, "users"), {
+          wallet_address: moralisUserWalletAddress,
+          uid: moralisUsernameID,
+        });
+      };
+
+      if (!userAlreadyInFirestore) importUserDataInFirestore();
     }
-  }, [isAuthenticated]);
+  }, [isAuthenticated, usersLoading]);
 
   return (
     <header>

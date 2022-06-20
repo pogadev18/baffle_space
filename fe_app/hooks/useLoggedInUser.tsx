@@ -8,12 +8,13 @@ import {
   getDocs,
 } from "@firebase/firestore";
 
-import { db } from "@/firebase/firebase-config";
+// import { db } from "@/firebase/firebase-config";
 import { userProperties } from "@/constants/firestoreUserProperties";
 
+// TODO: refactor
 const useLoggedInUser = () => {
   const { WALLET_ADDRESS } = userProperties;
-  const usersRef = collection(db, "users");
+  const usersRef = collection("test", "users");
   const { isAuthenticated, user: moralisUser } = useMoralis();
   const [loggedInUser, setLoggedInUser] = useState<DocumentData | null>(null);
 
