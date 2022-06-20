@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 export type NextApplicationPage<P = any, IP = P> = NextPage<P, IP> & {
   requireAuth?: boolean;
   specialLayout?: boolean;
+  landingPage?: boolean;
 };
 
 type AppProps = {
@@ -40,6 +41,8 @@ function MyApp({ Component, pageProps }: AppProps) {
             <AuthGuard>
               <Component {...pageProps} />
             </AuthGuard>
+          ) : Component.landingPage ? (
+            <Component {...pageProps} />
           ) : (
             <AppLayout>
               <Component {...pageProps} />
