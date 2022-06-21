@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import { FC, PropsWithChildren, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useMoralis } from 'react-moralis';
 import { Spinner } from '@chakra-ui/react';
 
-const AuthGuard = ({ children }: { children: any }) => {
+// @ts-ignore
+const AuthGuard: FC<PropsWithChildren> = ({ children }) => {
   const { user, isAuthenticating, isAuthenticated, isAuthUndefined } = useMoralis();
   const router = useRouter();
 
