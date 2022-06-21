@@ -1,23 +1,26 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Box, Stack } from '@chakra-ui/layout';
 import { Button, Text, Input } from '@chakra-ui/react';
 import { useMoralis } from 'react-moralis';
-import { addDoc } from '@firebase/firestore';
-import { collection } from 'firebase/firestore';
+import { addDoc, doc, setDoc, collection, serverTimestamp } from '@firebase/firestore';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { Formik, Form, FormikProps } from 'formik';
 
 import { db } from '@/firebase/clientApp';
+import useLoggedInUser from '@/hooks/useLoggedInUser';
 import AlertComponent from '@/components/alert';
 import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
 import { SocialsFormValues, socialsInitialValues, validationSchema } from '@/utils/landingPage';
 
-const { Error } = AlertStatusValues;
+const { Error, Success } = AlertStatusValues;
 
 const Home = () => {
   const [users, usersLoading] = useCollection(collection(db, 'users'), {
     snapshotListenOptions: { includeMetadataChanges: true },
   });
+  const { loggedInUser } = useLoggedInUser();
+  const [subscribedToSocials, setSubscribedToSocials] = useState(false);
+
   const {
     isAuthenticated,
     authenticate,
@@ -40,6 +43,7 @@ const Home = () => {
         await addDoc(collection(db, 'users'), {
           wallet_address: moralisUserWalletAddress,
           uid: moralisUsernameID,
+          createdAt: serverTimestamp(),
         });
       };
 
@@ -55,8 +59,28 @@ const Home = () => {
     }
   };
 
-  const handleSocialsSubmit = (values: SocialsFormValues) => {
-    console.log(values);
+  const handleLogout = async () => {
+    await logout();
+    await setSubscribedToSocials(false);
+  };
+
+  const handleSocialsSubmit = async (values: SocialsFormValues) => {
+    try {
+      const userDocRef = doc(db, 'users', loggedInUser?.docID);
+      const { tiktok, twitter, facebook, instagram } = values;
+
+      const socialsData = {
+        tiktok,
+        twitter,
+        facebook,
+        instagram,
+      };
+
+      await setDoc(userDocRef, socialsData, { merge: true });
+      await setSubscribedToSocials(true);
+    } catch (e) {
+      console.error(e);
+    }
   };
   return (
     <Box width={1000} margin="auto" padding={5}>
@@ -66,13 +90,16 @@ const Home = () => {
           login with metamask to have bla bla bla...access...whitelist...random text (use desktop
           version for metamask login)
         </Text>
-        {isAuthenticated ? (
+        {isAuthenticated && (
+          <Button onClick={handleLogout} colorScheme="red">
+            logout
+          </Button>
+        )}
+        {isAuthenticated && !subscribedToSocials && (
           <Box>
-            <Button onClick={logout} colorScheme="red">
-              logout
-            </Button>
             <Formik
-              initialValues={socialsInitialValues}
+              enableReinitialize
+              initialValues={socialsInitialValues(loggedInUser)}
               validationSchema={validationSchema}
               onSubmit={handleSocialsSubmit}
             >
@@ -146,7 +173,15 @@ const Home = () => {
               }}
             </Formik>
           </Box>
-        ) : (
+        )}
+        {isAuthenticated && subscribedToSocials && (
+          <AlertComponent
+            status={Success}
+            title="YEEEEEEI"
+            description="thanks for letting us know about your socials"
+          />
+        )}
+        {!isAuthenticated && (
           <Button onClick={handleLogin} colorScheme="yellow" isLoading={isAuthenticating}>
             Connect with MetaMask
           </Button>
