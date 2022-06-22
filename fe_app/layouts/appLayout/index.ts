@@ -1,2 +1,2 @@
-import AppLayout from "./appLayout";
+import AppLayout from './appLayout';
 export default AppLayout;

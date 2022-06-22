@@ -1,28 +1,24 @@
-import { useEffect } from "react";
-import { Box } from "@chakra-ui/layout";
-import { Button, Heading, useDisclosure } from "@chakra-ui/react";
-import { useMoralis } from "react-moralis";
-import Link from "next/link";
-import { collection } from "firebase/firestore";
-import { useCollection } from "react-firebase-hooks/firestore";
-import { addDoc } from "@firebase/firestore";
+import { useEffect } from 'react';
+import { Box } from '@chakra-ui/layout';
+import { Button, Heading, useDisclosure } from '@chakra-ui/react';
+import { useMoralis } from 'react-moralis';
+import { collection } from 'firebase/firestore';
+import { useCollection } from 'react-firebase-hooks/firestore';
+import { addDoc } from '@firebase/firestore';
 
-import Logo from "@/components/logoImage";
-import RulesModal from "@/components//rulesModal";
-import AlertComponent from "@/components/alert";
+import Logo from '@/components/logoImage';
+import RulesModal from '@/components//rulesModal';
+import AlertComponent from '@/components/alert';
 
-import { db } from "@/firebase/clientApp";
-import { AlertStatusValues } from "@/utils/interfaces/alertStatuses";
+import { db } from '@/firebase/clientApp';
+import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
 
 const { Error } = AlertStatusValues;
 
 const Header = () => {
-  const [users, usersLoading, usersError] = useCollection(
-    collection(db, "users"),
-    {
-      snapshotListenOptions: { includeMetadataChanges: true },
-    }
-  );
+  const [users, usersLoading] = useCollection(collection(db, 'users'), {
+    snapshotListenOptions: { includeMetadataChanges: true },
+  });
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const {
@@ -34,15 +30,13 @@ const Header = () => {
     isAuthUndefined,
   } = useMoralis();
   // const { loggedInUser } = useLoggedInUser();
-  const moralisUserWalletAddress: string =
-    !isAuthUndefined && moralisUser?.attributes?.ethAddress;
-  const moralisUsernameID: string =
-    !isAuthUndefined && moralisUser?.attributes?.username;
+  const moralisUserWalletAddress: string = !isAuthUndefined && moralisUser?.attributes?.ethAddress;
+  const moralisUsernameID: string = !isAuthUndefined && moralisUser?.attributes?.username;
 
   const handleLogin = async () => {
     if (!isAuthenticated) {
       await authenticate({
-        signingMessage: "Log in using Moralis",
+        signingMessage: 'Log in using Moralis',
       });
     }
   };
@@ -50,12 +44,10 @@ const Header = () => {
   useEffect(() => {
     if (isAuthenticated && !usersLoading && users) {
       const firebaseUsers = users.docs.map((user) => user.data());
-      const userAlreadyInFirestore = !!firebaseUsers.find(
-        (user) => user.uid === moralisUsernameID
-      );
+      const userAlreadyInFirestore = !!firebaseUsers.find((user) => user.uid === moralisUsernameID);
 
       const importUserDataInFirestore = async () => {
-        await addDoc(collection(db, "users"), {
+        await addDoc(collection(db, 'users'), {
           wallet_address: moralisUserWalletAddress,
           uid: moralisUsernameID,
         });
@@ -80,9 +72,9 @@ const Header = () => {
             nachos
             <Box
               sx={{
-                fontSize: "1rem",
-                textAlign: "center",
-                letterSpacing: ".25rem",
+                fontSize: '1rem',
+                textAlign: 'center',
+                letterSpacing: '.25rem',
               }}
             >
               [marketplace]
@@ -103,15 +95,9 @@ const Header = () => {
           )}
 
           {isAuthenticated ? (
-            <Link href="/profile">
-              <a>my profile</a>
-            </Link>
+            <p>my profile</p>
           ) : (
-            <Button
-              onClick={handleLogin}
-              colorScheme="yellow"
-              isLoading={isAuthenticating}
-            >
+            <Button onClick={handleLogin} colorScheme="yellow" isLoading={isAuthenticating}>
               Autentificare cu MetaMask
             </Button>
           )}

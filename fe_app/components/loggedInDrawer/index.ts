@@ -1,2 +1,3 @@
-import LoggedInDrawer from "./LoggedInDrawer";
+import LoggedInDrawer from './LoggedInDrawer';
+
 export default LoggedInDrawer;

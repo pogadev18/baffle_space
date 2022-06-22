@@ -1,3 +1,3 @@
-import RulesModal from "./RulesModal";
+import RulesModal from './RulesModal';
 
 export default RulesModal;
