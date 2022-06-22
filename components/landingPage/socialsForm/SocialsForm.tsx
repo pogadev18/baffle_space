@@ -3,12 +3,12 @@ import { Box, Stack } from '@chakra-ui/layout';
 import { Form, Formik, FormikProps } from 'formik';
 import { Button, Input } from '@chakra-ui/react';
 import useLoggedInUser from '@/hooks/useLoggedInUser';
+import { doc, setDoc } from '@firebase/firestore';
 
 import AlertComponent from '@/components/alert';
 import { SocialsFormValues, socialsInitialValues, validationSchema } from '@/utils/landingPage';
 import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
 
-import { doc, setDoc } from '@firebase/firestore';
 import { db } from '@/firebase/clientApp';
 
 const { Success } = AlertStatusValues;

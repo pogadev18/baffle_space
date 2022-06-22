@@ -7,9 +7,12 @@ import { useCollection } from 'react-firebase-hooks/firestore';
 import { isMobile } from 'react-device-detect';
 
 import { db } from '@/firebase/clientApp';
+
 import AlertComponent from '@/components/alert';
-import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
 import SocialsForm from '@/components/landingPage/socialsForm';
+import ParticipateToWhitelist from '@/components/landingPage/participateToWhitelist';
+
+import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
 
 const { Error, Info } = AlertStatusValues;
 
@@ -83,9 +86,12 @@ const Home = () => {
           </>
         )}
         {isAuthenticated && (
-          <Button onClick={handleLogout} colorScheme="red">
-            logout
-          </Button>
+          <>
+            <Button onClick={handleLogout} colorScheme="red">
+              logout
+            </Button>
+            <ParticipateToWhitelist />
+          </>
         )}
         {isAuthenticated && <SocialsForm isAuthenticated={isAuthenticated} />}
 
