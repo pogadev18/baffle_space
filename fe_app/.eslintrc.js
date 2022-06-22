@@ -6,6 +6,9 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'prettier',
   ],
+  globals: {
+    React: 'readonly',
+  },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   env: {
     browser: true,

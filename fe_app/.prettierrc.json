@@ -5,8 +5,5 @@
   "singleQuote": true,
   "printWidth": 100,
   "trailingComma": "all",
-  "endOfLine": "auto",
-  "importOrderGroupNamespaceSpecifiers": true,
-  "importOrderSeparation": true,
-  "importOrderSortSpecifiers": true
+  "endOfLine": "auto"
 }

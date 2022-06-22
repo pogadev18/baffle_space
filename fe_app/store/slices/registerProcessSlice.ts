@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-import { RootState } from "@/store/store";
+import { RootState } from '@/store/store';
 
 export interface RegisterProcessState {
   isOnRegisterProcess: boolean;
@@ -11,7 +11,7 @@ const initialState: RegisterProcessState = {
 };
 
 export const registerProcessSlice = createSlice({
-  name: "registerProcess",
+  name: 'registerProcess',
   initialState,
   reducers: {
     confirmIsOnRegisterProcess: (state) => {
