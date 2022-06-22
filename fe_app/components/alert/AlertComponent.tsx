@@ -26,13 +26,7 @@ const AlertComponent = ({ status, title, description }: AlertComponentProps) => 
         <AlertTitle>{title}</AlertTitle>
         <AlertDescription>{description}</AlertDescription>
       </Box>
-      <CloseButton
-        alignSelf="flex-start"
-        position="relative"
-        right={-1}
-        top={-1}
-        onClick={onClose}
-      />
+      <CloseButton alignSelf="flex-start" position="absolute" right={1} top={1} onClick={onClose} />
     </Alert>
   ) : null;
 };

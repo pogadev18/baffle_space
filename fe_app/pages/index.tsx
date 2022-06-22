@@ -11,7 +11,7 @@ import AlertComponent from '@/components/alert';
 import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
 import SocialsForm from '@/components/landingPage/socialsForm';
 
-const { Error } = AlertStatusValues;
+const { Error, Info } = AlertStatusValues;
 
 const Home = () => {
   const [users, usersLoading] = useCollection(collection(db, 'users'), {
@@ -61,7 +61,7 @@ const Home = () => {
   };
 
   return (
-    <Box width={1000} margin="auto" padding={5}>
+    <Box width="80vw" margin="auto" padding={5}>
       <Text fontSize="5xl">Baffle.space 😜</Text>
       <Box>
         <Text fontSize="3xl">
@@ -73,7 +73,13 @@ const Home = () => {
             <Button onClick={handleLogin} colorScheme="yellow" isLoading={isAuthenticating}>
               Connect with MetaMask
             </Button>
-            <p>is on mobile: {String(isMobile)}</p>
+            {isMobile && (
+              <AlertComponent
+                status={Info}
+                title="MetaMask mobile connection"
+                description="We detected that you are using a mobile device. In order to connect with MetaMask, please download the 'MetaMask' app from GooglePlay or AppStore."
+              />
+            )}
           </>
         )}
         {isAuthenticated && (
