@@ -1,25 +1,22 @@
-import { useEffect, useState } from 'react';
-import { Box, Stack } from '@chakra-ui/layout';
-import { Button, Text, Input } from '@chakra-ui/react';
+import { useEffect } from 'react';
+import { Box } from '@chakra-ui/layout';
+import { Button, Text } from '@chakra-ui/react';
 import { useMoralis } from 'react-moralis';
-import { addDoc, doc, setDoc, collection, serverTimestamp } from '@firebase/firestore';
+import { addDoc, collection, serverTimestamp } from '@firebase/firestore';
 import { useCollection } from 'react-firebase-hooks/firestore';
-import { Formik, Form, FormikProps } from 'formik';
+import { isMobile } from 'react-device-detect';
 
 import { db } from '@/firebase/clientApp';
-import useLoggedInUser from '@/hooks/useLoggedInUser';
 import AlertComponent from '@/components/alert';
 import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
-import { SocialsFormValues, socialsInitialValues, validationSchema } from '@/utils/landingPage';
+import SocialsForm from '@/components/landingPage/socialsForm';
 
-const { Error, Success } = AlertStatusValues;
+const { Error } = AlertStatusValues;
 
 const Home = () => {
   const [users, usersLoading] = useCollection(collection(db, 'users'), {
     snapshotListenOptions: { includeMetadataChanges: true },
   });
-  const { loggedInUser } = useLoggedInUser();
-  const [subscribedToSocials, setSubscribedToSocials] = useState(false);
 
   const {
     isAuthenticated,
@@ -61,27 +58,8 @@ const Home = () => {
 
   const handleLogout = async () => {
     await logout();
-    await setSubscribedToSocials(false);
   };
 
-  const handleSocialsSubmit = async (values: SocialsFormValues) => {
-    try {
-      const userDocRef = doc(db, 'users', loggedInUser?.docID);
-      const { tiktok, twitter, facebook, instagram } = values;
-
-      const socialsData = {
-        tiktok,
-        twitter,
-        facebook,
-        instagram,
-      };
-
-      await setDoc(userDocRef, socialsData, { merge: true });
-      await setSubscribedToSocials(true);
-    } catch (e) {
-      console.error(e);
-    }
-  };
   return (
     <Box width={1000} margin="auto" padding={5}>
       <Text fontSize="5xl">Baffle.space 😜</Text>
@@ -90,102 +68,21 @@ const Home = () => {
           login with metamask to have bla bla bla...access...whitelist...random text (use desktop
           version for metamask login)
         </Text>
+        {!isAuthenticated && (
+          <>
+            <Button onClick={handleLogin} colorScheme="yellow" isLoading={isAuthenticating}>
+              Connect with MetaMask
+            </Button>
+            <p>is on mobile: {String(isMobile)}</p>
+          </>
+        )}
         {isAuthenticated && (
           <Button onClick={handleLogout} colorScheme="red">
             logout
           </Button>
         )}
-        {isAuthenticated && !subscribedToSocials && (
-          <Box>
-            <Formik
-              enableReinitialize
-              initialValues={socialsInitialValues(loggedInUser)}
-              validationSchema={validationSchema}
-              onSubmit={handleSocialsSubmit}
-            >
-              {(props: FormikProps<SocialsFormValues>) => {
-                const { values, touched, errors, isSubmitting, handleChange, handleBlur } = props;
-                return (
-                  <Form>
-                    <Stack spacing={30}>
-                      <Box>
-                        <Input
-                          name="instagram"
-                          id="instagram"
-                          variant="flushed"
-                          size="md"
-                          type="text"
-                          placeholder="Instagram handle"
-                          onBlur={handleBlur}
-                          value={values.instagram}
-                          onChange={handleChange}
-                          isInvalid={!!(errors.instagram && touched.instagram)}
-                        />
-                      </Box>
-                      <Box>
-                        <Input
-                          name="facebook"
-                          id="facebook"
-                          variant="flushed"
-                          size="md"
-                          type="text"
-                          placeholder="Facebook profile"
-                          onBlur={handleBlur}
-                          value={values.facebook}
-                          onChange={handleChange}
-                          isInvalid={!!(errors.facebook && touched.facebook)}
-                        />
-                      </Box>
-                      <Box>
-                        <Input
-                          name="tiktok"
-                          id="tiktok"
-                          variant="flushed"
-                          size="md"
-                          type="text"
-                          placeholder="Tiktok profile"
-                          onBlur={handleBlur}
-                          value={values.tiktok}
-                          onChange={handleChange}
-                          isInvalid={!!(errors.tiktok && touched.tiktok)}
-                        />
-                      </Box>
-                      <Box>
-                        <Input
-                          name="twitter"
-                          id="twitter"
-                          variant="flushed"
-                          size="md"
-                          type="text"
-                          placeholder="Twitter profile"
-                          onBlur={handleBlur}
-                          value={values.twitter}
-                          onChange={handleChange}
-                          isInvalid={!!(errors.twitter && touched.twitter)}
-                        />
-                      </Box>
-                    </Stack>
-                    <Button colorScheme="yellow" type="submit" disabled={isSubmitting}>
-                      Submit
-                    </Button>
-                  </Form>
-                );
-              }}
-            </Formik>
-          </Box>
-        )}
-        {isAuthenticated && subscribedToSocials && (
-          <AlertComponent
-            status={Success}
-            title="YEEEEEEI"
-            description="thanks for letting us know about your socials"
-          />
-        )}
-        {!isAuthenticated && (
-          <Button onClick={handleLogin} colorScheme="yellow" isLoading={isAuthenticating}>
-            Connect with MetaMask
-          </Button>
-        )}
+        {isAuthenticated && <SocialsForm isAuthenticated={isAuthenticated} />}
+
         {authError && (
           <AlertComponent
             status={Error}

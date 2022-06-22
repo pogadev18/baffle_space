@@ -10,10 +10,10 @@ export interface SocialsFormValues {
 
 export const socialsInitialValues = (loggedInUser: DocumentData | null) => {
   return {
-    instagram: loggedInUser?.userData?.instagram || '',
-    tiktok: loggedInUser?.userData?.tiktok || '',
-    twitter: loggedInUser?.userData.twitter || '',
-    facebook: loggedInUser?.userData.facebook || '',
+    instagram: loggedInUser?.userData?.socials?.instagram || '',
+    tiktok: loggedInUser?.userData?.socials?.tiktok || '',
+    twitter: loggedInUser?.userData.socials?.twitter || '',
+    facebook: loggedInUser?.userData.socials?.facebook || '',
   };
 };
 
