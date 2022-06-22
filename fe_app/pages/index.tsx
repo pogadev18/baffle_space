@@ -65,7 +65,7 @@ const Home = () => {
       <Text fontSize="5xl">Baffle.space 😜</Text>
       <Box>
         <Text fontSize="3xl">
-          login with metamask to have bla bla bla...access...whitelist...random text (use desktop
+          loginzz with metamask to have bla bla bla...access...whitelist...random text (use desktop
           version for metamask login)
         </Text>
         {!isAuthenticated && (
