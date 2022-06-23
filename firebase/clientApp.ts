@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { getFunctions, httpsCallable } from 'firebase/functions';
 
 const clientCredentials = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -13,3 +14,6 @@ const clientCredentials = {
 
 const app = initializeApp(clientCredentials);
 export const db = getFirestore(app);
+
+export const getCloudFunctions = getFunctions;
+export const httpsCallableFunctions = httpsCallable;
