@@ -3,7 +3,7 @@ import { Box, Stack } from '@chakra-ui/layout';
 import { Form, Formik, FormikProps } from 'formik';
 import { Button, Input } from '@chakra-ui/react';
 import useLoggedInUser from '@/hooks/useLoggedInUser';
-import { doc, setDoc } from '@firebase/firestore';
+import { doc, setDoc, serverTimestamp } from '@firebase/firestore';
 
 import AlertComponent from '@/components/alert';
 import { SocialsFormValues, socialsInitialValues, validationSchema } from '@/utils/landingPage';
@@ -36,6 +36,7 @@ const SocialsForm = ({ isAuthenticated }: SocialsFormProps) => {
       await setDoc(
         userDocRef,
         {
+          lastUpdatedAt: serverTimestamp(),
           socials: socialsData,
         },
         { merge: true },
