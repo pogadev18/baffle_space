@@ -5,7 +5,6 @@ import { collection, query, DocumentData, where, getDocs } from '@firebase/fires
 import { db } from '@/firebase/clientApp';
 import { userProperties } from '@/constants/firestoreUserProperties';
 
-// TODO: refactor
 const useLoggedInUser = () => {
   const { WALLET_ADDRESS } = userProperties;
   const usersRef = collection(db, 'users');

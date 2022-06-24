@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Button } from '@chakra-ui/react';
-import { doc, setDoc } from '@firebase/firestore';
+import { doc, serverTimestamp, setDoc } from '@firebase/firestore';
 
 import useLoggedInUser from '@/hooks/useLoggedInUser';
 import { db } from '@/firebase/clientApp';
 
 import AlertComponent from '@/components/alert';
-
 import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
 
 const { Success } = AlertStatusValues;
@@ -22,7 +21,11 @@ const ParticipateToWhitelist = () => {
     try {
       const userDocRef = doc(db, 'users', loggedInUser?.docID);
 
-      await setDoc(userDocRef, { onWhitelist: true }, { merge: true });
+      await setDoc(
+        userDocRef,
+        { lastUpdatedAt: serverTimestamp(), onWhitelist: true },
+        { merge: true },
+      );
       await setWhitelistSuccess(true);
     } catch (e) {
       setError(true);

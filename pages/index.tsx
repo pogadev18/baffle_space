@@ -6,7 +6,7 @@ import { addDoc, collection, serverTimestamp } from '@firebase/firestore';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { isMobile } from 'react-device-detect';
 
-import { db, getCloudFunctions, httpsCallableFunctions } from '@/firebase/clientApp';
+import { db } from '@/firebase/clientApp';
 
 import AlertComponent from '@/components/alert';
 import SocialsForm from '@/components/landingPage/socialsForm';
@@ -20,7 +20,6 @@ const Home = () => {
   const [users, usersLoading] = useCollection(collection(db, 'users'), {
     snapshotListenOptions: { includeMetadataChanges: true },
   });
-  const cloudFunctions = getCloudFunctions();
 
   const {
     isAuthenticated,
@@ -64,19 +63,10 @@ const Home = () => {
     await logout();
   };
 
-  const handleSayHello = async () => {
-    const sayHello = httpsCallableFunctions(cloudFunctions, 'sayHello');
-    const data = await sayHello();
-    console.log(data);
-  };
-
   return (
     <Box width="80vw" margin="auto" padding={5}>
       <Text fontSize="5xl">Baffle.space 😜</Text>
       <Box>
-        <button type="button" onClick={handleSayHello}>
-          say hello
-        </button>
         <Text fontSize="3xl">
           loginzz with metamask to have bla bla bla...access...whitelist...random text (use desktop
           version for metamask login)
