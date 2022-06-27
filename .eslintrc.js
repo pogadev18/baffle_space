@@ -40,6 +40,13 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'no-unused-vars': [
+      'error',
+      {
+        varsIgnorePattern: '^_+$',
+        argsIgnorePattern: '^_+$',
+      },
+    ],
     'consistent-return': 'off',
     'arrow-body-style': 'off',
     'prefer-arrow-callback': 'off',

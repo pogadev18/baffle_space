@@ -1,15 +1,31 @@
 import * as Yup from 'yup';
 
+interface File {
+  url: string;
+  errors: string[];
+  file: {
+    type: string;
+    size: string;
+    name: string;
+  };
+}
 export interface CreateContestFormValues {
   description: string;
+  files: File[];
 }
 
 export const createContestFormInitialValues = {
   description: '',
+  files: [],
 };
 
 export const validationSchema = Yup.object().shape({
   description: Yup.string().required('Please add a description'),
+  files: Yup.array(
+    Yup.object({
+      url: Yup.string().required(),
+    }),
+  ).min(2, 'Please upload at least 2 images'),
 });
 
 // function to upload a file to firestore or any other CDN
@@ -35,6 +51,7 @@ export const uploadFile = (file: File, onProgress: (percentage: number) => void)
     };
 
     const formData = new FormData();
+    // @ts-ignore
     formData.append('file', file);
     formData.append('upload_preset', key);
 

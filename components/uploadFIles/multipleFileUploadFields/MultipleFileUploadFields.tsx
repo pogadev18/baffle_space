@@ -1,6 +1,10 @@
-import { useCallback, useState } from 'react';
+import { useEffect, useCallback, useState } from 'react';
 import { useDropzone, FileRejection, FileError } from 'react-dropzone';
+import { useField } from 'formik';
+import { uid } from 'uid';
+
 import SingleFileUploadWithProgress from '@/components/uploadFIles/singleFileUploadWithProgress';
+import UploadError from '@/components/uploadFIles/uploadError';
 
 export interface UploadableFile {
   file: File;
@@ -8,20 +12,35 @@ export interface UploadableFile {
   url?: string;
 }
 
-const MultipleFileUploadFields = () => {
+const MultipleFileUploadFields = ({ name }: { name: string }) => {
+  const [, , helpers] = useField(name);
   const [files, setFiles] = useState<UploadableFile[]>([]);
 
   const onDrop = useCallback((accFiles: File[], rejFiles: FileRejection[]) => {
-    console.log(rejFiles);
     const mappedAcc = accFiles.map((file) => ({ file, errors: [] }));
-    setFiles((curr) => [...curr, ...mappedAcc]);
+    const mappedRej = rejFiles.map((r) => ({ ...r, id: uid() }));
+
+    setFiles((curr) => [...curr, ...mappedAcc, ...mappedRej]);
   }, []);
 
-  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+  const { getRootProps, getInputProps } = useDropzone({
+    onDrop,
+    accept: {
+      'image/jpeg': [],
+      'image/png': [],
+      'image/jpg': [],
+    },
+    maxSize: 5242880, // 5MB
+  });
 
   const onDelete = (file: File) => {
     setFiles((currentFiles) => currentFiles.filter((fw) => fw.file !== file));
   };
+
+  useEffect(() => {
+    helpers.setValue(files);
+    helpers.setTouched(true);
+  }, [files]);
 
   const onUpload = (file: File, url: string) => {
     setFiles((currentFiles) =>
@@ -42,15 +61,22 @@ const MultipleFileUploadFields = () => {
         <p>Drag and drop some files here, or click to select files</p>
       </div>
 
-      {JSON.stringify(files)}
-      {files.map((fileWrapper) => (
-        <SingleFileUploadWithProgress
-          onUpload={onUpload}
-          onDelete={onDelete}
-          key={fileWrapper.file.name}
-          file={fileWrapper.file}
-        />
-      ))}
+      {files.map((fileWrapper) => {
+        if (fileWrapper.errors.length) {
+          return (
+            <UploadError file={fileWrapper.file} errors={fileWrapper.errors} onDelete={onDelete} />
+          );
+        }
+
+        return (
+          <SingleFileUploadWithProgress
+            onUpload={onUpload}
+            onDelete={onDelete}
+            key={fileWrapper.file.name}
+            file={fileWrapper.file}
+          />
+        );
+      })}
     </>
   );
 };
