@@ -6,6 +6,7 @@ import AlertComponent from '@/components/alert';
 import SocialsForm from '@/components/landingPage/socialsForm';
 import ParticipateToWhitelist from '@/components/landingPage/participateToWhitelist';
 import Hero from '@/components/landingPage/hero';
+import CreateContestForm from '@/components/createContestForm';
 
 import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
 
@@ -16,6 +17,14 @@ const Home = () => {
 
   return (
     <>
+      <CreateContestForm />
+      {authError && (
+        <AlertComponent
+          status={Error}
+          title="Something went wrong"
+          description={authError.message}
+        />
+      )}
       <Hero />
       <Box>
         {!isAuthenticated && isMobile && (
@@ -30,14 +39,6 @@ const Home = () => {
             <SocialsForm isAuthenticated={isAuthenticated} />
             <ParticipateToWhitelist />
           </>
-        )}
-
-        {authError && (
-          <AlertComponent
-            status={Error}
-            title="Something went wrong"
-            description={authError.message}
-          />
         )}
       </Box>
     </>
