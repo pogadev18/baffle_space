@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-interface File {
+interface FileForm {
   url: string;
   errors: string[];
   file: {
@@ -11,7 +11,7 @@ interface File {
 }
 export interface CreateContestFormValues {
   description: string;
-  files: File[];
+  files: FileForm[];
 }
 
 export const createContestFormInitialValues = {
@@ -29,7 +29,6 @@ export const validationSchema = Yup.object().shape({
 });
 
 // function to upload a file to firestore or any other CDN
-// eslint-disable-next-line no-unused-vars
 export const uploadFile = (file: File, onProgress: (percentage: number) => void) => {
   const url = 'https://api.cloudinary.com/v1_1/demo/image/upload';
   const key = 'docs_upload_example_us_preset';
