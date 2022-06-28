@@ -61,22 +61,25 @@ const MultipleFileUploadFields = ({ name }: { name: string }) => {
         <p>Drag and drop some files here, or click to select files</p>
       </div>
 
-      {files.map((fileWrapper) => {
-        if (fileWrapper.errors.length) {
-          return (
-            <UploadError file={fileWrapper.file} errors={fileWrapper.errors} onDelete={onDelete} />
-          );
-        }
-
-        return (
-          <SingleFileUploadWithProgress
-            onUpload={onUpload}
-            onDelete={onDelete}
-            key={fileWrapper.file.name}
-            file={fileWrapper.file}
-          />
-        );
-      })}
+      {files.map((fileWrapper) => (
+        <div>
+          {fileWrapper.errors.length ? (
+            <UploadError
+              key={fileWrapper.file.name}
+              file={fileWrapper.file}
+              errors={fileWrapper.errors}
+              onDelete={onDelete}
+            />
+          ) : (
+            <SingleFileUploadWithProgress
+              onUpload={onUpload}
+              onDelete={onDelete}
+              key={fileWrapper.file.name}
+              file={fileWrapper.file}
+            />
+          )}
+        </div>
+      ))}
     </>
   );
 };

@@ -8,9 +8,10 @@ export interface FileHeaderProps {
 }
 
 const FileHeader = ({ file, onDelete }: FileHeaderProps) => {
+  const { name } = file;
   return (
     <Flex alignItems="center" justifyContent="space-between">
-      <p>{file.name}</p>
+      <span>{name}</span>
       <Button onClick={() => onDelete(file)} rightIcon={<HiOutlineTrash />} rounded="full" px={6}>
         delete
       </Button>

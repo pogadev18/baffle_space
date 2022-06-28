@@ -13,7 +13,7 @@ const UploadError = ({ file, onDelete, errors }: UploadErrorProps) => {
     <>
       <FileHeader file={file} onDelete={onDelete} />
       <Progress size="md" colorScheme="red" value={100} />
-      {errors.length !== 0 && errors.map((error) => <p>{error.message}</p>)}
+      {errors.length !== 0 && errors.map(({ message }) => <span>{message}</span>)}
     </>
   );
 };

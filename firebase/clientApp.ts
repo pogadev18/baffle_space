@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
 import { getFunctions, httpsCallable } from 'firebase/functions';
 
 const clientCredentials = {
@@ -14,6 +15,7 @@ const clientCredentials = {
 
 const app = initializeApp(clientCredentials);
 export const db = getFirestore(app);
+export const storage = getStorage(app);
 
 export const getCloudFunctions = getFunctions;
 export const httpsCallableFunctions = httpsCallable;

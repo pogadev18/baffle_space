@@ -37,11 +37,11 @@ const CreateContestForm = () => {
                 onChange={handleChange}
                 isInvalid={!!(errors.description && touched.description)}
               />
-              {errors.description && touched.description && <p>{errors.description}</p>}
+              {/* {errors.description && touched.description && <p>{errors.description}</p>} */}
             </Box>
             <Box>
               <MultipleFileUploadFields name="files" />
-              {errors.files && touched.files && <p>{errors.files}</p>}
+              {/* {errors.files && touched.files && <p>{errors.files}</p>} */}
             </Box>
             <Button variant="contained" color="primary" disabled={isSubmitting} type="submit">
               Submit

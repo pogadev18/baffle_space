@@ -21,11 +21,7 @@ export const createContestFormInitialValues = {
 
 export const validationSchema = Yup.object().shape({
   description: Yup.string().required('Please add a description'),
-  files: Yup.array(
-    Yup.object({
-      url: Yup.string().required(),
-    }),
-  ).min(2, 'Please upload at least 2 images'),
+  files: Yup.array().min(2, 'Please upload at least 2 images'),
 });
 
 // function to upload a file to firestore or any other CDN

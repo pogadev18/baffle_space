@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { Progress } from '@chakra-ui/react';
+import React from 'react';
 import { Stack } from '@chakra-ui/layout';
+import { uid } from 'uid';
 
 import FileHeader from '@/components/uploadFIles/fileHeader';
-import { uploadFile } from '@/utils/createContestForm';
+import { storage } from '@/firebase/clientApp';
+import { ref, uploadBytes } from 'firebase/storage';
 
 export interface SingleFileUploadWithProgressProps {
   file: File;
@@ -18,21 +19,24 @@ const SingleFileUploadWithProgress = ({
   onDelete,
   onUpload,
 }: SingleFileUploadWithProgressProps) => {
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const upload = async () => {
-      const url = await uploadFile(file, setProgress);
-      onUpload(file, url);
-    };
-
-    upload();
-  }, []);
+  const handleUpload = async () => {
+    try {
+      const imageRef = ref(storage, `images/raffles/${file.name + uid()}`);
+      await uploadBytes(imageRef, file);
+      alert('upload ok!');
+      onUpload(file, 'test');
+    } catch (e) {
+      alert('something went wrong');
+    }
+  };
 
   return (
     <Stack spacing={5}>
+      <button type="button" onClick={handleUpload}>
+        upload photo
+      </button>
       <FileHeader file={file} onDelete={onDelete} />
-      <Progress size="md" colorScheme="green" value={progress} />
+      <img src={URL.createObjectURL(file)} alt="Uploaded" />
     </Stack>
   );
 };
