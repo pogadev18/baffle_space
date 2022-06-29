@@ -4,12 +4,10 @@ import { isMobile } from 'react-device-detect';
 import Head from 'next/head';
 
 import AlertComponent from '@/components/alert';
-import SocialsForm from '@/components/landingPage/socialsForm';
-import ParticipateToWhitelist from '@/components/landingPage/participateToWhitelist';
 import Hero from '@/components/landingPage/hero';
-import CreateContestForm from '@/components/createContestForm';
 
 import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
+import CreateContestForm from '@/components/createContestForm';
 
 const { Error, Info } = AlertStatusValues;
 
@@ -18,10 +16,11 @@ const Home = () => {
 
   return (
     <>
+      <CreateContestForm />
+
       <Head>
         <title>Baffle.space</title>
       </Head>
-      <CreateContestForm />
       {authError && (
         <AlertComponent
           status={Error}
@@ -37,12 +36,6 @@ const Home = () => {
             title="MetaMask mobile connection"
             description="We detected that you are using a mobile device. In order to connect with MetaMask, please download the 'MetaMask' app from GooglePlay or AppStore."
           />
-        )}
-        {isAuthenticated && (
-          <>
-            <SocialsForm isAuthenticated={isAuthenticated} />
-            <ParticipateToWhitelist />
-          </>
         )}
       </Box>
     </>

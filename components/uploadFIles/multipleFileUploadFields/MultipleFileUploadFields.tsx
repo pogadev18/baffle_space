@@ -42,17 +42,6 @@ const MultipleFileUploadFields = ({ name }: { name: string }) => {
     helpers.setTouched(true);
   }, [files]);
 
-  const onUpload = (file: File, url: string) => {
-    setFiles((currentFiles) =>
-      currentFiles.map((fw) => {
-        if (fw.file === file) {
-          return { ...fw, url };
-        }
-        return fw;
-      }),
-    );
-  };
-
   return (
     <>
       <div {...getRootProps()}>
@@ -72,7 +61,6 @@ const MultipleFileUploadFields = ({ name }: { name: string }) => {
             />
           ) : (
             <SingleFileUploadWithProgress
-              onUpload={onUpload}
               onDelete={onDelete}
               key={fileWrapper.file.name}
               file={fileWrapper.file}

@@ -1,18 +1,53 @@
+import { useState } from 'react';
 import { Form, Formik } from 'formik';
 import { Button, Input } from '@chakra-ui/react';
 import { Box, Stack } from '@chakra-ui/layout';
-import {
-  CreateContestFormValues,
-  createContestFormInitialValues,
-  validationSchema,
-} from '@/utils/createContestForm';
+import { useMoralis, useNewMoralisObject } from 'react-moralis';
 
 import MultipleFileUploadFields from '@/components/uploadFIles/multipleFileUploadFields';
 
+import {
+  createContestFormInitialValues,
+  CreateContestFormValues,
+  validationSchema,
+} from '@/utils/createContestForm';
+
+import { uploadImagesToIPFS } from './utils';
+
 const CreateContestForm = () => {
-  const handleSubmit = (values: CreateContestFormValues) => {
-    console.log(values);
+  const [formSubmitting, setFormSubmitting] = useState(false);
+  const { save } = useNewMoralisObject('Contest');
+  const { user } = useMoralis();
+
+  const handleSubmit = async (values: CreateContestFormValues) => {
+    setFormSubmitting(true);
+    const { files, description } = values;
+
+    if (files.length !== 0) {
+      const imageHasErrors = !!files.find((file) => file.errors.length >= 1);
+
+      if (!imageHasErrors) {
+        try {
+          const ipfsImagesResults = await uploadImagesToIPFS(files);
+          // @ts-ignore
+          const imageURLS: string[] = ipfsImagesResults?.map((file) => file.ipfs());
+
+          const dataToSaveForContestInMoralis = {
+            description,
+            createdBy: user?.get('ethAddress'),
+            imageURLS,
+          };
+
+          await save(dataToSaveForContestInMoralis);
+          setFormSubmitting(false);
+        } catch (e) {
+          setFormSubmitting(false);
+        }
+      }
+    }
   };
+
+  console.log(formSubmitting);
 
   return (
     <Formik

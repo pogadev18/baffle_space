@@ -14,8 +14,10 @@ import {
   Tab,
   TabPanel,
 } from '@chakra-ui/react';
+import { AiOutlineUser } from 'react-icons/ai';
 
 import ProfileDashboard from '@/components/dashboard/profileDashboard';
+import Nft from '@/components/dashboard/nft';
 import { useMoralis } from 'react-moralis';
 
 const DashboardDrawer = () => {
@@ -25,9 +27,10 @@ const DashboardDrawer = () => {
 
   return (
     <>
-      <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
-        Open
+      <Button ref={btnRef} onClick={onOpen} size="xl">
+        <AiOutlineUser size="30" />
       </Button>
+
       <Drawer size="xl" isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>
         <DrawerOverlay />
         <DrawerContent>
@@ -38,10 +41,7 @@ const DashboardDrawer = () => {
             <Tabs variant="enclosed" size="lg">
               <TabList>
                 <Tab>Profile</Tab>
-                <Tab>Balance</Tab>
-                <Tab>Transactions</Tab>
                 <Tab>NFTs</Tab>
-                <Tab>Send ETH</Tab>
               </TabList>
 
               <TabPanels>
@@ -49,16 +49,7 @@ const DashboardDrawer = () => {
                   <ProfileDashboard user={user} />
                 </TabPanel>
                 <TabPanel p="0" mt="5">
-                  <p>balance tab</p>
-                </TabPanel>
-                <TabPanel p="0" mt="5">
-                  <p>transactions tab</p>
-                </TabPanel>
-                <TabPanel p="0" mt="5">
-                  <p>nfts tab</p>
-                </TabPanel>
-                <TabPanel p="0" mt="5">
-                  <p>send eth tab</p>
+                  <Nft user={user} />
                 </TabPanel>
               </TabPanels>
             </Tabs>
