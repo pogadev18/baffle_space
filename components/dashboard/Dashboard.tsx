@@ -20,7 +20,7 @@ import { useMoralis } from 'react-moralis';
 
 const DashboardDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const btnRef = useRef();
+  const btnRef = useRef<HTMLButtonElement>(null);
   const { user } = useMoralis();
 
   return (
