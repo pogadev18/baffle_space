@@ -15,9 +15,11 @@ import { useMoralis } from 'react-moralis';
 import { addDoc, collection, serverTimestamp } from '@firebase/firestore';
 import { useCollection } from 'react-firebase-hooks/firestore';
 
+import Dashboard from '@/components/dashboard';
+
 import { db } from '@/firebase/clientApp';
 
-const Links = ['Dashboard', 'Projects', 'Team'];
+const Links = ['dashboard', 'Projects', 'Team'];
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -48,7 +50,6 @@ const LandingPageHeader = () => {
     snapshotListenOptions: { includeMetadataChanges: true },
   });
 
-  const moralisUserWalletAddress: string = !isAuthUndefined && moralisUser?.attributes?.ethAddress;
   const moralisUsernameID: string = !isAuthUndefined && moralisUser?.attributes?.username;
 
   useEffect(() => {
@@ -58,7 +59,6 @@ const LandingPageHeader = () => {
 
       const importUserDataInFirestore = async () => {
         await addDoc(collection(db, 'users'), {
-          wallet_address: moralisUserWalletAddress,
           uid: moralisUsernameID,
           createdAt: serverTimestamp(),
         });
@@ -71,7 +71,7 @@ const LandingPageHeader = () => {
   const handleLogin = async () => {
     if (!isAuthenticated) {
       await authenticate({
-        signingMessage: 'Log in using Moralis',
+        signingMessage: 'Auth required by Baffle.space',
       });
     }
   };
@@ -100,9 +100,12 @@ const LandingPageHeader = () => {
         </HStack>
         <Flex alignItems="center">
           {isAuthenticated ? (
-            <Button onClick={handleLogout} colorScheme="red" size="sm">
-              Disconnect
-            </Button>
+            <>
+              <Button variant="link" onClick={handleLogout} colorScheme="red" size="sm">
+                Disconnect
+              </Button>
+              <Dashboard />
+            </>
           ) : (
             <Button
               variant="solid"

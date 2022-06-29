@@ -6,7 +6,7 @@ import { db } from '@/firebase/clientApp';
 import { userProperties } from '@/constants/firestoreUserProperties';
 
 const useLoggedInUser = () => {
-  const { WALLET_ADDRESS } = userProperties;
+  const { UID } = userProperties;
   const usersRef = collection(db, 'users');
   const { isAuthenticated, user: moralisUser } = useMoralis();
   const [loggedInUser, setLoggedInUser] = useState<DocumentData | null>(null);
@@ -16,11 +16,10 @@ const useLoggedInUser = () => {
       const getLoggedInUser = async () => {
         const userQuery = await query(
           usersRef,
-          where(WALLET_ADDRESS, '==', moralisUser?.attributes?.ethAddress),
+          where(UID, '==', moralisUser?.attributes?.username),
         );
 
         const userData = await getDocs(userQuery);
-        // setLoggedInUser(userData.docs.map((doc) => doc.data())[0]);
         setLoggedInUser(
           userData.docs.map((doc) => {
             return {

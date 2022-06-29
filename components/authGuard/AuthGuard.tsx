@@ -22,7 +22,7 @@ const AuthGuard: FC<PropsWithChildren> = ({ children }) => {
   }
 
   if (isAuthenticated && user) {
-    return { children };
+    return children;
   }
 
   /* otherwise don't return anything, will do a redirect from useEffect */

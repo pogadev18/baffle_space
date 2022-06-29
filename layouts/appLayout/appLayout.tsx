@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { Box } from '@chakra-ui/layout';
 
-import Header from '@/components/header';
+import LandingPageHeader from '@/components/landingPage/header/Header';
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -10,7 +10,7 @@ interface AppLayoutProps {
 const AppLayout = ({ children }: AppLayoutProps) => {
   return (
     <Box height="100vh">
-      <Header />
+      <LandingPageHeader />
       <Box p={5}>{children}</Box>
     </Box>
   );

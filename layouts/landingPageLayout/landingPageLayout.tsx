@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { Flex } from '@chakra-ui/react';
 
-import LandingPageHeader from '@/components/landingPage/header/Header';
+import LandingPageHeader from '@/components/landingPage/header';
 
 interface LandingPageLayoutProps {
   children: ReactNode;

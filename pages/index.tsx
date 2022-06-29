@@ -1,6 +1,7 @@
 import { Box } from '@chakra-ui/layout';
 import { useMoralis } from 'react-moralis';
 import { isMobile } from 'react-device-detect';
+import Head from 'next/head';
 
 import AlertComponent from '@/components/alert';
 import SocialsForm from '@/components/landingPage/socialsForm';
@@ -17,6 +18,9 @@ const Home = () => {
 
   return (
     <>
+      <Head>
+        <title>Baffle.space</title>
+      </Head>
       <CreateContestForm />
       {authError && (
         <AlertComponent
