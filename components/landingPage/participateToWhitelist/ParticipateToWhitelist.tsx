@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@chakra-ui/react';
-import { doc, serverTimestamp, setDoc } from '@firebase/firestore';
-
-import useLoggedInUser from '@/hooks/useLoggedInUser';
-import { db } from '@/firebase/clientApp';
+import { useMoralis } from 'react-moralis';
 
 import AlertComponent from '@/components/alert';
 import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
@@ -12,21 +9,16 @@ const { Success } = AlertStatusValues;
 
 const ParticipateToWhitelist = () => {
   const [error, setError] = useState(false);
-  const [whitelistSuccess, setWhitelistSuccess] = useState(false);
-  const { loggedInUser } = useLoggedInUser();
+  const [notify, setNotify] = useState(false);
+  const { user } = useMoralis();
 
-  const isAlreadyOnWhitelist = loggedInUser?.userData?.onWhitelist;
+  const isAlreadyOnWhitelist = user?.get('whiteList');
 
   const handleWhiteList = async () => {
+    // add whiteList in DB for user
     try {
-      const userDocRef = doc(db, 'users', loggedInUser?.docID);
-
-      await setDoc(
-        userDocRef,
-        { lastUpdatedAt: serverTimestamp(), onWhitelist: true },
-        { merge: true },
-      );
-      await setWhitelistSuccess(true);
+      await user?.save('whiteList', true);
+      setNotify(true);
     } catch (e) {
       setError(true);
     }
@@ -36,13 +28,16 @@ const ParticipateToWhitelist = () => {
 
   return (
     <>
-      {!whitelistSuccess && (
-        <Button disabled={isAlreadyOnWhitelist} onClick={handleWhiteList} colorScheme="blue">
-          {isAlreadyOnWhitelist ? 'you are already on whitelist 😍' : 'participate to whitelist'}
-        </Button>
-      )}
+      <Button
+        width="250px"
+        disabled={isAlreadyOnWhitelist}
+        onClick={handleWhiteList}
+        colorScheme="blue"
+      >
+        {isAlreadyOnWhitelist ? 'you are already on whitelist 😍' : 'participate to whitelist'}
+      </Button>
 
-      {whitelistSuccess && (
+      {notify && (
         <AlertComponent
           status={Success}
           title="Participation completed"

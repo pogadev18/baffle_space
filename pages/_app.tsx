@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 
 import AppLayout from '@/layouts/appLayout';
+import LandingPageLayout from '@/layouts/landingPageLayout';
 import AuthGuard from '@/components/authGuard';
 import { theme } from '@/theme/index';
 import { store } from '@/store/store';
@@ -38,12 +39,10 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
                 <Component {...pageProps} />
               </AppLayout>
             </AuthGuard>
-          ) : Component.specialLayout ? (
-            <AuthGuard>
-              <Component {...pageProps} />
-            </AuthGuard>
           ) : Component.landingPage ? (
-            <Component {...pageProps} />
+            <LandingPageLayout>
+              <Component {...pageProps} />
+            </LandingPageLayout>
           ) : (
             <AppLayout>
               <Component {...pageProps} />

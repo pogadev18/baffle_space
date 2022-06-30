@@ -1,25 +1,19 @@
 import * as Yup from 'yup';
-import { DocumentData } from '@firebase/firestore';
+import Moralis from 'moralis';
 
 export interface SocialsFormValues {
-  instagram: string;
   tiktok: string;
   twitter: string;
-  facebook: string;
 }
 
-export const socialsInitialValues = (loggedInUser: DocumentData | null) => {
+export const socialsInitialValues = (loggedInUser: Moralis.User<Moralis.Attributes> | null) => {
   return {
-    instagram: loggedInUser?.userData?.socials?.instagram || '',
-    tiktok: loggedInUser?.userData?.socials?.tiktok || '',
-    twitter: loggedInUser?.userData.socials?.twitter || '',
-    facebook: loggedInUser?.userData.socials?.facebook || '',
+    tiktok: loggedInUser?.get('tiktok') || '',
+    twitter: loggedInUser?.get('twitter') || '',
   };
 };
 
 export const validationSchema = Yup.object().shape({
-  instagram: Yup.string(),
   tiktok: Yup.string(),
   twitter: Yup.string(),
-  facebook: Yup.string(),
 });
