@@ -1,6 +1,10 @@
 import { extendTheme } from '@chakra-ui/react';
 
 export const theme = extendTheme({
+  fonts: {
+    heading: `'Luckiest Guy', cursive`,
+    body: `'Luckiest Guy', cursive`,
+  },
   colors: {
     gray: {
       100: '#F5f5f5',

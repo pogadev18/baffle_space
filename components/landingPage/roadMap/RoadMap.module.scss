@@ -1,0 +1,27 @@
+.roadMap {
+  .baseImage {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+  }
+
+  .cityAndClouds {
+    position: relative;
+    background: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .cloudsImageWrapper {
+      position: relative;
+    }
+
+    .cityImageWrapper {
+      position: relative;
+    }
+  }
+}
+
+
+
