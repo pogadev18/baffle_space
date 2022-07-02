@@ -1,4 +1,4 @@
-## Welcome to the official repo of Baffle.space
+# Welcome to the official repo of Baffle.space
 
 On this repository you can see the Web3 implementation of our dAPP using TypeScript with Next.js and Moralis DB.
 
