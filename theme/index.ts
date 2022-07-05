@@ -3,7 +3,7 @@ import { extendTheme } from '@chakra-ui/react';
 export const theme = extendTheme({
   fonts: {
     heading: `'Luckiest Guy', cursive`,
-    body: `'Luckiest Guy', cursive`,
+    // body: `'Luckiest Guy', cursive`,
   },
   colors: {
     gray: {

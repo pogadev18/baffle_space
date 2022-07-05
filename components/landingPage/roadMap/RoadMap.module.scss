@@ -1,25 +1,32 @@
 .roadMap {
+  height: 100vh;
+
   .baseImage {
     object-fit: contain;
     width: 100%;
     height: auto;
   }
 
-  .cityAndClouds {
+  .cityAndCloudsWrapper {
+    height: 100vh; // position absolute city
+    background: blue url("/clouds.png") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
     position: relative;
-    background: blue;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
-    .cloudsImageWrapper {
-      position: relative;
-    }
-
     .cityImageWrapper {
-      position: relative;
+
+      position: absolute;
+      bottom: 0;
     }
+  }
+
+  .roadmapWrapper {
+    background: yellowgreen;
   }
 }
 
