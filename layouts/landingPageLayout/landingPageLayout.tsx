@@ -9,7 +9,7 @@ interface LandingPageLayoutProps {
 
 const LandingPageLayout = ({ children }: LandingPageLayoutProps) => {
   return (
-    <Flex direction="column" align="center" maxW={{ xl: '1400px' }} m="0 auto">
+    <Flex direction="column" align="center" m="0 auto">
       <LandingPageHeader />
       {children}
     </Flex>

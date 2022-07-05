@@ -12,6 +12,7 @@ import { theme } from '@/theme/index';
 import { store } from '@/store/store';
 
 import 'reset-css';
+import '@fontsource/luckiest-guy/400.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 export type NextApplicationPage<P = any, IP = P> = NextPage<P, IP> & {

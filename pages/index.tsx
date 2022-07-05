@@ -7,7 +7,7 @@ import AlertComponent from '@/components/alert';
 import Hero from '@/components/landingPage/hero';
 
 import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
-import CreateContestForm from '@/components/createContestForm';
+import RoadMap from '@/components/landingPage/roadMap';
 
 const { Error, Info } = AlertStatusValues;
 
@@ -16,8 +16,6 @@ const Home = () => {
 
   return (
     <>
-      <CreateContestForm />
-
       <Head>
         <title>Baffle.space</title>
       </Head>
@@ -37,6 +35,9 @@ const Home = () => {
             description="We detected that you are using a mobile device. In order to connect with MetaMask, please download the 'MetaMask' app from GooglePlay or AppStore."
           />
         )}
+      </Box>
+      <Box>
+        <RoadMap />
       </Box>
     </>
   );

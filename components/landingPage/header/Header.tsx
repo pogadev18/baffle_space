@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { useMoralis } from 'react-moralis';
+import { toast } from 'react-toastify';
 
 import Dashboard from '@/components/dashboard';
 
@@ -33,6 +34,10 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 );
 
 const LandingPageHeader = () => {
+  const notifyLoggedIn = () =>
+    toast(
+      'Now that you are logged in you can access your dashboard from the navigation bar (user icon)',
+    );
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isAuthenticated, authenticate, isAuthenticating } = useMoralis();
 
@@ -41,6 +46,8 @@ const LandingPageHeader = () => {
       await authenticate({
         signingMessage: 'Auth required by Baffle.space',
       });
+
+      notifyLoggedIn();
     }
   };
 
