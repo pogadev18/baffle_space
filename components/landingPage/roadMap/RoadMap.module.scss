@@ -9,7 +9,7 @@
 
   .cityAndCloudsWrapper {
     height: 100vh; // position absolute city
-    background: blue url("/clouds.png") no-repeat center center;
+    background: url("/clouds.png"), linear-gradient(171deg, rgba(104,0,255,1) 0%, rgba(53,0,150,1) 35%) no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     position: relative;
@@ -26,7 +26,7 @@
   }
 
   .roadmapWrapper {
-    background: yellowgreen;
+    background: #FFB717;
   }
 }
 
