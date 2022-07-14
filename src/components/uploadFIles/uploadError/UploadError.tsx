@@ -1,6 +1,7 @@
-import FileHeader from '@/components/uploadFIles/fileHeader';
 import { Progress } from '@chakra-ui/react';
 import { FileError } from 'react-dropzone';
+
+import FileHeader from '@/root/components/uploadFIles/fileHeader';
 
 interface UploadErrorProps {
   file: File;

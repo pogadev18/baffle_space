@@ -2,7 +2,7 @@ import React from 'react';
 import { Stack } from '@chakra-ui/layout';
 import { Flex, Box, Image } from '@chakra-ui/react';
 
-import FileHeader from '@/components/uploadFIles/fileHeader';
+import FileHeader from '@/root/components/uploadFIles/fileHeader';
 
 export interface SingleFileUploadWithProgressProps {
   file: File;

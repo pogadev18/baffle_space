@@ -3,8 +3,8 @@ import { useDropzone, FileRejection, FileError } from 'react-dropzone';
 import { useField } from 'formik';
 import { uid } from 'uid';
 
-import SingleFileUploadWithProgress from '@/components/uploadFIles/singleFileUploadWithProgress';
-import UploadError from '@/components/uploadFIles/uploadError';
+import SingleFileUploadWithProgress from '@/root/components/uploadFIles/singleFileUploadWithProgress';
+import UploadError from '@/root/components/uploadFIles/uploadError';
 
 export interface UploadableFile {
   file: File;
