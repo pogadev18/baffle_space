@@ -1,0 +1,40 @@
+import { extendTheme } from '@chakra-ui/react';
+
+export const theme = extendTheme({
+  fonts: {
+    heading: `'Lato'`,
+    body: `'Lato'`,
+  },
+  colors: {
+    gray: {
+      100: '#F5f5f5',
+      200: '#EEEEEE',
+      300: '#7d7d7d',
+      400: '#BDBDBD',
+      500: '#9E9E9E',
+      600: '#757575',
+      700: '#616161',
+      800: '#424242',
+      900: '#212121',
+    },
+    black: {
+      900: '#1E1E1E',
+    },
+    yellow: {
+      300: '#f0bc21',
+      400: '#FFC000',
+    },
+  },
+  components: {
+    Button: {
+      variants: {
+        link: {
+          ':focus': {
+            outline: 'none',
+            boxShadow: 'none',
+          },
+        },
+      },
+    },
+  },
+});

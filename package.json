@@ -17,7 +17,6 @@
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@firebase/firestore": "^3.4.10",
-    "@fontsource/luckiest-guy": "^4.5.7",
     "@reduxjs/toolkit": "^1.8.2",
     "@types/yup": "^0.29.14",
     "@walletconnect/web3-provider": "^1.7.8",
