@@ -53,7 +53,7 @@ const ParticipateToWhitelist = () => {
           background="transparent"
           color="black"
           border="1px solid black"
-          borderRadius="25px"
+          rounded="full"
           py={7}
           width="450px"
           textTransform="uppercase"
@@ -68,7 +68,7 @@ const ParticipateToWhitelist = () => {
           background="transparent"
           color="black"
           border="1px solid black"
-          borderRadius="25px"
+          rounded="full"
           py={7}
           width="450px"
           textTransform="uppercase"
