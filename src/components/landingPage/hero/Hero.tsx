@@ -1,77 +1,78 @@
-import {
-  Flex,
-  Container,
-  Heading,
-  Stack,
-  Text,
-  Button,
-  useDisclosure,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalCloseButton,
-} from '@chakra-ui/react';
-
-import { HiVideoCamera } from 'react-icons/hi';
-
-import YoutubeEmbed from '@/root/components/youtubeEmbed';
+import { Container, Stack, Flex, Box, Heading, Text, Button, Image } from '@chakra-ui/react';
 
 const Hero = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
   return (
-    <Container maxW="5xl">
-      <Stack
-        textAlign="center"
-        align="center"
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 10 }}
-      >
-        <Heading
-          fontWeight={600}
-          fontSize={{ base: '3xl', sm: '4xl', md: '6xl' }}
-          lineHeight="110%"
+    <Box background="black.900" width="100%">
+      <Container maxW="8xl">
+        <Stack
+          align="center"
+          spacing={{ base: 8, md: 10 }}
+          py={{ base: 20, md: 28 }}
+          direction={{ base: 'column', md: 'row' }}
         >
-          Baffle.space
-          <Text as="span" color="orange.400">
-            &nbsp;made easy
-          </Text>
-        </Heading>
-        <Text color="gray.500" maxW="3xl">
-          Never miss a meeting. Never be late for one too. Keep track of your meetings and receive
-          smart reminders in appropriate times. Read your smart “Daily Agenda” every morning.
-        </Text>
-        <Stack spacing={6} direction="row">
-          <Button
-            rounded="full"
-            px={6}
-            colorScheme="orange"
-            bg="orange.400"
-            _hover={{ bg: 'orange.500' }}
-          >
-            Get started
-          </Button>
-          <Button onClick={onOpen} rightIcon={<HiVideoCamera />} rounded="full" px={6}>
-            How to use MetaMask
-          </Button>
+          <Stack flex={1}>
+            <Box marginBottom={10}>
+              <Heading
+                lineHeight={1.1}
+                fontWeight={700}
+                fontSize={{ base: '3xl', sm: '4xl', lg: '80px' }}
+              >
+                <Text color="gray.300" as="span" textTransform="uppercase" position="relative">
+                  Baffle
+                </Text>
+                <Text textTransform="uppercase" as="span" color="yellow.400">
+                  S
+                  <Text as="span" textTransform="uppercase" fontSize="40px">
+                    pace
+                  </Text>
+                </Text>
+                <br />
+              </Heading>
+              <Text color="white" fontWeight="900" fontSize="3xl" marginTop="0">
+                Raffles for dreams and baffling wins!
+              </Text>
+              <Text
+                color="gray.300"
+                fontWeight="bold"
+                textTransform="uppercase"
+                marginTop="0"
+                fontSize="20px"
+              >
+                Home of the play to win &amp; earn games
+              </Text>
+            </Box>
+            <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
+              <Button
+                rounded="full"
+                size="lg"
+                fontWeight="normal"
+                px={6}
+                colorScheme="red"
+                bg="red.400"
+                _hover={{ bg: 'red.500' }}
+              >
+                Get started
+              </Button>
+              <Button rounded="full" size="lg" fontWeight="normal" px={6}>
+                How It Works
+              </Button>
+            </Stack>
+          </Stack>
+          <Flex flex={1} justify="center" align="center" position="relative" w="full">
+            <Box position="relative" height="400px" width="full" overflow="hidden">
+              <Image
+                alt="Hero Image"
+                fit="cover"
+                align="center"
+                w="100%"
+                h="100%"
+                src="/mascota.png"
+              />
+            </Box>
+          </Flex>
         </Stack>
-        <Flex w="full">
-          <p>hello</p>
-        </Flex>
-      </Stack>
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>How to use MetaMask in 2 minutes</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <YoutubeEmbed embedId="YVgfHZMFFFQ" />
-          </ModalBody>
-        </ModalContent>
-      </Modal>
-    </Container>
+      </Container>
+    </Box>
   );
 };
 

@@ -58,7 +58,7 @@ const LandingPageHeader = () => {
   return (
     <>
       <ParticipateToWhiteListBanner />
-      <Box width="100%" bg="black.900" px={6}>
+      <Box width="100%" bg="black.900" px={35}>
         <Flex h={16} alignItems="center" justifyContent="space-between">
           <IconButton
             size="md"
