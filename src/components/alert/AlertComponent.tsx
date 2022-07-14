@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { Box } from '@chakra-ui/layout';
 
-import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
+import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
 
 interface AlertComponentProps {
   status: AlertStatusValues;

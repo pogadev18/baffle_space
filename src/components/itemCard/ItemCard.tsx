@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
-import { CardItemProps } from '@/utils/interfaces/cardItem';
+import { CardItemProps } from '@/root/utils/interfaces/cardItem';
 
 const ItemCard = ({ name, images, price, ticketPrice, ticketsLeft }: CardItemProps) => {
   return (

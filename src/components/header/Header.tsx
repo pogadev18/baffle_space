@@ -6,12 +6,12 @@ import { collection } from 'firebase/firestore';
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { addDoc } from '@firebase/firestore';
 
-import Logo from '@/components/logoImage';
-import RulesModal from '@/components//rulesModal';
-import AlertComponent from '@/components/alert';
+import Logo from '@/root/components/logoImage';
+import RulesModal from '@/root/components//rulesModal';
+import AlertComponent from '@/root/components/alert';
 
-import { db } from '@/firebase/clientApp';
-import { AlertStatusValues } from '@/utils/interfaces/alertStatuses';
+import { db } from '@/root/firebase/clientApp';
+import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
 
 const { Error } = AlertStatusValues;
 

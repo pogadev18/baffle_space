@@ -4,13 +4,13 @@ import { Button, Input } from '@chakra-ui/react';
 import { Box, Stack } from '@chakra-ui/layout';
 import { useMoralis, useNewMoralisObject } from 'react-moralis';
 
-import MultipleFileUploadFields from '@/components/uploadFIles/multipleFileUploadFields';
+import MultipleFileUploadFields from '@/root/components/uploadFIles/multipleFileUploadFields';
 
 import {
   createContestFormInitialValues,
   CreateContestFormValues,
   validationSchema,
-} from '@/utils/createContestForm';
+} from '@/root/utils/createContestForm';
 
 import { uploadImagesToIPFS } from './utils';
 

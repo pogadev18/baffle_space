@@ -1,5 +1,6 @@
-import { FileForm } from '@/utils/createContestForm';
 import Moralis from 'moralis';
+
+import { FileForm } from '@/root/utils/createContestForm';
 
 // You can upload files with the saveIPFS() method (max file size 1 GB).
 
