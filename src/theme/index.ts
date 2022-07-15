@@ -1,6 +1,11 @@
 import { extendTheme } from '@chakra-ui/react';
 
+const breakpoints = {
+  custom1110: '1110px',
+};
+
 export const theme = extendTheme({
+  breakpoints,
   fonts: {
     heading: `'Lato'`,
     body: `'Lato'`,

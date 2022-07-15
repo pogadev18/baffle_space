@@ -70,7 +70,7 @@ const SocialsForm = ({ isAuthenticated }: SocialsFormProps) => {
                       type="text"
                       placeholder="@baffle_me_2022"
                       _placeholder={{
-                        color: 'black',
+                        color: 'gray.300',
                       }}
                       onBlur={handleBlur}
                       value={values.tiktok}
@@ -95,7 +95,7 @@ const SocialsForm = ({ isAuthenticated }: SocialsFormProps) => {
                       placeholder="@baffle_me_2022"
                       onBlur={handleBlur}
                       _placeholder={{
-                        color: 'black',
+                        color: 'gray.300',
                       }}
                       value={values.twitter}
                       onChange={handleChange}
@@ -111,6 +111,7 @@ const SocialsForm = ({ isAuthenticated }: SocialsFormProps) => {
                 type="submit"
                 variant="outline"
                 disabled={isSubmitting}
+                _hover={{ background: 'white' }}
               >
                 Submit
               </Button>

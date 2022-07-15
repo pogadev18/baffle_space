@@ -37,7 +37,13 @@ const ProfileDashboard = ({ user }: { user: Moralis.User<Moralis.Attributes> | n
             <FormLabel htmlFor="username" fontWeight="900">
               Set a new username
             </FormLabel>
-            <Flex gap={2} justify="center" align="center" justifyContent="flex-start">
+            <Flex
+              gap={2}
+              justify={{ base: 'flexStart', md: 'center' }}
+              align={{ base: 'flexStart', md: 'center' }}
+              justifyContent="flex-start"
+              direction={{ base: 'column', md: 'row' }}
+            >
               <Input
                 color="black"
                 width="300px"
@@ -46,7 +52,7 @@ const ProfileDashboard = ({ user }: { user: Moralis.User<Moralis.Attributes> | n
                 type="text"
                 placeholder="ex: baffle_me_2022"
                 _placeholder={{
-                  color: 'black',
+                  color: 'gray.300',
                 }}
                 value={username}
               />
@@ -56,6 +62,7 @@ const ProfileDashboard = ({ user }: { user: Moralis.User<Moralis.Attributes> | n
                 colorScheme="black"
                 variant="outline"
                 type="submit"
+                _hover={{ background: 'white' }}
               >
                 change
               </Button>

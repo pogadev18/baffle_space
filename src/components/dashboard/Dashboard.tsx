@@ -17,6 +17,9 @@ import {
   TabPanel,
   Text,
   Flex,
+  Box,
+  Image,
+  Show,
 } from '@chakra-ui/react';
 import { AiOutlineUser } from 'react-icons/ai';
 
@@ -43,18 +46,56 @@ const DashboardDrawer = () => {
       >
         <DrawerOverlay />
         <DrawerContent background="yellow.400">
-          <Flex minWidth="max-content" alignItems="center" height="100%">
-            <Flex
-              height="100%"
-              width="100%"
-              background="black.900"
-              flex={1}
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Text>BAFFLE</Text>
-            </Flex>
-
+          <Box
+            display={{ base: 'block', custom1110: 'flex' }}
+            // minWidth="max-content"
+            alignItems="center"
+            height="100%"
+            overflowY="auto"
+          >
+            <Show breakpoint="(min-width: 1110px)">
+              <Flex
+                height="100%"
+                width="100%"
+                background="black.900"
+                flex={2}
+                alignItems="center"
+                justifyContent="center"
+                direction="column"
+              >
+                <Box width="500px">
+                  <Text
+                    display="flex"
+                    alignItems="center"
+                    color="gray.300"
+                    fontWeight="black"
+                    fontSize="100px"
+                  >
+                    BAFFLE
+                    <Image
+                      width="250px"
+                      alt="Baffle Icon"
+                      fit="cover"
+                      align="center"
+                      margin="auto"
+                      src="/sig.svg"
+                      position="relative"
+                      right="42px"
+                    />
+                  </Text>
+                  <Text
+                    position="relative"
+                    bottom="40px"
+                    color="gray.300"
+                    textTransform="uppercase"
+                    fontWeight="black"
+                  >
+                    Our goal is to stay out of the greedy system and share the wealth with as many
+                    people as possible
+                  </Text>
+                </Box>
+              </Flex>
+            </Show>
             <DrawerBody>
               <DrawerCloseButton />
               <DrawerHeader px="0" paddingTop="0px" paddingBottom="20px">
@@ -82,7 +123,7 @@ const DashboardDrawer = () => {
                 </TabPanels>
               </Tabs>
             </DrawerBody>
-          </Flex>
+          </Box>
         </DrawerContent>
       </Drawer>
     </>
