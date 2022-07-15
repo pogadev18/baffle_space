@@ -24,7 +24,7 @@
     "formik": "^2.2.9",
     "framer-motion": "^6.3.11",
     "magic-sdk": "^8.1.1",
-    "moralis": "^1.8.0",
+    "moralis": "^1.9.0",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-device-detect": "^2.2.2",
