@@ -42,7 +42,7 @@ const SocialsForm = ({ isAuthenticated }: SocialsFormProps) => {
       {isAuthenticated && subscribedToSocials && (
         <AlertComponent
           status={Success}
-          title="YEEEEEEI"
+          title="Success"
           description="thanks for letting us know about your socials"
         />
       )}
@@ -59,13 +59,19 @@ const SocialsForm = ({ isAuthenticated }: SocialsFormProps) => {
               <Stack spacing={30}>
                 <Box>
                   <FormControl>
-                    <FormLabel htmlFor="tiktok">TikTok</FormLabel>
+                    <FormLabel fontWeight="900" htmlFor="tiktok">
+                      TikTok
+                    </FormLabel>
                     <Input
-                      width="50%"
+                      width="300px"
+                      color="black"
                       name="tiktok"
                       id="tiktok"
                       type="text"
                       placeholder="@baffle_me_2022"
+                      _placeholder={{
+                        color: 'black',
+                      }}
                       onBlur={handleBlur}
                       value={values.tiktok}
                       onChange={handleChange}
@@ -75,16 +81,22 @@ const SocialsForm = ({ isAuthenticated }: SocialsFormProps) => {
                 </Box>
                 <Box>
                   <FormControl>
-                    <FormLabel htmlFor="twitter">Twitter</FormLabel>
+                    <FormLabel fontWeight="900" htmlFor="twitter">
+                      Twitter
+                    </FormLabel>
 
                     <Input
-                      width="50%"
+                      width="300px"
+                      color="black"
                       name="twitter"
                       id="twitter"
                       size="md"
                       type="text"
                       placeholder="@baffle_me_2022"
                       onBlur={handleBlur}
+                      _placeholder={{
+                        color: 'black',
+                      }}
                       value={values.twitter}
                       onChange={handleChange}
                       isInvalid={!!(errors.twitter && touched.twitter)}
@@ -93,10 +105,11 @@ const SocialsForm = ({ isAuthenticated }: SocialsFormProps) => {
                 </Box>
               </Stack>
               <Button
-                width="250px"
+                width="150px"
                 mt="6"
-                colorScheme="purple"
+                colorScheme="black"
                 type="submit"
+                variant="outline"
                 disabled={isSubmitting}
               >
                 Submit

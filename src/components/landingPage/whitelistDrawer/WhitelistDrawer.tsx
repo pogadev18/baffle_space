@@ -46,7 +46,11 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
               </Text>
             </Box>
             <Box lineHeight="75px">
-              <Flex gap={2}>
+              <Flex
+                gap={2}
+                direction={{ base: 'column', md: 'row' }}
+                lineHeight={{ base: '1.6', md: 'auto' }}
+              >
                 <Text fontSize="30px" textTransform="uppercase" color="black" fontWeight="900">
                   Only 500 with
                 </Text>
@@ -63,13 +67,13 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
               </Flex>
             </Box>
             <Box>
-              <Text fontSize="25px" color="black">
+              <Text px="15px" fontSize="25px" color="black">
                 Join the NFT whitelist to become one of the first founders of Baffle.Space
               </Text>
             </Box>
 
             <Box mt={10}>
-              <Text>
+              <Text px="20px">
                 At launch, whitelisted players will have 7 days to mint their NFTs at 30% discount.
               </Text>
             </Box>

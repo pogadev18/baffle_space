@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Moralis from 'moralis';
-import { Text, FormControl, FormLabel, Input, Button, Box } from '@chakra-ui/react';
+import { Flex, Text, FormControl, FormLabel, Input, Button, Box } from '@chakra-ui/react';
 import { useMoralis } from 'react-moralis';
+import { HiLogout } from 'react-icons/hi';
 
-import ParticipateToWhitelist from '@/root/components/landingPage/participateToWhitelist';
 import SocialsForm from '@/root/components/landingPage/socialsForm';
 
 import TabsWrapper from '../tabsWrapper';
@@ -18,18 +18,12 @@ const ProfileDashboard = ({ user }: { user: Moralis.User<Moralis.Attributes> | n
 
   return (
     <TabsWrapper>
-      <Button mb="5" onClick={handleLogout} colorScheme="red" size="sm">
-        Disconnect
-      </Button>
       <Box mb="5">
-        <Text mb="5" fontSize="3xl">
-          Your details
+        <Text>
+          <span style={{ fontWeight: '900' }}>Username:</span> {user?.getUsername()}
         </Text>
         <Text>
-          <b>Username:</b> {user?.getUsername()}
-        </Text>
-        <Text>
-          <b>Wallet address:</b> {user?.get('ethAddress')}
+          <span style={{ fontWeight: '900' }}>Wallet address:</span> {user?.get('ethAddress')}
         </Text>
         <form
           onSubmit={(e) => {
@@ -40,34 +34,55 @@ const ProfileDashboard = ({ user }: { user: Moralis.User<Moralis.Attributes> | n
           }}
         >
           <FormControl mt="6" mb="6">
-            <FormLabel htmlFor="username">Set a new username</FormLabel>
-            <Input
-              width="50%"
-              onChange={(e) => setUsername(e.target.value)}
-              id="username"
-              type="text"
-              placeholder="ex: baffle_me_2022"
-              value={username}
-            />
+            <FormLabel htmlFor="username" fontWeight="900">
+              Set a new username
+            </FormLabel>
+            <Flex gap={2} justify="center" align="center" justifyContent="flex-start">
+              <Input
+                color="black"
+                width="300px"
+                onChange={(e) => setUsername(e.target.value)}
+                id="username"
+                type="text"
+                placeholder="ex: baffle_me_2022"
+                _placeholder={{
+                  color: 'black',
+                }}
+                value={username}
+              />
+              <Button
+                width="150px"
+                disabled={isUserUpdating}
+                colorScheme="black"
+                variant="outline"
+                type="submit"
+              >
+                change
+              </Button>
+            </Flex>
           </FormControl>
-          <Button width="250px" disabled={isUserUpdating} colorScheme="purple" type="submit">
-            change username
-          </Button>
         </form>
       </Box>
-      <hr />
-      <Box mb="5">
-        <Text mb="5" fontSize="3xl">
-          Participate to whitelist
-        </Text>
-        <ParticipateToWhitelist />
-      </Box>
-      <hr />
       <Box mt="5">
-        <Text mb="5" fontSize="3xl">
+        <Text fontWeight="900" mb="5" fontSize="3xl" color="black">
           Let us know about your socials
         </Text>
         <SocialsForm isAuthenticated={isAuthenticated} />
+      </Box>
+      <Box mt="45" textAlign="center">
+        <Button
+          onClick={handleLogout}
+          variant="ghost"
+          size="xl"
+          color="black"
+          fontWeight="900"
+          fontSize="25px"
+          textTransform="uppercase"
+          _hover={{ background: '0' }}
+          rightIcon={<HiLogout />}
+        >
+          Disconnect
+        </Button>
       </Box>
     </TabsWrapper>
   );

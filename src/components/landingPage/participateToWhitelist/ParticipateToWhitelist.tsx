@@ -9,7 +9,6 @@ import {
   ModalHeader,
   ModalFooter,
   ModalBody,
-  ModalCloseButton,
 } from '@chakra-ui/react';
 import { useMoralis } from 'react-moralis';
 
@@ -55,8 +54,9 @@ const ParticipateToWhitelist = () => {
           border="1px solid black"
           rounded="full"
           py={7}
-          width="450px"
+          width={{ base: '320px', md: '450px' }}
           textTransform="uppercase"
+          fontSize={{ base: '15px', md: '20px' }}
           mt="25px"
           disabled={isAlreadyOnWhitelist || isAuthenticating}
           onClick={onOpen}
@@ -70,8 +70,9 @@ const ParticipateToWhitelist = () => {
           border="1px solid black"
           rounded="full"
           py={7}
-          width="450px"
+          width={{ base: '320px', md: '450px' }}
           textTransform="uppercase"
+          fontSize={{ base: '13px', md: '20px' }}
           mt="25px"
           disabled={isAuthenticating}
           onClick={handleLogin}
@@ -94,7 +95,6 @@ const ParticipateToWhitelist = () => {
         <ModalOverlay />
         <ModalContent>
           <ModalHeader>Please be aware of the following</ModalHeader>
-          <ModalCloseButton />
           <ModalBody>
             If you join the whitelist you won&apos;t be able to undo this action. Please think twice
             before proceeding with this action
