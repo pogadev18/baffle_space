@@ -41,7 +41,23 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
         >
           <Center flexDirection="column">
             <Box mb={20}>
-              <Text textTransform="uppercase" fontWeight="900" color="black" fontSize="20px">
+              <Text
+                position="relative"
+                _after={{
+                  content: "''",
+                  width: 'full',
+                  height: '30%',
+                  position: 'absolute',
+                  bottom: '1px',
+                  left: 0,
+                  bg: 'red.400',
+                  zIndex: -1,
+                }}
+                textTransform="uppercase"
+                fontWeight="900"
+                color="black"
+                fontSize="25px"
+              >
                 20 spots remaining
               </Text>
             </Box>

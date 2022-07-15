@@ -54,7 +54,7 @@ const ParticipateToWhitelist = () => {
           border="1px solid black"
           rounded="full"
           py={7}
-          width={{ base: '320px', md: '450px' }}
+          width={{ base: '320px', md: '460px' }}
           textTransform="uppercase"
           fontSize={{ base: '15px', md: '20px' }}
           mt="25px"
@@ -70,7 +70,7 @@ const ParticipateToWhitelist = () => {
           border="1px solid black"
           rounded="full"
           py={7}
-          width={{ base: '320px', md: '450px' }}
+          width={{ base: '320px', md: '460px' }}
           textTransform="uppercase"
           fontSize={{ base: '13px', md: '20px' }}
           mt="25px"

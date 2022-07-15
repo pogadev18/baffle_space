@@ -24,6 +24,7 @@ export const theme = extendTheme({
     },
     black: {
       900: '#1E1E1E',
+      800: '#2B2B2B',
     },
     yellow: {
       300: '#f0bc21',

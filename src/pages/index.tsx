@@ -5,6 +5,7 @@ import Head from 'next/head';
 
 import AlertComponent from '@/root/components/alert';
 import Hero from '@/root/components/landingPage/hero';
+import HomeFooter from '@/root/components/landingPage/homeFooter';
 
 import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
 
@@ -26,6 +27,7 @@ const Home = () => {
         />
       )}
       <Hero />
+      <HomeFooter />
       <Box>
         {!isAuthenticated && isMobile && (
           <AlertComponent

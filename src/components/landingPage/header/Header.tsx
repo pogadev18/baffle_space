@@ -68,6 +68,7 @@ const LandingPageHeader = () => {
             wrap={{ base: 'wrap' }}
           >
             <IconButton
+              order={1}
               marginTop={{ base: 5, md: 0 }}
               variant="outline"
               colorScheme="yellow"

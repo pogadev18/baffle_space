@@ -9,7 +9,7 @@ const Hero = () => {
         <Stack
           align="center"
           spacing={{ base: 8, sm: 10 }}
-          py={{ base: 10, md: 10 }}
+          py={{ base: 10, md: 40 }}
           direction={{ base: 'column', lg: 'row' }}
         >
           <Stack flex={1}>
@@ -63,7 +63,7 @@ const Hero = () => {
           <Flex flex={1} justify="center" align="center" position="relative">
             <Box
               position="relative"
-              height={{ base: '300px', md: '350px' }}
+              height={{ sm: '260px', md: '400px' }}
               width="full"
               overflow="hidden"
               className={styles.uniwhaleImg}
