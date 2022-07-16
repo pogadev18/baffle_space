@@ -1,35 +1,14 @@
 import React, { useRef } from 'react';
-import {
-  Box,
-  Button,
-  Flex,
-  Text,
-  useDisclosure,
-  Container,
-  IconButton,
-  Spinner,
-} from '@chakra-ui/react';
+import { Box, Button, Flex, Text, useDisclosure, Container } from '@chakra-ui/react';
 import { HiChevronDown } from 'react-icons/hi';
-import { FaSync } from 'react-icons/fa';
 
 import WhitelistDrawer from '@/root/components/landingPage/whitelistDrawer';
 
-import { useWhitelistSlots } from '@/root/hooks/useWhitelistSlots';
-
-const ReloadButton = ({ onClick }: { onClick: () => void }) => (
-  <IconButton
-    onClick={onClick}
-    _hover={{ background: 'yellow.300' }}
-    variant="ghost"
-    aria-label="Search database"
-    icon={<FaSync />}
-  />
-);
+import ReloadWhiteList from '@/root/components/landingPage/reloadWhiteList';
 
 const ParticipateToWhiteListBanner = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<HTMLButtonElement>(null);
-  const { whitePaperSlots, fetchSlots, isFetching } = useWhitelistSlots();
 
   return (
     <Box width="100%" bg="yellow.400">
@@ -45,29 +24,7 @@ const ParticipateToWhiteListBanner = () => {
           <Text fontSize="2xl" color="black" fontWeight="900">
             NFT WHITELIST
           </Text>
-          <Text
-            display="flex"
-            alignItems="center"
-            fontSize="20px"
-            gap={2}
-            color="black"
-            fontWeight="900"
-            textTransform="uppercase"
-          >
-            {isFetching ? (
-              <Spinner color="black" />
-            ) : whitePaperSlots ? (
-              <>
-                {whitePaperSlots} spots
-                <ReloadButton onClick={fetchSlots} />
-              </>
-            ) : (
-              <>
-                spots left 🧐??
-                <ReloadButton onClick={fetchSlots} />
-              </>
-            )}
-          </Text>
+          <ReloadWhiteList fontSize="16px" />
           <Button
             _hover={{
               background: '0',
@@ -79,7 +36,7 @@ const ParticipateToWhiteListBanner = () => {
             onClick={onOpen}
             position={{ base: 'absolute', md: 'relative' }}
             top={{ base: '5px', md: '0' }}
-            right={{ base: '-5px', md: '0' }}
+            right={{ base: '-5px', md: '-5px' }}
             rightIcon={<HiChevronDown />}
           />
         </Flex>

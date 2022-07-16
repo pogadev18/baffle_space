@@ -84,8 +84,11 @@ const LandingPageHeader = () => {
               marginTop={{ base: 5, md: 0 }}
               variant="outline"
               colorScheme="yellow.400"
+              borderColor="yellow.400"
               size="md"
-              icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+              icon={
+                isOpen ? <CloseIcon color="yellow.400" /> : <HamburgerIcon color="yellow.400" />
+              }
               aria-label="Open Menu"
               display={{ md: 'none' }}
               onClick={isOpen ? onClose : onOpen}
@@ -116,7 +119,7 @@ const LandingPageHeader = () => {
                   variant="solid"
                   onClick={handleLogin}
                   size="sm"
-                  mr={4}
+                  // mr={4}
                   colorScheme="yellow"
                   rounded="full"
                   isLoading={isAuthenticating}

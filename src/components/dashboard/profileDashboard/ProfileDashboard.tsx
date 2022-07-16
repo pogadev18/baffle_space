@@ -3,14 +3,14 @@ import Moralis from 'moralis';
 import { Flex, Text, FormControl, FormLabel, Input, Button, Box } from '@chakra-ui/react';
 import { useMoralis } from 'react-moralis';
 
-import SocialsForm from '@/root/components/landingPage/socialsForm';
 import DisconnectButton from '@/root/components/disconnectButton';
+import SocialLinks from '@/root/components/socialLinks';
 
 import TabsWrapper from '../tabsWrapper';
 
 const ProfileDashboard = ({ user }: { user: Moralis.User<Moralis.Attributes> | null }) => {
   const [username, setUsername] = useState('');
-  const { setUserData, isUserUpdating, isAuthenticated } = useMoralis();
+  const { setUserData, isUserUpdating } = useMoralis();
 
   return (
     <TabsWrapper>
@@ -67,10 +67,13 @@ const ProfileDashboard = ({ user }: { user: Moralis.User<Moralis.Attributes> | n
         </form>
       </Box>
       <Box mt="5">
-        <Text fontWeight="900" mb="5" fontSize="3xl" color="black">
-          Let us know about your socials
-        </Text>
-        <SocialsForm isAuthenticated={isAuthenticated} />
+        <SocialLinks
+          iconTextColor="black"
+          iconsColor="black"
+          titleColor="black"
+          alignTitleRight={false}
+          alignIconsRight={false}
+        />
       </Box>
       <Box mt="45" textAlign="center" display={{ base: 'none', custom1110: 'block' }}>
         <DisconnectButton fontSize="25px" size="xl" variant="ghost" />

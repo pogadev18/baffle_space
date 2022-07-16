@@ -10,9 +10,10 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { useRef } from 'react';
+import { FaTwitter } from 'react-icons/fa';
 
 import ParticipateToWhitelist from '@/root/components/landingPage/participateToWhitelist';
-import { FaTwitter } from 'react-icons/fa';
+import ReloadWhiteList from '@/root/components/landingPage/reloadWhiteList';
 
 interface IWhiteListDrawerProps {
   isOpen: boolean;
@@ -43,26 +44,8 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
           alignItems="center"
         >
           <Center flexDirection="column">
-            <Box mb={20}>
-              <Text
-                position="relative"
-                _after={{
-                  content: "''",
-                  width: 'full',
-                  height: '30%',
-                  position: 'absolute',
-                  bottom: '1px',
-                  left: 0,
-                  bg: 'red.400',
-                  zIndex: -1,
-                }}
-                textTransform="uppercase"
-                fontWeight="900"
-                color="black"
-                fontSize="25px"
-              >
-                20 spots remaining
-              </Text>
+            <Box mb={{ base: 5, md: 20 }}>
+              <ReloadWhiteList fontSize="20px" />
             </Box>
             <Box lineHeight="75px">
               <Flex
@@ -92,8 +75,9 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
             </Box>
 
             <Box mt={10}>
-              <Text px="20px">
-                At launch, whitelisted players will have 7 days to mint their NFTs at 30% discount.
+              <Text px="20px" fontWeight="bold" color="black">
+                At launch, whitelisted players will have 7 days to mint their NFTs with 30%
+                discount.
               </Text>
             </Box>
             <ParticipateToWhitelist />
@@ -103,7 +87,7 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
                 width="100%"
                 leftIcon={<FaTwitter />}
                 color="black"
-                fontSize="30px"
+                fontSize={{ base: '30px', sm: '50px' }}
                 fontWeight="900"
                 background="0"
                 variant="link"
