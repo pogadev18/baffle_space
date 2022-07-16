@@ -20,7 +20,7 @@ const AlertComponent = ({ status, title, description }: AlertComponentProps) => 
   const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
 
   return isOpen ? (
-    <Alert status={status}>
+    <Alert status={status} overflow="inherit">
       <AlertIcon />
       <Box>
         <AlertTitle>{title}</AlertTitle>
