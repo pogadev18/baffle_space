@@ -1,27 +1,73 @@
 import { Button, Stack, Text } from '@chakra-ui/react';
 import { FaTelegramPlane, FaTiktok, FaTwitter, FaYoutube } from 'react-icons/fa';
 
-const SocialLinks = () => {
+interface ISocialLinksProps {
+  alignTitleRight: boolean;
+  alignIconsRight: boolean;
+  titleColor: string;
+  iconsColor: string;
+  iconTextColor: string;
+}
+
+const SocialLinks = ({
+  alignTitleRight,
+  alignIconsRight,
+  titleColor,
+  iconsColor,
+  iconTextColor,
+}: ISocialLinksProps) => {
   const redirect = (url: string) => {
     return () => window.location.assign(url);
   };
 
   return (
     <>
-      <Text fontWeight="900" fontSize="3xl" marginTop="0" marginBottom="15px">
+      <Text
+        textAlign={{ base: 'left', md: alignTitleRight ? 'right' : 'left' }}
+        fontWeight="900"
+        fontSize="3xl"
+        marginTop="0"
+        marginBottom="15px"
+        color={titleColor}
+      >
         Follow us
       </Text>
-      <Stack align="flex-start" spacing={4} className="links">
-        <Button onClick={redirect('twitter')} leftIcon={<FaTwitter />} variant="link">
+      <Stack
+        align={{ base: 'flex-start', md: alignIconsRight ? 'flex-end' : 'flex-start' }}
+        spacing={4}
+        className="links"
+      >
+        <Button
+          color={iconTextColor}
+          onClick={redirect('twitter')}
+          leftIcon={<FaTwitter color={iconsColor} />}
+          variant="link"
+        >
           Twitter
         </Button>
-        <Button onClick={redirect('telegram')} leftIcon={<FaTelegramPlane />} variant="link">
+
+        <Button
+          color={iconTextColor}
+          onClick={redirect('telegram')}
+          leftIcon={<FaTelegramPlane color={iconsColor} />}
+          variant="link"
+        >
           Telegram
         </Button>
-        <Button onClick={redirect('tiktok')} leftIcon={<FaTiktok />} variant="link">
+        <Button
+          color={iconTextColor}
+          onClick={redirect('tiktok')}
+          leftIcon={<FaTiktok color={iconsColor} />}
+          variant="link"
+        >
           TikTok
         </Button>
-        <Button onClick={redirect('youtube')} leftIcon={<FaYoutube />} variant="link">
+        <Button
+          color={iconTextColor}
+          onClick={redirect('youtube')}
+          leftIcon={<FaYoutube color={iconsColor} />}
+          variant="link"
+        >
           YouTube
         </Button>
       </Stack>

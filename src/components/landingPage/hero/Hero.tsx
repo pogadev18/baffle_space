@@ -18,9 +18,9 @@ const Hero = () => {
                 <Text color="gray.300" as="span" textTransform="uppercase" position="relative">
                   Baffle
                 </Text>
-                <Text textTransform="uppercase" as="span" color="yellow.400">
+                <Text textTransform="uppercase" as="span" color="yellow.400" fontWeight="900">
                   S
-                  <Text as="span" textTransform="uppercase" fontSize="40px">
+                  <Text as="span" textTransform="uppercase" fontSize="40px" fontWeight="900">
                     pace
                   </Text>
                 </Text>
@@ -49,6 +49,8 @@ const Hero = () => {
                 rounded="full"
                 size="lg"
                 fontWeight="normal"
+                borderWidth="3px"
+                borderColor="black.800"
                 px={6}
                 _hover={{
                   textDecoration: 'none',

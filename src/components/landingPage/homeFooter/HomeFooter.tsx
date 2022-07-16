@@ -5,7 +5,7 @@ import SocialLinks from '@/root/components/socialLinks';
 
 const HomeFooter = () => {
   return (
-    <Box background="black.800" width="100%">
+    <Box background="black.800" width="100%" height="100%">
       <Container maxW="8xl" py={{ base: 10, md: 10 }}>
         <Flex
           justifyContent="space-between"
@@ -15,8 +15,14 @@ const HomeFooter = () => {
           <Box flex={2}>
             <Faqs />
           </Box>
-          <Box flex={1} color="white">
-            <SocialLinks />
+          <Box flex={1}>
+            <SocialLinks
+              iconTextColor="white"
+              iconsColor="white"
+              titleColor="white"
+              alignTitleRight
+              alignIconsRight
+            />
           </Box>
         </Flex>
       </Container>
