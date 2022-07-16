@@ -2,19 +2,15 @@ import { useState } from 'react';
 import Moralis from 'moralis';
 import { Flex, Text, FormControl, FormLabel, Input, Button, Box } from '@chakra-ui/react';
 import { useMoralis } from 'react-moralis';
-import { HiLogout } from 'react-icons/hi';
 
 import SocialsForm from '@/root/components/landingPage/socialsForm';
+import DisconnectButton from '@/root/components/disconnectButton';
 
 import TabsWrapper from '../tabsWrapper';
 
 const ProfileDashboard = ({ user }: { user: Moralis.User<Moralis.Attributes> | null }) => {
   const [username, setUsername] = useState('');
-  const { setUserData, isUserUpdating, logout, isAuthenticated } = useMoralis();
-
-  const handleLogout = async () => {
-    await logout();
-  };
+  const { setUserData, isUserUpdating, isAuthenticated } = useMoralis();
 
   return (
     <TabsWrapper>
@@ -76,20 +72,8 @@ const ProfileDashboard = ({ user }: { user: Moralis.User<Moralis.Attributes> | n
         </Text>
         <SocialsForm isAuthenticated={isAuthenticated} />
       </Box>
-      <Box mt="45" textAlign="center">
-        <Button
-          onClick={handleLogout}
-          variant="ghost"
-          size="xl"
-          color="black"
-          fontWeight="900"
-          fontSize="25px"
-          textTransform="uppercase"
-          _hover={{ background: '0' }}
-          rightIcon={<HiLogout />}
-        >
-          Disconnect
-        </Button>
+      <Box mt="45" textAlign="center" display={{ base: 'none', custom1110: 'block' }}>
+        <DisconnectButton fontSize="25px" size="xl" variant="ghost" />
       </Box>
     </TabsWrapper>
   );

@@ -36,7 +36,8 @@ const ParticipateToWhiteListBanner = () => {
       <Container maxW="8xl">
         <Flex
           position="relative"
-          h={{ base: 70, md: 16 }}
+          h={{ base: 'auto', md: 16 }}
+          py={{ base: '10px', md: '20px' }}
           alignItems="center"
           justifyContent="space-between"
           direction={{ base: 'column-reverse', md: 'row' }}

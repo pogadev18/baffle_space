@@ -30,6 +30,9 @@ export const theme = extendTheme({
       300: '#f0bc21',
       400: '#FFC000',
     },
+    red: {
+      400: '#BA3326',
+    },
   },
   components: {
     Button: {
