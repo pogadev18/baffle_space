@@ -1,22 +1,25 @@
 import { ReactNode } from 'react';
 import {
   Box,
+  Button,
+  Container,
   Flex,
   HStack,
-  Link,
   IconButton,
-  Button,
-  useDisclosure,
+  Link,
   Stack,
-  Container,
+  useDisclosure,
 } from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { useMoralis } from 'react-moralis';
-import { toast } from 'react-toastify';
+import { isMobile } from 'react-device-detect';
 
 import Dashboard from '@/root/components/dashboard';
 import Logo from '@/root/components/logo';
 import ParticipateToWhiteListBanner from '@/root/components/landingPage/participateToWhiteListBanner';
+import AlertComponent from '@/root/components/alert';
+
+import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
 
 const Links = ['Whitepaper', 'Roadmap', 'Game', 'NFTs'];
 
@@ -39,26 +42,35 @@ const NavLink = ({ children }: { children: ReactNode }) => (
 );
 
 const LandingPageHeader = () => {
-  const notifyLoggedIn = () =>
-    toast(
-      'Now that you are logged in you can access your dashboard from the navigation bar (user icon)',
-    );
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isAuthenticated, authenticate, isAuthenticating } = useMoralis();
+  const { isAuthenticated, authenticate, isAuthenticating, authError } = useMoralis();
 
   const handleLogin = async () => {
     if (!isAuthenticated) {
       await authenticate({
         signingMessage: 'Auth required by Baffle.space',
       });
-
-      notifyLoggedIn();
     }
   };
 
   return (
     <>
       <ParticipateToWhiteListBanner />
+      {!isAuthenticated && isMobile && (
+        <AlertComponent
+          status={AlertStatusValues.Info}
+          title="MetaMask mobile connection"
+          description="We detected that you are using a mobile device. In order to connect with MetaMask, please download the 'MetaMask' app from GooglePlay or AppStore."
+        />
+      )}
+      {authError && (
+        <AlertComponent
+          status={AlertStatusValues.Error}
+          title="Something went wrong"
+          description={authError.message}
+        />
+      )}
+
       <Box width="100%" bg="black.900">
         <Container maxW="8xl">
           <Flex
@@ -71,7 +83,7 @@ const LandingPageHeader = () => {
               order={1}
               marginTop={{ base: 5, md: 0 }}
               variant="outline"
-              colorScheme="yellow"
+              colorScheme="yellow.400"
               size="md"
               icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
               aria-label="Open Menu"
@@ -95,7 +107,6 @@ const LandingPageHeader = () => {
             </HStack>
             <Flex
               marginTop={{ base: 15, md: 0 }}
-              // flexBasis={{ base: '100%', sm: '100%', md: 'auto' }}
               alignItems="center"
               display={{ base: 'none', md: 'block' }}
             >

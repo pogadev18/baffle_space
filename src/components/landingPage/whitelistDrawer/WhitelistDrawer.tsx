@@ -30,8 +30,11 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
     <Drawer size="full" isOpen={isOpen} placement="top" onClose={onClose} finalFocusRef={btnRef}>
       <DrawerOverlay />
       <DrawerContent background="yellow.400">
-        <DrawerCloseButton />
-        <Flex
+        <DrawerCloseButton fontSize={{ base: '20px', md: '30px' }} margin="10px" color="black" />
+        <Box
+          display={{ base: 'block', md: 'flex' }}
+          overflowY="auto"
+          paddingTop={{ base: '65px', md: '0' }}
           height="100vh"
           width="100vw"
           textAlign="center"
@@ -109,7 +112,7 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
               </Button>
             </Box>
           </Center>
-        </Flex>
+        </Box>
       </DrawerContent>
     </Drawer>
   );

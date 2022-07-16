@@ -1,6 +1,5 @@
 import { useRef } from 'react';
 import { useMoralis } from 'react-moralis';
-
 import {
   useDisclosure,
   Drawer,
@@ -20,11 +19,13 @@ import {
   Box,
   Image,
   Show,
+  Divider,
 } from '@chakra-ui/react';
 import { AiOutlineUser } from 'react-icons/ai';
 
 import ProfileDashboard from '@/root/components/dashboard/profileDashboard';
 import Nft from '@/root/components/dashboard/nft';
+import DisconnectButton from '@/root/components/disconnectButton';
 
 const DashboardDrawer = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -33,9 +34,17 @@ const DashboardDrawer = () => {
 
   return (
     <>
-      <Button colorScheme="white" variant="ghost" ref={btnRef} onClick={onOpen} size="xl">
-        <AiOutlineUser size="30" color="white" />
+      <Button
+        colorScheme="white"
+        color="white"
+        variant="ghost"
+        ref={btnRef}
+        onClick={onOpen}
+        size="xl"
+      >
+        <AiOutlineUser size="30" color="white" /> Your dashboard
       </Button>
+      <Divider paddingBottom="5px" display={{ base: 'block', sm: 'none' }} />
 
       <Drawer
         size="full"
@@ -48,10 +57,10 @@ const DashboardDrawer = () => {
         <DrawerContent background="yellow.400">
           <Box
             display={{ base: 'block', custom1110: 'flex' }}
-            // minWidth="max-content"
             alignItems="center"
             height="100%"
             overflowY="auto"
+            position="relative"
           >
             <Show breakpoint="(min-width: 1110px)">
               <Flex
@@ -97,11 +106,23 @@ const DashboardDrawer = () => {
               </Flex>
             </Show>
             <DrawerBody>
-              <DrawerCloseButton />
+              <DrawerCloseButton
+                fontSize={{ base: '20px', md: '30px' }}
+                margin="10px"
+                color="black"
+              />
               <DrawerHeader px="0" paddingTop="0px" paddingBottom="20px">
                 <Text color="black" fontWeight="900" fontSize="3xl" textTransform="uppercase">
                   Dashboard
                 </Text>
+                <Box mt="20px" display={{ base: 'block', custom1110: 'none' }}>
+                  <DisconnectButton
+                    borderColor="black"
+                    size="sm"
+                    variant="outline"
+                    fontSize="15px"
+                  />
+                </Box>
               </DrawerHeader>
               <Tabs justifyContent="center" variant="unstyled" size="lg">
                 <TabList background="yellow.300">
