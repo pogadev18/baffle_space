@@ -12,7 +12,7 @@ const ParticipateToWhiteListBanner = () => {
 
   return (
     <Box width="100%" bg="yellow.400">
-      <Container maxW="8xl">
+      <Container maxW="8xl" paddingX={{ base: '25px', md: '40px' }}>
         <Flex
           position="relative"
           h={{ base: 'auto', md: 16 }}

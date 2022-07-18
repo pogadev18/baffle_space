@@ -6,7 +6,7 @@ import SocialLinks from '@/root/components/socialLinks';
 const HomeFooter = () => {
   return (
     <Box background="black.800" width="100%" height="100%">
-      <Container maxW="8xl" py={{ base: 10, md: 10 }}>
+      <Container paddingX={{ base: '25px', md: '40px' }} maxW="8xl" py={{ base: 10, md: 10 }}>
         <Flex
           justifyContent="space-between"
           gap={{ base: 5, md: 20 }}
