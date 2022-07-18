@@ -35,7 +35,7 @@ const NFTs = () => {
           </Box>
           <Box marginY="60px">
             <Flex gap={10} direction={{ base: 'column', sm: 'row' }}>
-              <Box>
+              <Box display={{ base: 'none', sm: 'block' }}>
                 <Image
                   borderRadius="5px"
                   alt="Hero Image"
@@ -47,7 +47,7 @@ const NFTs = () => {
                   src="/whaleBlur.png"
                 />
               </Box>
-              <Box>
+              <Box display={{ base: 'none', sm: 'block' }}>
                 <Image
                   borderRadius="5px"
                   alt="Hero Image"
