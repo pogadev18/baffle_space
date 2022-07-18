@@ -1,9 +1,16 @@
-import { Text } from '@chakra-ui/react';
+import { Text, Link } from '@chakra-ui/react';
 
 const Logo = () => {
   return (
     <Text fontWeight="bold" color="gray.300" fontSize="25px">
-      BAFFLE
+      <Link
+        _hover={{
+          textDecoration: 'none',
+        }}
+        href="/"
+      >
+        BAFFLE
+      </Link>
     </Text>
   );
 };
