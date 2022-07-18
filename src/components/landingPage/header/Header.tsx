@@ -23,7 +23,7 @@ import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
 
 const Links = ['Whitepaper', 'Roadmap', 'Game', 'NFTs'];
 
-const NavLink = ({ children }: { children: ReactNode }) => (
+const NavLink = ({ children, url }: { children: ReactNode; url: string }) => (
   <Link
     px={2}
     py={1}
@@ -35,7 +35,7 @@ const NavLink = ({ children }: { children: ReactNode }) => (
       bg: 'yellow.400',
       color: 'black.900',
     }}
-    href="Header#0"
+    href={`/${url}`}
   >
     {children}
   </Link>
@@ -72,7 +72,7 @@ const LandingPageHeader = () => {
       )}
 
       <Box width="100%" bg="black.900">
-        <Container maxW="8xl">
+        <Container paddingX={{ base: '25px', md: '40px' }} maxW="8xl">
           <Flex
             h={16}
             alignItems="center"
@@ -99,12 +99,14 @@ const LandingPageHeader = () => {
               spacing={8}
               alignItems="center"
             >
-              <Box marginLeft={{ base: 5, md: 0 }}>
+              <Box>
                 <Logo />
               </Box>
               <HStack as="nav" spacing={4} display={{ base: 'none', md: 'flex' }}>
                 {Links.map((link) => (
-                  <NavLink key={link}>{link}</NavLink>
+                  <NavLink url={link.toLowerCase()} key={link}>
+                    {link}
+                  </NavLink>
                 ))}
               </HStack>
             </HStack>
@@ -155,7 +157,9 @@ const LandingPageHeader = () => {
                 )}
 
                 {Links.map((link) => (
-                  <NavLink key={link}>{link}</NavLink>
+                  <NavLink url={link} key={link}>
+                    {link}
+                  </NavLink>
                 ))}
               </Stack>
             </Box>

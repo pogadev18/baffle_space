@@ -5,7 +5,7 @@ import styles from './Hero.module.scss';
 const Hero = () => {
   return (
     <Box background="black.900" width="100%">
-      <Container maxW="8xl">
+      <Container maxW="8xl" paddingX={{ base: '25px', md: '40px' }}>
         <Stack
           align="center"
           spacing={{ base: 8, sm: 10 }}
