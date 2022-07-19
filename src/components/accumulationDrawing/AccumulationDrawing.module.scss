@@ -77,7 +77,7 @@
 }
 
 .firstColumn {
-  background: green;
+  background: #009244;
   flex: 3;
 
   @media screen and (max-width: 650px) {
@@ -87,7 +87,7 @@
 }
 
 .secondColumn {
-  background: lightgreen;
+  background: #05d35e;
   flex: 8;
 
   @media screen and (max-width: 650px) {
@@ -97,7 +97,7 @@
 }
 
 .thirdColumn {
-  background: purple;
+  background: #7c8ba3;
   width: 15%;
 
   @media screen and (max-width: 650px) {
@@ -107,7 +107,7 @@
 }
 
 .fourthColumn {
-  background: lightblue;
+  background: #52c2ba;
   width: 15%;
 
   @media screen and (max-width: 650px) {

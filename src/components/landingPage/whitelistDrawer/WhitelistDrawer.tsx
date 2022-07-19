@@ -50,11 +50,14 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
             <Box lineHeight="75px">
               <Flex
                 gap={2}
-                direction={{ base: 'column', md: 'row' }}
+                direction={{ base: 'column', md: 'column' }}
                 lineHeight={{ base: '1.6', md: 'auto' }}
               >
                 <Text fontSize="30px" textTransform="uppercase" color="black" fontWeight="900">
-                  Only 500 with
+                  Only 500 Spots on the Whitelist for
+                </Text>
+                <Text fontSize="30px" textTransform="uppercase" color="black" fontWeight="900">
+                  Baffle Space Genesis NFTs with
                 </Text>
                 <Text
                   position="relative"
@@ -64,13 +67,22 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
                   color="black"
                   fontWeight="900"
                 >
-                  30% off
+                  25% off
+                </Text>
+                <Text fontSize="30px" textTransform="uppercase" color="black" fontWeight="900">
+                  and the power to
+                </Text>
+                <Text fontSize="30px" textTransform="uppercase" color="black" fontWeight="900">
+                  Earn up to 95ETH
                 </Text>
               </Flex>
             </Box>
             <Box>
               <Text px="15px" fontSize="25px" color="black">
-                Join the NFT whitelist to become one of the first founders of Baffle.Space
+                <Box width={{ base: 'auto', md: '820px' }} margin="auto" textAlign="center">
+                  Whitelisted owners of Baffle Space NFTs will be the first to earn 5% from the
+                  price when someone mints an NFT using their referral link.
+                </Box>
               </Text>
             </Box>
 

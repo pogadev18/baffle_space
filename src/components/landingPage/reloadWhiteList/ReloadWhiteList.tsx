@@ -34,7 +34,7 @@ const ReloadWhiteList = ({ fontSize }: IReloadWhiteListProps) => {
         <Spinner color="black" />
       ) : whitePaperSlots ? (
         <>
-          {whitePaperSlots} spots
+          {whitePaperSlots} spots remaining
           <ReloadButton onClick={fetchSlots} />
         </>
       ) : (

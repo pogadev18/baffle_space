@@ -8,22 +8,23 @@ const ListWithColorBullets = () => {
     <Stack spacing={2} paddingLeft="15px" marginTop="45px" textAlign="left">
       <p className={styles.textWrapper}>
         <Text color="black" fontSize="18px">
-          sdsdsd fdsfs s dsdssdfdfgdf
+          Minimum amount to validate the game and move on to the next step
         </Text>
       </p>
       <p className={styles.textWrapper}>
         <Text color="black" fontSize="18px">
-          sdsdsd dfsdgdfg fgdfgd dfgdfgfd
+          Earnings of NFT owning players (distribution based on the number of tickets they purchased
+          for the game)
         </Text>
       </p>
       <p className={styles.textWrapper}>
         <Text color="black" fontSize="18px">
-          sdsdsd fdgdfgdf dfgdfgdf
+          Prize pool for the secondary draw to be split among 3 lucky winners
         </Text>
       </p>
       <p className={styles.textWrapper}>
         <Text color="black" fontSize="18px">
-          sdsdsdawadawda sasdas asdwdwd aa asdsfgrsgrd
+          Development and maintenance revenue of Baffle Space
         </Text>
       </p>
     </Stack>

@@ -19,62 +19,62 @@ const Faqs = () => {
         <AccordionItem background="black.900" borderRadius="5px" mb="5">
           <h2>
             <AccordionButton _expanded={{ bg: 'yellow.400', color: 'black' }}>
-              <Box flex="1" textAlign="left">
-                Section 1 title
+              <Box fontWeight="900" flex="1" textAlign="left">
+                What does raffle mean?
               </Box>
               <AccordionIcon />
             </AccordionButton>
           </h2>
           <AccordionPanel pb={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            A raffle is a type of contest in which you buy a ticket or more for chances to win a
+            prize. After the tickets are sold, a drawing determines the winning ticket.
           </AccordionPanel>
         </AccordionItem>
 
         <AccordionItem background="black.900" borderRadius="5px" mb="5">
           <h2>
             <AccordionButton _expanded={{ bg: 'yellow.400', color: 'black' }}>
-              <Box flex="1" textAlign="left">
-                Section 2 title
+              <Box fontWeight="900" flex="1" textAlign="left">
+                What is Baffle Space?
               </Box>
               <AccordionIcon />
             </AccordionButton>
           </h2>
           <AccordionPanel pb={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Baffle Space is the play to win and earn raffle dApp based on the Polygon blockchain set
+            to bridge the gap between the crypto space and the real world by offering tangible
+            prizes in raffles for which tickets are purchased with cryptocurrency ($MATIC). Read
+            more <i>link la litepaper</i>
           </AccordionPanel>
         </AccordionItem>
         <AccordionItem background="black.900" borderRadius="5px" mb="5">
           <h2>
             <AccordionButton _expanded={{ bg: 'yellow.400', color: 'black' }}>
-              <Box flex="1" textAlign="left">
-                Section 3 title
+              <Box fontWeight="900" flex="1" textAlign="left">
+                How can I earn?
               </Box>
               <AccordionIcon />
             </AccordionButton>
           </h2>
           <AccordionPanel pb={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Having your Baffle Space NFT as soon as they launch gives you the power to earn up to
+            95ETH by the time they get sold out. You can join the whitelist here link care deschide
+            whitelist drawer
           </AccordionPanel>
         </AccordionItem>
         <AccordionItem background="black.900" borderRadius="5px">
           <h2>
             <AccordionButton _expanded={{ bg: 'yellow.400', color: 'black' }}>
-              <Box flex="1" textAlign="left">
-                Section 4 title
+              <Box fontWeight="900" flex="1" textAlign="left">
+                What are dApps?
               </Box>
               <AccordionIcon />
             </AccordionButton>
           </h2>
           <AccordionPanel pb={4}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            After the Baffle Space Gaming dApp goes live, we will share 60% of the revenue with NFT
+            owning players, so each raffle you participate in will guarantee you a piece of the pie
+            on top of the chances to win the Dream Prize.
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
