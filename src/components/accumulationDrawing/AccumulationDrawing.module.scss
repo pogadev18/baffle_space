@@ -98,10 +98,20 @@
 
 .thirdColumn {
   background: purple;
-  width: 23%;
+  width: 15%;
+
+  @media screen and (max-width: 650px) {
+    flex: auto;
+    width: 30%;
+  }
 }
 
 .fourthColumn {
   background: lightblue;
-  width: 23%;
+  width: 15%;
+
+  @media screen and (max-width: 650px) {
+    flex: auto;
+    width: 30%;
+  }
 }

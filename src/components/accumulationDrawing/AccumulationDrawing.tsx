@@ -1,3 +1,5 @@
+import ListWithColorBullets from '@/root/components/listWithColorBullets';
+
 import styles from './AccumulationDrawing.module.scss';
 
 const AccumulationDrawing = () => {
@@ -23,6 +25,8 @@ const AccumulationDrawing = () => {
         </div>
         <p className={styles.mobileDay}>day 7 end</p>
       </div>
+
+      <ListWithColorBullets />
     </div>
   );
 };

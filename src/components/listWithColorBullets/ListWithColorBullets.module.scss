@@ -1,0 +1,41 @@
+.textWrapper {
+  position: relative;
+
+  > p {
+    padding-left: 45px;
+  }
+
+  &::before {
+    content: '';
+    height: 25px;
+    width: 25px;
+    border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &:nth-child(1) {
+    &::before {
+      background: red;
+    }
+  }
+
+  &:nth-child(2) {
+    &::before {
+      background: blue;
+    }
+  }
+
+  &:nth-child(3) {
+    &::before {
+      background: purple;
+    }
+  }
+
+  &:nth-child(4) {
+    &::before {
+      background: pink;
+    }
+  }
+}
