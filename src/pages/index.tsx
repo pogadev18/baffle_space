@@ -1,7 +1,6 @@
 import Head from 'next/head';
 
 import Hero from '@/root/components/landingPage/hero';
-import HomeFooter from '@/root/components/landingPage/homeFooter';
 
 const Home = () => {
   return (
@@ -11,7 +10,6 @@ const Home = () => {
       </Head>
 
       <Hero />
-      <HomeFooter />
     </>
   );
 };

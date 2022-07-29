@@ -1,0 +1,16 @@
+.navLink {
+  color: white;
+  padding: 2px 5px;
+  text-transform: uppercase;
+  border-radius: 5px;
+
+  &:hover {
+    text-decoration: none;
+    background: #FFC000;
+    color: #1E1E1E;
+  }
+}
+
+.active {
+  font-weight: 900;
+}

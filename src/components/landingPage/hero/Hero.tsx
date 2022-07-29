@@ -1,8 +1,11 @@
 import { Container, Stack, Flex, Box, Heading, Text, Button, Image } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 
 import styles from './Hero.module.scss';
 
 const Hero = () => {
+  const router = useRouter();
+
   return (
     <Box background="black.900" width="100%">
       <Container maxW="8xl" paddingX={{ base: '25px', md: '40px' }}>
@@ -40,10 +43,18 @@ const Hero = () => {
               </Text>
             </Box>
             <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
-              <Button rounded="full" variant="solid" size="lg" px={6} colorScheme="yellow">
+              <Button
+                onClick={() => router.push('/nfts')}
+                rounded="full"
+                variant="solid"
+                size="lg"
+                px={6}
+                colorScheme="yellow"
+              >
                 NFTs
               </Button>
               <Button
+                onClick={() => router.push('/game')}
                 variant="outline"
                 color="white"
                 rounded="full"

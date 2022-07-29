@@ -1,0 +1,117 @@
+.drawerWrapper {
+  background: #f0bc21;
+  padding: 15px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
+  width: 1100px;
+  margin: 50px auto;
+
+  @media screen and (max-width: 1200px) {
+    width: auto;
+  }
+
+}
+
+.daysCountWrapper {
+  display: flex;
+  width: 1000px;
+  margin: auto;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold;
+
+  @media screen and (max-width: 1200px) {
+    width: auto;
+  }
+
+  .hideOnMobile {
+    @media screen and (max-width: 650px) {
+      display: none;
+    }
+  }
+}
+
+.mobileDay {
+  display: none;
+  font-weight: bold;
+
+  @media screen and (max-width: 650px) {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+}
+
+.mainDrawingWrapper {
+  margin: auto;
+  display: flex;
+  border: 2px solid black;
+  width: 1000px;
+  border-radius: 15px;
+  background: black;
+
+  @media screen and (max-width: 1200px) {
+    width: auto;
+  }
+
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+    background: 0;
+    border: 0;
+  }
+}
+
+.column {
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 15px;
+  font-weight: 900;
+  color: black;
+
+  @media screen and (max-width: 650px) {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.firstColumn {
+  background: #009244;
+  flex: 3;
+
+  @media screen and (max-width: 650px) {
+    flex: auto;
+    width: 100%;
+  }
+}
+
+.secondColumn {
+  background: #05d35e;
+  flex: 8;
+
+  @media screen and (max-width: 650px) {
+    flex: auto;
+    width: 60%;
+  }
+}
+
+.thirdColumn {
+  background: #7c8ba3;
+  width: 15%;
+
+  @media screen and (max-width: 650px) {
+    flex: auto;
+    width: 30%;
+  }
+}
+
+.fourthColumn {
+  background: #52c2ba;
+  width: 15%;
+
+  @media screen and (max-width: 650px) {
+    flex: auto;
+    width: 30%;
+  }
+}

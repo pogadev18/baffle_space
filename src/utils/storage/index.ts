@@ -1,4 +1,4 @@
-const projectName = 'Crypto_Raffle';
+const projectName = 'baffle_space';
 const storageKey = (key: string) => `${projectName}_${key}`;
 
 const storageOperations = (storage: any) => {

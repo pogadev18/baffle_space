@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import {
   Box,
   Button,
@@ -6,40 +5,25 @@ import {
   Flex,
   HStack,
   IconButton,
-  Link,
   Stack,
   useDisclosure,
 } from '@chakra-ui/react';
+import dynamic from 'next/dynamic';
+
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { useMoralis } from 'react-moralis';
 import { isMobile } from 'react-device-detect';
 
-import Dashboard from '@/root/components/dashboard';
 import Logo from '@/root/components/logo';
 import ParticipateToWhiteListBanner from '@/root/components/landingPage/participateToWhiteListBanner';
-import AlertComponent from '@/root/components/alert';
+import NavLink from '@/root/components/navLink';
 
 import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
 
 const Links = ['Whitepaper', 'Roadmap', 'Game', 'NFTs'];
 
-const NavLink = ({ children, url }: { children: ReactNode; url: string }) => (
-  <Link
-    px={2}
-    py={1}
-    color="white"
-    textTransform="uppercase"
-    rounded="md"
-    _hover={{
-      textDecoration: 'none',
-      bg: 'yellow.400',
-      color: 'black.900',
-    }}
-    href={`/${url}`}
-  >
-    {children}
-  </Link>
-);
+const AlertComponent = dynamic(() => import('@/root/components/alert'));
+const Dashboard = dynamic(() => import('@/root/components/dashboard'));
 
 const LandingPageHeader = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -121,7 +105,6 @@ const LandingPageHeader = () => {
                   variant="solid"
                   onClick={handleLogin}
                   size="sm"
-                  // mr={4}
                   colorScheme="yellow"
                   rounded="full"
                   isLoading={isAuthenticating}
@@ -157,7 +140,7 @@ const LandingPageHeader = () => {
                 )}
 
                 {Links.map((link) => (
-                  <NavLink url={link} key={link}>
+                  <NavLink url={link.toLowerCase()} key={link}>
                     {link}
                   </NavLink>
                 ))}

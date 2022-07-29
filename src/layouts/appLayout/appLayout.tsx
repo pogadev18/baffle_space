@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import { Box } from '@chakra-ui/layout';
+import dynamic from 'next/dynamic';
 
-import LandingPageHeader from '@/root/components/landingPage/header';
+const Header = dynamic(() => import('@/root/components/landingPage/header'));
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -9,10 +9,10 @@ interface AppLayoutProps {
 
 const AppLayout = ({ children }: AppLayoutProps) => {
   return (
-    <Box height="100vh">
-      <LandingPageHeader />
-      <Box p={5}>{children}</Box>
-    </Box>
+    <div style={{ height: '100vh' }}>
+      <Header />
+      <div style={{ padding: '5px' }}>{children}</div>
+    </div>
   );
 };
 

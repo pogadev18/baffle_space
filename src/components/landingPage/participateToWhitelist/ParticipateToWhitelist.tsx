@@ -11,9 +11,11 @@ import {
   ModalBody,
 } from '@chakra-ui/react';
 import { useMoralis } from 'react-moralis';
+import dynamic from 'next/dynamic';
 
-import AlertComponent from '@/root/components/alert';
 import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
+
+const AlertComponent = dynamic(() => import('@/root/components/alert'));
 
 const { Success } = AlertStatusValues;
 

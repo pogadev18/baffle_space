@@ -1,7 +1,9 @@
 import { FC, PropsWithChildren, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useMoralis } from 'react-moralis';
-import { Spinner } from '@chakra-ui/react';
+import dynamic from 'next/dynamic';
+
+const LoadingSpinner = dynamic(() => import('@/root/components/LoadingSpinner'));
 
 // @ts-ignore
 const AuthGuard: FC<PropsWithChildren> = ({ children }) => {
@@ -18,7 +20,7 @@ const AuthGuard: FC<PropsWithChildren> = ({ children }) => {
   }, [isAuthenticating, router, user, isAuthUndefined]);
 
   if (isAuthenticating) {
-    return <Spinner />;
+    return <LoadingSpinner spinnerColor="black" />;
   }
 
   if (isAuthenticated && user) {
