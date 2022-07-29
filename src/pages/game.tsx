@@ -4,6 +4,8 @@ import ImageCard from '@/root/components/imageCard';
 import SectionTitle from '@/root/components/sectionTitle';
 import AccumulationDrawing from '@/root/components/accumulationDrawing';
 
+import styles from '@/root/styles/pages/gamePage.module.scss';
+
 const GamePage = () => {
   return (
     <>
@@ -21,7 +23,8 @@ const GamePage = () => {
               fontWeight="900"
               marginBottom="60px"
             >
-              the <span style={{ color: '#ffc100' }}>Game</span>play
+              the <span style={{ color: '#ffc100' }}>Game</span>
+              <span className={styles.titlePlayPart}>play</span>
             </Heading>
             <SectionTitle text="Choose your dream prize" textColor="white" />
 
@@ -73,15 +76,19 @@ const GamePage = () => {
             >
               Accumulation
             </Text>
-            <Text color="black" fontSize="18px">
-              <Box width={{ base: 'auto', md: '820px' }} margin="auto" textAlign="center">
-                A time-frame will be set for each game in which players will be able to buy tickets
-                for the Dream Prize they chose in the previous step. The first category of prizes
-                players can play for will have a 7 day accumulation period. Different prize
-                categories will have different time frames. This step will determine the validation
-                of the game, the reward amounts, the secondary draw prize pool and Baffle Space
-                development and maintenance revenue.
-              </Box>
+            <Text
+              color="black"
+              fontSize="18px"
+              width={{ base: 'auto', md: '820px' }}
+              margin="auto"
+              textAlign="center"
+            >
+              A time-frame will be set for each game in which players will be able to buy tickets
+              for the Dream Prize they chose in the previous step. The first category of prizes
+              players can play for will have a 7 day accumulation period. Different prize categories
+              will have different time frames. This step will determine the validation of the game,
+              the reward amounts, the secondary draw prize pool and Baffle Space development and
+              maintenance revenue.
             </Text>
             <AccumulationDrawing />
           </Box>
@@ -101,12 +108,16 @@ const GamePage = () => {
             >
               The main draw
             </Text>
-            <Text color="white" fontSize="18px">
-              <Box width={{ base: 'auto', md: '820px' }} margin="auto" textAlign="center">
-                The next step of every game is The Main Draw. This is when the winning ticket of the
-                Dream Prize gets drawn. After the accumulation period ends, the selection of the
-                winning ticket is made by the blockchain algorithm.
-              </Box>
+            <Text
+              color="white"
+              fontSize="18px"
+              width={{ base: 'auto', md: '820px' }}
+              margin="auto"
+              textAlign="center"
+            >
+              The next step of every game is The Main Draw. This is when the winning ticket of the
+              Dream Prize gets drawn. After the accumulation period ends, the selection of the
+              winning ticket is made by the blockchain algorithm.
             </Text>
             <Text
               textTransform="uppercase"
@@ -118,12 +129,16 @@ const GamePage = () => {
             >
               Claiming the win
             </Text>
-            <Text color="white" fontSize="18px">
-              <Box width={{ base: 'auto', md: '820px' }} margin="auto" textAlign="center">
-                Baffle Space offers the owner of the winning ticket two options of claiming the
-                Dream Prize. The winner will reach out to us on Telegram to confirm their win and
-                choose how they wish to claim their prize.
-              </Box>
+            <Text
+              color="white"
+              fontSize="18px"
+              width={{ base: 'auto', md: '820px' }}
+              margin="auto"
+              textAlign="center"
+            >
+              Baffle Space offers the owner of the winning ticket two options of claiming the Dream
+              Prize. The winner will reach out to us on Telegram to confirm their win and choose how
+              they wish to claim their prize.
             </Text>
             <Flex
               alignItems="center"
@@ -172,13 +187,16 @@ const GamePage = () => {
             >
               The Secondary Draw
             </Text>
-            <Text color="white" fontSize="18px">
-              <Box width={{ base: 'auto', md: '820px' }} margin="auto" textAlign="center">
-                After the main draw, players are automatically enrolled with their non-winning
-                tickets for the secondary draw where they have more chances to win. Three winning
-                tickets will be drawn and will share the 20% prize pool determined in the
-                accumulation phase.
-              </Box>
+            <Text
+              color="white"
+              fontSize="18px"
+              width={{ base: 'auto', md: '820px' }}
+              margin="auto"
+              textAlign="center"
+            >
+              After the main draw, players are automatically enrolled with their non-winning tickets
+              for the secondary draw where they have more chances to win. Three winning tickets will
+              be drawn and will share the 20% prize pool determined in the accumulation phase.
             </Text>
           </Box>
         </Container>
@@ -197,13 +215,17 @@ const GamePage = () => {
             >
               Last Chance Draw
             </Text>
-            <Text color="white" fontSize="18px">
-              <Box width={{ base: 'auto', md: '820px' }} margin="auto" textAlign="center">
-                The remaining non-winning tickets will grant players yet another way to win the
-                Baffle Space Games. This last draw of each raffle will bless players with chances
-                (free tickets) and discounts for tickets in games with more valuable Dream Prizes
-                than the current one.
-              </Box>
+            <Text
+              color="white"
+              fontSize="18px"
+              width={{ base: 'auto', md: '820px' }}
+              margin="auto"
+              textAlign="center"
+            >
+              The remaining non-winning tickets will grant players yet another way to win the Baffle
+              Space Games. This last draw of each raffle will bless players with chances (free
+              tickets) and discounts for tickets in games with more valuable Dream Prizes than the
+              current one.
             </Text>
           </Box>
         </Container>

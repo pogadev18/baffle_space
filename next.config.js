@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false,
+  reactStrictMode: true,
   env: {
     MORALIS_APP_ID: process.env.MORALIS_APP_ID,
     MORALIS_SERVER_URL: process.env.MORALIS_SERVER_URL,
@@ -10,7 +10,7 @@ const nextConfig = {
     FIREBASE_STORAGE_BUCKET: process.env.FIREBASE_STORAGE_BUCKET,
     FIREBASE_MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID,
     FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
-  }
+  },
 };
 
 module.exports = nextConfig;

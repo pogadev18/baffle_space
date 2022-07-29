@@ -11,7 +11,12 @@ const NFTs = () => {
       <Box width="100%" background="black.900">
         <Container maxW="8xl" paddingX={{ base: '25px', md: '40px' }}>
           <Box textAlign="center" marginTop="60px">
-            <Heading lineHeight={1.1} fontWeight={700} fontSize={{ base: '10vw', sm: '40px' }}>
+            <Heading
+              as="h1"
+              lineHeight={1.1}
+              fontWeight={700}
+              fontSize={{ base: '10vw', sm: '40px' }}
+            >
               <Text color="white" as="span" textTransform="uppercase" position="relative">
                 Founder&nbsp;
               </Text>
