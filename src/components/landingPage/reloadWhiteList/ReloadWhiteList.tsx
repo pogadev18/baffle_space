@@ -1,7 +1,10 @@
-import { IconButton, Spinner, Text } from '@chakra-ui/react';
+import { IconButton, Text } from '@chakra-ui/react';
+import dynamic from 'next/dynamic';
 
 import { useWhitelistSlots } from '@/root/hooks/useWhitelistSlots';
 import { FaSync } from 'react-icons/fa';
+
+const LoadingSpinner = dynamic(() => import('@/root/components/LoadingSpinner'));
 
 const ReloadButton = ({ onClick }: { onClick: () => void }) => (
   <IconButton
@@ -31,7 +34,7 @@ const ReloadWhiteList = ({ fontSize }: IReloadWhiteListProps) => {
       fontSize={fontSize}
     >
       {isFetching ? (
-        <Spinner color="black" />
+        <LoadingSpinner spinnerColor="black" />
       ) : whitePaperSlots ? (
         <>
           {whitePaperSlots} spots remaining

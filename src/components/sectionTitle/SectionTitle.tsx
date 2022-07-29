@@ -8,7 +8,7 @@ interface ISectionTitleProps {
 
 const SectionTitle = ({ text, textColor }: ISectionTitleProps) => {
   return (
-    <Heading lineHeight={1.1} fontWeight={900} fontSize={{ base: '10vw', sm: '40px' }}>
+    <Heading lineHeight={1.4} fontWeight={900} fontSize={{ base: '10vw', sm: '40px' }}>
       <Text color={textColor} as="span" textTransform="uppercase" position="relative">
         {text}
       </Text>

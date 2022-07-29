@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
 import { Box, Button, Flex, Text, useDisclosure, Container } from '@chakra-ui/react';
 import { HiChevronDown } from 'react-icons/hi';
-
-import WhitelistDrawer from '@/root/components/landingPage/whitelistDrawer';
+import dynamic from 'next/dynamic';
 
 import ReloadWhiteList from '@/root/components/landingPage/reloadWhiteList';
+
+const WhitelistDrawer = dynamic(() => import('@/root/components/landingPage/whitelistDrawer'));
 
 const ParticipateToWhiteListBanner = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();

@@ -3,14 +3,16 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { MoralisProvider } from 'react-moralis';
 import { NextPage } from 'next';
 import { ToastContainer } from 'react-toastify';
+import dynamic from 'next/dynamic';
 
-import AppLayout from '@/root/layouts/appLayout';
-import LandingPageLayout from '@/root/layouts/landingPageLayout';
-import AuthGuard from '@/root/components/authGuard';
 import { theme } from '@/root/theme';
 
 import 'reset-css';
 import 'react-toastify/dist/ReactToastify.css';
+
+const AppLayout = dynamic(() => import('@/root/layouts/appLayout'));
+const LandingPageLayout = dynamic(() => import('@/root/layouts/landingPageLayout'));
+const AuthGuard = dynamic(() => import('@/root/components/authGuard'));
 
 export type NextApplicationPage<P = any, IP = P> = NextPage<P, IP> & {
   requireAuth?: boolean;

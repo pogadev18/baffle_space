@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { Box, Container, Flex, Heading, Image, Text } from '@chakra-ui/react';
+import SectionTitle from '@/root/components/sectionTitle';
 
 const NFTs = () => {
   return (
@@ -15,7 +16,7 @@ const NFTs = () => {
               as="h1"
               lineHeight={1.1}
               fontWeight={700}
-              fontSize={{ base: '10vw', sm: '40px' }}
+              fontSize={{ base: '14vw', sm: '70px' }}
             >
               <Text color="white" as="span" textTransform="uppercase" position="relative">
                 Founder&nbsp;
@@ -23,7 +24,6 @@ const NFTs = () => {
               <Text
                 position="relative"
                 bottom={{ base: '0', md: '5px' }}
-                fontSize={{ base: '13vw', sm: '60px' }}
                 display={{ base: 'block', md: 'inline-block' }}
                 fontWeight="900"
                 textTransform="uppercase"
@@ -84,17 +84,25 @@ const NFTs = () => {
             fontSize={{ base: '15px', md: '20px' }}
             textTransform="uppercase"
           >
-            <Text>10.000 UNIQUE FOUNDER UNIWHALE NFTs.</Text>
-            <Text>POWERFUL FEATURES TO HELP YOU GAIN WEALTH.</Text>
+            <Text color="white" fontSize="18px" width={{ base: 'auto', md: '820px' }}>
+              10.000 UNIQUE FOUNDER UNIWHALE NFTs.
+            </Text>
+            <Text color="white" fontSize="18px" width={{ base: 'auto', md: '820px' }}>
+              POWERFUL FEATURES TO HELP YOU GAIN WEALTH.
+            </Text>
             <br />
-            <Text>referral LINK TO EARN 5% (WHEN AN NFT IS MINTED USING YOUR LINK</Text>
-            <Text>5% OF ITS PRICE IS AUTOMATICALLY SENT TO YOUR DIGITAL WALLET)</Text>
+            <Text color="white" fontSize="18px" width={{ base: 'auto', md: '820px' }}>
+              referral LINK TO EARN 5% (WHEN AN NFT IS MINTED USING YOUR LINK 5% OF ITS PRICE IS
+              AUTOMATICALLY SENT TO YOUR DIGITAL WALLET).
+            </Text>
             <br />
-            <Text>OWNERS OF NFTS ARE NO LONGER SIMPLE PARTICIPANTS, THEY PLAY</Text>
-            <Text>AS FOUNDERS OF THE GAME.</Text>
+            <Text color="white" fontSize="18px" width={{ base: 'auto', md: '820px' }}>
+              OWNERS OF NFTS ARE NO LONGER SIMPLE PARTICIPANTS, THEY PLAY AS FOUNDERS OF THE GAME.
+            </Text>
           </Box>
           <Box>
-            <Text
+            <Heading
+              as="h2"
               marginBottom="20px"
               fontWeight="900"
               color="gray.300"
@@ -104,16 +112,9 @@ const NFTs = () => {
               fontSize={{ base: '45px', md: '60px' }}
             >
               Uniwhale NFTs powers
-            </Text>
-            <Text
-              fontWeight="900"
-              color="yellow.400"
-              textTransform="uppercase"
-              position="relative"
-              fontSize={{ base: '30px', md: '40px' }}
-            >
-              Power of wealth
-            </Text>
+            </Heading>
+
+            <SectionTitle text="Power of wealth" textColor="yellow.400" />
             <Box
               marginBottom="40px"
               textTransform="uppercase"
@@ -121,20 +122,14 @@ const NFTs = () => {
               fontSize={{ base: '15px', md: '20px' }}
               lineHeight="32px"
             >
-              <Text>60% OF THE AMOUNT RAISED ABOVE THE VALIDATION OF THE GAME IS</Text>
-              <Text>DISTRIBUTED TO NFT OWNING PLAYERS IN A WEIGHTED MANNER BASED</Text>
-              <Text>ON THE number OF TICKETS THEY PURCHASE FOR EACH GAME</Text>
+              <Text color="white" fontSize="18px" width={{ base: 'auto', md: '820px' }}>
+                60% OF THE AMOUNT RAISED ABOVE THE VALIDATION OF THE GAME IS DISTRIBUTED TO NFT
+                OWNING PLAYERS IN A WEIGHTED MANNER BASED ON THE number OF TICKETS THEY PURCHASE FOR
+                EACH GAME.
+              </Text>
             </Box>
 
-            <Text
-              fontWeight="900"
-              color="yellow.400"
-              textTransform="uppercase"
-              position="relative"
-              fontSize={{ base: '30px', md: '40px' }}
-            >
-              Power of creation
-            </Text>
+            <SectionTitle text="Power of creation" textColor="yellow.400" />
             <Box
               marginBottom="40px"
               textTransform="uppercase"
@@ -142,10 +137,10 @@ const NFTs = () => {
               fontSize={{ base: '15px', md: '20px' }}
               lineHeight="32px"
             >
-              <Text>THE POWER OF CREATION (AN NFT HOLDER CAN, UNDER CERTAIN CONDITIONS</Text>
-              <Text>CREATE A NEW NFT, WHICH WILL HAVE ALL THE QUALITIES OF THE NFT FROM</Text>
-              <Text>WHICH IT COMES)</Text>
-              <Text>MORE INFO SOON...</Text>
+              <Text color="white" fontSize="18px" width={{ base: 'auto', md: '820px' }}>
+                THE POWER OF CREATION (AN NFT HOLDER CAN, UNDER CERTAIN CONDITIONS CREATE A NEW NFT,
+                WHICH WILL HAVE ALL THE QUALITIES OF THE NFT FROM WHICH IT COMES). MORE INFO SOON...
+              </Text>
             </Box>
           </Box>
         </Container>

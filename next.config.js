@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
+const withBundleAnalyzer = require('@next/bundle-analyzer');
+const withPlugins = require('next-compose-plugins');
+
+const bundleAnalyzer = withBundleAnalyzer({ enabled: process.env.ANALYZE === 'true' });
+
 const nextConfig = {
   reactStrictMode: true,
   env: {
@@ -11,6 +16,7 @@ const nextConfig = {
     FIREBASE_MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID,
     FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
   },
+  productionBrowserSourceMaps: true,
 };
 
-module.exports = nextConfig;
+module.exports = withPlugins([bundleAnalyzer], nextConfig);

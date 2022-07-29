@@ -1,5 +1,8 @@
 import React from 'react';
-import { Box, Image, Link, Text } from '@chakra-ui/react';
+import { Box, Image, Text } from '@chakra-ui/react';
+import Link from 'next/link';
+
+import styles from './ImageCard.module.scss';
 
 interface IImageCardProps {
   url: string;
@@ -27,18 +30,9 @@ const ImageCard = ({ url, categoryTitle }: IImageCardProps) => {
         <Text textTransform="uppercase" color="white" fontWeight="900" fontSize="20px">
           {categoryTitle}
         </Text>
-        <Link
-          px={2}
-          py={1}
-          padding="0"
-          color="yellow.400"
-          rounded="md"
-          _hover={{
-            textDecoration: 'underline',
-          }}
-          href={`/${url}`}
-        >
-          learn more
+        <Link href={`/${url}`}>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <a className={styles.link}>learn more</a>
         </Link>
       </Box>
     </Box>
