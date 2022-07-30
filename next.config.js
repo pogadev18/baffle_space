@@ -16,7 +16,6 @@ const nextConfig = {
     FIREBASE_MESSAGING_SENDER_ID: process.env.FIREBASE_MESSAGING_SENDER_ID,
     FIREBASE_APP_ID: process.env.FIREBASE_APP_ID,
   },
-  // productionBrowserSourceMaps: true,
 };
 
 module.exports = withPlugins([bundleAnalyzer], nextConfig);

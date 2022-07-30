@@ -78,11 +78,16 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
               </Flex>
             </Box>
             <Box>
-              <Text px="15px" fontSize="25px" color="black">
-                <Box width={{ base: 'auto', md: '820px' }} margin="auto" textAlign="center">
-                  Whitelisted owners of Baffle Space NFTs will be the first to earn 5% from the
-                  price when someone mints an NFT using their referral link.
-                </Box>
+              <Text
+                width={{ base: 'auto', md: '820px' }}
+                margin="auto"
+                textAlign="center"
+                px="15px"
+                fontSize="25px"
+                color="black"
+              >
+                Whitelisted owners of Baffle Space NFTs will be the first to earn 5% from the price
+                when someone mints an NFT using their referral link.
               </Text>
             </Box>
 
