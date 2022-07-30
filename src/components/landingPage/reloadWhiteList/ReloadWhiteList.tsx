@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { IconButton, Text } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 
@@ -22,6 +23,10 @@ interface IReloadWhiteListProps {
 
 const ReloadWhiteList = ({ fontSize }: IReloadWhiteListProps) => {
   const { whitePaperSlots, fetchSlots, isFetching } = useWhitelistSlots();
+
+  useEffect(() => {
+    fetchSlots();
+  }, [fetchSlots]);
 
   return (
     <Text

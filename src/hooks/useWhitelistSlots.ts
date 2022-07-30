@@ -22,7 +22,7 @@ export const useWhitelistSlots = () => {
         setWhitePaperSlots(WHITELIST_AVAILABLE_SLOTS - whitelistedUsers.length);
       }
     } catch (e) {
-      return 'something went wrong';
+      throw new Error('we could not calculate the availability of the slots left');
     }
   }, [fetch]);
 
