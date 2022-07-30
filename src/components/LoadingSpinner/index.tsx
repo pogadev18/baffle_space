@@ -7,7 +7,14 @@ interface ILoadingSpinnerProps {
 
 const LoadingSpinner = ({ spinnerColor }: ILoadingSpinnerProps) => {
   return (
-    <Spinner thickness="4px" speed="0.65s" emptyColor="gray.200" color={spinnerColor} size="xl" />
+    <Spinner
+      as="span"
+      thickness="4px"
+      speed="0.65s"
+      emptyColor="gray.200"
+      color={spinnerColor}
+      size="xl"
+    />
   );
 };
 

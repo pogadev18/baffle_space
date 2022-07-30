@@ -36,12 +36,12 @@ const GamePage = () => {
           </Box>
           <Box marginY={{ base: '20px', sm: '60px' }}>
             <SimpleGrid columns={{ base: 1, md: 3, sm: 2 }} spacing={10}>
-              <ImageCard categoryTitle="electronics" url="/game" />
-              <ImageCard categoryTitle="cars" url="/game" />
-              <ImageCard categoryTitle="motors" url="/game" />
-              <ImageCard categoryTitle="home" url="/game" />
-              <ImageCard categoryTitle="baffle dream" url="/game" />
-              <ImageCard categoryTitle="gold dream" url="/game" />
+              <ImageCard categoryTitle="electronics" url="game" />
+              <ImageCard categoryTitle="cars" url="game" />
+              <ImageCard categoryTitle="motors" url="game" />
+              <ImageCard categoryTitle="home" url="game" />
+              <ImageCard categoryTitle="baffle dream" url="game" />
+              <ImageCard categoryTitle="gold dream" url="game" />
             </SimpleGrid>
             <Text
               fontWeight="900"
