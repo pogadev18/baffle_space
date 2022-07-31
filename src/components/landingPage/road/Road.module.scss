@@ -1,0 +1,96 @@
+.roadWrapper {
+  width: 650px;
+  margin: 0 auto 60px;
+  display: flex;
+  gap: 20px;
+}
+
+.roadContent {
+  background: #2B2B2B;
+  padding: 0 15px;
+  width: 450px;
+}
+
+.roadDescriptions {
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.roadElement {
+  display: flex;
+  height: 170px;
+}
+
+.quarterText {
+  color: #FFC000;
+  font-weight: 900;
+  font-size: 40px;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+
+  &::after {
+    content: '';
+    width: 6px;
+    height: 90px;
+    background-color: #9E9E9E;
+    position: absolute;
+    right: 0;
+  }
+
+  span {
+    display: block;
+    font-weight: 400;
+    font-size: 25px;
+  }
+}
+
+.noBorder {
+  &::after {
+    display: none;
+  }
+}
+
+.checkpointDescription {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 900;
+  color: #9E9E9E;
+
+  span {
+    display: block;
+    font-weight: 400;
+    font-size: 20px;
+  }
+}
+
+.current {
+  color: #FFC000;
+}
+
+.rocketLaunch {
+  width: 650px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.launchCol1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px;
+}
+
+.launchCol2 {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
