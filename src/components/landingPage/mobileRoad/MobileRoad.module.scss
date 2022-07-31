@@ -1,0 +1,51 @@
+.checkpoint {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.description {
+  text-align: left;
+}
+
+.quarter {
+  background: #2B2B2B;
+  padding: 20px;
+}
+
+.mobileRoadWrapper {
+  display: none;
+
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
+}
+
+.quarterText {
+  color: #FFC000;
+  font-weight: 900;
+  font-size: 40px;
+
+  span {
+    display: block;
+    font-weight: 400;
+    font-size: 25px;
+  }
+}
+
+.checkpointDescription {
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 900;
+  color: #9E9E9E;
+
+  span {
+    display: block;
+    font-weight: 400;
+    font-size: 20px;
+  }
+}
+
+.current {
+  color: #FFC000;
+}

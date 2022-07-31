@@ -11,7 +11,7 @@ const Road = () => {
             <p className={styles.quarterText}>
               Q3 <span>2022</span>
             </p>
-            <p>
+            <p className={styles.movingCar}>
               <Image
                 alt="Car Image"
                 fit="cover"

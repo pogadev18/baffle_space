@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Box, Container, Heading } from '@chakra-ui/react';
 import React from 'react';
 import Road from '@/root/components/landingPage/road';
+import MobileRoad from '@/root/components/landingPage/mobileRoad';
 
 const RoadmapPage = () => {
   return (
@@ -25,6 +26,7 @@ const RoadmapPage = () => {
             </Heading>
           </Box>
           <Box textAlign="center" marginTop="40px">
+            <MobileRoad />
             <Road />
           </Box>
         </Container>
