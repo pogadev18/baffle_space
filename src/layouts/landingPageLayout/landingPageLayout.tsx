@@ -2,6 +2,7 @@ import React, { ReactNode, useEffect } from 'react';
 import { Flex } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import { isMobile } from 'react-device-detect';
+import detectEthereumProvider from '@metamask/detect-provider';
 
 import { METAMASK_APP_URL } from '@/root/constants';
 
@@ -14,9 +15,19 @@ interface LandingPageLayoutProps {
 
 const LandingPageLayout = ({ children }: LandingPageLayoutProps) => {
   useEffect(() => {
-    if (isMobile) {
-      window.location.replace(METAMASK_APP_URL);
-    }
+    const providerCheck = async () => {
+      try {
+        const provider = await detectEthereumProvider();
+
+        if (isMobile && !provider) {
+          window.location.replace(METAMASK_APP_URL);
+        }
+      } catch (e) {
+        throw new Error('please install metamask to properly use this application');
+      }
+    };
+
+    providerCheck();
   }, []);
 
   return (
