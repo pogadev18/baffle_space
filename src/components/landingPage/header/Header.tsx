@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import {
   Box,
   Button,
@@ -9,6 +10,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
+import detectEthereumProvider from '@metamask/detect-provider';
 
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { useMoralis } from 'react-moralis';
@@ -26,8 +28,25 @@ const AlertComponent = dynamic(() => import('@/root/components/alert'));
 const Dashboard = dynamic(() => import('@/root/components/dashboard'));
 
 const LandingPageHeader = () => {
+  const [metamaskAvailability, setMetamaskAvailability] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isAuthenticated, authenticate, isAuthenticating, authError } = useMoralis();
+
+  useEffect(() => {
+    const checkMetamaskAvailability = async () => {
+      try {
+        const provider = await detectEthereumProvider();
+
+        if (provider) {
+          setMetamaskAvailability(true);
+        }
+      } catch (error) {
+        throw new Error('No metamask provider available!');
+      }
+    };
+
+    checkMetamaskAvailability();
+  }, []);
 
   const handleLogin = async () => {
     if (!isAuthenticated) {
@@ -40,7 +59,7 @@ const LandingPageHeader = () => {
   return (
     <>
       <ParticipateToWhiteListBanner />
-      {!isAuthenticated && isMobile && (
+      {!isAuthenticated && isMobile && !metamaskAvailability && (
         <AlertComponent
           status={AlertStatusValues.Info}
           title="MetaMask mobile connection"
