@@ -6,7 +6,7 @@ const Introduction = () => {
     <>
       <Heading
         as="h3"
-        fontSize={{ base: '14vw', sm: '25px' }}
+        fontSize={{ base: '11vw', sm: '25px' }}
         fontWeight="900"
         color="white"
         marginBottom="20px"

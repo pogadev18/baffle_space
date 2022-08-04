@@ -58,7 +58,6 @@ const LandingPageHeader = () => {
 
   return (
     <>
-      <ParticipateToWhiteListBanner />
       {!isAuthenticated && isMobile && !metamaskAvailability && (
         <AlertComponent
           status={AlertStatusValues.Info}
@@ -66,6 +65,7 @@ const LandingPageHeader = () => {
           description="We detected that you are using a mobile device. In order to connect with MetaMask, please download the 'MetaMask' app from GooglePlay or AppStore."
         />
       )}
+      <ParticipateToWhiteListBanner />
       {authError && (
         <AlertComponent
           status={AlertStatusValues.Error}

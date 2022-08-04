@@ -3,6 +3,12 @@ import Link from 'next/link';
 
 import Introduction from './Introduction';
 import EnterBaffleSpace from './EnterBaffleSpace';
+import TheGameplay from './TheGameplay';
+import GenesisNFT from './GenesisNFT';
+import WhitelistAndMint from './WhitelistAndMint';
+import GameStart from './GameStart';
+import NFTMint from './NFTMint';
+import BaffleSpaceGames from './Games';
 
 import styles from './WhitepaperSections.module.scss';
 
@@ -35,7 +41,7 @@ const WhitepaperSections = () => {
           </Link>
         </li>
         <li>
-          <Link scroll href="#whitelist">
+          <Link scroll href="#whitelistAndMint">
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a>Whitelist & Mint</a>
           </Link>
@@ -66,6 +72,24 @@ const WhitepaperSections = () => {
         </section>
         <section id="enterBaffle">
           <EnterBaffleSpace />
+        </section>
+        <section id="gameplay">
+          <TheGameplay />
+        </section>
+        <section id="genesisNFT">
+          <GenesisNFT />
+        </section>
+        <section id="whitelistAndMint">
+          <WhitelistAndMint />
+        </section>
+        <section id="gameStart">
+          <GameStart />
+        </section>
+        <section id="nftMint">
+          <NFTMint />
+        </section>
+        <section id="games">
+          <BaffleSpaceGames />
         </section>
       </section>
     </div>

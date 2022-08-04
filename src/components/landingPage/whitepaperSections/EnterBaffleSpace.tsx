@@ -5,7 +5,7 @@ const EnterBaffleSpace = () => {
     <>
       <Heading
         as="h3"
-        fontSize={{ base: '14vw', sm: '25px' }}
+        fontSize={{ base: '11vw', sm: '25px' }}
         fontWeight="900"
         color="white"
         marginBottom="20px"
@@ -30,7 +30,7 @@ const EnterBaffleSpace = () => {
       </p>
       <p>
         Baffle Space is the play to win and earn raffle dApp based on the Polygon blockchain to
-        bridge the gap between the crypto space and the real world
+        bridge the gap between the crypto space and the real world.
       </p>
     </>
   );

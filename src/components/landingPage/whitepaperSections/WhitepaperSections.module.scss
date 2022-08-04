@@ -1,15 +1,45 @@
 .sectionWrapper {
   display: flex;
   gap: 50px;
+
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 }
 
 .topics {
   position: sticky;
-  top: 0;
+  top: 15px;
   align-self: flex-start;
+
+  @media screen and (max-width: 767px) {
+    background: #444242;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+  }
 
   li {
     margin-bottom: 10px;
+
+    @media screen and (max-width: 767px) {
+      display: inline-block;
+      margin-right: 10px;
+      padding-right: 10px;
+      border-right: 2px solid #fff;
+      margin-bottom: 5px;
+
+      &:last-child {
+        margin-right: 0;
+        padding-right: 0;
+        border-right: 0;
+      }
+    }
   }
 
   a {
@@ -27,6 +57,14 @@
   color: #fff;
   font-size: 19px;
   line-height: 31px;
+  border-left: 2px solid #444242;
+  padding-left: 35px;
+
+  @media screen and (max-width: 767px) {
+    flex-basis: 100%;
+    border-left: 0;
+    padding-left: 0;
+  }
 
   > section {
     margin-bottom: 40px;
@@ -39,4 +77,17 @@
       margin-bottom: 15px;
     }
   }
+
+
+  ol {
+    list-style: decimal;
+    padding-left: 25px;
+  }
+}
+
+.nestedTitle {
+  display: inline-block;
+  background: #444242;
+  padding: 7px;
+  border-radius: 10px;
 }

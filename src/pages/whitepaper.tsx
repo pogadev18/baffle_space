@@ -15,7 +15,7 @@ const WhitepaperPage = () => {
           <Box textAlign="center" marginTop="60px">
             <Heading
               as="h1"
-              fontSize={{ base: '14vw', sm: '70px' }}
+              fontSize={{ base: '13vw', sm: '70px' }}
               textTransform="uppercase"
               fontWeight="900"
               color="white"
