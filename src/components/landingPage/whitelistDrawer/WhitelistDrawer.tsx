@@ -13,7 +13,6 @@ import { useRef } from 'react';
 import { FaTwitter } from 'react-icons/fa';
 
 import ParticipateToWhitelist from '@/root/components/landingPage/participateToWhitelist';
-import ReloadWhiteList from '@/root/components/landingPage/reloadWhiteList';
 
 interface IWhiteListDrawerProps {
   isOpen: boolean;
@@ -44,9 +43,6 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
           alignItems="center"
         >
           <Center flexDirection="column">
-            <Box mb={{ base: 5, md: 20 }}>
-              <ReloadWhiteList fontSize="20px" />
-            </Box>
             <Box lineHeight="75px">
               <Flex
                 gap={2}

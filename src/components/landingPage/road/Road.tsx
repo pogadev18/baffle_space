@@ -53,11 +53,6 @@ const Road = () => {
               Q4 <span>2022</span>
             </p>
           </div>
-          <div className={styles.roadElement}>
-            <p className={styles.quarterText}>
-              Q4 <span>2022</span>
-            </p>
-          </div>
         </div>
         <div className={styles.roadDescriptions}>
           <p className={`${styles.checkpointDescription} ${styles.current}`}>

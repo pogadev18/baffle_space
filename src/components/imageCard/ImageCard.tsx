@@ -7,9 +7,10 @@ import styles from './ImageCard.module.scss';
 interface IImageCardProps {
   url: string;
   categoryTitle: string;
+  imageUrl: string;
 }
 
-const ImageCard = ({ url, categoryTitle }: IImageCardProps) => {
+const ImageCard = ({ url, categoryTitle, imageUrl }: IImageCardProps) => {
   return (
     <Box
       _hover={{ transform: 'scale(1.03)' }}
@@ -24,9 +25,18 @@ const ImageCard = ({ url, categoryTitle }: IImageCardProps) => {
         h="100%"
         w="100%"
         margin="auto"
-        src="/whaleBlur.png"
+        src={imageUrl}
       />
-      <Box textAlign="right" position="absolute" bottom="25px" right="25px">
+      <Box
+        textAlign="right"
+        position="absolute"
+        bottom="0"
+        left="0"
+        right="0"
+        background="black.100"
+        padding="15px"
+        opacity="0.8"
+      >
         <Text textTransform="uppercase" color="white" fontWeight="900" fontSize="20px">
           {categoryTitle}
         </Text>
