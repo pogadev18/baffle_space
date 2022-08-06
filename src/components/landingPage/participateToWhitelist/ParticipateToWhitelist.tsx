@@ -45,7 +45,7 @@ const ParticipateToWhitelist = () => {
     });
   };
 
-  if (error) <p>something went wrong, please refresh the page and try again</p>;
+  if (error) return <p>something went wrong, please refresh the page and try again</p>;
 
   return (
     <>
@@ -87,11 +87,9 @@ const ParticipateToWhitelist = () => {
 
       {notify && (
         <Box mt={5}>
-          <AlertComponent
-            status={Success}
-            title="Participation completed"
-            description="you are know whitelisted 😍"
-          />
+          <AlertComponent status={Success} title="Participation completed">
+            <p> you are know whitelisted 😍</p>
+          </AlertComponent>
         </Box>
       )}
 
