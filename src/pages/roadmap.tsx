@@ -26,8 +26,7 @@ const RoadmapPage = () => {
             </Heading>
           </Box>
           <Box textAlign="center" marginTop="40px">
-            <MobileRoad />
-            <Road />
+            <MobileRoad /> <Road />
           </Box>
         </Container>
       </Box>

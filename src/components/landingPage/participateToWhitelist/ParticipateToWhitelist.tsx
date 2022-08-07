@@ -64,7 +64,7 @@ const ParticipateToWhitelist = () => {
           _hover={{ background: 'yellow.300' }}
           onClick={onOpen}
         >
-          {isAlreadyOnWhitelist ? 'you are already on the whitelist 😍' : 'join the nft whitelist'}
+          {isAlreadyOnWhitelist ? 'you are already on the whitelist' : 'join the nft whitelist'}
         </Button>
       ) : (
         <Button
@@ -73,7 +73,7 @@ const ParticipateToWhitelist = () => {
           border="1px solid black"
           rounded="full"
           py={7}
-          width={{ base: '320px', md: '460px' }}
+          width={{ base: '350px', md: '330px' }}
           textTransform="uppercase"
           fontSize={{ base: '13px', md: '20px' }}
           mt="25px"
@@ -81,7 +81,7 @@ const ParticipateToWhitelist = () => {
           onClick={handleLogin}
           _hover={{ background: 'yellow.300' }}
         >
-          connect with metamask to participate
+          join the whitelist
         </Button>
       )}
 

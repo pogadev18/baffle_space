@@ -23,7 +23,7 @@ import NavLink from '@/root/components/navLink';
 import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
 import { METAMASK_APP_URL } from '@/root/constants';
 
-const Links = ['Whitepaper', 'Roadmap', 'Game', 'NFTs'];
+const Links = ['Whitepaper', 'Roadmap', 'The gameplay', 'NFTs'];
 
 const AlertComponent = dynamic(() => import('@/root/components/alert'));
 const Dashboard = dynamic(() => import('@/root/components/dashboard'));
