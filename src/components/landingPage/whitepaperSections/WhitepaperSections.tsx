@@ -11,10 +11,7 @@ import Introduction from './Introduction';
 import EnterBaffleSpace from './EnterBaffleSpace';
 import TheGameplay from './TheGameplay';
 import GenesisNFT from './GenesisNFT';
-import WhitelistAndMint from './WhitelistAndMint';
-import GameStart from './GameStart';
 import NFTMint from './NFTMint';
-import BaffleSpaceGames from './Games';
 
 import styles from './WhitepaperSections.module.scss';
 
@@ -71,30 +68,14 @@ const WhitepaperSections = () => {
               <a>Baffle Space Genesis NFT Collection</a>
             </Link>
           </li>
-          <li>
-            <Link scroll href="#whitelistAndMint">
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a>Whitelist & Mint</a>
-            </Link>
-          </li>
-          <li>
-            <Link scroll href="#gameStart">
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a>Baffle Space Game Start NFT</a>
-            </Link>
-          </li>
+
           <li>
             <Link scroll href="#nftMint">
               {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a>NFT Mint</a>
+              <a>Payouts</a>
             </Link>
           </li>
-          <li>
-            <Link scroll href="#games">
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-              <a>Baffle Space Games</a>
-            </Link>
-          </li>
+
           <li>
             <Link scroll href="#roadmap">
               {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
@@ -117,18 +98,11 @@ const WhitepaperSections = () => {
         <section id="genesisNFT">
           <GenesisNFT />
         </section>
-        <section id="whitelistAndMint">
-          <WhitelistAndMint />
-        </section>
-        <section id="gameStart">
-          <GameStart />
-        </section>
+
         <section id="nftMint">
           <NFTMint />
         </section>
-        <section id="games">
-          <BaffleSpaceGames />
-        </section>
+
         <section id="roadmap">
           <Heading
             as="h3"

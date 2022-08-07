@@ -2,6 +2,8 @@ import Head from 'next/head';
 import { Box, Container, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import SectionTitle from '@/root/components/sectionTitle';
 import React from 'react';
+import Link from 'next/link';
+import styles from '@/root/components/landingPage/whitepaperSections/WhitepaperSections.module.scss';
 
 const NFTs = () => {
   return (
@@ -105,7 +107,11 @@ const NFTs = () => {
             <SectionTitle text="Baffle Space Games Start As An NFT Owner" textColor="white" />
             <Text color="white" fontSize="18px" width={{ base: 'auto', md: '820px' }}>
               Shortly after the NFT minting will be accomplished the first version of the Baffle
-              Space Gaming dApp will be launched (check the roadmap to see the timeline).
+              Space Gaming dApp will be launched&nbsp;
+              <Link href="/whitepaper#roadmap">
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                <a className={styles.link}>(see the roadmap).</a>
+              </Link>
               <br />
               <br />
               When Baffle Space Games start, you will get to experience the day-to-day ownership of

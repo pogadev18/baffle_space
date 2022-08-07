@@ -1,5 +1,8 @@
 import { Heading } from '@chakra-ui/react';
 
+import Link from 'next/link';
+import React from 'react';
+
 import styles from './WhitepaperSections.module.scss';
 
 const TheGameplay = () => {
@@ -21,16 +24,40 @@ const TheGameplay = () => {
 
           <p>
             When players enter the Baffle Space Games dApp by connecting their MetaMask wallet, the
-            first thing to do will be to select the Dream Prize they want to play for. When the dApp
-            launches players will be able to choose from a variety of electronics and gadgets. After
-            the successful launch of Baffle Space Games more Dream Prize Categories will be added.
-            Eg. Vehicles, Homes, Vacations, etc.
+            first thing to do will be to choose the Dream Prize they want to play for. When the dApp
+            launches players will be able to choose and play for a variety of Dream Prizes included
+            in the Dream Electronics Prize Category. As we develop the Baffle Space Gaming dApp more
+            Dream Prize Categories will be added.
           </p>
           <p>
             Once the player has selected the Dream Prize, they will enter the Game by purchasing one
             or more tickets for the raffle, using $MATIC. The number of tickets purchased in a
             raffle will determine the chances the player has to win the Dream Prize.
           </p>
+          <ol>
+            <li>
+              <strong>Dream Prize Categories</strong>
+              <p>
+                The initial Dream Prize Category featured by the Baffle Space Gaming dApp will be
+                Electronics. We know people have various dreams and we are set to fulfill many of
+                them by constantly expanding the catalog. We select top of the range prizes in each
+                category, only the ones worthy to be called Dream Prizes.
+              </p>
+              <p>
+                The Dream Prize Categories to choose prizes from will be: Electronics, Cars, Bikes,
+                Homes, Vacations and Gold.
+              </p>
+              <p>
+                Ticket prices and accumulation time-frames will be updated in the whitepaper and
+                announced on Twitter and Telegram at the launch of each new playable category.
+              </p>
+              <p>
+                Baffle Space listens to its community and polls will be held regularly to determine
+                what future categories the community wants to play for. The most desired future
+                Dream Prize Categories will be implemented after the first six are up and running.{' '}
+              </p>
+            </li>
+          </ol>
         </li>
         <li>
           <strong>Accumulation</strong>
@@ -52,11 +79,12 @@ const TheGameplay = () => {
               </p>
             </li>
             <li>
-              <span className={styles.nestedTitle}>Rewards</span>
+              <span className={styles.nestedTitle}>Earnings of NFT owning players</span>
               <p>
-                In each game 60% of the amount raised above the validation amount will be
-                distributed as rewards to NFT owning players in a weighted manner based on the
-                number of tickets they purchased to play for the chosen Dream Prize.
+                <Link href="/whitepaper#gameStart">
+                  {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                  <a className={styles.link}>Read More</a>
+                </Link>
               </p>
             </li>
             <li>
@@ -65,7 +93,7 @@ const TheGameplay = () => {
                 When the secondary draw is developed, every game will have a prize pool comprised of
                 20% of the amount raised above the validation amount. After determining the winning
                 ticket of the Dream Prize, the non-winning tickets will automatically enter the
-                secondary draw, where 3 winning tickets will be drawn and share this prize pool.
+                secondary draw, where 3 winning tickets will be drawn and share this prize pool
               </p>
             </li>
             <li>
@@ -111,14 +139,19 @@ const TheGameplay = () => {
                   </p>
                 </li>
                 <li>
-                  <span className={styles.nestedTitle}>Get the dream prize</span>
+                  <span className={styles.nestedTitle}>Get the Dream Prize</span>
                   <p>
                     To choose this option, by participating in Baffle Space raffles in case of
                     winning the prize, the player agrees that Baffle Space will cash out from
                     cryptocurrencies amounting to the prize value. Baffle Space will pay all income
                     taxes for the aforementioned conversion and subsequently purchases the prize.
                     The winner accepts the prize and considers the receival of the prize sufficient
-                    and will not seek further reimbursement from Baffle Space.
+                    and will not seek further reimbursement from Baffle Space. This option will
+                    first be available for Romanian residents only&nbsp;
+                    <Link href="/whitepaper#roadmap">
+                      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                      <a className={styles.link}>(see the roadmap).</a>
+                    </Link>
                   </p>
                 </li>
               </ol>

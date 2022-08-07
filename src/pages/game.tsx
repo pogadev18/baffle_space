@@ -47,7 +47,7 @@ const GamePage = () => {
               <ImageCard categoryTitle="dream bikes" url="whitepaper" imageUrl="./moto.jpg" />
               <ImageCard categoryTitle="dream homes" url="whitepaper" imageUrl="./house.jpg" />
               <ImageCard
-                categoryTitle="dream vacations"
+                categoryTitle="dream experiences"
                 url="whitepaper"
                 imageUrl="./holiday.jpg"
               />
