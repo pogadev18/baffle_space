@@ -22,8 +22,9 @@ import NavLink from '@/root/components/navLink';
 
 import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
 import { METAMASK_APP_URL } from '@/root/constants';
+import { renderLinksUrl } from '@/root/utils/utilityFunctions';
 
-const Links = ['Whitepaper', 'Roadmap', 'The gameplay', 'NFTs'];
+const Links = ['Roadmap', 'The gameplay', 'NFTs', 'Whitepaper'];
 
 const AlertComponent = dynamic(() => import('@/root/components/alert'));
 const Dashboard = dynamic(() => import('@/root/components/dashboard'));
@@ -118,7 +119,7 @@ const LandingPageHeader = () => {
               </Box>
               <HStack as="nav" spacing={4} display={{ base: 'none', md: 'flex' }}>
                 {Links.map((link) => (
-                  <NavLink url={link.toLowerCase()} key={link}>
+                  <NavLink url={renderLinksUrl(link)} key={link}>
                     {link}
                   </NavLink>
                 ))}
@@ -170,7 +171,7 @@ const LandingPageHeader = () => {
                 )}
 
                 {Links.map((link) => (
-                  <NavLink url={link.toLowerCase()} key={link}>
+                  <NavLink url={renderLinksUrl(link)} key={link}>
                     {link}
                   </NavLink>
                 ))}

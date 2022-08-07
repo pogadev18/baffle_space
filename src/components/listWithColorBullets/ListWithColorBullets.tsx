@@ -10,10 +10,7 @@ const ListWithColorBullets = () => {
         <span>Minimum amount to validate the game and move on to the next step</span>
       </p>
       <p className={styles.textWrapper}>
-        <span>
-          Earnings of NFT owning players (distribution based on the number of tickets they purchased
-          for the game)
-        </span>
+        <span>Earnings of NFT owning players</span>
       </p>
       <p className={styles.textWrapper}>
         <span>Prize pool for the secondary draw to be split among 3 lucky winners</span>

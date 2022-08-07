@@ -14,9 +14,8 @@
 .daysCountWrapper {
   display: flex;
   width: 1000px;
-  margin: auto;
+  margin: 0 auto 10px;
   justify-content: space-between;
-  margin-bottom: 10px;
   font-weight: bold;
 
   @media screen and (max-width: 1200px) {

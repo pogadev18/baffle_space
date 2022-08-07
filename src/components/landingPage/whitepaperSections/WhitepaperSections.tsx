@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+import { Heading } from '@chakra-ui/react';
+
+import Roadmap from '@/root/pages/roadmap';
+import MobileRoad from '@/root/components/landingPage/mobileRoad';
 import { getOffset } from '@/root/utils/utilityFunctions';
 
 import Introduction from './Introduction';
@@ -91,6 +95,12 @@ const WhitepaperSections = () => {
               <a>Baffle Space Games</a>
             </Link>
           </li>
+          <li>
+            <Link scroll href="#roadmap">
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+              <a>Roadmap</a>
+            </Link>
+          </li>
         </ul>
       )}
 
@@ -118,6 +128,19 @@ const WhitepaperSections = () => {
         </section>
         <section id="games">
           <BaffleSpaceGames />
+        </section>
+        <section id="roadmap">
+          <Heading
+            as="h3"
+            fontSize={{ base: '11vw', sm: '25px' }}
+            fontWeight="900"
+            color="white"
+            marginBottom="20px"
+          >
+            Roadmap
+          </Heading>
+          <Roadmap isOnWhitepaperPage />
+          <MobileRoad />
         </section>
       </section>
     </div>
