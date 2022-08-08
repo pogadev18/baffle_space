@@ -1,22 +1,21 @@
-import { Container, Stack, Box, Heading, Text, Button } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
+import { Container, Stack, Box, Heading, Text } from '@chakra-ui/react';
+
+import CTAs from '@/root/components/landingPage/hero/CTAs';
 
 import styles from './Hero.module.scss';
 
 const Hero = () => {
-  const router = useRouter();
-
   return (
     <Box
       width="100%"
-      // backgroundImage={{ base: 'url(./mobil_hero.jpeg)', md: 'url(./desktop_hero.jpg)' }}
-      backgroundImage="url(./desktop_hero.jpg)"
+      backgroundImage={{ base: 'url(./mobile_hero.jpg)', md: 'url(./desktop_hero.jpg)' }}
       backgroundSize="cover"
       backgroundPosition="center center"
     >
       <Container
         height={{ base: '500px', md: 'calc(100vh - 128px)' }}
         maxW="8xl"
+        position="relative"
         paddingX={{ base: '25px', md: '40px' }}
       >
         <Stack
@@ -52,38 +51,7 @@ const Hero = () => {
                 Home of the play to win &amp; earn games
               </Text>
             </Box>
-            <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'column' }}>
-              <Button
-                onClick={() => router.push('/nfts')}
-                rounded="full"
-                variant="solid"
-                size="lg"
-                px={6}
-                width={{ base: 'auto', md: '100%' }}
-                colorScheme="yellow"
-              >
-                NFTs
-              </Button>
-              <Button
-                onClick={() => router.push('/game')}
-                width={{ base: 'auto', md: '100%' }}
-                variant="outline"
-                color="white"
-                rounded="full"
-                size="lg"
-                fontWeight="normal"
-                borderWidth="3px"
-                borderColor="black.800"
-                px={6}
-                _hover={{
-                  textDecoration: 'none',
-                  bg: 'yellow.400',
-                  color: 'black.900',
-                }}
-              >
-                The Gameplay
-              </Button>
-            </Stack>
+            <CTAs />
           </Stack>
         </Stack>
       </Container>

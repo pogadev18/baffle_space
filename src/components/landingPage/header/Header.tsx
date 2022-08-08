@@ -179,7 +179,7 @@ const LandingPageHeader = () => {
               </Stack>
             </Box>
           ) : null}
-          <Box marginY={10} display={{ md: 'none' }}>
+          <Box marginY={5} display={{ md: 'none' }}>
             <Heading
               marginBottom="10px"
               lineHeight={1.1}
