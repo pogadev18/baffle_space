@@ -7,9 +7,16 @@ import {
   Box,
   Text,
 } from '@chakra-ui/react';
+import Link from 'next/link';
+import styles from '@/root/components/landingPage/whitepaperSections/WhitepaperSections.module.scss';
+import React from 'react';
 
 const Faqs = () => {
-  // background="black.900" padding="15px"
+  const openWhitelistDrawer = () => {
+    const drawerIcon = document.getElementById('open-whitelist-icon');
+    if (drawerIcon) drawerIcon.click();
+  };
+
   return (
     <Box color="white">
       <Text fontWeight="900" fontSize="3xl" marginTop="0" marginBottom="15px">
@@ -43,8 +50,13 @@ const Faqs = () => {
           <AccordionPanel pb={4}>
             Baffle Space is the play to win and earn Gaming dApp based on the Polygon blockchain set
             to bridge the gap between the crypto space and the real world by offering tangible
-            prizes in raffles for which tickets are purchased with cryptocurrency ($MATIC). Read
-            more <i>link la litepaper</i>
+            prizes in raffles for which tickets are purchased with cryptocurrency ($MATIC).{' '}
+            <Link href="/whitepaper">
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+              <a className={styles.link}>
+                <strong style={{ textDecoration: 'underline' }}>Read More</strong>
+              </a>
+            </Link>
           </AccordionPanel>
         </AccordionItem>
         <AccordionItem background="black.900" borderRadius="5px" mb="5">
@@ -58,8 +70,11 @@ const Faqs = () => {
           </h2>
           <AccordionPanel pb={4}>
             Having your Baffle Space NFT as soon as they launch gives you the power to earn up to
-            95ETH by the time they get sold out. You can join the whitelist here link care deschide
-            whitelist drawer. <br />
+            95ETH by the time they get sold out. You can join the whitelist{' '}
+            <button type="button" onClick={openWhitelistDrawer}>
+              <strong style={{ textDecoration: 'underline' }}>here</strong>
+            </button>{' '}
+            <br />
             <br /> After the Baffle Space Gaming dApp goes live, we will share 60% of the revenue
             with NFT owning players, so each raffle you participate in will guarantee you a piece of
             the pie on top of the chances to win the Dream Prize.

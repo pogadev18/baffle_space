@@ -27,6 +27,7 @@ const ParticipateToWhiteListBanner = () => {
           </Text>
           <ReloadWhiteList fontSize="16px" />
           <Button
+            id="open-whitelist-icon"
             _hover={{
               background: '0',
             }}
