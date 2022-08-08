@@ -15,7 +15,7 @@ const Hero = () => {
       backgroundPosition="center center"
     >
       <Container
-        height={{ base: '500px', md: 'auto' }}
+        height={{ base: '500px', md: 'calc(100vh - 128px)' }}
         maxW="8xl"
         paddingX={{ base: '25px', md: '40px' }}
       >
