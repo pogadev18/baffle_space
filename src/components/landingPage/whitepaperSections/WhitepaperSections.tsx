@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { Heading } from '@chakra-ui/react';
 
 import Roadmap from '@/root/pages/roadmap';
-import MobileRoad from '@/root/components/landingPage/mobileRoad';
 import { getOffset } from '@/root/utils/utilityFunctions';
 
 import Introduction from './Introduction';
@@ -114,7 +113,6 @@ const WhitepaperSections = () => {
             Roadmap
           </Heading>
           <Roadmap isOnWhitepaperPage />
-          <MobileRoad />
         </section>
       </section>
     </div>

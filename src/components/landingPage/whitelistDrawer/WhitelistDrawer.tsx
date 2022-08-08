@@ -40,7 +40,11 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
           justifyContent="center"
           alignItems="center"
         >
-          <Center flexDirection="column">
+          <Center
+            className="HELLOOOOOOOO"
+            flexDirection="column"
+            paddingBottom={{ base: '60px', md: '0' }}
+          >
             <Box lineHeight="75px" paddingX={{ base: '25px', md: '10px' }}>
               <Flex
                 gap={2}
