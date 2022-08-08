@@ -1,4 +1,4 @@
-import { Box, Container, Flex } from '@chakra-ui/react';
+import { Box, Container, Flex, Text } from '@chakra-ui/react';
 
 import Faqs from '@/root/components/faqs';
 import SocialLinks from '@/root/components/socialLinks';
@@ -23,6 +23,9 @@ const HomeFooter = () => {
               alignTitleRight
               alignIconsRight
             />
+            <Text color="white" textAlign={{ base: 'center', md: 'right' }} marginTop="20px">
+              &copy; Baffle Space 2022
+            </Text>
           </Box>
         </Flex>
       </Container>

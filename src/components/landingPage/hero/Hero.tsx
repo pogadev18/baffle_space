@@ -1,4 +1,4 @@
-import { Container, Stack, Flex, Box, Heading, Text, Button, Image } from '@chakra-ui/react';
+import { Container, Stack, Box, Heading, Text, Button } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
 import styles from './Hero.module.scss';
@@ -7,18 +7,28 @@ const Hero = () => {
   const router = useRouter();
 
   return (
-    <Box background="black.900" width="100%">
-      <Container maxW="8xl" paddingX={{ base: '25px', md: '40px' }}>
+    <Box
+      width="100%"
+      // backgroundImage={{ base: 'url(./mobil_hero.jpeg)', md: 'url(./desktop_hero.jpg)' }}
+      backgroundImage="url(./desktop_hero.jpg)"
+      backgroundSize="cover"
+      backgroundPosition="center center"
+    >
+      <Container
+        height={{ base: '500px', md: 'auto' }}
+        maxW="8xl"
+        paddingX={{ base: '25px', md: '40px' }}
+      >
         <Stack
           align="center"
           spacing={{ base: 8, sm: 10 }}
           py={{ base: 10, md: 40 }}
           direction={{ base: 'column', lg: 'row' }}
         >
-          <Stack flex={1}>
+          <Stack className={styles.heroInfo} display={{ base: 'none', md: 'block' }}>
             <Box marginBottom={10}>
               <Heading lineHeight={1.1} fontWeight={700} fontSize={{ base: '15vw', sm: '80px' }}>
-                <Text color="gray.300" as="span" textTransform="uppercase" position="relative">
+                <Text color="white" as="span" textTransform="uppercase" position="relative">
                   Baffle
                 </Text>
                 <Text textTransform="uppercase" as="span" color="yellow.400" fontWeight="900">
@@ -33,7 +43,7 @@ const Hero = () => {
                 Raffles for dreams and baffling wins!
               </Text>
               <Text
-                color="gray.300"
+                color="white"
                 fontWeight="bold"
                 textTransform="uppercase"
                 marginTop="0"
@@ -49,14 +59,14 @@ const Hero = () => {
                 variant="solid"
                 size="lg"
                 px={6}
-                width={{ base: 'auto', md: '60%' }}
+                width={{ base: 'auto', md: '100%' }}
                 colorScheme="yellow"
               >
                 NFTs
               </Button>
               <Button
                 onClick={() => router.push('/game')}
-                width={{ base: 'auto', md: '60%' }}
+                width={{ base: 'auto', md: '100%' }}
                 variant="outline"
                 color="white"
                 rounded="full"
@@ -75,25 +85,6 @@ const Hero = () => {
               </Button>
             </Stack>
           </Stack>
-          <Flex flex={1} justify="center" align="center" position="relative">
-            <Box
-              position="relative"
-              height={{ sm: '260px', md: '400px' }}
-              width="full"
-              overflow="hidden"
-              className={styles.uniwhaleImg}
-            >
-              <Image
-                alt="Hero Image"
-                fit="cover"
-                align="center"
-                h={{ base: 'auto', md: '100%' }}
-                w={{ base: '500px', md: '100%' }}
-                margin="auto"
-                src="/mascota.png"
-              />
-            </Box>
-          </Flex>
         </Stack>
       </Container>
     </Box>

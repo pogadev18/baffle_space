@@ -4,9 +4,11 @@ import {
   Button,
   Container,
   Flex,
+  Heading,
   HStack,
   IconButton,
   Stack,
+  Text,
   useDisclosure,
 } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
@@ -24,7 +26,7 @@ import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
 import { METAMASK_APP_URL } from '@/root/constants';
 import { renderLinksUrl } from '@/root/utils/utilityFunctions';
 
-const Links = ['Roadmap', 'The gameplay', 'NFTs', 'Whitepaper'];
+const Links = ['Roadmap', 'The gameplay', 'NFTs', 'Whitepaper', 'Team'];
 
 const AlertComponent = dynamic(() => import('@/root/components/alert'));
 const Dashboard = dynamic(() => import('@/root/components/dashboard'));
@@ -145,7 +147,6 @@ const LandingPageHeader = () => {
               )}
             </Flex>
           </Flex>
-
           {isOpen ? (
             <Box pb={4} display={{ md: 'none' }}>
               <Stack as="nav" spacing={4}>
@@ -178,6 +179,28 @@ const LandingPageHeader = () => {
               </Stack>
             </Box>
           ) : null}
+          <Box marginY={10} display={{ md: 'none' }}>
+            <Heading
+              marginBottom="10px"
+              lineHeight={1.1}
+              fontWeight={700}
+              fontSize={{ base: '15vw', sm: '80px' }}
+            >
+              <Text color="white" as="span" textTransform="uppercase" position="relative">
+                Baffle
+              </Text>
+              <Text textTransform="uppercase" as="span" color="yellow.400" fontWeight="900">
+                S
+                <Text as="span" textTransform="uppercase" fontSize="40px" fontWeight="900">
+                  pace
+                </Text>
+              </Text>
+              <br />
+            </Heading>
+            <Text color="white" fontWeight="900" fontSize="3xl" marginTop="0">
+              Raffles for dreams and baffling wins!
+            </Text>
+          </Box>
         </Container>
       </Box>
     </>
