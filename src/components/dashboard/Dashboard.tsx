@@ -17,7 +17,6 @@ import {
   Text,
   Flex,
   Box,
-  Image,
   Show,
   Divider,
 } from '@chakra-ui/react';
@@ -57,7 +56,7 @@ const DashboardDrawer = () => {
         <DrawerContent background="yellow.400">
           <Box
             display={{ base: 'block', custom1110: 'flex' }}
-            alignItems="center"
+            // alignItems="center"
             height="100%"
             overflowY="auto"
             position="relative"
@@ -72,25 +71,16 @@ const DashboardDrawer = () => {
                 justifyContent="center"
                 direction="column"
               >
-                <Box width="500px">
+                <Box width="700px">
                   <Text
                     display="flex"
                     alignItems="center"
                     color="gray.300"
                     fontWeight="black"
                     fontSize="100px"
+                    marginBottom="20px"
                   >
-                    BAFFLE
-                    <Image
-                      width="250px"
-                      alt="Baffle Icon"
-                      fit="cover"
-                      align="center"
-                      margin="auto"
-                      src="/sig.svg"
-                      position="relative"
-                      right="42px"
-                    />
+                    BAFFLE SPACE
                   </Text>
                   <Text
                     position="relative"
@@ -98,9 +88,9 @@ const DashboardDrawer = () => {
                     color="gray.300"
                     textTransform="uppercase"
                     fontWeight="black"
+                    fontSize="22px"
                   >
-                    Our goal is to stay out of the greedy system and share the wealth with as many
-                    people as possible
+                    Raffles for dreams and baffling wins!
                   </Text>
                 </Box>
               </Flex>
@@ -111,7 +101,7 @@ const DashboardDrawer = () => {
                 margin="10px"
                 color="black"
               />
-              <DrawerHeader px="0" paddingTop="0px" paddingBottom="20px">
+              <DrawerHeader px="0" paddingTop="80px" paddingBottom="20px">
                 <Text color="black" fontWeight="900" fontSize="3xl" textTransform="uppercase">
                   Dashboard
                 </Text>
@@ -127,10 +117,10 @@ const DashboardDrawer = () => {
               <Tabs justifyContent="center" variant="unstyled" size="lg">
                 <TabList background="yellow.300">
                   <Tab textTransform="uppercase" _selected={{ fontWeight: 'black' }}>
-                    Profile
+                    Account
                   </Tab>
                   <Tab isDisabled textTransform="uppercase" _selected={{ fontWeight: 'black' }}>
-                    NFTs
+                    my NFTs
                   </Tab>
                 </TabList>
 

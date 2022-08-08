@@ -21,6 +21,42 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  > p {
+    position: relative;
+
+    &:nth-child(1) {
+      top: 45px;
+    }
+
+    &:nth-child(2) {
+      top: 72px;
+    }
+
+    &:nth-child(3) {
+      top: 82px;
+    }
+
+    &:nth-child(4) {
+      top: 82px;
+    }
+
+    &:nth-child(5) {
+      top: 82px;
+    }
+
+    &:nth-child(6) {
+      top: 82px;
+    }
+
+    &:nth-child(7) {
+      top: 54px;
+    }
+
+    &:nth-child(8) {
+      top: 32px;
+    }
+  }
 }
 
 .roadElement {

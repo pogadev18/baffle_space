@@ -22,7 +22,7 @@ const ParticipateToWhiteListBanner = () => {
           justifyContent="space-between"
           direction={{ base: 'column-reverse', md: 'row' }}
         >
-          <Text fontSize="2xl" color="black" fontWeight="900">
+          <Text order={{ base: '1', sm: '0' }} fontSize="2xl" color="black" fontWeight="900">
             NFT WHITELIST
           </Text>
           <ReloadWhiteList fontSize="16px" />

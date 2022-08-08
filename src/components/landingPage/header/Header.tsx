@@ -21,11 +21,25 @@ import ParticipateToWhiteListBanner from '@/root/components/landingPage/particip
 import NavLink from '@/root/components/navLink';
 
 import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
+import { METAMASK_APP_URL } from '@/root/constants';
+import { renderLinksUrl } from '@/root/utils/utilityFunctions';
 
-const Links = ['Whitepaper', 'Roadmap', 'Game', 'NFTs'];
+const Links = ['Roadmap', 'The gameplay', 'NFTs', 'Whitepaper'];
 
 const AlertComponent = dynamic(() => import('@/root/components/alert'));
 const Dashboard = dynamic(() => import('@/root/components/dashboard'));
+
+const MetamaskHelpText = () => (
+  <p>
+    In order to fully experience Baffle Space, you need access the website form Metamask. Click the
+    link to install Metamask or to open the application from metamask if you already installed it.
+    <p>
+      <a href={METAMASK_APP_URL}>
+        <strong>tap to enter from MetaMask</strong>
+      </a>
+    </p>
+  </p>
+);
 
 const LandingPageHeader = () => {
   const [metamaskAvailability, setMetamaskAvailability] = useState(false);
@@ -58,21 +72,19 @@ const LandingPageHeader = () => {
 
   return (
     <>
-      <ParticipateToWhiteListBanner />
       {!isAuthenticated && isMobile && !metamaskAvailability && (
-        <AlertComponent
-          status={AlertStatusValues.Info}
-          title="MetaMask mobile connection"
-          description="We detected that you are using a mobile device. In order to connect with MetaMask, please download the 'MetaMask' app from GooglePlay or AppStore."
-        />
+        <AlertComponent status={AlertStatusValues.Info} title="MetaMask mobile connection">
+          <MetamaskHelpText />
+        </AlertComponent>
       )}
+
       {authError && (
-        <AlertComponent
-          status={AlertStatusValues.Error}
-          title="Something went wrong"
-          description={authError.message}
-        />
+        <AlertComponent status={AlertStatusValues.Error} title="Something went wrong">
+          <p>{authError.message}</p>
+        </AlertComponent>
       )}
+
+      <ParticipateToWhiteListBanner />
 
       <Box width="100%" bg="black.900">
         <Container paddingX={{ base: '25px', md: '40px' }} maxW="8xl">
@@ -107,7 +119,7 @@ const LandingPageHeader = () => {
               </Box>
               <HStack as="nav" spacing={4} display={{ base: 'none', md: 'flex' }}>
                 {Links.map((link) => (
-                  <NavLink url={link.toLowerCase()} key={link}>
+                  <NavLink url={renderLinksUrl(link)} key={link}>
                     {link}
                   </NavLink>
                 ))}
@@ -159,7 +171,7 @@ const LandingPageHeader = () => {
                 )}
 
                 {Links.map((link) => (
-                  <NavLink url={link.toLowerCase()} key={link}>
+                  <NavLink url={renderLinksUrl(link)} key={link}>
                     {link}
                   </NavLink>
                 ))}

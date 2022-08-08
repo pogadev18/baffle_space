@@ -1,4 +1,3 @@
-// import { useEffect } from 'react';
 import { IconButton, Text } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 
@@ -21,20 +20,13 @@ interface IReloadWhiteListProps {
   fontSize: string;
 }
 
+const refreshTextStyles = {
+  color: 'black',
+  fontWeight: '900',
+};
+
 const ReloadWhiteList = ({ fontSize }: IReloadWhiteListProps) => {
   const { whitePaperSlots, fetchSlots, isFetching } = useWhitelistSlots();
-
-  // useEffect(() => {
-  //   const fetchWhitePaperSlots = async () => {
-  //     try {
-  //       await fetchSlots();
-  //     } catch (e) {
-  //       throw new Error('could not get the white-paper slots');
-  //     }
-  //   };
-  //
-  //   fetchWhitePaperSlots();
-  // }, [fetchSlots]);
 
   return (
     <Text
@@ -55,7 +47,9 @@ const ReloadWhiteList = ({ fontSize }: IReloadWhiteListProps) => {
         </>
       ) : (
         <>
-          Refresh for availability
+          <button style={refreshTextStyles} type="button" onClick={fetchSlots}>
+            Refresh for availability
+          </button>
           <ReloadButton onClick={fetchSlots} />
         </>
       )}

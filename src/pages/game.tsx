@@ -5,6 +5,8 @@ import SectionTitle from '@/root/components/sectionTitle';
 import AccumulationDrawing from '@/root/components/accumulationDrawing';
 
 import styles from '@/root/styles/pages/gamePage.module.scss';
+import Link from 'next/link';
+import React from 'react';
 
 const GamePage = () => {
   return (
@@ -34,24 +36,31 @@ const GamePage = () => {
               the first thing to do will be to select the Dream Prize they want to play for.
             </Text>
           </Box>
-          <Box marginY={{ base: '20px', sm: '60px' }}>
+          <Box marginY={{ base: '20px', sm: '60px' }} textAlign="center">
             <SimpleGrid columns={{ base: 1, md: 3, sm: 2 }} spacing={10}>
-              <ImageCard categoryTitle="electronics" url="game" />
-              <ImageCard categoryTitle="cars" url="game" />
-              <ImageCard categoryTitle="motors" url="game" />
-              <ImageCard categoryTitle="home" url="game" />
-              <ImageCard categoryTitle="baffle dream" url="game" />
-              <ImageCard categoryTitle="gold dream" url="game" />
+              <ImageCard
+                categoryTitle="dream electronics"
+                url="whitepaper"
+                imageUrl="./electronics.jpg"
+              />
+              <ImageCard categoryTitle="dream cars" url="whitepaper" imageUrl="./car.jpg" />
+              <ImageCard categoryTitle="dream bikes" url="whitepaper" imageUrl="./moto.jpg" />
+              <ImageCard categoryTitle="dream homes" url="whitepaper" imageUrl="./house.jpg" />
+              <ImageCard
+                categoryTitle="dream experiences"
+                url="whitepaper"
+                imageUrl="./holiday.jpg"
+              />
+              <ImageCard categoryTitle="golden dream" url="whitepaper" imageUrl="./gold.jpg" />
             </SimpleGrid>
             <Text
               fontWeight="900"
               textAlign="center"
-              textTransform="uppercase"
               color="black.700"
               fontSize="2xl"
               marginTop="50px"
             >
-              More dreams will be added soon
+              More Dream Prize Categories will be added soon
             </Text>
           </Box>
         </Container>
@@ -64,7 +73,7 @@ const GamePage = () => {
               More tickets mean more chances to win and more earnings.
             </Text>
             <Text color="black" fontSize="18px">
-              Blockchain technology ensures the fairness and transparency of Baffle.Space games.
+              Blockchain technology ensures the fairness and transparency of Baffle Space Games.
             </Text>
             <Text
               textTransform="uppercase"
@@ -83,12 +92,14 @@ const GamePage = () => {
               margin="auto"
               textAlign="center"
             >
-              A time-frame will be set for each game in which players will be able to buy tickets
-              for the Dream Prize they chose in the previous step. The first category of prizes
-              players can play for will have a 7 day accumulation period. Different prize categories
-              will have different time frames. This step will determine the validation of the game,
-              the reward amounts, the secondary draw prize pool and Baffle Space development and
-              maintenance revenue.
+              A timeframe will be set for each game in which players will be able to buy tickets for
+              the Dream Prize they chose in the previous step. <br />
+              <br />
+              The first category of prizes players can play for will be Dream Electronics and it
+              will have a 7 day accumulation period. Different Dream Prize Categories will have
+              different timeframes. This step will determine the validation of the game, the reward
+              amounts, the secondary draw prize pool and Baffle Space development and maintenance
+              revenue.
             </Text>
             <AccumulationDrawing />
           </Box>
@@ -129,26 +140,24 @@ const GamePage = () => {
             >
               Claiming the win
             </Text>
-            <Text
-              color="white"
-              fontSize="18px"
-              width={{ base: 'auto', md: '820px' }}
-              margin="auto"
-              textAlign="center"
-            >
-              Baffle Space offers the owner of the winning ticket two options of claiming the Dream
-              Prize. The winner will reach out to us on Telegram to confirm their win and choose how
-              they wish to claim their prize.
-            </Text>
+
             <Flex
+              color="white"
               alignItems="center"
               justifyContent="space-between"
-              width={{ base: 'auto', md: '500px' }}
+              width={{ base: 'auto', md: '600px' }}
               margin="auto"
               marginY="60px"
+              gap="20px"
               direction={{ base: 'column', md: 'row' }}
             >
-              <Box lineHeight="46px">
+              <Box
+                borderRadius="5px"
+                lineHeight="46px"
+                width="300px"
+                background="#474747"
+                padding="20px"
+              >
                 <Text margin="0" fontSize="30px">
                   get your
                 </Text>
@@ -161,7 +170,13 @@ const GamePage = () => {
                   or
                 </Text>
               </Box>
-              <Box lineHeight="46px">
+              <Box
+                borderRadius="5px"
+                lineHeight="46px"
+                width="300px"
+                background="#474747"
+                padding="20px"
+              >
                 <Text margin="0" fontSize="30px">
                   get your
                 </Text>
@@ -170,6 +185,18 @@ const GamePage = () => {
                 </Text>
               </Box>
             </Flex>
+            <Text
+              fontWeight="900"
+              textAlign="center"
+              color="black.700"
+              fontSize="2xl"
+              marginY="50px"
+            >
+              <Link href="/whitepaper#gameplay">
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                <a className={styles.link}>Read More</a>
+              </Link>
+            </Text>
           </Box>
         </Container>
       </Box>

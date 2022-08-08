@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Center,
   Drawer,
   DrawerCloseButton,
@@ -10,10 +9,8 @@ import {
   Text,
 } from '@chakra-ui/react';
 import { useRef } from 'react';
-import { FaTwitter } from 'react-icons/fa';
 
 import ParticipateToWhitelist from '@/root/components/landingPage/participateToWhitelist';
-import ReloadWhiteList from '@/root/components/landingPage/reloadWhiteList';
 
 interface IWhiteListDrawerProps {
   isOpen: boolean;
@@ -23,9 +20,9 @@ interface IWhiteListDrawerProps {
 const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
   const btnRef = useRef<HTMLButtonElement>(null);
 
-  const redirect = () => {
-    window.location.assign('https://twitter.com/');
-  };
+  // const redirect = () => {
+  //   window.location.assign('https://twitter.com/');
+  // };
 
   return (
     <Drawer size="full" isOpen={isOpen} placement="top" onClose={onClose} finalFocusRef={btnRef}>
@@ -43,36 +40,50 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
           justifyContent="center"
           alignItems="center"
         >
-          <Center flexDirection="column">
-            <Box mb={{ base: 5, md: 20 }}>
-              <ReloadWhiteList fontSize="20px" />
-            </Box>
-            <Box lineHeight="75px">
+          <Center
+            className="HELLOOOOOOOO"
+            flexDirection="column"
+            paddingBottom={{ base: '60px', md: '0' }}
+          >
+            <Box lineHeight="75px" paddingX={{ base: '25px', md: '10px' }}>
               <Flex
                 gap={2}
                 direction={{ base: 'column', md: 'column' }}
                 lineHeight={{ base: '1.6', md: 'auto' }}
               >
-                <Text fontSize="30px" textTransform="uppercase" color="black" fontWeight="900">
+                <Text
+                  fontSize={{ base: '4.5vw', md: '30px' }}
+                  textTransform="uppercase"
+                  color="black"
+                  fontWeight="900"
+                >
                   Only 500 Spots on the Whitelist for
                 </Text>
-                <Text fontSize="30px" textTransform="uppercase" color="black" fontWeight="900">
+                <Text
+                  fontSize={{ base: '5vw', md: '30px' }}
+                  textTransform="uppercase"
+                  color="black"
+                  fontWeight="900"
+                >
                   Baffle Space Genesis NFTs with
                 </Text>
                 <Text
-                  position="relative"
-                  bottom="20px"
-                  fontSize="60px"
+                  fontSize={{ base: '13vw', md: '60px' }}
                   textTransform="uppercase"
                   color="black"
                   fontWeight="900"
                 >
                   25% off
                 </Text>
-                <Text fontSize="30px" textTransform="uppercase" color="black" fontWeight="900">
+                <Text fontSize={{ base: '4.5vw', md: '25px' }} color="black" fontWeight="900">
                   and the power to
                 </Text>
-                <Text fontSize="30px" textTransform="uppercase" color="black" fontWeight="900">
+                <Text
+                  fontSize={{ base: '13vw', md: '60px' }}
+                  textTransform="uppercase"
+                  color="black"
+                  fontWeight="900"
+                >
                   Earn up to 95ETH
                 </Text>
               </Flex>
@@ -83,7 +94,7 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
                 margin="auto"
                 textAlign="center"
                 px="15px"
-                fontSize="25px"
+                fontSize={{ base: '5vw', md: '25px' }}
                 color="black"
               >
                 Whitelisted owners of Baffle Space NFTs will be the first to earn 5% from the price
@@ -91,27 +102,13 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
               </Text>
             </Box>
 
-            <Box mt={10}>
-              <Text px="20px" fontWeight="bold" color="black">
-                At launch, whitelisted players will have 7 days to mint their NFTs with 30%
-                discount.
+            <Box mt={5}>
+              <Text fontSize={{ base: '5vw', md: '25px' }} px="20px" color="black">
+                At launch, whitelisted players will have 24h to mint their NFTs <br />
+                with 25% off before the general minting goes live.
               </Text>
             </Box>
             <ParticipateToWhitelist />
-            <Box background="yellow.300" width="100vw" mt={20} py={5} fontSize="20px">
-              <Button
-                onClick={redirect}
-                width="100%"
-                leftIcon={<FaTwitter />}
-                color="black"
-                fontSize={{ base: '30px', sm: '50px' }}
-                fontWeight="900"
-                background="0"
-                variant="link"
-              >
-                follow us on Twitter
-              </Button>
-            </Box>
           </Center>
         </Box>
       </DrawerContent>

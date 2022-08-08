@@ -42,19 +42,21 @@ const Hero = () => {
                 Home of the play to win &amp; earn games
               </Text>
             </Box>
-            <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'row' }}>
+            <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'column' }}>
               <Button
                 onClick={() => router.push('/nfts')}
                 rounded="full"
                 variant="solid"
                 size="lg"
                 px={6}
+                width={{ base: 'auto', md: '60%' }}
                 colorScheme="yellow"
               >
                 NFTs
               </Button>
               <Button
                 onClick={() => router.push('/game')}
+                width={{ base: 'auto', md: '60%' }}
                 variant="outline"
                 color="white"
                 rounded="full"
@@ -69,7 +71,7 @@ const Hero = () => {
                   color: 'black.900',
                 }}
               >
-                Gameplay
+                The Gameplay
               </Button>
             </Stack>
           </Stack>
