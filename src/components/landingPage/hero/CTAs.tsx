@@ -2,7 +2,11 @@ import React from 'react';
 import { Button, Stack } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
-const CtAs = () => {
+interface CTAsProps {
+  mobileVersion: boolean;
+}
+
+const CTAs = ({ mobileVersion }: CTAsProps) => {
   const router = useRouter();
 
   return (
@@ -28,6 +32,7 @@ const CtAs = () => {
         fontWeight="normal"
         borderWidth="3px"
         borderColor="black.800"
+        background={mobileVersion ? 'black.800' : 'transparent'}
         px={6}
         _hover={{
           textDecoration: 'none',
@@ -41,4 +46,4 @@ const CtAs = () => {
   );
 };
 
-export default CtAs;
+export default CTAs;

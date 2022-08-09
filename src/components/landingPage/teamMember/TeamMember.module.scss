@@ -5,6 +5,7 @@
 
 .imageWrapper {
   position: relative;
+  height: 400px;
 }
 
 .memberInfo {
@@ -16,8 +17,8 @@
   margin: 5px 0;
 }
 
-.role {
-  position: relative;
+.role,
+.position{
   text-transform: uppercase;
   font-weight: bold;
 }

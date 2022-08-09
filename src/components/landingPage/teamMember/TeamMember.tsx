@@ -6,17 +6,24 @@ import styles from './TeamMember.module.scss';
 interface AlertComponentProps {
   children: ReactNode;
   name: string;
+  memberPosition: string;
   memberRole: string;
   imageUrl: string;
 }
 
-const TeamMember = ({ children, name, memberRole, imageUrl }: AlertComponentProps) => {
+const TeamMember = ({
+  children,
+  name,
+  memberPosition,
+  memberRole,
+  imageUrl,
+}: AlertComponentProps) => {
   return (
     <section className={styles.teamCardWrapper}>
       <section className={styles.imageWrapper}>
         <Image
           borderRadius="5px"
-          alt="Hero Image"
+          alt="Team member photo"
           fit="cover"
           align="center"
           h="100%"
@@ -25,8 +32,9 @@ const TeamMember = ({ children, name, memberRole, imageUrl }: AlertComponentProp
           src={imageUrl}
         />
       </section>
-      <section className={styles.member}>
+      <section className={styles.memberInfo}>
         <p className={styles.name}>{name}</p>
+        <p className={styles.position}>{memberPosition}</p>
         <p className={styles.role}>{memberRole}</p>
         <p className={styles.description}>{children}</p>
       </section>

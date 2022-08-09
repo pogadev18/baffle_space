@@ -1,6 +1,6 @@
 import { Container, Stack, Box, Heading, Text } from '@chakra-ui/react';
 
-import CTAs from '@/root/components/landingPage/hero/CTAs';
+import CTAs from './CTAs';
 
 import styles from './Hero.module.scss';
 
@@ -13,7 +13,7 @@ const Hero = () => {
       backgroundPosition="center center"
     >
       <Container
-        height={{ base: '500px', md: 'calc(100vh - 128px)' }}
+        height={{ base: '620px', md: 'calc(100vh - 128px)' }}
         maxW="8xl"
         position="relative"
         paddingX={{ base: '25px', md: '40px' }}
@@ -51,8 +51,17 @@ const Hero = () => {
                 Home of the play to win &amp; earn games
               </Text>
             </Box>
-            <CTAs />
+            <CTAs mobileVersion={false} />
           </Stack>
+          <Box
+            position="absolute"
+            bottom="20px"
+            left="25px"
+            right="25px"
+            display={{ base: 'block', md: 'none' }}
+          >
+            <CTAs mobileVersion />
+          </Box>
         </Stack>
       </Container>
     </Box>

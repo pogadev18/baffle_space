@@ -17,13 +17,13 @@ const GamePage = () => {
 
       <Box width="100%" background="black.900">
         <Container maxW="8xl" paddingX={{ base: '25px', md: '40px' }}>
-          <Box textAlign="center" marginTop="60px">
+          <Box textAlign="center" marginTop={{ base: '25px', md: '60px' }}>
             <Heading
               as="h1"
               fontSize={{ base: '14vw', sm: '70px' }}
               textTransform="uppercase"
               fontWeight="900"
-              marginBottom="60px"
+              marginBottom={{ base: '25px', md: '60px' }}
             >
               the <span style={{ color: '#ffc100' }}>Game</span>
               <span className={styles.titlePlayPart}>play</span>

@@ -12,14 +12,14 @@ const WhitepaperPage = () => {
 
       <Box width="100%" background="black.900">
         <Container maxW="8xl" paddingX={{ base: '25px', md: '40px' }}>
-          <Box textAlign="center" marginTop="60px">
+          <Box textAlign="center" marginTop={{ base: '25px', md: '60px' }}>
             <Heading
               as="h1"
               fontSize={{ base: '13vw', sm: '70px' }}
               textTransform="uppercase"
               fontWeight="900"
               color="white"
-              marginBottom="60px"
+              marginBottom={{ base: '25px', md: '60px' }}
             >
               Whitepaper
             </Heading>

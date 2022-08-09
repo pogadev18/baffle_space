@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import detectEthereumProvider from '@metamask/detect-provider';
+import { useRouter } from 'next/router';
 
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { useMoralis } from 'react-moralis';
@@ -26,7 +27,7 @@ import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
 import { METAMASK_APP_URL } from '@/root/constants';
 import { renderLinksUrl } from '@/root/utils/utilityFunctions';
 
-const Links = ['Roadmap', 'The gameplay', 'NFTs', 'Whitepaper', 'Team'];
+const Links = ['The gameplay', 'NFTs', 'Roadmap', 'Team', 'Whitepaper'];
 
 const AlertComponent = dynamic(() => import('@/root/components/alert'));
 const Dashboard = dynamic(() => import('@/root/components/dashboard'));
@@ -44,6 +45,7 @@ const MetamaskHelpText = () => (
 );
 
 const LandingPageHeader = () => {
+  const router = useRouter();
   const [metamaskAvailability, setMetamaskAvailability] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isAuthenticated, authenticate, isAuthenticating, authError } = useMoralis();
@@ -179,28 +181,35 @@ const LandingPageHeader = () => {
               </Stack>
             </Box>
           ) : null}
-          <Box marginY={5} display={{ md: 'none' }}>
-            <Heading
-              marginBottom="10px"
-              lineHeight={1.1}
-              fontWeight={700}
-              fontSize={{ base: '15vw', sm: '80px' }}
-            >
-              <Text color="white" as="span" textTransform="uppercase" position="relative">
-                Baffle
-              </Text>
-              <Text textTransform="uppercase" as="span" color="yellow.400" fontWeight="900">
-                S
-                <Text as="span" textTransform="uppercase" fontSize="40px" fontWeight="900">
-                  pace
+          {router.pathname === '/' && (
+            <Box marginY={5} display={{ md: 'none' }}>
+              <Heading
+                marginBottom="10px"
+                lineHeight={1.1}
+                fontWeight={700}
+                fontSize={{ base: '12vw', sm: '80px' }}
+              >
+                <Text color="white" as="span" textTransform="uppercase" position="relative">
+                  Baffle&nbsp;
                 </Text>
+                <Text textTransform="uppercase" as="span" color="yellow.400" fontWeight="900">
+                  S
+                  <Text as="span" textTransform="uppercase" fontSize="40px" fontWeight="900">
+                    pace
+                  </Text>
+                </Text>
+                <br />
+              </Heading>
+              <Text
+                color="white"
+                fontWeight="900"
+                fontSize={{ base: '7vw', sm: '80px' }}
+                marginTop="0"
+              >
+                Raffles for dreams and baffling wins!
               </Text>
-              <br />
-            </Heading>
-            <Text color="white" fontWeight="900" fontSize="3xl" marginTop="0">
-              Raffles for dreams and baffling wins!
-            </Text>
-          </Box>
+            </Box>
+          )}
         </Container>
       </Box>
     </>
