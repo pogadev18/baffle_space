@@ -40,11 +40,7 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
           justifyContent="center"
           alignItems="center"
         >
-          <Center
-            className="HELLOOOOOOOO"
-            flexDirection="column"
-            paddingBottom={{ base: '60px', md: '0' }}
-          >
+          <Center flexDirection="column" paddingBottom={{ base: '60px', md: '0' }}>
             <ParticipateToWhitelist />
             <br />
             <Box lineHeight="75px" paddingX={{ base: '25px', md: '10px' }}>
@@ -70,7 +66,7 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
                   Baffle Space Genesis NFTs with
                 </Text>
                 <Text
-                  fontSize={{ base: '13vw', md: '60px' }}
+                  fontSize={{ base: '9vw', md: '60px' }}
                   textTransform="uppercase"
                   color="black"
                   fontWeight="900"
@@ -81,7 +77,7 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
                   and the power to
                 </Text>
                 <Text
-                  fontSize={{ base: '13vw', md: '60px' }}
+                  fontSize={{ base: '9vw', md: '60px' }}
                   textTransform="uppercase"
                   color="black"
                   fontWeight="900"
@@ -96,7 +92,7 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
                 margin="auto"
                 textAlign="center"
                 px="15px"
-                fontSize={{ base: '5vw', md: '25px' }}
+                fontSize={{ base: '18px', md: '25px' }}
                 color="black"
               >
                 Whitelisted owners of Baffle Space NFTs will be the first to earn 5% from the price
@@ -105,9 +101,9 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
             </Box>
 
             <Box mt={5}>
-              <Text fontSize={{ base: '5vw', md: '25px' }} px="20px" color="black">
-                At launch, whitelisted players will have 24h to mint their NFTs <br />
-                with 25% off before the general minting goes live.
+              <Text fontSize={{ base: '18px', md: '25px' }} px="20px" color="black">
+                At launch, whitelisted players will have 24h to mint their NFTs with 25% off before
+                the general minting goes live.
               </Text>
             </Box>
           </Center>

@@ -4,16 +4,13 @@ import {
   Button,
   Container,
   Flex,
-  Heading,
   HStack,
   IconButton,
   Stack,
-  Text,
   useDisclosure,
 } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import detectEthereumProvider from '@metamask/detect-provider';
-import { useRouter } from 'next/router';
 
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { useMoralis } from 'react-moralis';
@@ -45,7 +42,6 @@ const MetamaskHelpText = () => (
 );
 
 const LandingPageHeader = () => {
-  const router = useRouter();
   const [metamaskAvailability, setMetamaskAvailability] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isAuthenticated, authenticate, isAuthenticating, authError } = useMoralis();
@@ -91,12 +87,18 @@ const LandingPageHeader = () => {
       <ParticipateToWhiteListBanner />
 
       <Box width="100%" bg="black.900">
-        <Container paddingX={{ base: '25px', md: '40px' }} maxW="8xl">
+        <Container
+          position="relative"
+          paddingBottom={{ base: '1.25rem', md: '0' }}
+          paddingX={{ base: '25px', md: '40px' }}
+          maxW="8xl"
+        >
           <Flex
             h={16}
             alignItems="center"
             justifyContent={{ base: 'auto', md: 'space-between' }}
             wrap={{ base: 'wrap' }}
+            className="SDASDASDASDASDASDASDAS"
           >
             <IconButton
               order={1}
@@ -181,35 +183,6 @@ const LandingPageHeader = () => {
               </Stack>
             </Box>
           ) : null}
-          {router.pathname === '/' && (
-            <Box marginY={5} display={{ md: 'none' }}>
-              <Heading
-                marginBottom="10px"
-                lineHeight={1.1}
-                fontWeight={700}
-                fontSize={{ base: '12vw', sm: '80px' }}
-              >
-                <Text color="white" as="span" textTransform="uppercase" position="relative">
-                  Baffle&nbsp;
-                </Text>
-                <Text textTransform="uppercase" as="span" color="yellow.400" fontWeight="900">
-                  S
-                  <Text as="span" textTransform="uppercase" fontSize="40px" fontWeight="900">
-                    pace
-                  </Text>
-                </Text>
-                <br />
-              </Heading>
-              <Text
-                color="white"
-                fontWeight="900"
-                fontSize={{ base: '7vw', sm: '80px' }}
-                marginTop="0"
-              >
-                Raffles for dreams and baffling wins!
-              </Text>
-            </Box>
-          )}
         </Container>
       </Box>
     </>

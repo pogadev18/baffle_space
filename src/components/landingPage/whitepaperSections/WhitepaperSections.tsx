@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { Heading } from '@chakra-ui/react';
 
 import Roadmap from '@/root/pages/roadmap';
+import CoreTeamMembers from '@/root/components/landingPage/coreTeamMembers';
+
 import { getOffset } from '@/root/utils/utilityFunctions';
 
 import Introduction from './Introduction';
@@ -81,6 +83,12 @@ const WhitepaperSections = () => {
               <a>Roadmap</a>
             </Link>
           </li>
+          <li>
+            <Link scroll href="#team">
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+              <a>Team</a>
+            </Link>
+          </li>
         </ul>
       )}
 
@@ -113,6 +121,18 @@ const WhitepaperSections = () => {
             Roadmap
           </Heading>
           <Roadmap isOnWhitepaperPage />
+        </section>
+        <section id="team">
+          <Heading
+            as="h3"
+            fontSize={{ base: '11vw', sm: '25px' }}
+            fontWeight="900"
+            color="white"
+            marginBottom="20px"
+          >
+            Team
+          </Heading>
+          <CoreTeamMembers desktopNumberOfColumns={2} />
         </section>
       </section>
     </div>

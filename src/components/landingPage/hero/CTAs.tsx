@@ -30,14 +30,15 @@ const CTAs = ({ mobileVersion }: CTAsProps) => {
         rounded="full"
         size="lg"
         fontWeight="normal"
-        borderWidth="3px"
-        borderColor="black.800"
+        borderWidth="1px"
+        borderColor={mobileVersion ? 'black.800' : 'white'}
         background={mobileVersion ? 'black.800' : 'transparent'}
         px={6}
         _hover={{
           textDecoration: 'none',
           bg: 'yellow.400',
           color: 'black.900',
+          borderColor: 'yellow.400',
         }}
       >
         The Gameplay

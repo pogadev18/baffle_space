@@ -1,6 +1,7 @@
-import { Container, Stack, Box, Heading, Text } from '@chakra-ui/react';
+import { Container, Stack, Box } from '@chakra-ui/react';
 
 import CTAs from './CTAs';
+import HeroText from './HeroText';
 
 import styles from './Hero.module.scss';
 
@@ -13,7 +14,8 @@ const Hero = () => {
       backgroundPosition="center center"
     >
       <Container
-        height={{ base: '620px', md: 'calc(100vh - 128px)' }}
+        display={{ base: 'block', md: 'flex' }}
+        height={{ base: '100vh', md: 'calc(100vh - 128px)' }}
         maxW="8xl"
         position="relative"
         paddingX={{ base: '25px', md: '40px' }}
@@ -21,37 +23,14 @@ const Hero = () => {
         <Stack
           align="center"
           spacing={{ base: 8, sm: 10 }}
-          py={{ base: 10, md: 40 }}
+          py={{ base: 0, md: 40 }}
           direction={{ base: 'column', lg: 'row' }}
         >
-          <Stack className={styles.heroInfo} display={{ base: 'none', md: 'block' }}>
-            <Box marginBottom={10}>
-              <Heading lineHeight={1.1} fontWeight={700} fontSize={{ base: '15vw', sm: '80px' }}>
-                <Text color="white" as="span" textTransform="uppercase" position="relative">
-                  Baffle
-                </Text>
-                <Text textTransform="uppercase" as="span" color="yellow.400" fontWeight="900">
-                  S
-                  <Text as="span" textTransform="uppercase" fontSize="40px" fontWeight="900">
-                    pace
-                  </Text>
-                </Text>
-                <br />
-              </Heading>
-              <Text color="white" fontWeight="900" fontSize="3xl" marginTop="0">
-                Raffles for dreams and baffling wins!
-              </Text>
-              <Text
-                color="white"
-                fontWeight="bold"
-                textTransform="uppercase"
-                marginTop="0"
-                fontSize="20px"
-              >
-                Home of the play to win &amp; earn games
-              </Text>
+          <Stack className={styles.heroInfo}>
+            <HeroText />
+            <Box display={{ base: 'none', md: 'block' }}>
+              <CTAs mobileVersion={false} />
             </Box>
-            <CTAs mobileVersion={false} />
           </Stack>
           <Box
             position="absolute"

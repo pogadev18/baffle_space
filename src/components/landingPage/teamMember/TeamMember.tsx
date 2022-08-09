@@ -33,10 +33,10 @@ const TeamMember = ({
         />
       </section>
       <section className={styles.memberInfo}>
-        <p className={styles.name}>{name}</p>
-        <p className={styles.position}>{memberPosition}</p>
-        <p className={styles.role}>{memberRole}</p>
-        <p className={styles.description}>{children}</p>
+        <span className={styles.name}>{name}</span>
+        <span className={styles.position}>{memberPosition}</span>
+        <span className={styles.role}>{memberRole}</span>
+        <span className={styles.description}>{children}</span>
       </section>
     </section>
   );
