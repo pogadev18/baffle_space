@@ -11,7 +11,7 @@ const Introduction = () => {
         color="white"
         marginBottom="20px"
       >
-        Introduction to global context
+        Introduction to the global context
       </Heading>
       <p>
         The problem of every financial system at its beginning is belief, belief that it could

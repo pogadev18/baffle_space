@@ -98,9 +98,9 @@ const LandingPageHeader = () => {
             alignItems="center"
             justifyContent={{ base: 'auto', md: 'space-between' }}
             wrap={{ base: 'wrap' }}
-            className="SDASDASDASDASDASDASDAS"
           >
             <IconButton
+              data-ismenuopen={isOpen}
               order={1}
               marginTop={{ base: 5, md: 0 }}
               variant="outline"
@@ -176,7 +176,7 @@ const LandingPageHeader = () => {
                 )}
 
                 {Links.map((link) => (
-                  <NavLink url={renderLinksUrl(link)} key={link}>
+                  <NavLink onClick={onClose} url={renderLinksUrl(link)} key={link}>
                     {link}
                   </NavLink>
                 ))}

@@ -25,8 +25,8 @@ const NFTMint = () => {
         <li>
           <strong> Baffle Space Games Payouts</strong>
           <p>
-            Dream Prize payouts, if chosen as the way of claiming the win, will be sent to the
-            winning ticket address.
+            Dream Prize payouts, if chosen as the way of claiming the win , will be sent to the
+            winning ticket address after the draw within a timeframe that will not exceed 24 hours.
           </p>
           <p>
             Secondary draw prizes will be sent to the winning tickets addresses after the draw

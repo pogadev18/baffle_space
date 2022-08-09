@@ -2,25 +2,10 @@
   position: relative;
   color: white;
   margin-bottom: 30px;
-
-  &:nth-child(1),
-  &:nth-child(2) {
-    width: 400px;
-    margin: auto;
-
-    @media screen and (max-width: 767px) {
-      width: auto;
-    }
-  }
 }
 
 .imageWrapper {
   position: relative;
-  height: 500px;
-
-  @media screen and (max-width: 767px) {
-    height: auto;
-  }
 }
 
 .memberInfo {

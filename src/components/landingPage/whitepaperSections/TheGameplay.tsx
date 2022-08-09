@@ -74,14 +74,14 @@ const TheGameplay = () => {
               <span className={styles.nestedTitle}>Validation</span>
               <p>
                 Each game will play out if within the time-frame the minimum validation amount is
-                raised by ticket sales.* The minimum validation amount represents the value of the
+                raised by ticket sales. The minimum validation amount represents the value of the
                 prize the raffle is held for.
               </p>
             </li>
             <li>
               <span className={styles.nestedTitle}>Earnings of NFT owning players</span>
               <p>
-                <Link href="/whitepaper#gameStart">
+                <Link href="/whitepaper#genesisNFT">
                   {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                   <a className={styles.link}>Read More</a>
                 </Link>

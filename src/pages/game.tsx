@@ -40,18 +40,34 @@ const GamePage = () => {
             <SimpleGrid columns={{ base: 1, md: 3, sm: 2 }} spacing={10}>
               <ImageCard
                 categoryTitle="dream electronics"
-                url="whitepaper"
+                url="whitepaper#gameplay"
                 imageUrl="./electronics.jpg"
               />
-              <ImageCard categoryTitle="dream cars" url="whitepaper" imageUrl="./car.jpg" />
-              <ImageCard categoryTitle="dream bikes" url="whitepaper" imageUrl="./moto.jpg" />
-              <ImageCard categoryTitle="dream homes" url="whitepaper" imageUrl="./house.jpg" />
+              <ImageCard
+                categoryTitle="dream cars"
+                url="whitepaper#gameplay"
+                imageUrl="./car.jpg"
+              />
+              <ImageCard
+                categoryTitle="dream bikes"
+                url="whitepaper#gameplay"
+                imageUrl="./moto.jpg"
+              />
+              <ImageCard
+                categoryTitle="dream homes"
+                url="whitepaper#gameplay"
+                imageUrl="./house.jpg"
+              />
               <ImageCard
                 categoryTitle="dream experiences"
-                url="whitepaper"
+                url="whitepaper#gameplay"
                 imageUrl="./holiday.jpg"
               />
-              <ImageCard categoryTitle="golden dream" url="whitepaper" imageUrl="./gold.jpg" />
+              <ImageCard
+                categoryTitle="golden dream"
+                url="whitepaper#gameplay"
+                imageUrl="./gold.jpg"
+              />
             </SimpleGrid>
             <Text
               fontWeight="900"
@@ -60,7 +76,12 @@ const GamePage = () => {
               fontSize="2xl"
               marginTop="50px"
             >
-              More Dream Prize Categories will be added soon
+              <Link href="/whitepaper#gameplay">
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                <a className={styles.link}>
+                  <strong> More Dream Prize Categories will be added soon</strong>
+                </a>
+              </Link>
             </Text>
           </Box>
         </Container>

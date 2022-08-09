@@ -34,7 +34,7 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
         bridge the space between business and tech for communities.
       </TeamMember>
       <TeamMember
-        imageUrl="./bogdan.jpeg"
+        imageUrl="./bogdan.jpg"
         name="Bogdan Pogăcean"
         memberPosition="Co-Founder"
         memberRole="Developer"

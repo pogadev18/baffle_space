@@ -63,7 +63,7 @@ const Faqs = () => {
           <h2>
             <AccordionButton _expanded={{ bg: 'yellow.400', color: 'black' }}>
               <Box fontWeight="900" flex="1" textAlign="left">
-                How can I earn?
+                How do I earn?
               </Box>
               <AccordionIcon />
             </AccordionButton>
@@ -76,8 +76,15 @@ const Faqs = () => {
             </button>{' '}
             <br />
             <br /> After the Baffle Space Gaming dApp goes live, we will share 60% of the revenue
-            with NFT owning players, so each raffle you participate in will guarantee you a piece of
-            the pie on top of the chances to win the Dream Prize.
+            with NFT owners.
+            <br />
+            <br />
+            <Link href="/whitepaper#genesisNFT">
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+              <a className={styles.link}>
+                <strong style={{ textDecoration: 'underline' }}>Read More</strong>
+              </a>
+            </Link>
           </AccordionPanel>
         </AccordionItem>
         <AccordionItem background="black.900" borderRadius="5px">
