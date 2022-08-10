@@ -12,7 +12,7 @@ const HomeFooter = () => {
           gap={{ base: 5, md: 20 }}
           direction={{ base: 'column', md: 'row' }}
         >
-          <Box flex={2}>
+          <Box flex={1}>
             <Faqs />
           </Box>
           <Box flex={1}>

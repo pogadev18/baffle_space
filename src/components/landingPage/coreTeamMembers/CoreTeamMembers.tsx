@@ -46,7 +46,7 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
       <TeamMember
         imageUrl={dummyImage}
         name="Cosmin Hodiș"
-        memberPosition="Videography Director"
+        memberPosition="Visuals Director"
         memberRole="Videographer & Designer"
       >
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, aspernatur consequatur

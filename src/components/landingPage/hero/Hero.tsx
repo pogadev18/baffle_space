@@ -18,9 +18,10 @@ const Hero = () => {
         height={{ base: '100vh', md: 'calc(100vh - 128px)' }}
         maxW="8xl"
         position="relative"
-        paddingX={{ base: '25px', md: '40px' }}
+        paddingX={{ base: '0px', md: '40px' }}
       >
         <Stack
+          className="info-container"
           align="center"
           spacing={{ base: 8, sm: 10 }}
           py={{ base: 0, md: 40 }}

@@ -25,7 +25,7 @@ const TeamPage = () => {
             </Heading>
           </Box>
           <Box marginY={{ base: '20px', sm: '60px' }}>
-            <CoreTeamMembers desktopNumberOfColumns={2} />
+            <CoreTeamMembers desktopNumberOfColumns={4} />
           </Box>
         </Container>
       </Box>

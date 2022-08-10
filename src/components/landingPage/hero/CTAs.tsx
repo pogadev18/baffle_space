@@ -10,21 +10,25 @@ const CTAs = ({ mobileVersion }: CTAsProps) => {
   const router = useRouter();
 
   return (
-    <Stack spacing={{ base: 4, sm: 6 }} direction={{ base: 'column', sm: 'column' }}>
+    <Stack
+      alignItems="center"
+      spacing={{ base: 4, sm: 6 }}
+      direction={{ base: 'column', sm: 'column' }}
+    >
       <Button
         onClick={() => router.push('/nfts')}
         rounded="full"
         variant="solid"
         size="lg"
         px={6}
-        width={{ base: 'auto', md: '100%' }}
+        width={{ base: '100%', md: '80%' }}
         colorScheme="yellow"
       >
         NFTs
       </Button>
       <Button
         onClick={() => router.push('/game')}
-        width={{ base: 'auto', md: '100%' }}
+        width={{ base: '100%', md: '80%' }}
         variant="outline"
         color="white"
         rounded="full"

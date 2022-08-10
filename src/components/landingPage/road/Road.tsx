@@ -72,7 +72,7 @@ const Road = () => {
             Community Onboarding <span>Open Communication Channels</span>
           </p>
           <p className={styles.checkpointDescription}>
-            Community Earning Mechanism Setup <span>Initial Method to Earn</span>
+            Community Earning Mechanism Setup <span>Initial Methods to Earn</span>
           </p>
           <p className={styles.checkpointDescription}>
             Baffle Space NFT Genesis Collection Launch <span>Minting Enabled</span>

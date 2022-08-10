@@ -28,6 +28,18 @@ const GamePage = () => {
               the <span style={{ color: '#ffc100' }}>Game</span>
               <span className={styles.titlePlayPart}>play</span>
             </Heading>
+            <Box
+              marginBottom="60px"
+              marginRight="auto"
+              marginLeft="auto"
+              width={{ base: 'auto', md: '820px' }}
+              textAlign="center"
+              color="white"
+            >
+              <Text fontSize="18px">
+                The following steps describe how Baffle Space Games (raffles) will play out.
+              </Text>
+            </Box>
             <SectionTitle text="Choose your dream prize" textColor="white" />
 
             <Text color="white" marginTop="20px" fontSize="18px">
