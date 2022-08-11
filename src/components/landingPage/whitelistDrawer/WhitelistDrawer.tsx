@@ -41,8 +41,6 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
           alignItems="center"
         >
           <Center flexDirection="column" paddingBottom={{ base: '60px', md: '0' }}>
-            <ParticipateToWhitelist />
-            <br />
             <Box lineHeight="75px" paddingX={{ base: '25px', md: '10px' }}>
               <Flex
                 gap={2}
@@ -106,6 +104,7 @@ const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
                 the general minting goes live.
               </Text>
             </Box>
+            <ParticipateToWhitelist />
           </Center>
         </Box>
       </DrawerContent>

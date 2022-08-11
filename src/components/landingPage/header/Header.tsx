@@ -94,7 +94,7 @@ const LandingPageHeader = () => {
           maxW="8xl"
         >
           <Flex
-            h={16}
+            h="90px"
             alignItems="center"
             justifyContent={{ base: 'auto', md: 'space-between' }}
             wrap={{ base: 'wrap' }}
