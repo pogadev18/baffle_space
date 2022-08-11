@@ -7,14 +7,11 @@ interface CoreTeamMembersProps {
   desktopNumberOfColumns: number;
 }
 
-const dummyImage =
-  'https://thumbs.dreamstime.com/b/vector-illustration-avatar-dummy-logo-collection-image-icon-stock-isolated-object-set-symbol-web-137160339.jpg';
-
 const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
   return (
     <SimpleGrid columns={{ base: 1, md: desktopNumberOfColumns }} spacing={10} textAlign="center">
       <TeamMember
-        imageUrl="./calin.jpg"
+        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660245057/my-uploads/yq9xctpozxnbklwbilrp.webp"
         name="Călin Susa"
         memberPosition="Co-Founder"
         memberRole="Developer & Designer"
@@ -24,7 +21,7 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
         past 6 years.
       </TeamMember>
       <TeamMember
-        imageUrl="./teddy.jpg"
+        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660245072/my-uploads/khqvtkvzrigej6f2b5tl.webp"
         name="Theodor Gal"
         memberPosition="Co-Founder"
         memberRole=" Business & Community Strategist "
@@ -34,7 +31,7 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
         bridge the space between business and tech for communities.
       </TeamMember>
       <TeamMember
-        imageUrl="./bogdan.jpg"
+        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660244937/my-uploads/yhi1v2duaqayn5sbrojl.webp"
         name="Bogdan Pogăcean"
         memberPosition="Co-Founder"
         memberRole="Developer"
@@ -44,7 +41,7 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
         same kind of top tier &lsquo;dunks&rsquo;.
       </TeamMember>
       <TeamMember
-        imageUrl={dummyImage}
+        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660245064/my-uploads/cz8y8dmpdbd86iyrotlx.webp"
         name="Cosmin Hodiș"
         memberPosition="Visuals Director"
         memberRole="Videographer & Designer"
