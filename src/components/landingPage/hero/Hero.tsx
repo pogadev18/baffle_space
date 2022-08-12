@@ -17,22 +17,22 @@ const Hero = () => {
       backgroundPosition="center center"
     >
       <Container
-        display={{ base: 'block', md: 'flex' }}
-        height={{ base: '100vh', md: 'calc(100vh - 128px)' }}
+        display={{ base: 'block', lg: 'flex' }}
+        height={{ base: '100vh', lg: 'calc(100vh - 128px)' }}
         maxW="8xl"
         position="relative"
-        paddingX={{ base: '0px', md: '40px' }}
+        paddingX={{ base: '0px', lg: '40px' }}
       >
         <Stack
           className="info-container"
           align="center"
           spacing={{ base: 8, sm: 10 }}
-          py={{ base: 0, md: 40 }}
+          py={{ base: 0, lg: 40 }}
           direction={{ base: 'column', lg: 'row' }}
         >
           <Stack className={styles.heroInfo}>
             <HeroText />
-            <Box display={{ base: 'none', md: 'block' }}>
+            <Box display={{ base: 'none', lg: 'block' }}>
               <CTAs mobileVersion={false} />
             </Box>
           </Stack>
@@ -41,7 +41,7 @@ const Hero = () => {
             bottom="20px"
             left="25px"
             right="25px"
-            display={{ base: 'block', md: 'none' }}
+            display={{ base: 'block', lg: 'none' }}
           >
             <CTAs mobileVersion />
           </Box>

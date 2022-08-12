@@ -9,7 +9,11 @@ interface CoreTeamMembersProps {
 
 const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
   return (
-    <SimpleGrid columns={{ base: 1, md: desktopNumberOfColumns }} spacing={10} textAlign="center">
+    <SimpleGrid
+      columns={{ base: 1, lg: desktopNumberOfColumns, md: 2 }}
+      spacing={10}
+      textAlign="center"
+    >
       <TeamMember
         imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305121/my-uploads/imj0i8uywbt1kqxx5hpq.jpg"
         fallbackUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305115/my-uploads/p6l9f5o48qknioot7i7b.jpg"

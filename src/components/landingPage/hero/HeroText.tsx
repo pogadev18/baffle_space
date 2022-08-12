@@ -2,12 +2,12 @@ import { Box, Heading, Text } from '@chakra-ui/react';
 
 const HeroText = () => {
   return (
-    <Box marginBottom={{ base: 0, md: 10 }}>
+    <Box marginBottom={{ base: 0, lg: 10 }}>
       <Heading
         lineHeight={1.1}
         fontWeight={300}
-        fontSize={{ base: '11vw', md: '80px' }}
-        marginBottom={{ base: '10px', md: 0 }}
+        fontSize={{ base: '11vw', lg: '80px' }}
+        marginBottom={{ base: '10px', lg: 0 }}
       >
         <Text color="white" as="span" textTransform="uppercase" position="relative">
           Baffle.
@@ -19,19 +19,19 @@ const HeroText = () => {
       </Heading>
       <Text
         color="white"
-        width={{ base: 'auto', md: '80%' }}
+        width={{ base: 'auto', lg: '80%' }}
         textAlign="center"
         margin="auto"
         fontWeight="700"
-        lineHeight={{ base: '35px', md: 'auto' }}
-        fontSize={{ base: '28px', md: '25px' }}
+        lineHeight={{ base: '35px', lg: 'auto' }}
+        fontSize={{ base: '28px', lg: '25px' }}
         marginTop="0"
       >
         Raffles for dreams and baffling wins!
       </Text>
       <Text
         // display={{ base: 'none', md: 'block' }}
-        width={{ base: 'auto', md: '80%' }}
+        width={{ base: 'auto', lg: '80%' }}
         textAlign="center"
         margin="auto"
         color="white"

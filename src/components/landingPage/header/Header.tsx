@@ -112,7 +112,7 @@ const LandingPageHeader = () => {
                 isOpen ? <CloseIcon color="yellow.400" /> : <HamburgerIcon color="yellow.400" />
               }
               aria-label="Open Menu"
-              display={{ md: 'none' }}
+              display={{ lg: 'none' }}
               onClick={isOpen ? onClose : onOpen}
             />
             <HStack
@@ -124,7 +124,7 @@ const LandingPageHeader = () => {
               <Box>
                 <Logo />
               </Box>
-              <HStack as="nav" spacing={4} display={{ base: 'none', md: 'flex' }}>
+              <HStack as="nav" spacing={4} display={{ base: 'none', lg: 'flex' }}>
                 {Links.map((link) => (
                   <NavLink url={renderLinksUrl(link)} key={link}>
                     {link}
@@ -135,7 +135,7 @@ const LandingPageHeader = () => {
             <Flex
               marginTop={{ base: 15, md: 0 }}
               alignItems="center"
-              display={{ base: 'none', md: 'block' }}
+              display={{ base: 'none', lg: 'block' }}
             >
               {isAuthenticated && <Dashboard />}
               {!isAuthenticated && (
@@ -153,7 +153,7 @@ const LandingPageHeader = () => {
             </Flex>
           </Flex>
           {isOpen ? (
-            <Box pb={4} display={{ md: 'none' }}>
+            <Box pb={4} display={{ lg: 'none' }}>
               <Stack as="nav" spacing={4}>
                 {isAuthenticated && (
                   <Box width="100%" marginTop="10px">
