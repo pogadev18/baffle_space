@@ -31,11 +31,12 @@ const Dashboard = dynamic(() => import('@/root/components/dashboard'));
 
 const MetamaskHelpText = () => (
   <p>
-    In order to fully experience Baffle Space, you need access the website form Metamask. Click the
-    link to install Metamask or to open the application from metamask if you already installed it.
+    In order to fully experience Baffle Space, you need to access the website from MetaMask. Tap the
+    link below to install MetaMask or to open the website in MetaMask if you already have it.
+    <br />
     <p>
       <a href={METAMASK_APP_URL}>
-        <strong>tap to enter from MetaMask</strong>
+        <strong> Tap to enter from MetaMask</strong>
       </a>
     </p>
   </p>
@@ -73,7 +74,7 @@ const LandingPageHeader = () => {
   return (
     <>
       {!isAuthenticated && isMobile && !metamaskAvailability && (
-        <AlertComponent status={AlertStatusValues.Info} title="MetaMask mobile connection">
+        <AlertComponent status={AlertStatusValues.Info} title="MetaMask Mobile Access">
           <MetamaskHelpText />
         </AlertComponent>
       )}
