@@ -63,7 +63,7 @@ const GamePage = () => {
               <ImageCard
                 categoryTitle="dream bikes"
                 url="whitepaper#gameplay"
-                imageUrl="./moto.jpg"
+                imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660308033/my-uploads/zfnprssjmojd9bn09gle.jpg"
               />
               <ImageCard
                 categoryTitle="dream homes"
