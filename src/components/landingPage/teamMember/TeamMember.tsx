@@ -9,6 +9,8 @@ interface AlertComponentProps {
   memberPosition: string;
   memberRole: string;
   imageUrl: string;
+  fallbackUrl: string;
+  alternativeText: string;
 }
 
 const TeamMember = ({
@@ -17,19 +19,22 @@ const TeamMember = ({
   memberPosition,
   memberRole,
   imageUrl,
+  fallbackUrl,
+  alternativeText,
 }: AlertComponentProps) => {
   return (
     <section className={styles.teamCardWrapper}>
       <section className={styles.imageWrapper}>
         <Image
           borderRadius="5px"
-          alt="Team member photo"
+          alt={alternativeText}
           fit="cover"
           align="center"
           h="100%"
           w="100%"
           margin="auto"
           src={imageUrl}
+          fallbackSrc={fallbackUrl}
         />
       </section>
       <section className={styles.memberInfo}>

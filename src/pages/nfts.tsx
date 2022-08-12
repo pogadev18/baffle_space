@@ -37,37 +37,37 @@ const NFTs = () => {
               <Box>
                 <Image
                   borderRadius="5px"
-                  alt="Hero Image"
+                  alt="NFT 1"
                   fit="cover"
                   align="center"
                   h="100%"
                   w="100%"
                   margin="auto"
-                  src="/nft1.png"
+                  src="https://res.cloudinary.com/baffle-space/image/upload/v1660307007/my-uploads/zh5mcxlzoas2r6dvehta.jpg"
                 />
               </Box>
               <Box>
                 <Image
                   borderRadius="5px"
-                  alt="Hero Image"
+                  alt="NFT 2"
                   fit="cover"
                   align="center"
                   h="100%"
                   w="100%"
                   margin="auto"
-                  src="/nft2.png"
+                  src="https://res.cloudinary.com/baffle-space/image/upload/v1660307014/my-uploads/ubxq0nqrzdfeteh0hmxu.jpg"
                 />
               </Box>
               <Box>
                 <Image
                   borderRadius="5px"
-                  alt="Hero Image"
+                  alt="NFT 3"
                   fit="cover"
                   align="center"
                   h="100%"
                   w="100%"
                   margin="auto"
-                  src="/nft3.png"
+                  src="https://res.cloudinary.com/baffle-space/image/upload/v1660307000/my-uploads/y54afsabs4c83bs0v55c.jpg"
                 />
               </Box>
             </Flex>

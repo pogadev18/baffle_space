@@ -19,7 +19,7 @@ const ImageCard = ({ url, categoryTitle, imageUrl }: IImageCardProps) => {
     >
       <Image
         borderRadius="5px"
-        alt="Hero Image"
+        alt="Dream Category"
         fit="cover"
         align="center"
         h="100%"

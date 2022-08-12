@@ -53,12 +53,12 @@ const GamePage = () => {
               <ImageCard
                 categoryTitle="dream electronics"
                 url="whitepaper#gameplay"
-                imageUrl="./electronics.jpg"
+                imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660306672/my-uploads/lqt6cowbsyrzfhnskqzn.jpg"
               />
               <ImageCard
                 categoryTitle="dream cars"
                 url="whitepaper#gameplay"
-                imageUrl="./car.jpg"
+                imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660306665/my-uploads/pjmii2zzqgqkrldxpck1.jpg"
               />
               <ImageCard
                 categoryTitle="dream bikes"
@@ -68,17 +68,17 @@ const GamePage = () => {
               <ImageCard
                 categoryTitle="dream homes"
                 url="whitepaper#gameplay"
-                imageUrl="./house.jpg"
+                imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660306692/my-uploads/skshtzeko1iue6zpz9be.jpg"
               />
               <ImageCard
                 categoryTitle="dream experiences"
                 url="whitepaper#gameplay"
-                imageUrl="./holiday.jpg"
+                imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660306686/my-uploads/c2rd53pee4naw8jyo3rx.jpg"
               />
               <ImageCard
                 categoryTitle="golden dream"
                 url="whitepaper#gameplay"
-                imageUrl="./gold.jpg"
+                imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660306678/my-uploads/jpp1uyjumwmoduckasth.jpg"
               />
             </SimpleGrid>
             <Text

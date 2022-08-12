@@ -11,8 +11,10 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
   return (
     <SimpleGrid columns={{ base: 1, md: desktopNumberOfColumns }} spacing={10} textAlign="center">
       <TeamMember
-        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660245057/my-uploads/yq9xctpozxnbklwbilrp.webp"
+        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305121/my-uploads/imj0i8uywbt1kqxx5hpq.jpg"
+        fallbackUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305115/my-uploads/p6l9f5o48qknioot7i7b.jpg"
         name="Călin Susa"
+        alternativeText="Călin Susa"
         memberPosition="Co-Founder"
         memberRole="Developer & Designer"
       >
@@ -21,8 +23,10 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
         past 6 years.
       </TeamMember>
       <TeamMember
-        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660245072/my-uploads/khqvtkvzrigej6f2b5tl.webp"
+        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305142/my-uploads/fribcjc3c1ngimqbribo.jpg"
+        fallbackUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305137/my-uploads/ssoa1i7ciylmlewmjacv.jpg"
         name="Theodor Gal"
+        alternativeText="Theodor Gal"
         memberPosition="Co-Founder"
         memberRole=" Business & Community Strategist "
       >
@@ -31,8 +35,10 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
         bridge the space between business and tech for communities.
       </TeamMember>
       <TeamMember
-        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660244937/my-uploads/yhi1v2duaqayn5sbrojl.webp"
+        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305106/my-uploads/jrh6hidqkebeujcl0y8m.jpg"
+        fallbackUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305100/my-uploads/cqhgprnd8zfytc7nptjz.jpg"
         name="Bogdan Pogăcean"
+        alternativeText="Bogdan Pogăcean"
         memberPosition="Co-Founder"
         memberRole="Developer"
       >
@@ -41,8 +47,10 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
         same kind of top tier &lsquo;dunks&rsquo;.
       </TeamMember>
       <TeamMember
-        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660245064/my-uploads/cz8y8dmpdbd86iyrotlx.webp"
         name="Cosmin Hodiș"
+        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305131/my-uploads/rpsognl0d3tdkemhqebp.jpg"
+        fallbackUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305126/my-uploads/qppgn9bzv8nk2rqtmedl.jpg"
+        alternativeText="Cosmin Hodiș"
         memberPosition="Visuals Director"
         memberRole="Videographer & Designer"
       >

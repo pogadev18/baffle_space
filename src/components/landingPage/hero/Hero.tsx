@@ -9,7 +9,10 @@ const Hero = () => {
   return (
     <Box
       width="100%"
-      backgroundImage={{ base: 'url(./mobile_hero.jpg)', md: 'url(./desktop_hero.jpg)' }}
+      backgroundImage={{
+        base: 'url(https://res.cloudinary.com/baffle-space/image/upload/v1660306371/my-uploads/hdeogqjyfbbkruq1ngos.webp), url(https://res.cloudinary.com/baffle-space/image/upload/v1660306360/my-uploads/cu5sdivswvpow7e0ut5c.jpg)',
+        md: 'url(https://res.cloudinary.com/baffle-space/image/upload/v1660305975/my-uploads/qwjzoktwccp8ouhrvurn.webp), url(https://res.cloudinary.com/baffle-space/image/upload/v1660305968/my-uploads/xo4aetcflcjefqacyqgv.jpg)',
+      }}
       backgroundSize="cover"
       backgroundPosition="center center"
     >
