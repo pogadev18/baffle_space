@@ -5,8 +5,8 @@ import {
   AlertDescription,
   CloseButton,
   useDisclosure,
+  Box,
 } from '@chakra-ui/react';
-import { Box } from '@chakra-ui/layout';
 import { ReactNode } from 'react';
 
 import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
@@ -21,7 +21,7 @@ const AlertComponent = ({ status, title, children }: AlertComponentProps) => {
   const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
 
   return isOpen ? (
-    <Alert status={status} overflow="inherit">
+    <Alert paddingLeft={{ base: '20px', lg: '170px' }} status={status} overflow="inherit">
       <AlertIcon />
       <Box>
         <AlertTitle>{title}</AlertTitle>

@@ -14,7 +14,6 @@ import detectEthereumProvider from '@metamask/detect-provider';
 
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { useMoralis } from 'react-moralis';
-import { isMobile } from 'react-device-detect';
 
 import Logo from '@/root/components/logo';
 import ParticipateToWhiteListBanner from '@/root/components/landingPage/participateToWhiteListBanner';
@@ -30,16 +29,16 @@ const AlertComponent = dynamic(() => import('@/root/components/alert'));
 const Dashboard = dynamic(() => import('@/root/components/dashboard'));
 
 const MetamaskHelpText = () => (
-  <p>
+  <>
     In order to fully experience Baffle Space, you need to access the website from MetaMask. Tap the
     link below to install MetaMask or to open the website in MetaMask if you already have it.
     <br />
-    <p>
+    <span>
       <a href={METAMASK_APP_URL}>
         <strong> Tap to enter from MetaMask</strong>
       </a>
-    </p>
-  </p>
+    </span>
+  </>
 );
 
 const LandingPageHeader = () => {
@@ -73,8 +72,8 @@ const LandingPageHeader = () => {
 
   return (
     <>
-      {!isAuthenticated && isMobile && !metamaskAvailability && (
-        <AlertComponent status={AlertStatusValues.Info} title="MetaMask Mobile Access">
+      {!isAuthenticated && !metamaskAvailability && (
+        <AlertComponent status={AlertStatusValues.Info} title="MetaMask Access">
           <MetamaskHelpText />
         </AlertComponent>
       )}
