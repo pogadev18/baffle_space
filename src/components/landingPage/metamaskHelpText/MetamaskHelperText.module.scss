@@ -4,6 +4,10 @@
   margin: auto;
   text-align: center;
 
+  @media screen and (max-width: 768px) {
+    width: auto;
+  }
+
   > p {
     margin: 10px 0;
   }
