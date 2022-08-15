@@ -22,6 +22,7 @@ import NavLink from '@/root/components/navLink';
 
 import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
 import { renderLinksUrl } from '@/root/utils/utilityFunctions';
+import MetamaskMobileTutorial from '@/root/components/landingPage/metamaskMobileTutorial';
 
 const Links = ['The gameplay', 'NFTs', 'Roadmap', 'Team', 'Whitepaper'];
 
@@ -154,6 +155,8 @@ const LandingPageHeader = () => {
           {isOpen ? (
             <Box pb={4} display={{ lg: 'none' }}>
               <Stack as="nav" spacing={4}>
+                <MetamaskMobileTutorial />
+
                 {isAuthenticated && (
                   <Box width="100%" marginTop="10px">
                     <Dashboard />
@@ -174,7 +177,6 @@ const LandingPageHeader = () => {
                     Connect with MetaMask
                   </Button>
                 )}
-
                 {Links.map((link) => (
                   <NavLink onClick={onClose} url={renderLinksUrl(link)} key={link}>
                     {link}

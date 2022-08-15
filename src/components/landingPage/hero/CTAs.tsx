@@ -3,7 +3,6 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
   Button,
@@ -36,27 +35,21 @@ const CTAs = () => {
         </Button>
       </Stack>
 
-      <Modal isOpen={isOpen} onClose={onClose}>
+      <Modal size="xl" isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Baffle Space</ModalHeader>
+          <ModalHeader>More about BAFFLE.SPACE</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <iframe
               width="100%"
               height="315"
-              src="https://www.youtube.com/embed/q5jEY92Amgw?controls=1"
+              src="https://www.youtube.com/embed/Mxq0cY8Nxv4"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />
           </ModalBody>
-
-          <ModalFooter>
-            <Button margin="0" padding="0" variant="ghost" onClick={onClose}>
-              Close
-            </Button>
-          </ModalFooter>
         </ModalContent>
       </Modal>
     </>
