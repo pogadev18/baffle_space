@@ -6,6 +6,7 @@ import {
   Flex,
   HStack,
   IconButton,
+  Spinner,
   Stack,
   useDisclosure,
 } from '@chakra-ui/react';
@@ -36,14 +37,14 @@ const MetamaskHelpText = () => (
     <br />
     <span>
       <a href={METAMASK_APP_URL}>
-        <strong>Enter from MetaMask</strong>
+        <strong>Eter from MetaMask</strong>
       </a>
     </span>
   </>
 );
 
 const LandingPageHeader = () => {
-  const [metamaskAvailability, setMetamaskAvailability] = useState(false);
+  const [metamaskAvailability, setMetamaskAvailability] = useState('pending');
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isAuthenticated, authenticate, isAuthenticating, authError } = useMoralis();
 
@@ -53,9 +54,10 @@ const LandingPageHeader = () => {
         const provider = await detectEthereumProvider();
 
         if (provider) {
-          setMetamaskAvailability(true);
+          setMetamaskAvailability('ok');
         }
       } catch (error) {
+        setMetamaskAvailability('error');
         throw new Error('No metamask provider available!');
       }
     };
@@ -71,13 +73,16 @@ const LandingPageHeader = () => {
     }
   };
 
+  if (metamaskAvailability === 'pending') return <Spinner />;
+
   return (
     <>
-      {!isAuthenticated && !metamaskAvailability && (
-        <AlertComponent status={AlertStatusValues.Info} title="MetaMask Access">
-          <MetamaskHelpText />
-        </AlertComponent>
-      )}
+      {(!isAuthenticated && metamaskAvailability === 'pending') ||
+        (metamaskAvailability === 'error' && (
+          <AlertComponent status={AlertStatusValues.Info} title="MetaMask Access">
+            <MetamaskHelpText />
+          </AlertComponent>
+        ))}
 
       {authError && (
         <AlertComponent status={AlertStatusValues.Error} title="Something went wrong">

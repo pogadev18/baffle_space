@@ -49,7 +49,7 @@ const GamePage = () => {
             </Text>
           </Box>
           <Box marginY={{ base: '20px', sm: '60px' }} textAlign="center">
-            <SimpleGrid columns={{ base: 1, lg: 2, sm: 2 }} spacing={10}>
+            <SimpleGrid columns={{ base: 1, xl: 3, lg: 2 }} spacing={10}>
               <ImageCard
                 categoryTitle="dream electronics"
                 url="whitepaper#gameplay"
