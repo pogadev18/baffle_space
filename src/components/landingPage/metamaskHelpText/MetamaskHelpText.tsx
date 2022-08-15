@@ -19,7 +19,7 @@ const MetamaskHelpText = () => {
 
         <p>
           <a href={METAMASK_APP_URL}>
-            <strong>Enter from MetaMask</strong>
+            <strong>{!isMobile ? 'Download MetaMask' : 'Enter from MetaMask'}</strong>
           </a>
         </p>
       </div>

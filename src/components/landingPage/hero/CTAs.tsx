@@ -10,7 +10,7 @@ import {
   Stack,
   useDisclosure,
 } from '@chakra-ui/react';
-import { FaVideo } from 'react-icons/fa';
+import { FaYoutube } from 'react-icons/fa';
 
 const CTAs = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -30,7 +30,7 @@ const CTAs = () => {
           px={6}
           width={{ base: '100%', md: '80%' }}
           colorScheme="yellow"
-          rightIcon={<FaVideo />}
+          rightIcon={<FaYoutube />}
         >
           Find Out More
         </Button>
