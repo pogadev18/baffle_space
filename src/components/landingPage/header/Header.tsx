@@ -21,27 +21,13 @@ import ParticipateToWhiteListBanner from '@/root/components/landingPage/particip
 import NavLink from '@/root/components/navLink';
 
 import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
-import { METAMASK_APP_URL } from '@/root/constants';
 import { renderLinksUrl } from '@/root/utils/utilityFunctions';
 
 const Links = ['The gameplay', 'NFTs', 'Roadmap', 'Team', 'Whitepaper'];
 
 const AlertComponent = dynamic(() => import('@/root/components/alert'));
 const Dashboard = dynamic(() => import('@/root/components/dashboard'));
-
-const MetamaskHelpText = () => (
-  <>
-    In order to fully experience Baffle Space, you need to access the website from MetaMask. <br />{' '}
-    Access the link below to install MetaMask or to open the website in MetaMask if you already have
-    it.
-    <br />
-    <span>
-      <a href={METAMASK_APP_URL}>
-        <strong>Eter from MetaMask</strong>
-      </a>
-    </span>
-  </>
-);
+const MetamaskHelpText = dynamic(() => import('@/root/components/landingPage/metamaskHelpText'));
 
 const LandingPageHeader = () => {
   const [metamaskAvailability, setMetamaskAvailability] = useState('pending');
@@ -55,6 +41,10 @@ const LandingPageHeader = () => {
 
         if (provider) {
           setMetamaskAvailability('ok');
+        }
+
+        if (!provider) {
+          setMetamaskAvailability('not found');
         }
       } catch (error) {
         setMetamaskAvailability('error');
@@ -73,16 +63,20 @@ const LandingPageHeader = () => {
     }
   };
 
-  if (metamaskAvailability === 'pending') return <Spinner />;
+  if (metamaskAvailability === 'pending')
+    return (
+      <div style={{ padding: '15px' }}>
+        <Spinner color="white" />
+      </div>
+    );
 
   return (
     <>
-      {(!isAuthenticated && metamaskAvailability === 'pending') ||
-        (metamaskAvailability === 'error' && (
-          <AlertComponent status={AlertStatusValues.Info} title="MetaMask Access">
-            <MetamaskHelpText />
-          </AlertComponent>
-        ))}
+      {!isAuthenticated && metamaskAvailability === 'not found' && (
+        <AlertComponent status={AlertStatusValues.Info} title="MetaMask Access">
+          <MetamaskHelpText />
+        </AlertComponent>
+      )}
 
       {authError && (
         <AlertComponent status={AlertStatusValues.Error} title="Something went wrong">

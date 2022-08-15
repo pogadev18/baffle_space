@@ -1,0 +1,27 @@
+.helpTextWrapper {
+  position: relative;
+  width: 600px;
+  margin: auto;
+  text-align: center;
+
+  > p {
+    margin: 10px 0;
+  }
+}
+
+.descriptionList {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    position: relative;
+    margin: 5px 0;
+  }
+
+
+  p:last-child {
+    margin: 10px 0;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+}
