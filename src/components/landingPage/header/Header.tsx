@@ -73,13 +73,13 @@ const LandingPageHeader = () => {
   return (
     <>
       {!isAuthenticated && metamaskAvailability === 'not found' && (
-        <AlertComponent status={AlertStatusValues.Info} title="MetaMask Access">
+        <AlertComponent showIcon={false} status={AlertStatusValues.Info} title="MetaMask Access">
           <MetamaskHelpText />
         </AlertComponent>
       )}
 
       {authError && (
-        <AlertComponent status={AlertStatusValues.Error} title="Something went wrong">
+        <AlertComponent showIcon status={AlertStatusValues.Error} title="Something went wrong">
           <p>{authError.message}</p>
         </AlertComponent>
       )}

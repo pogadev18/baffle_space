@@ -15,14 +15,15 @@ interface AlertComponentProps {
   status: AlertStatusValues;
   title: string;
   children: ReactNode;
+  showIcon: boolean;
 }
 
-const AlertComponent = ({ status, title, children }: AlertComponentProps) => {
+const AlertComponent = ({ status, title, children, showIcon }: AlertComponentProps) => {
   const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
 
   return isOpen ? (
     <Alert textAlign="center" justifyContent="center" status={status} overflow="inherit">
-      <AlertIcon />
+      {showIcon ? <AlertIcon /> : null}
       <Box>
         <AlertTitle>{title}</AlertTitle>
         <AlertDescription>{children}</AlertDescription>
