@@ -30,12 +30,13 @@ const Dashboard = dynamic(() => import('@/root/components/dashboard'));
 
 const MetamaskHelpText = () => (
   <>
-    In order to fully experience Baffle Space, you need to access the website from MetaMask. Tap the
-    link below to install MetaMask or to open the website in MetaMask if you already have it.
+    In order to fully experience Baffle Space, you need to access the website from MetaMask. <br />{' '}
+    Access the link below to install MetaMask or to open the website in MetaMask if you already have
+    it.
     <br />
     <span>
       <a href={METAMASK_APP_URL}>
-        <strong> Tap to enter from MetaMask</strong>
+        <strong>Enter from MetaMask</strong>
       </a>
     </span>
   </>

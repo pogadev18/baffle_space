@@ -24,9 +24,8 @@ const EnterBaffleSpace = () => {
       </p>
       <p>
         We chose raffles as the way to aid people to step into the crypto space because we believe
-        bringing tangible, real world prizes to people for the price of a lottery ticket purchased
-        with crypto ($MATIC) solves the belief problem in the crypto space and paves the way, our
-        way to mass adoption.
+        bringing tangible, real world prizes to people for the small price of a lottery ticket
+        purchased with crypto ($MATIC), paves the way, our way to mass adoption for cryptocurrency.
       </p>
       <p>
         Baffle Space is the play to win and earn raffle dApp based on the Polygon blockchain to

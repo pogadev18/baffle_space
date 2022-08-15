@@ -29,14 +29,14 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
       <TeamMember
         imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305142/my-uploads/fribcjc3c1ngimqbribo.jpg"
         fallbackUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305137/my-uploads/ssoa1i7ciylmlewmjacv.jpg"
-        name="Theodor Gal"
-        alternativeText="Theodor Gal"
+        name="Theodor Gál"
+        alternativeText="Theodor Gál"
         memberPosition="Co-Founder"
         memberRole=" Business & Community Strategist "
       >
-        Entrepreneur since 2017, driven by a strong need of independence, becoming enthusiastic
-        about blockchain technologies came easily. Passionate about teaching, I share my insights to
-        bridge the space between business and tech for communities.
+        Entrepreneur driven by a strong need of independence, becoming enthusiastic about blockchain
+        technologies came easily. Passionate about teaching, I share my insights to bridge the space
+        between business, tech and communities.
       </TeamMember>
       <TeamMember
         imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305106/my-uploads/jrh6hidqkebeujcl0y8m.jpg"
@@ -55,12 +55,12 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
         imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305131/my-uploads/rpsognl0d3tdkemhqebp.jpg"
         fallbackUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305126/my-uploads/qppgn9bzv8nk2rqtmedl.jpg"
         alternativeText="Cosmin Hodiș"
-        memberPosition="Visuals Director"
+        memberPosition="Visual Director"
         memberRole="Videographer & Designer"
       >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, aspernatur consequatur
-        doloribus facilis labore laudantium libero nobis non, pariatur quam quibusdam quod ratione
-        repellat, tenetur vitae voluptas voluptate. Aspernatur, ut.
+        Professional by all accounts, an in-depth analyst of his trades. Recognized by world
+        renowned companies like HBO, Cosmin is devoted to elevate your understanding of Baffle
+        Space.
       </TeamMember>
     </SimpleGrid>
   );

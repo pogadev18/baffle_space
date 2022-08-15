@@ -21,7 +21,7 @@ const AlertComponent = ({ status, title, children }: AlertComponentProps) => {
   const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true });
 
   return isOpen ? (
-    <Alert paddingLeft={{ base: '20px', lg: '170px' }} status={status} overflow="inherit">
+    <Alert textAlign="center" justifyContent="center" status={status} overflow="inherit">
       <AlertIcon />
       <Box>
         <AlertTitle>{title}</AlertTitle>

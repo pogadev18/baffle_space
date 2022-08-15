@@ -33,7 +33,7 @@ const Hero = () => {
           <Stack className={styles.heroInfo}>
             <HeroText />
             <Box display={{ base: 'none', lg: 'block' }}>
-              <CTAs mobileVersion={false} />
+              <CTAs />
             </Box>
           </Stack>
           <Box
@@ -43,7 +43,7 @@ const Hero = () => {
             right="25px"
             display={{ base: 'block', lg: 'none' }}
           >
-            <CTAs mobileVersion />
+            <CTAs />
           </Box>
         </Stack>
       </Container>

@@ -11,13 +11,6 @@ import {
   ModalBody,
 } from '@chakra-ui/react';
 import { useMoralis } from 'react-moralis';
-import dynamic from 'next/dynamic';
-
-import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
-
-const AlertComponent = dynamic(() => import('@/root/components/alert'));
-
-const { Success } = AlertStatusValues;
 
 const ParticipateToWhitelist = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -86,20 +79,25 @@ const ParticipateToWhitelist = () => {
       )}
 
       {notify && (
-        <Box mt={5}>
-          <AlertComponent status={Success} title="Participation completed">
-            <p> you are know whitelisted 😍</p>
-          </AlertComponent>
+        <Box
+          background="green.900"
+          fontWeight="bold"
+          color="white"
+          padding="5px 10px"
+          borderRadius="5px"
+          mt={5}
+        >
+          <p>Your wallet address is now whitelisted</p>
         </Box>
       )}
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Please be aware of the following</ModalHeader>
+          <ModalHeader>Notice</ModalHeader>
           <ModalBody>
-            If you join the whitelist you won&apos;t be able to undo this action. Please think twice
-            before proceeding with this action
+            If you join the whitelist you won&apos;t be able to undo this action. Are you sure you
+            want to join the whitelist?
           </ModalBody>
 
           <ModalFooter>

@@ -1,53 +1,65 @@
-import React from 'react';
-import { Button, Stack } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+  Button,
+  Stack,
+  useDisclosure,
+} from '@chakra-ui/react';
+import { FaVideo } from 'react-icons/fa';
 
-interface CTAsProps {
-  mobileVersion: boolean;
-}
-
-const CTAs = ({ mobileVersion }: CTAsProps) => {
-  const router = useRouter();
+const CTAs = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Stack
-      alignItems="center"
-      spacing={{ base: 4, sm: 6 }}
-      direction={{ base: 'column', sm: 'column' }}
-    >
-      <Button
-        onClick={() => router.push('/nfts')}
-        rounded="full"
-        variant="solid"
-        size="lg"
-        px={6}
-        width={{ base: '100%', md: '80%' }}
-        colorScheme="yellow"
+    <>
+      <Stack
+        alignItems="center"
+        spacing={{ base: 4, sm: 6 }}
+        direction={{ base: 'column', sm: 'column' }}
       >
-        NFTs
-      </Button>
-      <Button
-        onClick={() => router.push('/game')}
-        width={{ base: '100%', md: '80%' }}
-        variant="outline"
-        color="white"
-        rounded="full"
-        size="lg"
-        fontWeight="normal"
-        borderWidth="1px"
-        borderColor={mobileVersion ? 'black.800' : 'white'}
-        background={mobileVersion ? 'black.800' : 'transparent'}
-        px={6}
-        _hover={{
-          textDecoration: 'none',
-          bg: 'yellow.400',
-          color: 'black.900',
-          borderColor: 'yellow.400',
-        }}
-      >
-        The Gameplay
-      </Button>
-    </Stack>
+        <Button
+          onClick={onOpen}
+          rounded="full"
+          variant="solid"
+          size="lg"
+          px={6}
+          width={{ base: '100%', md: '80%' }}
+          colorScheme="yellow"
+          rightIcon={<FaVideo />}
+        >
+          Find Out More
+        </Button>
+      </Stack>
+
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Baffle Space</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/q5jEY92Amgw?controls=1"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </ModalBody>
+
+          <ModalFooter>
+            <Button margin="0" padding="0" variant="ghost" onClick={onClose}>
+              Close
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+    </>
   );
 };
 

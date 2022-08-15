@@ -91,7 +91,12 @@ const NFTs = () => {
           </Box>
           <Box textAlign="center" marginBottom="60px" color="white">
             <SectionTitle text="Whitelist & Mint Earnings" textColor="white" />
-            <Text margin="auto" color="white" fontSize="18px" width={{ base: 'auto', md: '820px' }}>
+            <Text
+              margin="20px auto 0"
+              color="white"
+              fontSize="18px"
+              width={{ base: 'auto', md: '820px' }}
+            >
               While we work intensely on designing the NFTs, we opened a whitelist with 500 spots
               available for people who want to be among the first to own a business on the
               blockchain within the Baffle Space Ecosystem and get 25% off when minting will begin.
@@ -114,7 +119,7 @@ const NFTs = () => {
             <Box textAlign="center" color="white">
               <SectionTitle text="Baffle Space Games Start As An NFT Owner" textColor="white" />
               <Text
-                margin=" 10px auto 0"
+                margin=" 20px auto 0"
                 color="white"
                 fontSize="18px"
                 width={{ base: 'auto', md: '820px' }}
@@ -155,7 +160,7 @@ const NFTs = () => {
               <SectionTitle text="Cumulative discounted chances" textColor="black" />
               <Text
                 color="black"
-                margin="auto"
+                margin="20px auto 0"
                 fontSize="18px"
                 width={{ base: 'auto', md: '820px' }}
               >
@@ -168,7 +173,7 @@ const NFTs = () => {
               <SectionTitle text="Increasing your share of the pie" textColor="black" />
               <Text
                 color="black"
-                margin="auto"
+                margin="20px auto 0"
                 fontSize="18px"
                 width={{ base: 'auto', md: '820px' }}
               >
@@ -188,7 +193,12 @@ const NFTs = () => {
           color="white"
         >
           <SectionTitle text="Descendant NFT Creation Revenue" textColor="white" />
-          <Text margin="auto" color="white" fontSize="18px" width={{ base: 'auto', md: '820px' }}>
+          <Text
+            margin="20px auto 0"
+            color="white"
+            fontSize="18px"
+            width={{ base: 'auto', md: '820px' }}
+          >
             Baffle Space Genesis NFT owners will have the ability to generate
             &ldquo;offspring&rdquo; NFTs, free of charge ( minus minting/transaction fees). You, as
             the owner will have the option to distribute them for free or sell them on opensea.io

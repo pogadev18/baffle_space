@@ -23,6 +23,16 @@ const WhitepaperPage = () => {
             >
               Whitepaper
             </Heading>
+            <Box
+              textAlign={{ base: 'center', lg: 'right' }}
+              fontWeight="bold"
+              position="relative"
+              bottom={{ base: '20px', sm: '40px', lg: '0' }}
+              color="gray.500"
+              fontSize="18px"
+            >
+              Latest update: August 2022
+            </Box>
           </Box>
           <WhitepaperSections />
         </Container>

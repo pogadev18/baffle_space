@@ -121,9 +121,11 @@ const TheGameplay = () => {
             <li>
               Claiming the win
               <p>
+                Players will be able to find out if they won the Dream Prize in their dashboard.
+              </p>
+              <p>
                 Baffle Space offers the owner of the winning ticket two options of claiming the
-                Dream Prize. The winner will reach out to us on Telegram to confirm their win and
-                choose how they wish to claim their prize.
+                Dream Prize.
               </p>
               <ol>
                 <li>
