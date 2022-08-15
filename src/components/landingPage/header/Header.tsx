@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { isMobile } from 'react-device-detect';
 import {
   Box,
   Button,
@@ -74,7 +75,11 @@ const LandingPageHeader = () => {
   return (
     <>
       {!isAuthenticated && metamaskAvailability === 'not found' && (
-        <AlertComponent showIcon={false} status={AlertStatusValues.Info} title="MetaMask Access">
+        <AlertComponent
+          showIcon={false}
+          status={AlertStatusValues.Info}
+          title={isMobile ? 'MetaMask Access' : 'MetaMask Connection'}
+        >
           <MetamaskHelpText />
         </AlertComponent>
       )}
