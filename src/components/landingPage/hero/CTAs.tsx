@@ -34,7 +34,7 @@ const CTAs = () => {
           colorScheme="yellow"
           rightIcon={<FaYoutube />}
         >
-          Find Out More
+          Play Intro Video
         </Button>
       </Stack>
 

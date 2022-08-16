@@ -157,7 +157,7 @@ const LandingPageHeader = () => {
             <Box pb={4} display={{ lg: 'none' }}>
               <Stack as="nav" spacing={4}>
                 {isAuthenticated && (
-                  <Box width="100%" marginTop="10px">
+                  <Box width="100%" marginTop="25px">
                     <Dashboard />
                   </Box>
                 )}
@@ -165,9 +165,9 @@ const LandingPageHeader = () => {
                   <Button
                     variant="solid"
                     onClick={handleLogin}
-                    size="sm"
-                    mr={4}
-                    marginTop="10px"
+                    size="md"
+                    margin="25px 0 10px 0"
+                    paddingY="23px"
                     width="100%"
                     colorScheme="yellow"
                     rounded="full"
