@@ -30,7 +30,6 @@ const HeroText = () => {
         Raffles for dreams and baffling wins!
       </Text>
       <Text
-        // display={{ base: 'none', md: 'block' }}
         width={{ base: 'auto', lg: '80%' }}
         textAlign="center"
         margin="auto"

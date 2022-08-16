@@ -1,5 +1,6 @@
 import { isMobile } from 'react-device-detect';
 
+import MetamaskMobileTutorial from '@/root/components/landingPage/metamaskMobileTutorial';
 import { METAMASK_APP_URL } from '@/root/constants';
 
 import styles from './MetamaskHelperText.module.scss';
@@ -27,6 +28,9 @@ const MetamaskHelpText = () => {
             <p>
               Tap the link below to either access the website from MetaMask or get it from your app
               store first.
+            </p>
+            <p>
+              <MetamaskMobileTutorial />
             </p>
             <p>
               <a href={METAMASK_APP_URL}>

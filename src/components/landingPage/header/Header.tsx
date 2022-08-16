@@ -23,7 +23,6 @@ import NavLink from '@/root/components/navLink';
 
 import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
 import { renderLinksUrl } from '@/root/utils/utilityFunctions';
-import MetamaskMobileTutorial from '@/root/components/landingPage/metamaskMobileTutorial';
 
 const Links = ['The gameplay', 'NFTs', 'Roadmap', 'Team', 'Whitepaper'];
 
@@ -65,16 +64,13 @@ const LandingPageHeader = () => {
     }
   };
 
-  if (metamaskAvailability === 'pending')
-    return (
-      <div style={{ padding: '15px' }}>
-        <Spinner color="white" />
-      </div>
-    );
-
   return (
     <>
-      {!isAuthenticated && metamaskAvailability === 'not found' && (
+      {metamaskAvailability === 'pending' ? (
+        <div style={{ padding: '15px' }}>
+          <Spinner color="white" />
+        </div>
+      ) : !isAuthenticated && metamaskAvailability === 'not found' ? (
         <AlertComponent
           showIcon={false}
           status={AlertStatusValues.Info}
@@ -82,7 +78,7 @@ const LandingPageHeader = () => {
         >
           <MetamaskHelpText />
         </AlertComponent>
-      )}
+      ) : null}
 
       {authError && (
         <AlertComponent showIcon status={AlertStatusValues.Error} title="Something went wrong">
@@ -160,8 +156,6 @@ const LandingPageHeader = () => {
           {isOpen ? (
             <Box pb={4} display={{ lg: 'none' }}>
               <Stack as="nav" spacing={4}>
-                <MetamaskMobileTutorial />
-
                 {isAuthenticated && (
                   <Box width="100%" marginTop="10px">
                     <Dashboard />

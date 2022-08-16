@@ -11,6 +11,8 @@ import {
 } from '@chakra-ui/react';
 import { FaYoutube } from 'react-icons/fa';
 
+import styles from './Hero.module.scss';
+
 const CTAs = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
@@ -36,16 +38,23 @@ const CTAs = () => {
         </Button>
       </Stack>
 
-      <Modal size="xl" isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>More about BAFFLE.SPACE</ModalHeader>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay bg="rgba(0,0,0,0.8)" />
+        <ModalContent
+          background="black.500"
+          className={styles.moreAboutBaffleModal}
+          h={{ base: '400px', md: '600px' }}
+          maxW="800px"
+        >
+          <ModalHeader color="white" textTransform="uppercase" fontWeight="300" fontSize="25px">
+            BAFFLE.SPACE
+          </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <iframe
               width="100%"
-              height="315"
-              src="https://www.youtube.com/embed/Mxq0cY8Nxv4?autoplay=1&rel=0&showinfo=1&modestbranding=1"
+              height="100%"
+              src="https://www.youtube.com/embed/DoxTvWq6W-Y?autoplay=1&rel=0&showinfo=1&modestbranding=1"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
