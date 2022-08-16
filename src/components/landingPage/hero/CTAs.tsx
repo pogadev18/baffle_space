@@ -47,7 +47,7 @@ const CTAs = () => {
           maxW="800px"
         >
           <ModalHeader color="white" textTransform="uppercase" fontWeight="300" fontSize="25px">
-            BAFFLE.SPACE
+            &nbsp;
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>

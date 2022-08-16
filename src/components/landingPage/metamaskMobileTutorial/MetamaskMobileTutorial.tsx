@@ -41,8 +41,7 @@ const MetamaskMobileTutorial = () => {
           background="black.500"
         >
           <ModalHeader color="white" textTransform="uppercase" fontWeight="300" fontSize="25px">
-            How to install <br />
-            MetaMask
+            &nbsp;
           </ModalHeader>
           <ModalCloseButton />
           <ModalBody>
