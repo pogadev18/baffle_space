@@ -25,9 +25,10 @@ const CTAs = () => {
           onClick={onOpen}
           rounded="full"
           variant="solid"
-          size="lg"
+          size={{ base: 'md', lg: 'lg' }}
           px={6}
-          width={{ base: '100%', md: '80%' }}
+          marginTop={{ base: 3, lg: 0 }}
+          width={{ base: '100%', md: '400px' }}
           colorScheme="yellow"
           rightIcon={<FaYoutube />}
         >
@@ -44,7 +45,7 @@ const CTAs = () => {
             <iframe
               width="100%"
               height="315"
-              src="https://www.youtube.com/embed/Mxq0cY8Nxv4"
+              src="https://www.youtube.com/embed/Mxq0cY8Nxv4?autoplay=1&rel=0&showinfo=1&modestbranding=1"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

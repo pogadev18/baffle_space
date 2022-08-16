@@ -32,19 +32,10 @@ const Hero = () => {
         >
           <Stack className={styles.heroInfo}>
             <HeroText />
-            <Box display={{ base: 'none', lg: 'block' }}>
+            <Box display={{ base: 'block', lg: 'block' }}>
               <CTAs />
             </Box>
           </Stack>
-          <Box
-            position="absolute"
-            bottom="20px"
-            left="25px"
-            right="25px"
-            display={{ base: 'block', lg: 'none' }}
-          >
-            <CTAs />
-          </Box>
         </Stack>
       </Container>
     </Box>
