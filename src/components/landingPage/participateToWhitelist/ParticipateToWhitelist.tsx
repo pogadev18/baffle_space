@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Button,
   Box,
@@ -11,13 +11,21 @@ import {
   ModalBody,
 } from '@chakra-ui/react';
 import { useMoralis } from 'react-moralis';
+import WhitelistDrawerWarning from '@/root/components/landingPage/whitelistDrawerWarning';
 
 const ParticipateToWhitelist = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [error, setError] = useState(false);
   const [notify, setNotify] = useState(false);
-  const { isAuthenticated, authenticate, isAuthenticating, user } = useMoralis();
+  const { isAuthenticated, authenticate, isAuthenticating, user, authError } = useMoralis();
+  const [displayWarning, setDisplayWarning] = useState(false);
+
+  useEffect(() => {
+    if (authError) {
+      setDisplayWarning(true);
+    }
+  }, [authError]);
 
   const isAlreadyOnWhitelist = user?.get('whiteList');
 
@@ -74,16 +82,20 @@ const ParticipateToWhitelist = () => {
           onClick={handleLogin}
           _hover={{ background: 'yellow.300' }}
         >
-          join the whitelist
+          join the nft whitelist
         </Button>
+      )}
+
+      {displayWarning && (
+        <WhitelistDrawerWarning setDisplayWarning={() => setDisplayWarning(false)} />
       )}
 
       {notify && (
         <Box
-          background="green.900"
+          background="#ffce86"
           fontWeight="bold"
-          color="white"
-          padding="5px 10px"
+          color="black"
+          padding="5px 15px"
           borderRadius="5px"
           mt={5}
         >

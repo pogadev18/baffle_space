@@ -36,6 +36,15 @@ const LandingPageHeader = () => {
   const { isAuthenticated, authenticate, isAuthenticating, authError } = useMoralis();
 
   useEffect(() => {
+    if (authError) {
+      const toggleErrorButton = document.getElementById('toggle-metamask-help-text');
+      if (toggleErrorButton) {
+        toggleErrorButton.click();
+      }
+    }
+  }, [authError]);
+
+  useEffect(() => {
     const checkMetamaskAvailability = async () => {
       try {
         const provider = await detectEthereumProvider();
@@ -79,12 +88,6 @@ const LandingPageHeader = () => {
           <MetamaskHelpText />
         </AlertComponent>
       ) : null}
-
-      {authError && (
-        <AlertComponent showIcon status={AlertStatusValues.Error} title="Something went wrong">
-          <p>{authError.message}</p>
-        </AlertComponent>
-      )}
 
       <ParticipateToWhiteListBanner />
 
