@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { isMobile } from 'react-device-detect';
 import {
   Box,
   Button,
@@ -6,6 +7,7 @@ import {
   Flex,
   HStack,
   IconButton,
+  Spinner,
   Stack,
   useDisclosure,
 } from '@chakra-ui/react';
@@ -14,35 +16,22 @@ import detectEthereumProvider from '@metamask/detect-provider';
 
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { useMoralis } from 'react-moralis';
-import { isMobile } from 'react-device-detect';
 
 import Logo from '@/root/components/logo';
 import ParticipateToWhiteListBanner from '@/root/components/landingPage/participateToWhiteListBanner';
 import NavLink from '@/root/components/navLink';
 
 import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
-import { METAMASK_APP_URL } from '@/root/constants';
 import { renderLinksUrl } from '@/root/utils/utilityFunctions';
 
-const Links = ['Roadmap', 'The gameplay', 'NFTs', 'Whitepaper'];
+const Links = ['The gameplay', 'NFTs', 'Roadmap', 'Team', 'Whitepaper'];
 
 const AlertComponent = dynamic(() => import('@/root/components/alert'));
 const Dashboard = dynamic(() => import('@/root/components/dashboard'));
-
-const MetamaskHelpText = () => (
-  <p>
-    In order to fully experience Baffle Space, you need access the website form Metamask. Click the
-    link to install Metamask or to open the application from metamask if you already installed it.
-    <p>
-      <a href={METAMASK_APP_URL}>
-        <strong>tap to enter from MetaMask</strong>
-      </a>
-    </p>
-  </p>
-);
+const MetamaskHelpText = dynamic(() => import('@/root/components/landingPage/metamaskHelpText'));
 
 const LandingPageHeader = () => {
-  const [metamaskAvailability, setMetamaskAvailability] = useState(false);
+  const [metamaskAvailability, setMetamaskAvailability] = useState('pending');
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isAuthenticated, authenticate, isAuthenticating, authError } = useMoralis();
 
@@ -52,9 +41,14 @@ const LandingPageHeader = () => {
         const provider = await detectEthereumProvider();
 
         if (provider) {
-          setMetamaskAvailability(true);
+          setMetamaskAvailability('ok');
+        }
+
+        if (!provider) {
+          setMetamaskAvailability('not found');
         }
       } catch (error) {
+        setMetamaskAvailability('error');
         throw new Error('No metamask provider available!');
       }
     };
@@ -72,14 +66,22 @@ const LandingPageHeader = () => {
 
   return (
     <>
-      {!isAuthenticated && isMobile && !metamaskAvailability && (
-        <AlertComponent status={AlertStatusValues.Info} title="MetaMask mobile connection">
+      {metamaskAvailability === 'pending' ? (
+        <div style={{ padding: '15px' }}>
+          <Spinner color="white" />
+        </div>
+      ) : !isAuthenticated && metamaskAvailability === 'not found' ? (
+        <AlertComponent
+          showIcon={false}
+          status={AlertStatusValues.Info}
+          title={isMobile ? 'MetaMask Access' : 'MetaMask Connection'}
+        >
           <MetamaskHelpText />
         </AlertComponent>
-      )}
+      ) : null}
 
       {authError && (
-        <AlertComponent status={AlertStatusValues.Error} title="Something went wrong">
+        <AlertComponent showIcon status={AlertStatusValues.Error} title="Something went wrong">
           <p>{authError.message}</p>
         </AlertComponent>
       )}
@@ -87,14 +89,20 @@ const LandingPageHeader = () => {
       <ParticipateToWhiteListBanner />
 
       <Box width="100%" bg="black.900">
-        <Container paddingX={{ base: '25px', md: '40px' }} maxW="8xl">
+        <Container
+          position="relative"
+          paddingBottom={{ base: '1.25rem', md: '0' }}
+          paddingX={{ base: '25px', md: '40px' }}
+          maxW="8xl"
+        >
           <Flex
-            h={16}
+            h="90px"
             alignItems="center"
             justifyContent={{ base: 'auto', md: 'space-between' }}
             wrap={{ base: 'wrap' }}
           >
             <IconButton
+              data-ismenuopen={isOpen}
               order={1}
               marginTop={{ base: 5, md: 0 }}
               variant="outline"
@@ -105,7 +113,7 @@ const LandingPageHeader = () => {
                 isOpen ? <CloseIcon color="yellow.400" /> : <HamburgerIcon color="yellow.400" />
               }
               aria-label="Open Menu"
-              display={{ md: 'none' }}
+              display={{ lg: 'none' }}
               onClick={isOpen ? onClose : onOpen}
             />
             <HStack
@@ -117,7 +125,7 @@ const LandingPageHeader = () => {
               <Box>
                 <Logo />
               </Box>
-              <HStack as="nav" spacing={4} display={{ base: 'none', md: 'flex' }}>
+              <HStack as="nav" spacing={4} display={{ base: 'none', lg: 'flex' }}>
                 {Links.map((link) => (
                   <NavLink url={renderLinksUrl(link)} key={link}>
                     {link}
@@ -128,7 +136,7 @@ const LandingPageHeader = () => {
             <Flex
               marginTop={{ base: 15, md: 0 }}
               alignItems="center"
-              display={{ base: 'none', md: 'block' }}
+              display={{ base: 'none', lg: 'block' }}
             >
               {isAuthenticated && <Dashboard />}
               {!isAuthenticated && (
@@ -145,12 +153,11 @@ const LandingPageHeader = () => {
               )}
             </Flex>
           </Flex>
-
           {isOpen ? (
-            <Box pb={4} display={{ md: 'none' }}>
+            <Box pb={4} display={{ lg: 'none' }}>
               <Stack as="nav" spacing={4}>
                 {isAuthenticated && (
-                  <Box width="100%" marginTop="10px">
+                  <Box width="100%" marginTop="25px">
                     <Dashboard />
                   </Box>
                 )}
@@ -158,9 +165,9 @@ const LandingPageHeader = () => {
                   <Button
                     variant="solid"
                     onClick={handleLogin}
-                    size="sm"
-                    mr={4}
-                    marginTop="10px"
+                    size="md"
+                    margin="25px 0 10px 0"
+                    paddingY="23px"
                     width="100%"
                     colorScheme="yellow"
                     rounded="full"
@@ -169,9 +176,8 @@ const LandingPageHeader = () => {
                     Connect with MetaMask
                   </Button>
                 )}
-
                 {Links.map((link) => (
-                  <NavLink url={renderLinksUrl(link)} key={link}>
+                  <NavLink onClick={onClose} url={renderLinksUrl(link)} key={link}>
                     {link}
                   </NavLink>
                 ))}

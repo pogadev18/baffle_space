@@ -16,10 +16,10 @@ const Road = () => {
                 alt="Car Image"
                 fit="cover"
                 align="center"
-                h="100%"
-                w="200px"
-                margin="auto"
-                src="/car.png"
+                h="auto"
+                width="80px"
+                margin="10px 0 0 30px"
+                src="https://res.cloudinary.com/baffle-space/image/upload/v1660307021/my-uploads/tfz4hnkx5adpyils4ar1.png"
               />
             </p>
           </div>
@@ -72,7 +72,7 @@ const Road = () => {
             Community Onboarding <span>Open Communication Channels</span>
           </p>
           <p className={styles.checkpointDescription}>
-            Community Earning Mechanism Setup <span>Initial Method to Earn</span>
+            Community Earning Mechanism Setup <span>Initial Methods to Earn</span>
           </p>
           <p className={styles.checkpointDescription}>
             Baffle Space NFT Genesis Collection Launch <span>Minting Enabled</span>
@@ -111,7 +111,7 @@ const Road = () => {
             h="100%"
             w="300px"
             margin="auto"
-            src="/rocket.png"
+            src="https://res.cloudinary.com/baffle-space/image/upload/v1660307415/my-uploads/jkvs4hnddwiiiekvl53a.png"
           />
           <p className={styles.checkpointDescription}>
             International Launch <span>The Option of Claiming Dream Prizes Goes International</span>

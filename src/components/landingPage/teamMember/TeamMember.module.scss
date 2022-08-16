@@ -1,0 +1,33 @@
+.teamCardWrapper {
+  position: relative;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.memberInfo {
+  position: relative;
+
+  span {
+    display: block;
+  }
+}
+
+.name {
+  font-size: 25px;
+  margin: 5px 0;
+}
+
+.role,
+.position{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.description {
+  margin-top: 10px;
+  position: relative;
+}

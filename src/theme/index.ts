@@ -7,8 +7,8 @@ const breakpoints = {
 export const theme = extendTheme({
   breakpoints,
   fonts: {
-    heading: `'Lato'`,
-    body: `'Lato'`,
+    heading: `'Lato', sans-serif`,
+    body: `'Lato', sans-serif`,
   },
   colors: {
     gray: {
@@ -27,6 +27,7 @@ export const theme = extendTheme({
       800: '#2B2B2B',
       700: '#5B5B5B',
       600: '#49515a',
+      500: '#242424',
       100: '#000000',
     },
     yellow: {
@@ -35,6 +36,9 @@ export const theme = extendTheme({
     },
     red: {
       400: '#BA3326',
+    },
+    green: {
+      900: '#34a134',
     },
   },
   components: {

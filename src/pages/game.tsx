@@ -17,17 +17,29 @@ const GamePage = () => {
 
       <Box width="100%" background="black.900">
         <Container maxW="8xl" paddingX={{ base: '25px', md: '40px' }}>
-          <Box textAlign="center" marginTop="60px">
+          <Box textAlign="center" marginTop={{ base: '25px', md: '60px' }}>
             <Heading
               as="h1"
               fontSize={{ base: '14vw', sm: '70px' }}
               textTransform="uppercase"
               fontWeight="900"
-              marginBottom="60px"
+              marginBottom={{ base: '25px', md: '60px' }}
             >
               the <span style={{ color: '#ffc100' }}>Game</span>
               <span className={styles.titlePlayPart}>play</span>
             </Heading>
+            <Box
+              marginBottom="60px"
+              marginRight="auto"
+              marginLeft="auto"
+              width={{ base: 'auto', md: '820px' }}
+              textAlign="center"
+              color="white"
+            >
+              <Text fontSize="18px">
+                The following steps describe how Baffle Space Games (raffles) will play out.
+              </Text>
+            </Box>
             <SectionTitle text="Choose your dream prize" textColor="white" />
 
             <Text color="white" marginTop="20px" fontSize="18px">
@@ -37,21 +49,37 @@ const GamePage = () => {
             </Text>
           </Box>
           <Box marginY={{ base: '20px', sm: '60px' }} textAlign="center">
-            <SimpleGrid columns={{ base: 1, md: 3, sm: 2 }} spacing={10}>
+            <SimpleGrid columns={{ base: 1, xl: 3, lg: 2 }} spacing={10}>
               <ImageCard
                 categoryTitle="dream electronics"
-                url="whitepaper"
-                imageUrl="./electronics.jpg"
+                url="whitepaper#gameplay"
+                imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660306672/my-uploads/lqt6cowbsyrzfhnskqzn.jpg"
               />
-              <ImageCard categoryTitle="dream cars" url="whitepaper" imageUrl="./car.jpg" />
-              <ImageCard categoryTitle="dream bikes" url="whitepaper" imageUrl="./moto.jpg" />
-              <ImageCard categoryTitle="dream homes" url="whitepaper" imageUrl="./house.jpg" />
+              <ImageCard
+                categoryTitle="dream cars"
+                url="whitepaper#gameplay"
+                imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660306665/my-uploads/pjmii2zzqgqkrldxpck1.jpg"
+              />
+              <ImageCard
+                categoryTitle="dream bikes"
+                url="whitepaper#gameplay"
+                imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660308033/my-uploads/zfnprssjmojd9bn09gle.jpg"
+              />
+              <ImageCard
+                categoryTitle="dream homes"
+                url="whitepaper#gameplay"
+                imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660306692/my-uploads/skshtzeko1iue6zpz9be.jpg"
+              />
               <ImageCard
                 categoryTitle="dream experiences"
-                url="whitepaper"
-                imageUrl="./holiday.jpg"
+                url="whitepaper#gameplay"
+                imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660306686/my-uploads/c2rd53pee4naw8jyo3rx.jpg"
               />
-              <ImageCard categoryTitle="golden dream" url="whitepaper" imageUrl="./gold.jpg" />
+              <ImageCard
+                categoryTitle="golden dream"
+                url="whitepaper#gameplay"
+                imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660306678/my-uploads/jpp1uyjumwmoduckasth.jpg"
+              />
             </SimpleGrid>
             <Text
               fontWeight="900"
@@ -60,7 +88,12 @@ const GamePage = () => {
               fontSize="2xl"
               marginTop="50px"
             >
-              More Dream Prize Categories will be added soon
+              <Link href="/whitepaper#gameplay">
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                <a className={styles.link}>
+                  <strong> More Dream Prize Categories will be added soon</strong>
+                </a>
+              </Link>
             </Text>
           </Box>
         </Container>

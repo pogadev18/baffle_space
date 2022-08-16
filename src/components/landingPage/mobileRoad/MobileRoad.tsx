@@ -37,7 +37,7 @@ const MobileRoad = () => {
         </div>
         <div className={styles.description}>
           <p className={styles.checkpointDescription}>
-            Community Earning Mechanism Setup <span>Initial Method to Earn</span>
+            Community Earning Mechanism Setup <span>Initial Methods to Earn</span>
           </p>
         </div>
       </div>

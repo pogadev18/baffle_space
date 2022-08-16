@@ -1,7 +1,10 @@
-import { Box, Container, Flex } from '@chakra-ui/react';
+import { Box, Container, Flex, Text } from '@chakra-ui/react';
 
 import Faqs from '@/root/components/faqs';
-import SocialLinks from '@/root/components/socialLinks';
+// import SocialLinks from '@/root/components/socialLinks';
+import LogoWhite from '@/root/components/logoWhite';
+
+import styles from './HomeFooter.module.scss';
 
 const HomeFooter = () => {
   return (
@@ -12,17 +15,24 @@ const HomeFooter = () => {
           gap={{ base: 5, md: 20 }}
           direction={{ base: 'column', md: 'row' }}
         >
-          <Box flex={2}>
+          <Box flex={1}>
             <Faqs />
           </Box>
           <Box flex={1}>
-            <SocialLinks
-              iconTextColor="white"
-              iconsColor="white"
-              titleColor="white"
-              alignTitleRight
-              alignIconsRight
-            />
+            <section className={styles.logoWrapper}>
+              <LogoWhite />
+            </section>
+
+            <Text color="white" textAlign={{ base: 'center', md: 'right' }} marginTop="20px">
+              &copy; Baffle Space 2022
+            </Text>
+            {/* <SocialLinks */}
+            {/*  iconTextColor="white" */}
+            {/*  iconsColor="white" */}
+            {/*  titleColor="white" */}
+            {/*  alignTitleRight */}
+            {/*  alignIconsRight */}
+            {/* /> */}
           </Box>
         </Flex>
       </Container>

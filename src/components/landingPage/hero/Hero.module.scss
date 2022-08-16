@@ -1,14 +1,19 @@
-.uniwhaleImg {
-  animation: MoveUpDown 2.5s linear infinite;
-  position: absolute;
+.heroInfo {
+  background: rgba(0,0,0,0.7);
+  padding: 30px;
+  border-radius: 5px;
+
+  @media screen and (max-width: 992px) {
+    width: 100%;
+    text-align: center;
+  }
 }
 
-@keyframes MoveUpDown {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(15px);
+.moreAboutBaffleModal {
+  align-self: center;
+  padding-bottom: 35px;
 
+  svg {
+    color: white;
   }
 }

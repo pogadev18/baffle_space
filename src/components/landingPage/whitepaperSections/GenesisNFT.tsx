@@ -25,10 +25,12 @@ const GenesisNFT = () => {
         Prizes. The more people you manage to bring to mint their NFT using your referral link and
         play for the Dream Prizes Baffle Space offers, the more you will earn.
       </p>
-      <p>Bringing people to mint and play will increase your earnings when Baffle Space Games</p>
+      <p>
+        Bringing people to mint and play will increase your earnings when Baffle Space Games start.
+      </p>
       <ol>
         <li>
-          <strong>Whitelist & Mint</strong>
+          <strong>Whitelist & Mint Earnings</strong>
           <p>
             While we work intensely on designing the NFTs, we opened a whitelist with 500 spots
             available for people who want to be among the first to own a business on the blockchain
@@ -46,7 +48,7 @@ const GenesisNFT = () => {
           </p>
         </li>
         <li>
-          <strong> Baffle Space Games Start NFT</strong>
+          <strong>Baffle Space Games Start As An NFT Owner</strong>
           <p>
             Shortly after the NFT minting will be accomplished the first version of the Baffle Space
             Gaming dApp will be launched&nbsp;
@@ -72,7 +74,7 @@ const GenesisNFT = () => {
           </p>
           <ol>
             <li>
-              <strong>Cumulative discounts</strong>
+              <strong>Cumulative discounted chances</strong>
               <p>
                 When people buy ticket packages for Dream Prizes using your second referral link,
                 the discount you offer them, adds up to the discount we offer all players for
@@ -80,7 +82,7 @@ const GenesisNFT = () => {
               </p>
             </li>
             <li>
-              <strong>Increasing your share</strong>
+              <strong>Increasing your share of the pie</strong>
               <p>
                 After the accumulation step of each game is completed and the validation amount is
                 passed, the tickets bought using your referral link will increase the weight of your
@@ -90,7 +92,7 @@ const GenesisNFT = () => {
               </p>
             </li>
             <li>
-              <strong>Descendant NFT Creation</strong>
+              <strong>Descendant NFT Creation Revenue</strong>
               <p>
                 Baffle Space Genesis NFT owners will have the ability to generate
                 &ldquo;offspring&rdquo; NFTs, free of charge ( minus minting/transaction fees). You,

@@ -74,14 +74,14 @@ const TheGameplay = () => {
               <span className={styles.nestedTitle}>Validation</span>
               <p>
                 Each game will play out if within the time-frame the minimum validation amount is
-                raised by ticket sales.* The minimum validation amount represents the value of the
+                raised by ticket sales. The minimum validation amount represents the value of the
                 prize the raffle is held for.
               </p>
             </li>
             <li>
               <span className={styles.nestedTitle}>Earnings of NFT owning players</span>
               <p>
-                <Link href="/whitepaper#gameStart">
+                <Link href="/whitepaper#genesisNFT">
                   {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                   <a className={styles.link}>Read More</a>
                 </Link>
@@ -121,9 +121,11 @@ const TheGameplay = () => {
             <li>
               Claiming the win
               <p>
+                Players will be able to find out if they won the Dream Prize in their dashboard.
+              </p>
+              <p>
                 Baffle Space offers the owner of the winning ticket two options of claiming the
-                Dream Prize. The winner will reach out to us on Telegram to confirm their win and
-                choose how they wish to claim their prize.
+                Dream Prize.
               </p>
               <ol>
                 <li>
