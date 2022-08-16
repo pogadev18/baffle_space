@@ -11,9 +11,9 @@ interface WhitelistDrawerWarningProps {
 const WhitelistDrawerWarning = ({ setDisplayWarning }: WhitelistDrawerWarningProps) => {
   return (
     <Box
-      position="fixed"
+      position={{ base: 'relative', md: 'fixed' }}
       width={{ base: '90%', lg: 'auto' }}
-      bottom="10"
+      bottom={{ base: '0', md: '20px' }}
       background="#ffce86"
       color="black"
       padding="30px 15px 15px 15px"
