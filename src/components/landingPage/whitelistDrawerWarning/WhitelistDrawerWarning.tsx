@@ -11,9 +11,10 @@ interface WhitelistDrawerWarningProps {
 const WhitelistDrawerWarning = ({ setDisplayWarning }: WhitelistDrawerWarningProps) => {
   return (
     <Box
-      position={{ base: 'relative', md: 'fixed' }}
+      position={{ base: 'absolute', md: 'fixed' }}
       width={{ base: '90%', lg: 'auto' }}
-      bottom={{ base: '0', md: '20px' }}
+      bottom={{ base: 'auto', md: '20px' }}
+      top={{ base: '0px', md: 'auto' }}
       background="#ffce86"
       color="black"
       padding="30px 15px 15px 15px"
@@ -41,7 +42,7 @@ const WhitelistDrawerWarning = ({ setDisplayWarning }: WhitelistDrawerWarningPro
           &nbsp;to your browser
         </>
       ) : (
-        <a href={METAMASK_APP_URL}>
+        <a style={{ textDecoration: 'underline' }} href={METAMASK_APP_URL}>
           <strong>enter from metamask</strong>
         </a>
       )}
