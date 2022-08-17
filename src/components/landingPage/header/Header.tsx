@@ -148,7 +148,7 @@ const LandingPageHeader = () => {
                   hasArrow
                   label={
                     metamaskAvailability === 'notFound'
-                      ? 'Install metamask in order to connect'
+                      ? 'MetaMask needs to be installed in order to connect'
                       : ''
                   }
                   bg="red.600"
@@ -180,7 +180,7 @@ const LandingPageHeader = () => {
                     hasArrow
                     label={
                       metamaskAvailability === 'notFound'
-                        ? 'Install metamask in order to connect'
+                        ? 'MetaMask needs to be installed in order to connect'
                         : ''
                     }
                     bg="red.600"
