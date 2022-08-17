@@ -10,6 +10,7 @@ import {
   Spinner,
   Stack,
   useDisclosure,
+  Tooltip,
 } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import detectEthereumProvider from '@metamask/detect-provider';
@@ -54,7 +55,7 @@ const LandingPageHeader = () => {
         }
 
         if (!provider) {
-          setMetamaskAvailability('not found');
+          setMetamaskAvailability('notFound');
         }
       } catch (error) {
         setMetamaskAvailability('error');
@@ -79,7 +80,7 @@ const LandingPageHeader = () => {
         <div style={{ padding: '15px' }}>
           <Spinner color="white" />
         </div>
-      ) : !isAuthenticated && metamaskAvailability === 'not found' ? (
+      ) : !isAuthenticated && metamaskAvailability === 'notFound' ? (
         <AlertComponent
           showIcon={false}
           status={AlertStatusValues.Info}
@@ -143,16 +144,26 @@ const LandingPageHeader = () => {
             >
               {isAuthenticated && <Dashboard />}
               {!isAuthenticated && (
-                <Button
-                  variant="solid"
-                  onClick={handleLogin}
-                  size="sm"
-                  colorScheme="yellow"
-                  rounded="full"
-                  isLoading={isAuthenticating}
+                <Tooltip
+                  hasArrow
+                  label={
+                    metamaskAvailability === 'notFound'
+                      ? 'Install metamask in order to connect'
+                      : ''
+                  }
+                  bg="red.600"
                 >
-                  Connect with MetaMask
-                </Button>
+                  <Button
+                    variant="solid"
+                    onClick={handleLogin}
+                    size="sm"
+                    colorScheme="yellow"
+                    rounded="full"
+                    isLoading={isAuthenticating}
+                  >
+                    Connect with MetaMask
+                  </Button>
+                </Tooltip>
               )}
             </Flex>
           </Flex>
@@ -165,19 +176,29 @@ const LandingPageHeader = () => {
                   </Box>
                 )}
                 {!isAuthenticated && (
-                  <Button
-                    variant="solid"
-                    onClick={handleLogin}
-                    size="md"
-                    margin="25px 0 10px 0"
-                    paddingY="23px"
-                    width="100%"
-                    colorScheme="yellow"
-                    rounded="full"
-                    isLoading={isAuthenticating}
+                  <Tooltip
+                    hasArrow
+                    label={
+                      metamaskAvailability === 'notFound'
+                        ? 'Install metamask in order to connect'
+                        : ''
+                    }
+                    bg="red.600"
                   >
-                    Connect with MetaMask
-                  </Button>
+                    <Button
+                      variant="solid"
+                      onClick={handleLogin}
+                      size="md"
+                      margin="25px 0 10px 0"
+                      paddingY="23px"
+                      width="100%"
+                      colorScheme="yellow"
+                      rounded="full"
+                      isLoading={isAuthenticating}
+                    >
+                      Connect with MetaMask
+                    </Button>
+                  </Tooltip>
                 )}
                 {Links.map((link) => (
                   <NavLink onClick={onClose} url={renderLinksUrl(link)} key={link}>
