@@ -41,7 +41,7 @@ const DashboardDrawer = () => {
         onClick={onOpen}
         size="xl"
       >
-        <AiOutlineUser size="30" color="white" /> Your dashboard
+        <AiOutlineUser size="30" color="white" /> your dashboard
       </Button>
       <Divider paddingBottom="5px" display={{ base: 'block', sm: 'none' }} />
 

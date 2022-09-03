@@ -40,6 +40,10 @@ export const theme = extendTheme({
     green: {
       900: '#34a134',
     },
+    pink: {
+      900: '#ef21d9',
+      800: '#bc25ab',
+    },
   },
   components: {
     Button: {

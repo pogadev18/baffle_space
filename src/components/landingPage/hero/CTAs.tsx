@@ -31,7 +31,11 @@ const CTAs = () => {
           px={6}
           marginTop={{ base: 3, lg: 0 }}
           width={{ base: '100%', md: '400px' }}
-          colorScheme="yellow"
+          backgroundColor="pink.900"
+          color="white"
+          _hover={{
+            backgroundColor: 'pink.800',
+          }}
           rightIcon={<FaYoutube />}
         >
           Play Intro Video

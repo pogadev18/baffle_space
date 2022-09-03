@@ -14,12 +14,13 @@ import {
 } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import detectEthereumProvider from '@metamask/detect-provider';
+import { IoWalletOutline } from 'react-icons/io5';
 
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { useMoralis } from 'react-moralis';
 
 import Logo from '@/root/components/logo';
-import ParticipateToWhiteListBanner from '@/root/components/landingPage/participateToWhiteListBanner';
+// import ParticipateToWhiteListBanner from '@/root/components/landingPage/participateToWhiteListBanner';
 import NavLink from '@/root/components/navLink';
 
 import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
@@ -90,9 +91,9 @@ const LandingPageHeader = () => {
         </AlertComponent>
       ) : null}
 
-      <ParticipateToWhiteListBanner />
+      {/* <ParticipateToWhiteListBanner /> */}
 
-      <Box width="100%" bg="black.900">
+      <Box width="100%" position={{ base: 'static', lg: 'absolute' }} zIndex="10">
         <Container
           position="relative"
           paddingBottom={{ base: '1.25rem', md: '0' }}
@@ -151,17 +152,19 @@ const LandingPageHeader = () => {
                       ? 'MetaMask needs to be installed in order to connect'
                       : ''
                   }
-                  bg="red.600"
+                  bg="pink.900"
                 >
                   <Button
-                    variant="solid"
+                    variant="ghost"
                     onClick={handleLogin}
                     size="sm"
-                    colorScheme="yellow"
                     rounded="full"
+                    color="white"
+                    rightIcon={<IoWalletOutline />}
                     isLoading={isAuthenticating}
+                    _hover={{ background: 'pink.900' }}
                   >
-                    Connect with MetaMask
+                    Connect
                   </Button>
                 </Tooltip>
               )}

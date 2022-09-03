@@ -1,45 +1,44 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
+import React from 'react';
 
 const HeroText = () => {
   return (
-    <Box marginBottom={{ base: 0, lg: 10 }}>
+    <Box textAlign="center">
       <Heading
-        lineHeight={1.1}
-        fontWeight={300}
-        fontSize={{ base: '11vw', lg: '80px' }}
+        lineHeight={1.4}
+        fontWeight={900}
+        color="white"
+        fontSize={{ base: '11vw', lg: '28px' }}
+        textTransform="uppercase"
         marginBottom={{ base: '10px', lg: 0 }}
       >
-        <Text color="white" as="span" textTransform="uppercase" position="relative">
-          Baffle.
-        </Text>
-        <Text textTransform="uppercase" as="span" color="yellow.400" fontWeight="300">
-          Space
-        </Text>
-        <br />
+        Raffles for dreams and baffling wins!
       </Heading>
       <Text
-        color="white"
+        color="gray.500"
         width={{ base: 'auto', lg: '80%' }}
         textAlign="center"
         margin="auto"
         fontWeight="700"
         lineHeight={{ base: '35px', lg: 'auto' }}
-        fontSize={{ base: '28px', lg: '25px' }}
+        fontSize={{ base: '28px', lg: '22px' }}
         marginTop="0"
       >
-        Raffles for dreams and baffling wins!
+        Home of the play to win &amp; earn games
       </Text>
       <Text
-        width={{ base: 'auto', lg: '80%' }}
-        textAlign="center"
-        margin="auto"
+        margin="20px auto 0"
         color="white"
-        fontWeight="bold"
-        textTransform="uppercase"
-        marginTop="10px"
-        fontSize="16px"
+        fontSize="18px"
+        width={{ base: 'auto', md: '500px' }}
       >
-        Home of the play to win &amp; earn games
+        Baffle Space hosts hybrid games of chance playable with crypto, where participants win real
+        world prizes, crypto and can also earn as owners of the games.
+        <br />
+        <br />
+        In a fully decentralised environment powered by blockchain technology we hold in high regard
+        the privacy and security of participants in the Baffle Space Ecosystem so you can win and
+        earn safely and anonymously.
       </Text>
     </Box>
   );

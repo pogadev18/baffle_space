@@ -1,13 +1,14 @@
 .navLink {
   color: white;
   padding: 2px 5px;
-  text-transform: uppercase;
+  text-transform: lowercase;
+  font-weight: bold;
   border-radius: 5px;
 
   &:hover {
     text-decoration: none;
-    background: #FFC000;
-    color: #1E1E1E;
+    background: #ef21d9;
+    color: white;
   }
 }
 

@@ -1,4 +1,4 @@
-import { Container, Stack, Box } from '@chakra-ui/react';
+import { Container, Box, Image } from '@chakra-ui/react';
 
 import CTAs from './CTAs';
 import HeroText from './HeroText';
@@ -7,36 +7,34 @@ import styles from './Hero.module.scss';
 
 const Hero = () => {
   return (
-    <Box
-      width="100%"
-      backgroundImage={{
-        base: 'url(https://res.cloudinary.com/baffle-space/image/upload/v1660306371/my-uploads/hdeogqjyfbbkruq1ngos.webp), url(https://res.cloudinary.com/baffle-space/image/upload/v1660306360/my-uploads/cu5sdivswvpow7e0ut5c.jpg)',
-        md: 'url(https://res.cloudinary.com/baffle-space/image/upload/v1660305975/my-uploads/qwjzoktwccp8ouhrvurn.webp), url(https://res.cloudinary.com/baffle-space/image/upload/v1660305968/my-uploads/xo4aetcflcjefqacyqgv.jpg)',
-      }}
-      backgroundSize="cover"
-      backgroundPosition="center center"
-    >
+    <Box className={styles.heroWrapper} width="100%">
       <Container
         display={{ base: 'block', lg: 'flex' }}
-        height={{ base: '100vh', lg: 'calc(100vh - 128px)' }}
+        height="100vh"
         maxW="8xl"
         position="relative"
         paddingX={{ base: '0px', lg: '40px' }}
       >
-        <Stack
-          className="info-container"
-          align="center"
-          spacing={{ base: 8, sm: 10 }}
-          py={{ base: 0, lg: 40 }}
-          direction={{ base: 'column', lg: 'row' }}
-        >
-          <Stack className={styles.heroInfo}>
+        <Box display="flex" alignItems="center" justifyContent="center">
+          <Box position="relative" right="100px">
+            <Image
+              borderRadius="5px"
+              alt="Dream Category"
+              fit="cover"
+              align="center"
+              h="100%"
+              w="100%"
+              margin="auto"
+              src="https://res.cloudinary.com/baffle-space/image/upload/v1662207801/my-uploads/hero-image-w_hzq7ma.webp"
+            />
+          </Box>
+          <Box>
             <HeroText />
-            <Box display={{ base: 'block', lg: 'block' }}>
+            <Box marginTop="40px">
               <CTAs />
             </Box>
-          </Stack>
-        </Stack>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
