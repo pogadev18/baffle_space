@@ -25,11 +25,13 @@ const AlertComponent = ({ status, title, children, showIcon }: AlertComponentPro
 
   return isOpen ? (
     <Alert
-      background="#ffce86"
+      zIndex="20"
+      backgroundColor="pink.900"
       textAlign="center"
       justifyContent="center"
       status={status}
       overflow="inherit"
+      color="white"
     >
       {showIcon ? <AlertIcon /> : null}
       <Box>
@@ -39,7 +41,7 @@ const AlertComponent = ({ status, title, children, showIcon }: AlertComponentPro
       <CloseButton alignSelf="flex-start" position="absolute" right={1} top={1} onClick={onClose} />
     </Alert>
   ) : (
-    <Box height="50px" width="100%" background="#ffce86" textAlign="center">
+    <Box height="50px" width="100%" backgroundColor="pink.900" textAlign="center">
       <Button
         id="toggle-metamask-help-text"
         _hover={{

@@ -1,6 +1,61 @@
 .heroWrapper {
-  background-size: contain;
-  background-position: bottom;
+  background-size: cover;
+  background-position: center center;
   background-repeat: no-repeat;
-  background-image: url("https://res.cloudinary.com/baffle-space/image/upload/v1662207537/my-uploads/pata_de_culoare_mlyzxk.svg"), linear-gradient(#231f20, #2c0f55);
+  background-image: url("https://res.cloudinary.com/baffle-space/image/upload/v1662295319/my-uploads/hero_img_qulws4.webp");
+
+  @media screen and (max-width: 992px) {
+    background-image: url("https://res.cloudinary.com/baffle-space/image/upload/v1662297668/my-uploads/hero_mobil_ijbjsd.webp");
+    background-position: center;
+  }
+
+  @media screen and (max-width: 500px) {
+    background-position: bottom;
+  }
+}
+
+.heroTitle {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 65px;
+
+  @media screen and (max-width: 992px) {
+    text-shadow: 6px 6px 0 rgba(0,0,0,0.7);
+    line-height: 35px;
+  }
+}
+
+.firstTitle {
+  font-size: 127px;
+
+  @media screen and (max-width: 992px) {
+    font-size: 70px;
+  }
+}
+
+.secondTitle {
+  font-size: 89px;
+
+  @media screen and (max-width: 992px) {
+    font-size: 48px;
+  }
+}
+
+.pinkWord {
+  color: #ef21d9;
+}
+
+.textWrapper {
+  background: #64105bcc;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+
+  @media screen and (max-width: 992px) {
+    background: transparent;
+  }
 }

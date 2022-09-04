@@ -1,4 +1,4 @@
-import { Container, Box, Image } from '@chakra-ui/react';
+import { Container, Box } from '@chakra-ui/react';
 
 import CTAs from './CTAs';
 import HeroText from './HeroText';
@@ -15,20 +15,18 @@ const Hero = () => {
         position="relative"
         paddingX={{ base: '0px', lg: '40px' }}
       >
-        <Box display="flex" alignItems="center" justifyContent="center">
-          <Box position="relative" right="100px">
-            <Image
-              borderRadius="5px"
-              alt="Dream Category"
-              fit="cover"
-              align="center"
-              h="100%"
-              w="100%"
-              margin="auto"
-              src="https://res.cloudinary.com/baffle-space/image/upload/v1662207801/my-uploads/hero-image-w_hzq7ma.webp"
-            />
-          </Box>
-          <Box>
+        <Box
+          width="100%"
+          display="flex"
+          flexDirection={{ base: 'column', lg: 'row' }}
+          alignItems="center"
+          justifyContent={{ base: 'auto', lg: 'flex-end' }}
+        >
+          <Box
+            padding={{ base: '0 25px', lg: '0' }}
+            position={{ base: 'absolute', lg: 'static' }}
+            bottom="45px"
+          >
             <HeroText />
             <Box marginTop="40px">
               <CTAs />

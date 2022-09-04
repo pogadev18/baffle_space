@@ -29,10 +29,12 @@ const CTAs = () => {
           variant="solid"
           size={{ base: 'md', lg: 'lg' }}
           px={6}
+          py={10}
           marginTop={{ base: 3, lg: 0 }}
-          width={{ base: '100%', md: '400px' }}
+          width={{ base: '100%', md: '260px' }}
           backgroundColor="pink.900"
           color="white"
+          textTransform="uppercase"
           _hover={{
             backgroundColor: 'pink.800',
           }}

@@ -25,7 +25,7 @@ const MetamaskMobileTutorial = () => {
         rounded="full"
         width={{ base: '100%', md: '80%' }}
         colorScheme="yellow"
-        color="black"
+        color="white"
         rightIcon={<FaYoutube />}
         variant="outline"
         _hover={{ background: 'transparent' }}
