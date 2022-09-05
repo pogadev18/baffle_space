@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import Hero from '@/root/components/landingPage/hero';
+import HomeSlider from '@/root/components/homeSlider';
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       </Head>
 
       <Hero />
+      <HomeSlider />
     </>
   );
 };
