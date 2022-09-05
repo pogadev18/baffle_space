@@ -1,9 +1,8 @@
-import React from 'react';
 import { Button, Image } from '@chakra-ui/react';
 
 import styles from './HomeSlider.module.scss';
 
-const Slide1 = () => {
+const Slide3 = () => {
   return (
     <div className={styles.slider}>
       <div className={styles.slideImage}>
@@ -12,35 +11,19 @@ const Slide1 = () => {
           alt="Dream Car"
           fit="cover"
           align="center"
-          h={{ base: 'auto', custom1110: '300px' }}
+          h={{ base: 'auto', custom1110: '400px' }}
           w="100%"
           margin="auto"
-          src="https://res.cloudinary.com/baffle-space/image/upload/v1662397590/my-uploads/masina_copy_simz10.webp"
+          src="https://res.cloudinary.com/baffle-space/image/upload/v1662388352/my-uploads/electro_rdptkh.webp"
         />
       </div>
       <div className={styles.carSliderInfo}>
         <h2>
-          Your dream to win <br />a luxury car
+          or maybe you like
+          <br /> high-end electronics
         </h2>
-        <h3>Home of the play to win &amp; earn games</h3>
+        <h3>All electronics are absolutely awesome!!</h3>
         <div className={styles.carButtons}>
-          <Button
-            rounded="full"
-            variant="solid"
-            size={{ base: 'md', lg: 'lg' }}
-            px={6}
-            border="1px solid black"
-            width={{ base: '100%', md: '260px' }}
-            backgroundColor="black"
-            color="white"
-            textTransform="uppercase"
-            _hover={{
-              backgroundColor: 'white',
-              color: 'black',
-            }}
-          >
-            Cars collection
-          </Button>
           <Button
             rounded="full"
             variant="solid"
@@ -64,4 +47,4 @@ const Slide1 = () => {
   );
 };
 
-export default Slide1;
+export default Slide3;

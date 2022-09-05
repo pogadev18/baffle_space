@@ -1,31 +1,41 @@
+import Slider from 'react-slick';
 import { Container } from '@chakra-ui/react';
-import { Carousel } from 'react-responsive-carousel';
 
 import Slide1 from './Slide1';
+import Slide2 from './Slide2';
+import Slide3 from './Slide3';
+import Slide4 from './Slide4';
+import Slide5 from './Slide5';
 
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import styles from './HomeSlider.module.scss';
 
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
+
 const HomeSlider = () => (
-  <Container
-    display={{ base: 'block', lg: 'flex' }}
-    height="100vh"
-    maxW="8xl"
-    position="relative"
-    paddingX={{ base: '0px', lg: '40px' }}
-    className={styles.carouselWrapper}
-  >
-    <Carousel className={styles.baffleCarousel} swipeable showArrows={false} showStatus={false}>
+  <Container paddingX={{ base: '25px', md: '40px' }} maxW="8xl" className={styles.carouselWrapper}>
+    <Slider {...settings}>
       <div className={styles.slideWrapper}>
         <Slide1 />
       </div>
       <div className={styles.slideWrapper}>
-        <h2>Slide 2</h2>
+        <Slide2 />
       </div>
       <div className={styles.slideWrapper}>
-        <h2>Slide 3</h2>
+        <Slide3 />
       </div>
-    </Carousel>
+      <div className={styles.slideWrapper}>
+        <Slide4 />
+      </div>
+      <div className={styles.slideWrapper}>
+        <Slide5 />
+      </div>
+    </Slider>
   </Container>
 );
 

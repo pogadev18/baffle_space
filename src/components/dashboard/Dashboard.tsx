@@ -56,7 +56,6 @@ const DashboardDrawer = () => {
         <DrawerContent background="yellow.400">
           <Box
             display={{ base: 'block', custom1110: 'flex' }}
-            // alignItems="center"
             height="100%"
             overflowY="auto"
             position="relative"
