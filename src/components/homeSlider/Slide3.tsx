@@ -1,8 +1,13 @@
-import { Button, Image } from '@chakra-ui/react';
+import { Button, Image, Modal, ModalOverlay, useDisclosure } from '@chakra-ui/react';
+
+import SliderModalSkeleton from '@/root/components/homeSlider/SliderModalSkeleton';
+import ElectronicsModalContent from './ElectronicsModalContent';
 
 import styles from './HomeSlider.module.scss';
 
 const Slide3 = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <div className={styles.slider}>
       <div className={styles.slideImage}>
@@ -33,6 +38,7 @@ const Slide3 = () => {
             width={{ base: '100%', md: '260px' }}
             backgroundColor="white"
             color="black"
+            onClick={onOpen}
             textTransform="uppercase"
             _hover={{
               backgroundColor: 'black',
@@ -43,6 +49,16 @@ const Slide3 = () => {
           </Button>
         </div>
       </div>
+      <Modal isOpen={isOpen} onClose={onClose} size="full">
+        <ModalOverlay />
+        <SliderModalSkeleton
+          title="Dream Electronics"
+          subtitle="lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect"
+          onClose={onClose}
+        >
+          <ElectronicsModalContent />
+        </SliderModalSkeleton>
+      </Modal>
     </div>
   );
 };

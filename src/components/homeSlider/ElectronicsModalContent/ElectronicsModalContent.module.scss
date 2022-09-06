@@ -1,0 +1,44 @@
+.row {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.firstRow {
+  .column:first-child {
+    flex-basis: calc(50% - 15px)
+  }
+
+  .column:last-child {
+    flex-basis: calc(50% - 15px);
+    background: #fff;
+    border-radius: 15px;
+  }
+}
+
+.product {
+  background: #fff;
+  color: #000;
+  padding: 15px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.listFlex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  li {
+    flex-basis: calc(50% - 15px);
+  }
+}
+
+.title {
+  font-weight: 900;
+}
+
+.productPrice {
+  margin-top: 10px;
+}

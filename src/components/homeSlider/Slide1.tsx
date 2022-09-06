@@ -68,7 +68,11 @@ const Slide1 = () => {
       </div>
       <Modal isOpen={isOpen} onClose={onClose} size="full">
         <ModalOverlay />
-        <SliderModalSkeleton title="" onClose={onClose}>
+        <SliderModalSkeleton
+          title="Dream Cars Contest"
+          subtitle="lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect"
+          onClose={onClose}
+        >
           <CarsModalContent />
         </SliderModalSkeleton>
       </Modal>
