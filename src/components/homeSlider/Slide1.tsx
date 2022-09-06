@@ -1,9 +1,14 @@
 import React from 'react';
-import { Button, Image } from '@chakra-ui/react';
+import { Button, Image, Modal, ModalOverlay, useDisclosure } from '@chakra-ui/react';
+
+import SliderModalSkeleton from './SliderModalSkeleton';
+import CarsModalContent from './CarsModalContent';
 
 import styles from './HomeSlider.module.scss';
 
 const Slide1 = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <div className={styles.slider}>
       <div className={styles.slideImage}>
@@ -29,6 +34,7 @@ const Slide1 = () => {
             variant="solid"
             size={{ base: 'md', lg: 'lg' }}
             px={6}
+            onClick={onOpen}
             border="1px solid black"
             width={{ base: '100%', md: '260px' }}
             backgroundColor="black"
@@ -60,6 +66,12 @@ const Slide1 = () => {
           </Button>
         </div>
       </div>
+      <Modal isOpen={isOpen} onClose={onClose} size="full">
+        <ModalOverlay />
+        <SliderModalSkeleton title="" onClose={onClose}>
+          <CarsModalContent />
+        </SliderModalSkeleton>
+      </Modal>
     </div>
   );
 };

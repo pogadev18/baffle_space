@@ -1,0 +1,38 @@
+.carsWrapper {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.car {
+  background: #4f4f4f;
+  flex-basis: calc(25% - 15px);
+  color: #ccc;
+  padding: 15px;
+  border-radius: 15px;
+
+  @media screen and (max-width: 1275px) {
+    flex-basis: calc(33.33% - 15px);
+  }
+
+  @media screen and (max-width: 992px) {
+    flex-basis: calc(50% - 15px);
+  }
+
+  @media screen and (max-width: 767px) {
+    flex-basis: 100%;
+  }
+}
+
+.carType {
+  font-weight: 900;
+}
+
+.carPrice {}
+.chanceToWin {
+  margin-bottom: 10px;
+
+  span {
+    font-weight: 900;
+  }
+}
