@@ -1,0 +1,39 @@
+.sectionWrapper {
+  height: 100vh;
+  width: 100%;
+  background: url('https://res.cloudinary.com/baffle-space/image/upload/v1662560518/my-uploads/ocean-desktop-home_copy_r382bd.webp') center center no-repeat;
+  background-size: cover;
+
+  @media screen and (max-width: 992px) {
+    height: auto;
+  }
+
+  h2 {
+    font-weight: 900;
+    font-size: 35px;
+    line-height: 45px;
+    margin-bottom: 25px;
+    color: #fff;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 1100px) {
+      font-size: 23px;
+      line-height: 33px;
+    }
+  }
+}
+
+.container {
+  height: 100vh;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+    justify-content: center;
+    height: auto;
+
+    padding: 40px 0;
+  }
+}

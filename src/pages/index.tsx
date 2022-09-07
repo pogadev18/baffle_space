@@ -2,6 +2,8 @@ import Head from 'next/head';
 
 import Hero from '@/root/components/landingPage/hero';
 import HomeSlider from '@/root/components/homeSlider';
+import HomeWhaleSection from '@/root/components/HomeWhaleSection';
+import IncomeDistribution from '@/root/components/IncomeDistribution';
 
 const Home = () => {
   return (
@@ -12,6 +14,8 @@ const Home = () => {
 
       <Hero />
       <HomeSlider />
+      <HomeWhaleSection />
+      <IncomeDistribution />
     </>
   );
 };
