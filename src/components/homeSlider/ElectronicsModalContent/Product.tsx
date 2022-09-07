@@ -24,6 +24,7 @@ const Product = ({ title, imageSrc, info, price, titleBig }: ProductProps) => {
         w="100%"
         margin="auto"
         src={imageSrc}
+        marginBottom="25px"
       />
       <p className={`${styles.title} ${titleBig ? styles.titleBig : ''}`}>{title}</p>
       {info &&

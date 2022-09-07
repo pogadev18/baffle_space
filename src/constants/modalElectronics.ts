@@ -31,7 +31,7 @@ export const firstRowSecondary = [
 export const firstRowMain = {
   imageSrc:
     'https://res.cloudinary.com/baffle-space/image/upload/v1662544079/my-uploads/mc_copy_y2aiqe.webp',
-  title: 'SOME KIND OF PRO COMBO',
+  title: 'THE PROFESSIONAL COMBO',
   info: [
     'Apple Pro Display XDR',
     'Mac Pro Tower',

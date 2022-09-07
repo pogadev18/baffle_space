@@ -3,6 +3,10 @@
   gap: 30px;
   justify-content: space-between;
   margin-bottom: 30px;
+
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+  }
 }
 
 .firstRow {
@@ -46,7 +50,7 @@
 }
 
 .chanceToWin {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 
   span {
     font-weight: 900;
@@ -60,6 +64,10 @@
   gap: 30px;
   justify-content: space-between;
 
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+  }
+
   li {
     flex-basis: calc(50% - 15px);
   }
@@ -67,10 +75,18 @@
 
 .title {
   font-weight: 900;
+  //margin-top: 20px;
 }
 
 .titleBig {
   font-size: 30px;
+  line-height: 38px;
+  margin-bottom: 15px;
+
+  @media screen and (max-width: 992px) {
+    font-size: 26px;
+    line-height:36px;
+  }
 }
 
 .productPrice {

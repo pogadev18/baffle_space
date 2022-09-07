@@ -50,7 +50,7 @@ const Slide3 = () => {
         </div>
       </div>
       <Modal isOpen={isOpen} onClose={onClose} size="full">
-        <ModalOverlay />
+        <ModalOverlay backgroundColor="#232323" />
         <SliderModalSkeleton
           title="Dream Electronics"
           subtitle="lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect"
