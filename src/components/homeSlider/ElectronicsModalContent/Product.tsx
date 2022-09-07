@@ -7,11 +7,15 @@ interface ProductProps {
   imageSrc: string;
   info?: string[];
   price: string;
+  titleBig?: boolean;
 }
 
-const Product = ({ title, imageSrc, info, price }: ProductProps) => {
+const Product = ({ title, imageSrc, info, price, titleBig }: ProductProps) => {
   return (
     <li className={styles.product}>
+      <p className={styles.chanceToWin}>
+        1 Chance to win - <span>6 Matic</span>
+      </p>
       <Image
         alt={title}
         fit="cover"
@@ -21,7 +25,7 @@ const Product = ({ title, imageSrc, info, price }: ProductProps) => {
         margin="auto"
         src={imageSrc}
       />
-      <p className={styles.title}>{title}</p>
+      <p className={`${styles.title} ${titleBig ? styles.titleBig : ''}`}>{title}</p>
       {info &&
         info.map((detail) => (
           <p className={styles.title} key={detail}>
@@ -35,6 +39,7 @@ const Product = ({ title, imageSrc, info, price }: ProductProps) => {
 
 Product.defaultProps = {
   info: [],
+  titleBig: false,
 };
 
 export default Product;

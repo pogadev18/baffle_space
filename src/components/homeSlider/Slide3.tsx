@@ -36,13 +36,13 @@ const Slide3 = () => {
             px={6}
             border="1px solid black"
             width={{ base: '100%', md: '260px' }}
-            backgroundColor="white"
-            color="black"
+            backgroundColor="black"
+            color="white"
             onClick={onOpen}
             textTransform="uppercase"
             _hover={{
-              backgroundColor: 'black',
-              color: 'white',
+              backgroundColor: 'white',
+              color: 'black',
             }}
           >
             Read more
