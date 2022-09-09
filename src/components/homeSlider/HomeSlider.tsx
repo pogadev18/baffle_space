@@ -5,7 +5,6 @@ import Slide1 from './Slide1';
 import Slide2 from './Slide2';
 import Slide3 from './Slide3';
 import Slide4 from './Slide4';
-import Slide5 from './Slide5';
 
 import styles from './HomeSlider.module.scss';
 
@@ -31,9 +30,6 @@ const HomeSlider = () => (
       </div>
       <div className={styles.slideWrapper}>
         <Slide4 />
-      </div>
-      <div className={styles.slideWrapper}>
-        <Slide5 />
       </div>
     </Slider>
   </Container>

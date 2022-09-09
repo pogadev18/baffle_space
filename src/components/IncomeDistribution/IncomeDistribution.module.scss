@@ -17,6 +17,13 @@
   }
 }
 
+.title {
+  background: #ededed;
+  color: black;
+  padding: 15px;
+  font-weight: bold;
+}
+
 .distributionColumns {
   width: 100%;
   display: flex;
@@ -30,13 +37,6 @@
 
   > div {
     flex-basis: calc(50% - 30px)
-  }
-
-  .title {
-    background: #ededed;
-    color: black;
-    padding: 15px;
-    font-weight: bold;
   }
 }
 

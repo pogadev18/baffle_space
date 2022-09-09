@@ -1,9 +1,13 @@
-import React from 'react';
-import { Button, Image, Text } from '@chakra-ui/react';
+import { Button, Image, Modal, ModalOverlay, Text, useDisclosure } from '@chakra-ui/react';
+
+import SliderModalSkeleton from '@/root/components/homeSlider/SliderModalSkeleton';
+import ChristmasModalContent from '@/root/components/homeSlider/ChristmasModalContent';
 
 import styles from './HomeSlider.module.scss';
 
-const Slide1 = () => {
+const Slide2 = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <div className={styles.slider}>
       <div className={styles.slideImage}>
@@ -40,20 +44,34 @@ const Slide1 = () => {
             px={6}
             border="1px solid black"
             width={{ base: '100%', md: '260px' }}
-            backgroundColor="white"
-            color="black"
+            backgroundColor="black"
+            color="white"
+            onClick={onOpen}
             textTransform="uppercase"
             _hover={{
-              backgroundColor: 'black',
-              color: 'white',
+              backgroundColor: 'white',
+              color: 'black',
             }}
           >
             Read more
           </Button>
         </div>
       </div>
+      <Modal isOpen={isOpen} onClose={onClose} size="full">
+        <ModalOverlay />
+        <SliderModalSkeleton
+          headerTextColor="#000"
+          bgColor="#fff"
+          title="THE BIG CHRISTMAS DRAW"
+          closeModalColor="black"
+          subtitle="loremasdasd asdasdasdas"
+          onClose={onClose}
+        >
+          <ChristmasModalContent />
+        </SliderModalSkeleton>
+      </Modal>
     </div>
   );
 };
 
-export default Slide1;
+export default Slide2;

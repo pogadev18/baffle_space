@@ -1,8 +1,13 @@
-import { Button, Image, Text } from '@chakra-ui/react';
+import { Button, Image, Modal, ModalOverlay, Text, useDisclosure } from '@chakra-ui/react';
+
+import SliderModalSkeleton from '@/root/components/homeSlider/SliderModalSkeleton';
+import HomeSliderContent from '@/root/components/homeSlider/HomeSliderContent';
 
 import styles from './HomeSlider.module.scss';
 
 const Slide4 = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <div className={styles.slider}>
       <div className={styles.slideImage}>
@@ -35,18 +40,29 @@ const Slide4 = () => {
             px={6}
             border="1px solid black"
             width={{ base: '100%', md: '260px' }}
-            backgroundColor="white"
-            color="black"
+            backgroundColor="black"
+            color="white"
             textTransform="uppercase"
+            onClick={onOpen}
             _hover={{
-              backgroundColor: 'black',
-              color: 'white',
+              backgroundColor: 'white',
+              color: 'black',
             }}
           >
             Read more
           </Button>
         </div>
       </div>
+      <Modal isOpen={isOpen} onClose={onClose} size="full">
+        <ModalOverlay />
+        <SliderModalSkeleton
+          title="NOT FOR EVERYONE"
+          subtitle="lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consect"
+          onClose={onClose}
+        >
+          <HomeSliderContent />
+        </SliderModalSkeleton>
+      </Modal>
     </div>
   );
 };
