@@ -1,13 +1,9 @@
 import { Box, Container, Heading, Text } from '@chakra-ui/react';
+import styles from './InfoTexts.module.scss';
 
 const textColor = '#bababa';
 const titlesColor = '#09ccdb';
 const whiteColor = '#fff';
-
-const moreInfoStyles = {
-  color: textColor,
-  textTransform: 'lowercase',
-};
 
 const InfoTexts = () => {
   return (
@@ -15,7 +11,7 @@ const InfoTexts = () => {
       <Box marginBottom="60px">
         <Heading
           as="h4"
-          fontSize={{ base: '11vw', sm: '35px' }}
+          fontSize={{ base: '8vw', sm: '35px' }}
           fontWeight="900"
           color={titlesColor}
           marginBottom="20px"
@@ -30,7 +26,7 @@ const InfoTexts = () => {
       </Box>
       <Box marginBottom="60px">
         <Text
-          fontSize={{ base: '11vw', sm: '15px' }}
+          fontSize={{ base: '5vw', sm: '15px' }}
           fontWeight="900"
           color={textColor}
           marginBottom="0px"
@@ -40,14 +36,14 @@ const InfoTexts = () => {
         <Heading
           textTransform="uppercase"
           as="h3"
-          fontSize={{ base: '11vw', sm: '40px' }}
+          fontSize={{ base: '7vw', sm: '40px' }}
           fontWeight="900"
           color={whiteColor}
         >
           luxury electronics
         </Heading>
         <Text
-          fontSize={{ base: '11vw', sm: '15px' }}
+          fontSize={{ base: '5vw', sm: '15px' }}
           fontWeight="900"
           color={textColor}
           marginBottom="0px"
@@ -57,7 +53,7 @@ const InfoTexts = () => {
       </Box>
       <Box marginBottom="60px">
         <Text
-          fontSize={{ base: '11vw', sm: '15px' }}
+          fontSize={{ base: '5vw', sm: '15px' }}
           fontWeight="900"
           color={textColor}
           marginBottom="0px"
@@ -67,36 +63,36 @@ const InfoTexts = () => {
         <Heading
           textTransform="uppercase"
           as="h3"
-          fontSize={{ base: '11vw', sm: '40px' }}
+          fontSize={{ base: '7vw', sm: '40px' }}
           fontWeight="900"
           color={whiteColor}
           marginBottom="10px"
         >
-          luxury cars - <span style={moreInfoStyles}>more than 200 models</span>
+          luxury cars - <span className={styles.moreInfoText}>more than 200 models</span>
         </Heading>
         <Heading
           textTransform="uppercase"
           as="h3"
-          fontSize={{ base: '11vw', sm: '40px' }}
+          fontSize={{ base: '7vw', sm: '40px' }}
           fontWeight="900"
           color={whiteColor}
           marginBottom="10px"
         >
-          luxury motors - <span style={moreInfoStyles}>more than 100 models</span>
+          luxury motors - <span className={styles.moreInfoText}>more than 100 models</span>
         </Heading>
         <Heading
           textTransform="uppercase"
           as="h3"
-          fontSize={{ base: '11vw', sm: '40px' }}
+          fontSize={{ base: '7vw', sm: '40px' }}
           fontWeight="900"
           color={whiteColor}
         >
-          gold - <span style={moreInfoStyles}>more than 10 kg</span>
+          gold - <span className={styles.moreInfoText}>more than 10 kg</span>
         </Heading>
       </Box>
       <Box marginBottom="60px">
         <Text
-          fontSize={{ base: '11vw', sm: '15px' }}
+          fontSize={{ base: '5vw', sm: '15px' }}
           fontWeight="900"
           color={textColor}
           marginBottom="0px"
@@ -106,16 +102,16 @@ const InfoTexts = () => {
         <Heading
           textTransform="uppercase"
           as="h3"
-          fontSize={{ base: '11vw', sm: '40px' }}
+          fontSize={{ base: '7vw', sm: '40px' }}
           fontWeight="900"
           color={whiteColor}
         >
-          luxury houses - <span style={moreInfoStyles}>hundreds of houses</span>
+          luxury houses - <span className={styles.moreInfoText}>hundreds of houses</span>
         </Heading>
       </Box>
       <Box marginBottom="60px">
         <Text
-          fontSize={{ base: '11vw', sm: '15px' }}
+          fontSize={{ base: '5vw', sm: '15px' }}
           fontWeight="900"
           color={textColor}
           marginBottom="0px"
@@ -125,27 +121,28 @@ const InfoTexts = () => {
         <Heading
           textTransform="uppercase"
           as="h3"
-          fontSize={{ base: '11vw', sm: '40px' }}
+          fontSize={{ base: '7vw', sm: '40px' }}
           fontWeight="900"
           color={whiteColor}
           marginBottom="10px"
         >
-          new year lottery - <span style={moreInfoStyles}>from $1.000.000 guaranteed</span>
+          new year lottery - <span className={styles.moreInfoText}>from $1.000.000 guaranteed</span>
         </Heading>
         <Heading
           textTransform="uppercase"
           as="h3"
-          fontSize={{ base: '11vw', sm: '40px' }}
+          fontSize={{ base: '7vw', sm: '40px' }}
           fontWeight="900"
           color={whiteColor}
         >
-          christmas lottery - <span style={moreInfoStyles}>from $1.000.000 guaranteed</span>
+          christmas lottery -{' '}
+          <span className={styles.moreInfoText}>from $1.000.000 guaranteed</span>
         </Heading>
       </Box>
       <Box marginBottom="60px">
         <Heading
           as="h4"
-          fontSize={{ base: '11vw', sm: '35px' }}
+          fontSize={{ base: '8vw', sm: '35px' }}
           fontWeight="900"
           color={titlesColor}
           marginBottom="20px"
