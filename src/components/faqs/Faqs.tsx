@@ -25,7 +25,7 @@ const Faqs = () => {
       <Accordion allowMultiple>
         <AccordionItem background="black.900" borderRadius="5px" mb="5">
           <h2>
-            <AccordionButton _expanded={{ bg: 'yellow.400', color: 'black' }}>
+            <AccordionButton _expanded={{ bg: '#09ccdb', color: 'white' }}>
               <Box fontWeight="900" flex="1" textAlign="left">
                 What is a raffle?
               </Box>
@@ -40,7 +40,7 @@ const Faqs = () => {
 
         <AccordionItem background="black.900" borderRadius="5px" mb="5">
           <h2>
-            <AccordionButton _expanded={{ bg: 'yellow.400', color: 'black' }}>
+            <AccordionButton _expanded={{ bg: '#09ccdb', color: 'white' }}>
               <Box fontWeight="900" flex="1" textAlign="left">
                 What is Baffle Space?
               </Box>
@@ -61,7 +61,7 @@ const Faqs = () => {
         </AccordionItem>
         <AccordionItem background="black.900" borderRadius="5px" mb="5">
           <h2>
-            <AccordionButton _expanded={{ bg: 'yellow.400', color: 'black' }}>
+            <AccordionButton _expanded={{ bg: '#09ccdb', color: 'white' }}>
               <Box fontWeight="900" flex="1" textAlign="left">
                 How do I earn?
               </Box>
@@ -89,7 +89,7 @@ const Faqs = () => {
         </AccordionItem>
         <AccordionItem background="black.900" borderRadius="5px">
           <h2>
-            <AccordionButton _expanded={{ bg: 'yellow.400', color: 'black' }}>
+            <AccordionButton _expanded={{ bg: '#09ccdb', color: 'white' }}>
               <Box fontWeight="900" flex="1" textAlign="left">
                 What are dApps?
               </Box>

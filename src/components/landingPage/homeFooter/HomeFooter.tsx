@@ -8,7 +8,7 @@ import styles from './HomeFooter.module.scss';
 
 const HomeFooter = () => {
   return (
-    <Box id="footer" background="black.800" width="100%" height="100%">
+    <Box id="footer" background="#0e0e0e" width="100%" height="100%">
       <Container paddingX={{ base: '25px', md: '40px' }} maxW="8xl" py={{ base: 10, md: 10 }}>
         <Flex
           justifyContent="space-between"

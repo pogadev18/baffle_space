@@ -31,7 +31,7 @@ class MyDocument extends Document {
             href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
           />
         </Head>
-        <body style={{ background: '#fff' }}>
+        <body style={{ background: '#000' }}>
           <Main />
           <NextScript />
         </body>

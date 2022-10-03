@@ -1,166 +1,68 @@
-import { Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import styles from './Logo.module.scss';
 
 const Logo = () => {
   return (
-    <Text fontWeight="bold" color="gray.300" fontSize="25px">
-      <Link href="/">
-        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a className={styles.logoWrapper}>
-          <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 418.56 386.19">
-            <g id="Whale">
-              <polygon className={styles.cls11} points="0 0 11.08 76.23 66.51 42.12 0 0" />
-              <polygon
-                className={styles.cls5}
-                points="55.42 124.15 11.08 76.23 66.51 42.12 55.42 124.15"
-              />
-              <polygon
-                className={styles.cls11}
-                points="83.36 124.15 55.42 124.15 66.51 42.12 83.36 124.15"
-              />
-              <polygon
-                className={styles.cls10}
-                points="83.36 124.15 96.66 89.56 66.51 42.12 83.36 124.15"
-              />
-              <polygon
-                className={styles.cls10}
-                points="152.08 67.39 152.08 129.47 213.71 81.14 152.08 67.39"
-              />
-              <polygon
-                className={styles.cls11}
-                points="96.66 89.56 152.08 67.39 152.08 129.47 96.66 89.56"
-              />
-              <polygon
-                className={styles.cls5}
-                points="105.97 141.66 152.08 129.47 96.66 89.56 105.97 141.66"
-              />
-              <polygon
-                className={styles.cls6}
-                points="83.36 124.15 96.66 89.56 105.97 141.66 83.36 124.15"
-              />
-              <polygon
-                className={styles.cls4}
-                points="75.82 159.18 105.97 141.66 83.36 124.15 75.82 159.18"
-              />
-              <polygon
-                className={styles.cls3}
-                points="55.42 124.15 83.36 124.15 75.82 159.18 55.42 124.15"
-              />
-              <polygon
-                className={styles.cls1}
-                points="57.2 168.04 55.42 124.15 75.82 159.18 57.2 168.04"
-              />
-              <polygon
-                className={styles.cls1}
-                points="57.2 168.04 75.82 159.18 91.34 212.23 57.2 168.04"
-              />
-              <polygon
-                className={styles.cls5}
-                points="66.06 245.19 91.34 212.23 57.2 168.04 66.06 245.19"
-              />
-              <polygon
-                className={styles.cls11}
-                points="112.2 209.45 105.97 141.66 75.82 159.18 112.2 209.45"
-              />
-              <polygon
-                className={styles.cls10}
-                points="112.2 209.45 91.34 212.23 75.82 159.18 112.2 209.45"
-              />
-              <polygon
-                className={styles.cls11}
-                points="126.37 386.19 68.73 379.54 194.65 344.96 126.37 386.19"
-              />
-              <polygon
-                className={styles.cls10}
-                points="68.73 379.54 155.63 287.76 194.65 344.96 68.73 379.54"
-              />
-              <polygon
-                className={styles.cls11}
-                points="117.49 328.03 66.06 245.19 155.63 287.76 117.49 328.03"
-              />
-              <polygon
-                className={styles.cls10}
-                points="66.06 245.19 91.34 212.23 155.63 287.76 66.06 245.19"
-              />
-              <polygon
-                className={styles.cls8}
-                points="112.2 209.45 91.34 212.23 155.63 287.76 112.2 209.45"
-              />
-              <polygon
-                className={styles.cls5}
-                points="152.08 198.19 112.2 209.45 155.63 287.76 152.08 198.19"
-              />
-              <polygon
-                className={styles.cls1}
-                points="227.74 279.78 152.08 198.19 155.63 287.76 227.74 279.78"
-              />
-              <polygon
-                className={styles.cls5}
-                points="227.74 279.78 155.63 287.76 194.65 344.96 227.74 279.78"
-              />
-              <polygon
-                className={styles.cls3}
-                points="194.65 344.96 314.81 312.37 227.74 279.78 194.65 344.96"
-              />
-              <polygon
-                className={styles.cls1}
-                points="271.27 386.19 260.71 356.04 323.01 359.59 271.27 386.19"
-              />
-              <polygon
-                className={styles.cls5}
-                points="323.01 359.59 314.81 312.37 260.71 356.04 323.01 359.59"
-              />
-              <polygon
-                className={styles.cls10}
-                points="395.95 241.23 323.01 359.59 314.81 312.37 395.95 241.23"
-              />
-              <polygon
-                className={styles.cls7}
-                points="250.07 238.54 314.81 312.37 227.74 279.78 250.07 238.54"
-              />
-              <polygon
-                className={styles.cls9}
-                points="250.07 238.54 152.08 198.19 227.74 279.78 250.07 238.54"
-              />
-              <polygon
-                className={styles.cls4}
-                points="250.07 238.54 152.08 198.19 227.74 119.23 250.07 238.54"
-              />
-              <polygon
-                className={styles.cls1}
-                points="250.07 238.54 314.81 312.37 395.95 241.23 250.07 238.54"
-              />
-              <polygon
-                className={styles.cls5}
-                points="250.07 238.54 320.74 143.23 395.95 241.23 250.07 238.54"
-              />
-              <polygon
-                className={styles.cls1}
-                points="250.07 238.54 227.74 119.23 320.74 143.23 250.07 238.54"
-              />
-              <polygon
-                className={styles.cls2}
-                points="227.74 119.23 341.74 76.23 320.74 143.23 227.74 119.23"
-              />
-              <polygon
-                className={styles.cls10}
-                points="395.95 241.23 418.56 141.66 320.74 143.23 395.95 241.23"
-              />
-              <polygon
-                className={styles.cls3}
-                points="418.56 141.66 387.52 79.81 320.74 143.23 418.56 141.66"
-              />
-              <polygon
-                className={styles.cls10}
-                points="387.52 79.81 341.74 76.23 320.74 143.23 387.52 79.81"
-              />
-            </g>
-          </svg>
-        </a>
-      </Link>
-    </Text>
+    <Link href="/">
+      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+      <a className={styles.logoWrapper}>
+        <svg
+          version="1.1"
+          id="Layer_1"
+          x="0px"
+          y="0px"
+          viewBox="0 0 1500 1500"
+          // style={{"enable-background:new 0 0 1500 1500"}}
+        >
+          <g>
+            <polygon className={styles.st0} points="1107.8,526.68 1163.8,646.67 981.14,646.67 	" />
+            <polygon className={styles.st1} points="1122.47,842.66 1163.8,646.67 981.14,646.67 	" />
+            <polygon className={styles.st2} points="1014.48,518.68 981.14,646.67 1107.8,526.68 	" />
+            <polygon className={styles.st3} points="793.15,602.67 1014.48,518.68 981.14,646.67 	" />
+            <polygon className={styles.st4} points="1122.47,842.66 838.48,842.66 981.14,646.67 	" />
+            <polygon className={styles.st5} points="793.15,602.67 838.48,842.66 981.14,646.67 	" />
+            <polygon className={styles.st3} points="642.49,757.33 793.15,602.67 838.48,842.66 	" />
+            <polygon className={styles.st6} points="962.48,981.32 1122.47,842.66 838.48,842.66 	" />
+            <polygon className={styles.st1} points="980.48,1077.32 962.48,981.32 1122.47,842.66 	" />
+            <polygon className={styles.st4} points="859.82,1069.32 962.48,981.32 980.48,1077.32 	" />
+            <polygon
+              className={styles.st0}
+              points="878.48,1129.32 859.82,1069.32 980.48,1077.32 	"
+            />
+            <polygon className={styles.st7} points="838.48,842.66 793.15,918.37 962.48,981.32 	" />
+            <polygon className={styles.st6} points="727.82,1046.65 793.15,918.37 962.48,981.32 	" />
+            <polygon className={styles.st6} points="483.83,1115.98 727.82,1046.65 649.16,935.99 	" />
+            <polygon className={styles.st8} points="642.49,757.33 649.16,935.99 793.15,918.37 	" />
+            <polygon className={styles.st5} points="727.82,1046.65 793.15,918.37 649.16,935.99 	" />
+            <polygon className={styles.st9} points="838.48,842.66 793.15,918.37 642.49,757.33 	" />
+            <polygon
+              className={styles.st1}
+              points="591.83,1129.32 727.82,1046.65 483.83,1115.98 	"
+            />
+            <polygon className={styles.st10} points="473.17,846.66 575.8,1015.86 649.16,935.99 	" />
+            <polygon className={styles.st11} points="566.49,780 649.16,935.99 642.49,757.33 	" />
+            <polygon className={styles.st12} points="522.5,789.33 473.17,846.66 649.16,935.99 	" />
+            <polygon className={styles.st2} points="566.49,780 522.5,789.33 649.16,935.99 	" />
+            <polygon className={styles.st6} points="551.83,646.67 566.49,780 493.16,682.67 	" />
+            <polygon className={styles.st6} points="537.16,545.34 551.83,646.67 642.49,621.34 	" />
+            <polygon className={styles.st3} points="642.49,501.34 642.49,621.34 762.49,526.68 	" />
+            <polygon className={styles.st3} points="473.17,452.01 537.16,545.34 505.16,602.67 	" />
+            <polygon className={styles.st4} points="551.83,646.67 505.16,602.67 537.16,545.34 	" />
+            <polygon className={styles.st2} points="642.49,501.34 537.16,545.34 642.49,621.34 	" />
+            <polygon className={styles.st11} points="455.83,701.34 473.17,846.66 522.5,789.33 	" />
+            <polygon className={styles.st2} points="493.16,682.67 522.5,789.33 566.49,780 	" />
+            <polygon className={styles.st13} points="455.83,612.01 493.16,682.67 455.83,701.34 	" />
+            <polygon className={styles.st0} points="473.17,452.01 455.83,612.01 505.16,602.67 	" />
+            <polygon className={styles.st4} points="493.16,682.67 505.16,602.67 455.83,612.01 	" />
+            <polygon className={styles.st0} points="551.83,646.67 505.16,602.67 493.16,682.67 	" />
+            <polygon className={styles.st0} points="522.5,789.33 493.16,682.67 455.83,701.34 	" />
+            <polygon className={styles.st14} points="473.17,452.01 367.84,518.68 455.83,612.01 	" />
+            <polygon className={styles.st15} points="345.17,370.68 367.84,518.68 473.17,452.01 	" />
+          </g>
+        </svg>
+      </a>
+    </Link>
   );
 };
 
