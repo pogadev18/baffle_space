@@ -1,4 +1,6 @@
 import { Box, Container, Heading, Text } from '@chakra-ui/react';
+import SimulateEarnings from '@/root/components/landingPage/simulateEarnings';
+
 import styles from './InfoTexts.module.scss';
 
 const textColor = '#bababa';
@@ -145,11 +147,20 @@ const InfoTexts = () => {
           fontSize={{ base: '8vw', sm: '35px' }}
           fontWeight="900"
           color={titlesColor}
-          marginBottom="20px"
           textTransform="uppercase"
         >
           What you earn from referrals
         </Heading>
+        <Box
+          marginTop="50px"
+          width="800px"
+          borderRadius="15px"
+          backgroundColor="black.500"
+          paddingY="50px"
+          paddingX="50px"
+        >
+          <SimulateEarnings />
+        </Box>
       </Box>
     </Container>
   );
