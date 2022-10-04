@@ -1,5 +1,6 @@
 import { Image, Text } from '@chakra-ui/react';
 import { FaRocket } from 'react-icons/fa';
+import Link from 'next/link';
 
 import styles from './SoftHeader.module.scss';
 
@@ -21,10 +22,27 @@ const SoftHeader = () => {
   return (
     <header className={styles.softHeader}>
       <div style={{ textAlign: 'center' }}>
-        <Image alt="NFT 2" fit="cover" align="center" h="auto" w="205px" src="./logo_text.webp" />
-        <Text fontWeight="bold" color="white" fontSize="13px">
-          Raffles for dreams &amp; baffling wins!
-        </Text>
+        <Link href="/">
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <a>
+            <Image
+              alt="NFT 2"
+              fit="cover"
+              align="center"
+              h="auto"
+              w="205px"
+              src="./logo_text.webp"
+            />
+          </a>
+        </Link>
+        <Link href="/">
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <a>
+            <Text fontWeight="bold" color="white" fontSize="13px">
+              Raffles for dreams &amp; baffling wins!
+            </Text>
+          </a>
+        </Link>
       </div>
       <div className={styles.rocketLaunchWrapper}>
         <RocketLaunch />

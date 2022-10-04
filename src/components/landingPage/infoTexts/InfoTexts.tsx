@@ -1,11 +1,19 @@
 import { Box, Container, Heading, Text } from '@chakra-ui/react';
 import SimulateEarnings from '@/root/components/landingPage/simulateEarnings';
+import Link from 'next/link';
 
 import styles from './InfoTexts.module.scss';
 
 const textColor = '#bababa';
 const titlesColor = '#09ccdb';
 const whiteColor = '#fff';
+
+const buildBenefitsTexts = [
+  'BUY YOUR GENESIS NFT TO UNLOCK THE POWER OF WEALTH',
+  'generate your own NFTs collection',
+  'GENERATE YOUR REFERRAL LINK',
+  'MORE CHANCES YOU SELL MORE MONEY YOU MAKE',
+];
 
 const InfoTexts = () => {
   return (
@@ -153,14 +161,57 @@ const InfoTexts = () => {
         </Heading>
         <Box
           marginTop="50px"
-          width="800px"
+          width={{ base: 'auto', sm: '800px' }}
           borderRadius="15px"
           backgroundColor="black.500"
-          paddingY="50px"
-          paddingX="50px"
+          padding={{ base: '15px', sm: '50px' }}
         >
           <SimulateEarnings />
         </Box>
+      </Box>
+      <Box marginBottom="60px">
+        <Heading
+          as="h4"
+          fontSize={{ base: '8vw', sm: '35px' }}
+          fontWeight="900"
+          color={titlesColor}
+          marginBottom="20px"
+          textTransform="uppercase"
+        >
+          Build your own earning system
+        </Heading>
+        {buildBenefitsTexts.map((text) => (
+          <Text
+            key={text}
+            color={textColor}
+            textTransform="uppercase"
+            fontSize="18px"
+            fontWeight="bold"
+            width={{ base: 'auto', md: '620px' }}
+          >
+            - {text}
+          </Text>
+        ))}
+      </Box>
+      <Box marginBottom="60px" className={styles.socialMediaLinks}>
+        <Text
+          color={textColor}
+          textTransform="uppercase"
+          fontSize="18px"
+          width={{ base: 'auto', md: '620px' }}
+        >
+          follow us on <Link href="/">twitter</Link>, <Link href="/">tiktok</Link>,{' '}
+          <Link href="/">telegram</Link> to find out more!
+        </Text>
+        <br />
+        <Text
+          color={textColor}
+          textTransform="uppercase"
+          fontSize="18px"
+          width={{ base: 'auto', md: '620px' }}
+        >
+          Also, check out our <Link href="/team">TEAM</Link>.
+        </Text>
       </Box>
     </Container>
   );

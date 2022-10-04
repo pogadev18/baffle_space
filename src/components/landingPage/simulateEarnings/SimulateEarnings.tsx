@@ -67,16 +67,10 @@ const SimulateEarnings = () => {
 
   return (
     <>
-      <Heading
-        as="h6"
-        fontSize={{ base: '8vw', sm: '25px' }}
-        fontWeight="900"
-        color="#747070"
-        marginBottom="50px"
-      >
-        simulate your earn
+      <Heading as="h6" fontSize={{ base: '8vw', sm: '25px' }} fontWeight="900" color="#747070">
+        simulate your earnings
       </Heading>
-      <Text fontSize="50px" marginY="50px" color="white" fontWeight="900">
+      <Text fontSize="50px" marginBottom="50px" color="white" fontWeight="900">
         ${finalValue}
       </Text>
 
