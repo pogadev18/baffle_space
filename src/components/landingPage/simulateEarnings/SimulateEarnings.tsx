@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Slider,
   SliderTrack,
@@ -8,9 +8,8 @@ import {
   Box,
   Heading,
   Text,
-  Button,
 } from '@chakra-ui/react';
-import { MdGraphicEq } from 'react-icons/md';
+import LoadingSpinner from '@/root/components/LoadingSpinner';
 
 const SimulateSlider = ({
   value,
@@ -20,23 +19,8 @@ const SimulateSlider = ({
   // eslint-disable-next-line no-unused-vars
   setValue: (val: number) => void;
 }) => {
-  const labelStyles = {
-    mt: '2',
-    ml: '-2.5',
-    fontSize: 'sm',
-  };
-
   return (
     <Slider value={value} defaultValue={0} aria-label="slider" onChange={(val) => setValue(val)}>
-      <SliderMark value={25} {...labelStyles} color="white">
-        25%
-      </SliderMark>
-      <SliderMark value={50} {...labelStyles} color="white">
-        50%
-      </SliderMark>
-      <SliderMark value={75} {...labelStyles} color="white">
-        75%
-      </SliderMark>
       <SliderMark
         value={value}
         textAlign="center"
@@ -52,7 +36,7 @@ const SimulateSlider = ({
         <SliderFilledTrack bg="tomato" />
       </SliderTrack>
       <SliderThumb boxSize={6}>
-        <Box color="tomato" as={MdGraphicEq} />
+        <Box color="tomato" />
       </SliderThumb>
     </Slider>
   );
@@ -62,8 +46,21 @@ const SimulateEarnings = () => {
   const [chancesValue, setChancesValue] = useState(0);
   const [nftOwnersValue, setNftOwnersValue] = useState(0);
   const [finalValue, setFinalValue] = useState(0);
+  const [calculatingEarnings, setCalculatingEarnings] = useState(false);
 
-  const simulateMyEarnings = () => setFinalValue(chancesValue + nftOwnersValue);
+  useEffect(() => {
+    setCalculatingEarnings(true);
+    const simulateEarnings = setTimeout(() => {
+      console.log('doing magic ');
+      setFinalValue(chancesValue + nftOwnersValue);
+      setCalculatingEarnings(false);
+    }, 1000);
+
+    return () => {
+      clearTimeout(simulateEarnings);
+      setCalculatingEarnings(false);
+    };
+  }, [chancesValue, nftOwnersValue]);
 
   return (
     <>
@@ -71,49 +68,28 @@ const SimulateEarnings = () => {
         simulate your earnings
       </Heading>
       <Text fontSize="50px" marginBottom="50px" color="white" fontWeight="900">
-        ${finalValue}
+        {calculatingEarnings ? (
+          <Box marginTop="10px" display="flex" alignItems="center" gap="15px">
+            <LoadingSpinner spinnerColor="#09ccdb" />
+            <Text fontSize="15px">calculating...</Text>
+          </Box>
+        ) : (
+          `$${finalValue}`
+        )}
       </Text>
 
       <Box marginBottom="100px">
         <SimulateSlider value={chancesValue} setValue={setChancesValue} />
-        <Text
-          fontSize={{ base: '5vw', sm: '15px' }}
-          fontWeight="900"
-          color="white"
-          marginTop="25px"
-        >
+        <Text fontSize={{ base: '5vw', sm: '15px' }} fontWeight="900" color="white" marginTop="5px">
           number of sold chances
         </Text>
       </Box>
       <Box>
         <SimulateSlider value={nftOwnersValue} setValue={setNftOwnersValue} />
-        <Text
-          fontSize={{ base: '5vw', sm: '15px' }}
-          fontWeight="900"
-          color="white"
-          marginTop="25px"
-        >
+        <Text fontSize={{ base: '5vw', sm: '15px' }} fontWeight="900" color="white" marginTop="5px">
           number of nft owners
         </Text>
       </Box>
-      <Button
-        marginTop="30px"
-        rounded="20px"
-        variant="solid"
-        size={{ base: 'md', lg: 'lg' }}
-        px={6}
-        width={{ base: '100%', md: '260px' }}
-        backgroundColor="#09ccdb"
-        color="white"
-        onClick={simulateMyEarnings}
-        textTransform="uppercase"
-        _hover={{
-          backgroundColor: 'white',
-          color: '#09ccdb',
-        }}
-      >
-        calculate earnings
-      </Button>
     </>
   );
 };

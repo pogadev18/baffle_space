@@ -9,7 +9,9 @@ const RocketLaunch = () => (
     <div className={styles.rocketProgress}>
       <p className={styles.launchText}>LAUNCH</p>
       <div className={styles.progressBar}>
-        <div className={styles.loadingPercentage} />
+        <div style={{ width: '15%' }} className={styles.loadingPercentage}>
+          <p>15%</p>
+        </div>
       </div>
     </div>
     <div className={styles.rocketIcon}>

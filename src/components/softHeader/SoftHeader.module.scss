@@ -11,6 +11,8 @@
 
   @media screen and (max-width: 1100px) {
     flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -20,12 +22,23 @@
   width: 80%;
   align-items: center;
 
+  @media screen and (max-width: 1100px) {
+    flex-direction: column;
+  }
+
 }
+
 .rocketProgress {
   position: relative;
   flex: 1;
   height: 40px;
-  background: #191a1a;
+  background: #525252;
+  border-radius: 15px;
+
+  @media screen and (max-width: 1100px) {
+    flex: auto;
+    width: 100%;
+  }
 }
 
 .launchText {
@@ -37,15 +50,30 @@
   right: 15px;
   top: 50%;
   transform: translateY(-50%);
+
+  @media screen and (max-width: 1100px) {
+    font-size: 16px;
+  }
 }
 
 .progressBar {
   height: 100%;
 
   .loadingPercentage {
-    width: 15%;
+    position: relative;
     height: 100%;
     background-color: #00ccdb;
+    border-radius: 15px;
+
+    > p {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 15px;
+      color: #fff;
+      text-shadow: 1px 1px 1px #000;
+      font-weight: bold;
+    }
   }
 }
 
