@@ -1,15 +1,15 @@
 import { ReactNode } from 'react';
 
 import { Box, Container, Heading, Text, Image } from '@chakra-ui/react';
-// import SimulateEarnings from '@/root/components/landingPage/simulateEarnings';
 import NftTree from '@/root/components/nftTree';
 import LogoTwitter from '@/root/components/logoTwitter';
 import LogoTelegram from '@/root/components/logoTelegram';
 import LogoTikTok from '@/root/components/logoTikTok';
 import Less365DaysGraph from '@/root/components/less365DaysGraph';
+import Exact365DaysGraph from '@/root/components/exact365DaysGraph';
+import SimulateEarnings from '@/root/components/landingPage/simulateEarnings';
 
 import { genesisNFTBenefits, less365DaysTexts, exact365DaysTexts } from '@/root/utils/texts';
-import Exact365DaysGraph from '@/root/components/exact365DaysGraph';
 
 // import styles from './InfoTexts.module.scss';
 
@@ -22,6 +22,19 @@ const SubHeading = ({ children }: { children: ReactNode }) => (
     as="h2"
     fontSize={{ base: '8vw', sm: '34px' }}
     fontWeight="900"
+    color={titlesColor}
+    marginBottom="20px"
+    textTransform="uppercase"
+  >
+    {children}
+  </Heading>
+);
+
+const SoftHeading = ({ children }: { children: ReactNode }) => (
+  <Heading
+    as="h3"
+    fontSize={{ base: '5vw', sm: '26px' }}
+    fontWeight="400"
     color={titlesColor}
     marginBottom="20px"
     textTransform="uppercase"
@@ -60,11 +73,11 @@ const InfoTexts = () => {
       <Box
         borderTop={`1px solid ${borderBlue}`}
         borderBottom={`1px solid ${borderBlue}`}
-        marginBottom="60px"
+        marginBottom={{ base: '20px', md: '60px' }}
         display="flex"
         flexDirection={{ base: 'column', '2xl': 'row' }}
         justifyContent="space-between"
-        paddingY="30px"
+        paddingY={{ base: '30px', md: '60px' }}
         paddingX={{ base: '25px', '2xl': '130px' }}
         alignItems="center"
       >
@@ -96,6 +109,42 @@ const InfoTexts = () => {
           </Box>
         </Box>
       </Box>
+
+      <Box
+        borderBottom={`1px solid ${borderBlue}`}
+        marginBottom={{ base: '20px', md: '60px' }}
+        display="flex"
+        flexDirection={{ base: 'column', '2xl': 'row' }}
+        justifyContent="space-between"
+        paddingBottom="30px"
+        paddingX={{ base: '25px', '2xl': '80px' }}
+        // alignItems="center"
+        gap="30px"
+      >
+        <Box display={{ base: 'none', md: 'block' }}>
+          <SubHeading>
+            What you earn from <br />
+            referrals
+          </SubHeading>
+          <Text
+            color={textColor}
+            fontSize="16px"
+            margin="auto"
+            width={{ base: 'auto', md: '540px' }}
+          >
+            Algoritmul nostru împarte 60% din câștigul pe fiecare joc între deținătorii de NFTs.
+          </Text>
+          <Box color="#fff" marginTop="20px">
+            <FollowUs />
+          </Box>
+        </Box>
+
+        <Box flex="1" marginTop={{ base: '0px', '2xl': '0px' }} color="#fff">
+          <SubHeading>Simulate your earn</SubHeading>
+          <SimulateEarnings />
+        </Box>
+      </Box>
+
       <Box marginBottom="60px" textAlign="center">
         <SubHeading>Distributia fondurilor</SubHeading>
         <Box
@@ -109,17 +158,10 @@ const InfoTexts = () => {
           alignItems="center"
         >
           <Box textAlign="left" color="#fff">
-            <Heading
-              as="h3"
-              fontSize={{ base: '5vw', sm: '26px' }}
-              fontWeight="400"
-              color={titlesColor}
-              marginBottom="20px"
-              textTransform="uppercase"
-            >
+            <SoftHeading>
               Distribuția fondurilor din jocurile cu <br />
               durata mai mică de 365 de zile
-            </Heading>
+            </SoftHeading>
             <ol style={{ listStyle: 'decimal', paddingLeft: '15px' }}>
               {less365DaysTexts.map((text) => (
                 <li key={text}>{text}</li>
@@ -151,16 +193,9 @@ const InfoTexts = () => {
           alignItems="center"
         >
           <Box textAlign="left" color="#fff">
-            <Heading
-              as="h3"
-              fontSize={{ base: '5vw', sm: '26px' }}
-              fontWeight="400"
-              color={titlesColor}
-              marginBottom="20px"
-              textTransform="uppercase"
-            >
+            <SoftHeading>
               Distribuția fondurilor din jocurile cu <br /> durata de 365 de zile
-            </Heading>
+            </SoftHeading>
             <ol style={{ listStyle: 'decimal', paddingLeft: '15px' }}>
               {exact365DaysTexts.map((text) => (
                 <li key={text}>{text}</li>

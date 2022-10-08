@@ -6,7 +6,6 @@ import {
   SliderThumb,
   SliderMark,
   Box,
-  Heading,
   Text,
 } from '@chakra-ui/react';
 import LoadingSpinner from '@/root/components/LoadingSpinner';
@@ -32,7 +31,7 @@ const SimulateSlider = ({
       <SliderMark
         value={value}
         textAlign="center"
-        bg="blue.500"
+        bg="#00B0CA"
         color="white"
         mt="-10"
         ml="-5"
@@ -40,11 +39,11 @@ const SimulateSlider = ({
       >
         {value}
       </SliderMark>
-      <SliderTrack bg="red.100">
-        <SliderFilledTrack bg="tomato" />
+      <SliderTrack bg="#333333">
+        <SliderFilledTrack bg="#00B0CA" />
       </SliderTrack>
       <SliderThumb boxSize={6}>
-        <Box color="tomato" />
+        <Box color="#00B0CA" />
       </SliderThumb>
     </Slider>
   );
@@ -71,30 +70,40 @@ const SimulateEarnings = () => {
 
   return (
     <>
-      <Heading as="h6" fontSize={{ base: '8vw', sm: '25px' }} fontWeight="900" color="#747070">
-        simulate your earnings
-      </Heading>
-      <Text fontSize="50px" marginBottom="50px" color="white" fontWeight="900">
+      <Text
+        textAlign="right"
+        fontSize={{ base: '50px', sm: '50px' }}
+        marginBottom="50px"
+        color="white"
+        fontWeight="700"
+      >
         {calculatingEarnings ? (
-          <Box marginTop="10px" display="flex" alignItems="center" gap="15px">
+          <Box
+            marginLeft="auto"
+            marginTop="10px"
+            display="flex"
+            alignItems="center"
+            justifyContent="flex-end"
+            gap="15px"
+          >
             <LoadingSpinner spinnerColor="#09ccdb" />
-            <Text fontSize="15px">calculating...</Text>
+            <Text fontSize={{ base: '25px', sm: '50px' }}>calculating...</Text>
           </Box>
         ) : (
           `$${finalValue}`
         )}
       </Text>
 
-      <Box marginBottom="100px">
+      <Box marginBottom="50px">
         <SimulateSlider max={1000} value={chancesValue} setValue={setChancesValue} />
-        <Text fontSize={{ base: '5vw', sm: '15px' }} fontWeight="900" color="white" marginTop="5px">
-          number of sold chances
+        <Text fontSize={{ base: '4vw', sm: '14px' }} fontWeight="400" color="white" marginTop="5px">
+          number of sold tickets
         </Text>
       </Box>
       <Box>
         <SimulateSlider max={100} value={nftOwnersValue} setValue={setNftOwnersValue} />
-        <Text fontSize={{ base: '5vw', sm: '15px' }} fontWeight="900" color="white" marginTop="5px">
-          number of nft owners
+        <Text fontSize={{ base: '4vw', sm: '14px' }} fontWeight="400" color="white" marginTop="5px">
+          Number of NFT owners engaged in one game
         </Text>
       </Box>
     </>
