@@ -13,14 +13,22 @@ import LoadingSpinner from '@/root/components/LoadingSpinner';
 
 const SimulateSlider = ({
   value,
+  max,
   setValue,
 }: {
   value: number;
+  max: number;
   // eslint-disable-next-line no-unused-vars
   setValue: (val: number) => void;
 }) => {
   return (
-    <Slider value={value} defaultValue={0} aria-label="slider" onChange={(val) => setValue(val)}>
+    <Slider
+      max={max}
+      value={value}
+      defaultValue={0}
+      aria-label="slider"
+      onChange={(val) => setValue(val)}
+    >
       <SliderMark
         value={value}
         textAlign="center"
@@ -51,7 +59,6 @@ const SimulateEarnings = () => {
   useEffect(() => {
     setCalculatingEarnings(true);
     const simulateEarnings = setTimeout(() => {
-      console.log('doing magic ');
       setFinalValue(chancesValue + nftOwnersValue);
       setCalculatingEarnings(false);
     }, 1000);
@@ -79,13 +86,13 @@ const SimulateEarnings = () => {
       </Text>
 
       <Box marginBottom="100px">
-        <SimulateSlider value={chancesValue} setValue={setChancesValue} />
+        <SimulateSlider max={1000} value={chancesValue} setValue={setChancesValue} />
         <Text fontSize={{ base: '5vw', sm: '15px' }} fontWeight="900" color="white" marginTop="5px">
           number of sold chances
         </Text>
       </Box>
       <Box>
-        <SimulateSlider value={nftOwnersValue} setValue={setNftOwnersValue} />
+        <SimulateSlider max={100} value={nftOwnersValue} setValue={setNftOwnersValue} />
         <Text fontSize={{ base: '5vw', sm: '15px' }} fontWeight="900" color="white" marginTop="5px">
           number of nft owners
         </Text>

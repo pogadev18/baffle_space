@@ -28,7 +28,7 @@ const SoftHeader = () => {
           {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a>
             <Image
-              alt="NFT 2"
+              alt="Baffle Space"
               fit="cover"
               align="center"
               h="auto"

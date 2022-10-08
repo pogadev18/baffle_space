@@ -8,8 +8,8 @@ const breakpoints = {
 export const theme = extendTheme({
   breakpoints,
   fonts: {
-    heading: `'Lato', sans-serif`,
-    body: `'Lato', sans-serif`,
+    heading: `'Poppins', sans-serif`,
+    body: `'Poppins', sans-serif`,
   },
   colors: {
     gray: {
