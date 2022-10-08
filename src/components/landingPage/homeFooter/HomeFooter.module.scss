@@ -1,10 +1,18 @@
 .logoWrapper {
   svg {
     margin-left: auto;
-    width: 300px;
 
     @media screen and (max-width: 768px) {
       margin: auto;
     }
+  }
+}
+
+.footerSocials {
+  margin-top: 20px;
+  color: #fff;
+
+  > div {
+    justify-content: flex-end;
   }
 }

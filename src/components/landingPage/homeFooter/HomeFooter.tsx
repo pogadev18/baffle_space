@@ -1,14 +1,14 @@
 import { Box, Container, Flex, Text } from '@chakra-ui/react';
 
 import Faqs from '@/root/components/faqs';
-// import SocialLinks from '@/root/components/socialLinks';
 import LogoWhite from '@/root/components/logoWhite';
+import { FollowUs } from '@/root/components/landingPage/infoTexts/InfoTexts';
 
 import styles from './HomeFooter.module.scss';
 
 const HomeFooter = () => {
   return (
-    <Box id="footer" background="#0e0e0e" width="100%" height="100%">
+    <Box borderTop="1px solid #0070A2" id="footer" width="100%" height="100%">
       <Container paddingX={{ base: '25px', md: '40px' }} maxW="8xl" py={{ base: 10, md: 10 }}>
         <Flex
           justifyContent="space-between"
@@ -26,13 +26,9 @@ const HomeFooter = () => {
             <Text color="white" textAlign={{ base: 'center', md: 'right' }} marginTop="20px">
               &copy; Baffle Space 2022
             </Text>
-            {/* <SocialLinks */}
-            {/*  iconTextColor="white" */}
-            {/*  iconsColor="white" */}
-            {/*  titleColor="white" */}
-            {/*  alignTitleRight */}
-            {/*  alignIconsRight */}
-            {/* /> */}
+            <Box className={styles.footerSocials}>
+              <FollowUs />
+            </Box>
           </Box>
         </Flex>
       </Container>

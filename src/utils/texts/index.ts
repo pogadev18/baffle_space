@@ -13,3 +13,11 @@ export const less365DaysTexts = [
   'Development and maintenance revenue of Baffle Space',
   '2% din suma strânsă merge către un fond special de caritate,  gestionat prin vot de către deținătorii de NFT-uri, indiferent de generație',
 ];
+
+export const exact365DaysTexts = [
+  '1.000.000$ este suma de validare a concursului. Tot ce se strânge peste suma de validare se distribuie după cum urmează',
+  '20% se împarte între 3 câștigători într-o nouă extragere',
+  'Earnings of NFT owning players',
+  'Development and maintenance revenue of Baffle Space',
+  '10% din suma strânsă merge către un fond special de caritate, gestionat prin vot de către deținătorii de NFT-uri, indiferent de generație',
+];

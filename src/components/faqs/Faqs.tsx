@@ -19,14 +19,14 @@ const Faqs = () => {
 
   return (
     <Box color="white">
-      <Text fontWeight="900" fontSize="3xl" marginTop="0" marginBottom="15px">
+      <Text color="#00B0CA" fontWeight="900" fontSize="3xl" marginTop="0" marginBottom="15px">
         FAQ
       </Text>
       <Accordion allowMultiple>
         <AccordionItem background="black.900" borderRadius="5px" mb="5">
           <h2>
-            <AccordionButton _expanded={{ bg: '#09ccdb', color: 'white' }}>
-              <Box fontWeight="900" flex="1" textAlign="left">
+            <AccordionButton _expanded={{ bg: '#09ccdb', color: 'black' }}>
+              <Box fontWeight="700" flex="1" textAlign="left">
                 What is a raffle?
               </Box>
               <AccordionIcon />
@@ -40,8 +40,8 @@ const Faqs = () => {
 
         <AccordionItem background="black.900" borderRadius="5px" mb="5">
           <h2>
-            <AccordionButton _expanded={{ bg: '#09ccdb', color: 'white' }}>
-              <Box fontWeight="900" flex="1" textAlign="left">
+            <AccordionButton _expanded={{ bg: '#09ccdb', color: 'black' }}>
+              <Box fontWeight="700" flex="1" textAlign="left">
                 What is Baffle Space?
               </Box>
               <AccordionIcon />
@@ -61,8 +61,8 @@ const Faqs = () => {
         </AccordionItem>
         <AccordionItem background="black.900" borderRadius="5px" mb="5">
           <h2>
-            <AccordionButton _expanded={{ bg: '#09ccdb', color: 'white' }}>
-              <Box fontWeight="900" flex="1" textAlign="left">
+            <AccordionButton _expanded={{ bg: '#09ccdb', color: 'black' }}>
+              <Box fontWeight="700" flex="1" textAlign="left">
                 How do I earn?
               </Box>
               <AccordionIcon />
@@ -89,8 +89,8 @@ const Faqs = () => {
         </AccordionItem>
         <AccordionItem background="black.900" borderRadius="5px">
           <h2>
-            <AccordionButton _expanded={{ bg: '#09ccdb', color: 'white' }}>
-              <Box fontWeight="900" flex="1" textAlign="left">
+            <AccordionButton _expanded={{ bg: '#09ccdb', color: 'black' }}>
+              <Box fontWeight="700" flex="1" textAlign="left">
                 What are dApps?
               </Box>
               <AccordionIcon />

@@ -8,7 +8,8 @@ import LogoTelegram from '@/root/components/logoTelegram';
 import LogoTikTok from '@/root/components/logoTikTok';
 import Less365DaysGraph from '@/root/components/less365DaysGraph';
 
-import { genesisNFTBenefits, less365DaysTexts } from '@/root/utils/texts';
+import { genesisNFTBenefits, less365DaysTexts, exact365DaysTexts } from '@/root/utils/texts';
+import Exact365DaysGraph from '@/root/components/exact365DaysGraph';
 
 // import styles from './InfoTexts.module.scss';
 
@@ -29,7 +30,7 @@ const SubHeading = ({ children }: { children: ReactNode }) => (
   </Heading>
 );
 
-const FollowUs = () => (
+export const FollowUs = () => (
   <Box display="flex" flexDirection={{ base: 'column', md: 'row' }} gap="10px" alignItems="center">
     <p>Follow us to learn more:</p>
     <Box display="flex" gap="10px">
@@ -136,6 +137,47 @@ const InfoTexts = () => {
               h="auto"
               w="auto"
               src="https://res.cloudinary.com/baffle-space/image/upload/v1665255746/my-uploads/graph_w25vsx.png"
+            />
+          </Box>
+        </Box>
+      </Box>
+      <Box marginBottom="60px" textAlign="center">
+        <Box
+          display="flex"
+          flexDirection={{ base: 'column', '2xl': 'row' }}
+          justifyContent="space-between"
+          paddingX={{ base: '25px', '2xl': '80px' }}
+          gap="25px"
+          alignItems="center"
+        >
+          <Box textAlign="left" color="#fff">
+            <Heading
+              as="h3"
+              fontSize={{ base: '5vw', sm: '26px' }}
+              fontWeight="400"
+              color={titlesColor}
+              marginBottom="20px"
+              textTransform="uppercase"
+            >
+              Distribuția fondurilor din jocurile cu <br /> durata de 365 de zile
+            </Heading>
+            <ol style={{ listStyle: 'decimal', paddingLeft: '15px' }}>
+              {exact365DaysTexts.map((text) => (
+                <li key={text}>{text}</li>
+              ))}
+            </ol>
+          </Box>
+          <Box display={{ base: 'none', md: 'block' }}>
+            <Exact365DaysGraph />
+          </Box>
+          <Box display={{ base: 'block', md: 'none' }}>
+            <Image
+              alt="Less365DaysGraph"
+              fit="cover"
+              align="center"
+              h="auto"
+              w="auto"
+              src="https://res.cloudinary.com/baffle-space/image/upload/v1665256613/my-uploads/graph_h16iun.png"
             />
           </Box>
         </Box>
