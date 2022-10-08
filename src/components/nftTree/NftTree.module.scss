@@ -1,0 +1,11 @@
+.svgWrapper {
+  svg {
+    width: 600px;
+    height: 434px;
+
+    @media screen and (max-width: 640px) {
+      width: 320px;
+      height: 250px;
+    }
+  }
+}

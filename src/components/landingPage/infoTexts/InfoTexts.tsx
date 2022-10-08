@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { Box, Container, Heading, Text, Image } from '@chakra-ui/react';
+import { Box, Container, Heading, Text } from '@chakra-ui/react';
 import NftTree from '@/root/components/nftTree';
 import LogoTwitter from '@/root/components/logoTwitter';
 import LogoTelegram from '@/root/components/logoTelegram';
@@ -17,7 +17,7 @@ const textColor = '#fff';
 const titlesColor = '#00B0CA';
 const borderBlue = '#0070A2';
 
-const SubHeading = ({ children }: { children: ReactNode }) => (
+export const SubHeading = ({ children }: { children: ReactNode }) => (
   <Heading
     as="h2"
     fontSize={{ base: '8vw', sm: '34px' }}
@@ -30,7 +30,7 @@ const SubHeading = ({ children }: { children: ReactNode }) => (
   </Heading>
 );
 
-const SoftHeading = ({ children }: { children: ReactNode }) => (
+export const SoftHeading = ({ children }: { children: ReactNode }) => (
   <Heading
     as="h3"
     fontSize={{ base: '5vw', sm: '26px' }}
@@ -81,19 +81,8 @@ const InfoTexts = () => {
         paddingX={{ base: '25px', '2xl': '130px' }}
         alignItems="center"
       >
-        <Box display={{ base: 'none', md: 'block' }}>
-          <NftTree />
-        </Box>
-        <Box display={{ base: 'block', md: 'none' }}>
-          <Image
-            alt="Genesis NFTs"
-            fit="cover"
-            align="center"
-            h="auto"
-            w="auto"
-            src="https://res.cloudinary.com/baffle-space/image/upload/v1665254282/my-uploads/nft_generations_xczpaw.png"
-          />
-        </Box>
+        <NftTree />
+
         <Box marginTop={{ base: '50px', '2xl': '0px' }} color="#fff">
           <SubHeading>
             Build your own <br />
@@ -168,19 +157,7 @@ const InfoTexts = () => {
               ))}
             </ol>
           </Box>
-          <Box display={{ base: 'none', md: 'block' }}>
-            <Less365DaysGraph />
-          </Box>
-          <Box display={{ base: 'block', md: 'none' }}>
-            <Image
-              alt="Less365DaysGraph"
-              fit="cover"
-              align="center"
-              h="auto"
-              w="auto"
-              src="https://res.cloudinary.com/baffle-space/image/upload/v1665255746/my-uploads/graph_w25vsx.png"
-            />
-          </Box>
+          <Less365DaysGraph />
         </Box>
       </Box>
       <Box marginBottom="60px" textAlign="center">
@@ -202,19 +179,7 @@ const InfoTexts = () => {
               ))}
             </ol>
           </Box>
-          <Box display={{ base: 'none', md: 'block' }}>
-            <Exact365DaysGraph />
-          </Box>
-          <Box display={{ base: 'block', md: 'none' }}>
-            <Image
-              alt="Less365DaysGraph"
-              fit="cover"
-              align="center"
-              h="auto"
-              w="auto"
-              src="https://res.cloudinary.com/baffle-space/image/upload/v1665256613/my-uploads/graph_h16iun.png"
-            />
-          </Box>
+          <Exact365DaysGraph />
         </Box>
       </Box>
     </Container>
