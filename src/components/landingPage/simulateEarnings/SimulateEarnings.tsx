@@ -176,7 +176,7 @@ const SimulateEarnings = () => {
       </Box>
       <Box marginBottom="50px">
         <Slider
-          disabled={sliderState}
+          isDisabled={sliderState}
           // step={10}
           color="primary"
           defaultValue={0}
