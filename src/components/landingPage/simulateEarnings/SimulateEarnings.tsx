@@ -7,6 +7,8 @@ import {
   SliderMark,
   Box,
   Button,
+  Text,
+  Heading,
   Stack,
 } from '@chakra-ui/react';
 
@@ -15,17 +17,27 @@ import { gameContexts } from '@/root/utils/earningsSimulator';
 const Buttons = ({
   gameContext,
   userSetGameContext,
+  disabledContext,
 }: {
   gameContext: any;
   userSetGameContext: any;
+  disabledContext: boolean;
 }) => {
   return (
-    <Stack spacing={4} direction="row" align="center">
+    <Stack justify="center" spacing={1} direction="row" align="center">
       {gameContext.map((game: any) => (
         <Button
-          colorScheme="teal"
+          disabled={disabledContext}
+          fontWeight="400"
+          textTransform="uppercase"
+          background="#00B0CA"
+          _hover={{
+            background: '#05899c',
+          }}
           size="md"
-          onClick={() => userSetGameContext(game.id)}
+          onClick={() => {
+            userSetGameContext(game.id);
+          }}
           key={game.id}
         >
           {game.contextName}
@@ -42,6 +54,8 @@ const labelStyles = {
 };
 
 const SimulateEarnings = () => {
+  const [sliderDefaultValue, setSliderDefaultValue] = useState(0);
+  const [disabledContext, setDisabledContext] = useState(false);
   const [numberOfTiketsSetByUser, setNumberOfTiketsSetByUser] = useState(0);
   const [numberOfPlayersInGame, setNumberOfPlayersInGame] = useState(0);
   const [sliderState, setSliderState] = useState(true);
@@ -97,6 +111,7 @@ const SimulateEarnings = () => {
         }
 
         setSliderState(false);
+        setDisabledContext(true);
       }
 
       return null;
@@ -167,27 +182,50 @@ const SimulateEarnings = () => {
     addUserTicketsToTicketsByPlayerArray();
   }, [addUserTicketsToTicketsByPlayerArray]);
 
+  const handleSimulatorReset = () => {
+    totalNumberOfTickets = 0;
+    newTicketsByPlayer = [];
+
+    setDisabledContext(false);
+    setSliderState(true);
+    setNewGameContext({
+      contextName: '',
+      timeInterval: '',
+      maxTicketAmount: 0,
+      minTiketAmount: 0,
+      maxNumberOfPlayers: 0,
+      minNumbersOfPlayers: 0,
+      ticketPrice: 0,
+    });
+
+    setTicketPriceByGameType(0);
+    setNumberOfPlayersInGame(0);
+    setNumberOfSimplePlayersInGame(0);
+    setSliderDefaultValue(0);
+    setNumberOfTiketsSetByUser(0);
+  };
+
+  const spanStyles = { color: '#00B0CA', fontWeight: 'bold' };
+
   return (
-    <>
-      <Box marginBottom="50px">
-        <p className="user-income-counter">
+    <Box display="flex" alignItems="center" gap="150px">
+      <Box textAlign="center" flex="1" className="slider-wrapper">
+        <Text fontSize="125px" fontWeight="700">
           {!userIncome ? 0 : userIncome}
           <span
             style={{
-              fontSize: 40,
+              fontSize: '40px',
               color: 'grey',
             }}
           >
             $
           </span>
-        </p>
-      </Box>
-      <Box marginBottom="50px">
+        </Text>
         <Slider
           isDisabled={sliderState}
           // step={10}
           color="primary"
-          defaultValue={0}
+          defaultValue={sliderDefaultValue}
           max={maxUserTiketAnount}
           // valueLabelDisplay="auto"
           value={numberOfTiketsSetByUser}
@@ -230,57 +268,118 @@ const SimulateEarnings = () => {
             <Box color="#00B0CA" />
           </SliderThumb>
         </Slider>
-      </Box>
-      <Box>
-        <Buttons gameContext={gameContexts} userSetGameContext={createGameContext} />
-      </Box>
-      <div className="container-data">
-        <h1>
-          Simulate the earnings <br />
-          for NFTs owners
-        </h1>
-        <div>
-          <div>
-            <h3>Simulated environment</h3>
-            <p>
-              Category :<span className="dinamic-data-style">{newGameContext.contextName}</span>
-            </p>
 
-            <p>
-              Ticket price : <span className="dinamic-data-style">{ticketPriceByGameType} $</span>
-            </p>
-
-            <p>
-              Duration :<span className="dinamic-data-style">{newGameContext.timeInterval}</span>
-            </p>
-            <p>
-              <span>NFT owners :</span>
-              <span className="dinamic-data-style">{numberOfPlayersInGame}</span>
-            </p>
-            <p>
-              Amount distributed :<span className="dinamic-data-style">{amountDistributed} $</span>
-            </p>
-            <p>
-              Number of tickets :
-              <span className="dinamic-data-style">{numberOfSimplePlayersInGame}</span>
-            </p>
-            <p>
-              Earning percent :<span className="dinamic-data-style">{userEarningPercent}%</span>
-            </p>
+        <Box marginTop="50px">
+          <Buttons
+            disabledContext={disabledContext}
+            gameContext={gameContexts}
+            userSetGameContext={createGameContext}
+          />
+          {!disabledContext ? (
             <p
               style={{
                 marginTop: 10,
-                color: 'grey',
+                color: '#fff',
                 fontSize: 12,
               }}
             >
-              * the amounts in dollars are converted from MATIC,
-              <br /> which is the official currency of the game platform
+              * please select a game category from above
+              <br /> in order to activate the simulator
             </p>
-          </div>
-        </div>
-      </div>
-    </>
+          ) : (
+            <Box marginTop="10px">
+              <span
+                style={{
+                  marginTop: 10,
+                  color: '#fff',
+                  fontSize: 12,
+                }}
+              >
+                current category:{' '}
+                <span style={{ fontWeight: 'bold' }}>{newGameContext.contextName}</span>
+              </span>
+              <p>
+                <Button
+                  _hover={{ background: '0' }}
+                  size="sm"
+                  variant="outline"
+                  marginTop="5px"
+                  type="button"
+                  onClick={handleSimulatorReset}
+                >
+                  reset
+                </Button>
+              </p>
+            </Box>
+          )}
+        </Box>
+      </Box>
+      <Box className="details-wrapper">
+        <Heading as="h4" fontSize="28px" marginBottom="30px">
+          Simulate the earnings <br />
+          for NFTs owners
+        </Heading>
+        <Box color="#a9a9a9">
+          <Text fontWeight="bold" fontSize="18px" color="#a9a9a9" marginBottom="15px">
+            Simulated environment
+          </Text>
+          <p>
+            Category:{' '}
+            <span style={spanStyles} className="dinamic-data-style">
+              {newGameContext.contextName}
+            </span>
+          </p>
+
+          <p>
+            Ticket price:{' '}
+            <span style={spanStyles} className="dinamic-data-style">
+              {ticketPriceByGameType}$
+            </span>
+          </p>
+
+          <p>
+            Duration:{' '}
+            <span style={spanStyles} className="dinamic-data-style">
+              {newGameContext.timeInterval}
+            </span>
+          </p>
+          <p>
+            <span>NFT owners: </span>
+            <span style={spanStyles} className="dinamic-data-style">
+              {numberOfPlayersInGame}
+            </span>
+          </p>
+          <p>
+            Amount distributed:{' '}
+            <span style={spanStyles} className="dinamic-data-style">
+              {amountDistributed}$
+            </span>
+          </p>
+          <p>
+            Number of tickets:&nbsp;
+            <span style={spanStyles} className="dinamic-data-style">
+              {!disabledContext ? 0 : numberOfSimplePlayersInGame}
+            </span>
+          </p>
+          <p>
+            Earning percent:{' '}
+            <span style={spanStyles} className="dinamic-data-style">
+              {userEarningPercent}%
+            </span>
+          </p>
+          <p
+            style={{
+              marginTop: 10,
+              color: 'grey',
+              fontSize: 12,
+            }}
+          >
+            * the amounts in dollars are converted from MATIC,
+            <br /> which is the official currency of the game platform
+          </p>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

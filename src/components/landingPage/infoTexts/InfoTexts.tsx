@@ -130,7 +130,6 @@ const InfoTexts = () => {
         </Box>
 
         <Box marginTop={{ base: '0px', '2xl': '0px' }} color="#fff">
-          <SubHeading>Simulate your earn</SubHeading>
           <SimulateEarnings />
         </Box>
       </Box>
