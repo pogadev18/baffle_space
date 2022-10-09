@@ -48,7 +48,15 @@ const SimulateEarnings = () => {
   const [userIncome, setUserIncome] = useState(0);
   const [numberOfSimplePlayersInGame, setNumberOfSimplePlayersInGame] = useState(0);
   // const [sumAmountForBaffleSpace, setSumAmountForBaffleSpace] = useState(0);
-  const [newGameContext, setNewGameContext] = useState({});
+  const [newGameContext, setNewGameContext] = useState({
+    contextName: '',
+    timeInterval: '',
+    maxTicketAmount: 0,
+    minTiketAmount: 0,
+    maxNumberOfPlayers: 0,
+    minNumbersOfPlayers: 0,
+    ticketPrice: 0,
+  });
   const [userEarningPercent, setUserEarningPercent] = useState();
   const [ticketPriceByGameType, setTicketPriceByGameType] = useState(0);
   const [amountDistributed, setAmountDistributed] = useState(0);
