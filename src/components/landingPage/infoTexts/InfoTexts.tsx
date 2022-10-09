@@ -165,13 +165,14 @@ const InfoTexts = () => {
         <Box
           textAlign="center"
           paddingTop={{ base: '50px', md: '0px' }}
-          paddingBottom={{ base: '100px', md: '0px' }}
+          paddingBottom={{ base: '30px', md: '0px' }}
         >
           <Box
             height={{ base: 'auto', md: '100vh' }}
             display="flex"
             alignItems="center"
             justifyContent="center"
+            borderBottom={`1px solid ${borderBlue}`}
           >
             <section style={{ width: '100%' }}>
               <SubHeading>
