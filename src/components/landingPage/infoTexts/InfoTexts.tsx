@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-
 import { Box, Container, Heading, Text } from '@chakra-ui/react';
+
 import NftTree from '@/root/components/nftTree';
 import LogoTwitter from '@/root/components/logoTwitter';
 import LogoTelegram from '@/root/components/logoTelegram';
@@ -43,8 +43,14 @@ export const SoftHeading = ({ children }: { children: ReactNode }) => (
   </Heading>
 );
 
-export const FollowUs = () => (
-  <Box display="flex" flexDirection={{ base: 'column', md: 'row' }} gap="10px" alignItems="center">
+export const FollowUs = ({ alignX }: { alignX: string }) => (
+  <Box
+    display="flex"
+    flexDirection={{ base: 'column', md: 'row' }}
+    gap="10px"
+    justifyContent={alignX}
+    alignItems="center"
+  >
     <p>Follow us to learn more:</p>
     <Box display="flex" gap="10px">
       <LogoTwitter />
@@ -94,7 +100,7 @@ const InfoTexts = () => {
             ))}
           </ul>
           <Box marginTop="20px">
-            <FollowUs />
+            <FollowUs alignX="flextStart" />
           </Box>
         </Box>
       </Box>
@@ -102,15 +108,10 @@ const InfoTexts = () => {
       <Box
         borderBottom={`1px solid ${borderBlue}`}
         marginBottom={{ base: '20px', md: '60px' }}
-        display="flex"
-        flexDirection={{ base: 'column', '2xl': 'row' }}
-        justifyContent="space-between"
         paddingBottom="30px"
         paddingX={{ base: '25px', '2xl': '80px' }}
-        // alignItems="center"
-        gap="30px"
       >
-        <Box display={{ base: 'none', md: 'block' }}>
+        <Box textAlign="center">
           <SubHeading>
             What you earn from <br />
             referrals
@@ -123,12 +124,12 @@ const InfoTexts = () => {
           >
             Algoritmul nostru împarte 60% din câștigul pe fiecare joc între deținătorii de NFTs.
           </Text>
-          <Box color="#fff" marginTop="20px">
-            <FollowUs />
+          <Box color="#fff" marginY="40px">
+            <FollowUs alignX="center" />
           </Box>
         </Box>
 
-        <Box flex="1" marginTop={{ base: '0px', '2xl': '0px' }} color="#fff">
+        <Box marginTop={{ base: '0px', '2xl': '0px' }} color="#fff">
           <SubHeading>Simulate your earn</SubHeading>
           <SimulateEarnings />
         </Box>
