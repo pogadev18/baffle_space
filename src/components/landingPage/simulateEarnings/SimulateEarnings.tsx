@@ -24,9 +24,10 @@ const Buttons = ({
   disabledContext: boolean;
 }) => {
   return (
-    <Stack justify="center" spacing={1} direction="row" align="center">
+    <Stack justify="center" spacing={1} direction={{ base: 'column', md: 'row' }} align="center">
       {gameContext.map((game: any) => (
         <Button
+          width={{ base: '200px', md: 'auto' }}
           disabled={disabledContext}
           fontWeight="400"
           textTransform="uppercase"
@@ -208,9 +209,19 @@ const SimulateEarnings = () => {
   const spanStyles = { color: '#00B0CA', fontWeight: 'bold' };
 
   return (
-    <Box display="flex" alignItems="center" gap="150px">
-      <Box textAlign="center" flex="1" className="slider-wrapper">
-        <Text fontSize="125px" fontWeight="700">
+    <Box
+      display="flex"
+      flexDirection={{ base: 'column', xl: 'row' }}
+      alignItems="center"
+      gap={{ base: '40px', xl: '150px' }}
+    >
+      <Box
+        textAlign="center"
+        flex="1"
+        width={{ base: '100%', xl: 'auto' }}
+        className="slider-wrapper"
+      >
+        <Text fontSize={{ base: '80px', md: '125px' }} fontWeight="700">
           {!userIncome ? 0 : userIncome}
           <span
             style={{
