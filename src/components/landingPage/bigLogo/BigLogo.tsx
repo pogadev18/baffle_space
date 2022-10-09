@@ -13,13 +13,15 @@ const BigLogo = () => (
         fontSize={{ base: '8vw', sm: '34px' }}
         fontWeight="900"
         color="#fff"
+        marginBottom="20px"
         textTransform="uppercase"
       >
         baffle space
       </Heading>
       <Text color="#fff" fontSize="16px" margin="auto" width={{ base: 'auto', md: '520px' }}>
-        Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative
-        approaches to corporate strategy foster collaborative thinking.
+        Home of the play to win and earn games!
+        <br />
+        Hybrid web3 lotteries owned by the people.
       </Text>
     </Box>
   </div>
