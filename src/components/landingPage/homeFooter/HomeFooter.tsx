@@ -27,7 +27,7 @@ const HomeFooter = () => {
               &copy; Baffle Space 2022
             </Text>
             <Box className={styles.footerSocials}>
-              <FollowUs />
+              <FollowUs alignX="flexEnd" />
             </Box>
           </Box>
         </Flex>
