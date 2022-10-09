@@ -33,8 +33,8 @@ export const winCategories = [
         subtitle: 'Top of the range electronics',
       },
       {
-        title: 'dream rides',
-        subtitle: 'Top of the range motorbikes',
+        title: 'Dream experiences',
+        subtitle: 'Live a life worth remembering',
       },
     ],
   },
@@ -46,12 +46,8 @@ export const winCategories = [
         subtitle: 'Top of the range cars',
       },
       {
-        title: 'dream houses',
-        subtitle: "Houses and apartments anyone would love to call 'home'",
-      },
-      {
-        title: 'golden dream',
-        subtitle: 'Gold ingot prizes ranging from 100g to 10kg',
+        title: 'Dream Rides',
+        subtitle: 'Top of the range motorbikes',
       },
     ],
   },
@@ -65,6 +61,19 @@ export const winCategories = [
       {
         title: 'Xmas Craze Lottery',
         subtitle: 'Million dollar present',
+      },
+    ],
+  },
+  {
+    dayInterval: 'Yearly Contests - 365 day accumulation period',
+    info: [
+      {
+        title: 'Dream homes',
+        subtitle: "Houses and apartments anyone would love to call 'home'",
+      },
+      {
+        title: 'golden dream',
+        subtitle: 'Gold ingot prizes ranging from 100g to 10kg',
       },
     ],
   },
