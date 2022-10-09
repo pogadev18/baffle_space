@@ -30,11 +30,11 @@ export const winCategories = [
     info: [
       {
         title: 'dream electronics',
-        subtitle: 'Sute de modele în sute de concursuri care rulează în paralel',
+        subtitle: 'Top of the range electronics',
       },
       {
         title: 'dream rides',
-        subtitle: 'Peste 100 de modele de motociclete din toate categoriile',
+        subtitle: 'Top of the range motorbikes',
       },
     ],
   },
@@ -43,15 +43,15 @@ export const winCategories = [
     info: [
       {
         title: 'dream cars',
-        subtitle: 'Peste 200 de modele de mașini de lux',
+        subtitle: 'Top of the range cars',
       },
       {
         title: 'dream houses',
-        subtitle: 'Peste 100 de modele de motociclete din toate categoriile',
+        subtitle: "Houses and apartments anyone would love to call 'home'",
       },
       {
         title: 'golden dream',
-        subtitle: 'Premii de la 100g până la 10kg de aur pur în lingouri',
+        subtitle: 'Gold ingot prizes ranging from 100g to 10kg',
       },
     ],
   },
@@ -60,7 +60,11 @@ export const winCategories = [
     info: [
       {
         title: 'New Year Lottery',
-        subtitle: 'Premiu garantat de $1.000.000',
+        subtitle: '1 million dollar grand prize',
+      },
+      {
+        title: 'Xmas Craze Lottery',
+        subtitle: 'Million dollar present',
       },
     ],
   },
