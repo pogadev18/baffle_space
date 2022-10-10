@@ -21,7 +21,7 @@ export const exact365DaysTexts = [
 export const whatYouWinTexts = [
   'More than 200 games will be running at the same time in the first Dream Prize Categories. ',
   'You will be able to play for Dream Homes, Dream Cars, Dream Rides, Dream Electronics, Golden Dream ( gold ingots ) and Dream Experiences.',
-  'You could play to win the Xmas or the New Year contest? How amazing would it feel to work on your New Year resolution with an extra 1.000.000 $ in your account?',
+  'You could play to win the Xmas or the New Year contest. How amazing would it feel to work on your New Year resolution with an extra $1.000.000 in your account?',
 ];
 
 export const winCategories = [

@@ -306,7 +306,7 @@ const SimulateEarnings = () => {
                   fontSize: 12,
                 }}
               >
-                current category:{' '}
+                chosen category:{' '}
                 <span style={{ fontWeight: 'bold' }}>{newGameContext.contextName}</span>
               </span>
               <p>
@@ -334,7 +334,7 @@ const SimulateEarnings = () => {
             Simulated environment
           </Text>
           <p>
-            Category:{' '}
+            Game Category:{' '}
             <span style={spanStyles} className="dinamic-data-style">
               {newGameContext.contextName}
             </span>
@@ -354,13 +354,13 @@ const SimulateEarnings = () => {
             </span>
           </p>
           <p>
-            <span>NFT2 owners: </span>
+            <span>NFT Owners Engaged: </span>
             <span style={spanStyles} className="dinamic-data-style">
               {numberOfPlayersInGame}
             </span>
           </p>
           <p>
-            Amount distributed:{' '}
+            Amount raised for distribution:{' '}
             <span style={spanStyles} className="dinamic-data-style">
               {amountDistributed}$
             </span>
@@ -372,7 +372,7 @@ const SimulateEarnings = () => {
             </span>
           </p>
           <p>
-            Earning percent:{' '}
+            Earnings percentage:{' '}
             <span style={spanStyles} className="dinamic-data-style">
               {userEarningPercent}%
             </span>

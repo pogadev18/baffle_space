@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 const LogoTwitter = () => {
   return (
-    <Link href="/">
+    <Link href="https://twitter.com/BaffleSpace">
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <a>
+      <a target="_blank">
         <svg
           width="45"
           height="45"

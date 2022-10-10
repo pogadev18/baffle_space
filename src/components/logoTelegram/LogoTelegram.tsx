@@ -4,7 +4,7 @@ const LogoTelegram = ({ url }: { url: string }) => {
   return (
     <Link href={url}>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-      <a>
+      <a target="_blank">
         <svg
           width="45"
           height="45"

@@ -283,10 +283,10 @@ const InfoTexts = () => {
             opensea.io marketplace.
             <br />
             <br />
-            Descendant NFT creation will be unlocked in 3 stages:
+            Descendant NFT creation will be unlocked in stages:
             <br />
             <br />
-            1.The first 1000 descendant NFTs will be unlocked for creation upon reaching 10.000
+            1. The first 1000 descendant NFTs will be unlocked for creation upon reaching 10.000
             tickets sold through affiliate links for Baffle Space Games.
             <br />
             <br />
@@ -294,7 +294,7 @@ const InfoTexts = () => {
             tickets sold through affiliate links for Baffle Space Games.
             <br />
             <br />
-            3. As long as the above criteria for descendant NFT creation is reached, all NFT
+            As long as the above criteria for descendant NFT creation is reached, all NFT
             generations have the ability to create descendant NFTs.
           </Text>
         </Box>
