@@ -13,7 +13,7 @@ const Home = () => {
       <Head>
         <title>Baffle.space</title>
       </Head>
-      <section id="#top">
+      <section id="#top" style={{ width: '100%' }}>
         <BigLogo />
         <InfoTexts />
       </section>
