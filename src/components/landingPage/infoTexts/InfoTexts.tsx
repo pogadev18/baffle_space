@@ -80,7 +80,7 @@ const InfoTexts = () => {
       paddingX={{ base: '15px', md: '40px' }}
       maxW="8xl"
     >
-      <Box marginBottom="60px" textAlign="center">
+      <Box id="topOfThePage" marginBottom="60px" textAlign="center">
         <SubHeading>What are baffle space games?</SubHeading>
         <Text color={textColor} fontSize="16px" margin="auto" width={{ base: 'auto', md: '540px' }}>
           Baffle Space Games are hybrid games of chance for which we combined the best features of
@@ -384,6 +384,9 @@ const InfoTexts = () => {
           </Box>
           <Exact365DaysGraph />
         </Box>
+        <Text marginTop="50px" color={titlesColor} fontWeight="700" textDecoration="underline">
+          <a href="#topOfThePage">back to top</a>
+        </Text>
       </Box>
     </Container>
   );
