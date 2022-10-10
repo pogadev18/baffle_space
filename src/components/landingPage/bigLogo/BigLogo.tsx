@@ -5,7 +5,7 @@ import Logo from '@/root/components/logo';
 import styles from './BigLogo.module.scss';
 
 const BigLogo = () => (
-  <div className={styles.bigLogoWrapper}>
+  <div id="logoWrapper" className={styles.bigLogoWrapper}>
     <Logo />
     <Box marginTop="30px">
       <Heading

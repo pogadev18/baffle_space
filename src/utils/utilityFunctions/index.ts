@@ -1,7 +1,8 @@
 export const getOffset = (element: HTMLElement | null) => {
   const rect = element?.getBoundingClientRect();
   const scrollTop = window.scrollY;
-  return rect!.top + scrollTop - rect!.height;
+
+  return rect!.top + scrollTop + rect!.height;
 };
 
 export const renderLinksUrl = (link: string) => {
