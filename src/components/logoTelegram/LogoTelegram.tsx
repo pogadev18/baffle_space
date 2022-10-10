@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-const LogoTelegram = () => {
+const LogoTelegram = ({ url }: { url: string }) => {
   return (
-    <Link href="/">
+    <Link href={url}>
       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
       <a>
         <svg

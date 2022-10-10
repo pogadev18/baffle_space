@@ -3,7 +3,7 @@ export const genesisNFTBenefits = [
 ];
 
 export const less365DaysTexts = [
-  'Minimum amount to validate the game and move on to the next step',
+  'Minimum amount to validate the game and draw the winning tickets',
   'Earnings of participating NFT owners',
   'Prize pool for the secondary draw to be split among 3 lucky winners',
   'Development and maintenance income of Baffle Space',
@@ -11,7 +11,7 @@ export const less365DaysTexts = [
 ];
 
 export const exact365DaysTexts = [
-  '1.000.000$ is the minimum amount to validate the game and move on to the next step',
+  '$1.000.000 is the minimum amount to validate the game and draw the winning tickets',
   'Prize pool for the secondary draw to be split among 3 lucky winners',
   'Earnings of participating NFT owners',
   'Development and maintenance income of Baffle Space',
@@ -55,12 +55,12 @@ export const winCategories = [
     dayInterval: 'Quarterly Contests - 90 day accumulation period',
     info: [
       {
-        title: 'New Year Lottery',
-        subtitle: '1 million dollar grand prize',
+        title: 'Dream homes',
+        subtitle: "Houses and apartments anyone would love to call 'home'",
       },
       {
-        title: 'Xmas Craze Lottery',
-        subtitle: 'Million dollar present',
+        title: 'golden dream',
+        subtitle: 'Gold ingot prizes ranging from 100g to 10kg',
       },
     ],
   },
@@ -68,12 +68,12 @@ export const winCategories = [
     dayInterval: 'Yearly Contests - 365 day accumulation period',
     info: [
       {
-        title: 'Dream homes',
-        subtitle: "Houses and apartments anyone would love to call 'home'",
+        title: 'New Year Lottery',
+        subtitle: '1 million dollar grand prize',
       },
       {
-        title: 'golden dream',
-        subtitle: 'Gold ingot prizes ranging from 100g to 10kg',
+        title: 'Xmas Craze Lottery',
+        subtitle: 'Million dollar grand prize',
       },
     ],
   },

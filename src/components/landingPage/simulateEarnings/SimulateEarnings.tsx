@@ -294,8 +294,8 @@ const SimulateEarnings = () => {
                 fontSize: 12,
               }}
             >
-              * please select a game category from above
-              <br /> in order to activate the simulator
+              please select a game category from above
+              <br /> to activate the simulator
             </p>
           ) : (
             <Box marginTop="10px">
@@ -327,8 +327,7 @@ const SimulateEarnings = () => {
       </Box>
       <Box className="details-wrapper">
         <Heading as="h4" fontSize="28px" marginBottom="30px">
-          Simulate the earnings <br />
-          from sold tickets
+          Earnings Simulator
         </Heading>
         <Box color="#a9a9a9">
           <Text fontWeight="bold" fontSize="18px" color="#a9a9a9" marginBottom="15px">
@@ -355,7 +354,7 @@ const SimulateEarnings = () => {
             </span>
           </p>
           <p>
-            <span>NFT owners: </span>
+            <span>NFT2 owners: </span>
             <span style={spanStyles} className="dinamic-data-style">
               {numberOfPlayersInGame}
             </span>
@@ -367,7 +366,7 @@ const SimulateEarnings = () => {
             </span>
           </p>
           <p>
-            Number of tickets:&nbsp;
+            Number of tickets in the game:&nbsp;
             <span style={spanStyles} className="dinamic-data-style">
               {!disabledContext ? 0 : numberOfSimplePlayersInGame}
             </span>
@@ -385,8 +384,8 @@ const SimulateEarnings = () => {
               fontSize: 12,
             }}
           >
-            * the amounts in dollars are converted from MATIC,
-            <br /> which is the official currency of the game platform
+            * the amounts in dollars are converted and sent out as $MATIC, <br />
+            the official currency of Baffle Space Gaming Platform
           </p>
         </Box>
       </Box>
