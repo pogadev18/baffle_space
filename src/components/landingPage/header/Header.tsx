@@ -14,12 +14,13 @@ import {
 } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 import detectEthereumProvider from '@metamask/detect-provider';
+import { IoWalletOutline } from 'react-icons/io5';
 
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { useMoralis } from 'react-moralis';
 
 import Logo from '@/root/components/logo';
-import ParticipateToWhiteListBanner from '@/root/components/landingPage/participateToWhiteListBanner';
+// import ParticipateToWhiteListBanner from '@/root/components/landingPage/participateToWhiteListBanner';
 import NavLink from '@/root/components/navLink';
 
 import { AlertStatusValues } from '@/root/utils/interfaces/alertStatuses';
@@ -77,8 +78,8 @@ const LandingPageHeader = () => {
   return (
     <>
       {metamaskAvailability === 'pending' ? (
-        <div style={{ padding: '15px' }}>
-          <Spinner color="white" />
+        <div style={{ position: 'absolute', padding: '15px', zIndex: '20' }}>
+          <Spinner color="pink" />
         </div>
       ) : !isAuthenticated && metamaskAvailability === 'notFound' ? (
         <AlertComponent
@@ -90,9 +91,15 @@ const LandingPageHeader = () => {
         </AlertComponent>
       ) : null}
 
-      <ParticipateToWhiteListBanner />
+      {/* <ParticipateToWhiteListBanner /> */}
 
-      <Box width="100%" bg="black.900">
+      <Box
+        width="100%"
+        position={{ base: 'static', lg: 'absolute' }}
+        top={!isAuthenticated && metamaskAvailability === 'notFound' ? '40px' : '0'}
+        zIndex="10"
+        background={{ base: '#2a134b', lg: 'transparent' }}
+      >
         <Container
           position="relative"
           paddingBottom={{ base: '1.25rem', md: '0' }}
@@ -110,12 +117,10 @@ const LandingPageHeader = () => {
               order={1}
               marginTop={{ base: 5, md: 0 }}
               variant="outline"
-              colorScheme="yellow.400"
-              borderColor="yellow.400"
+              colorScheme="pink.900"
+              borderColor="pink.900"
               size="md"
-              icon={
-                isOpen ? <CloseIcon color="yellow.400" /> : <HamburgerIcon color="yellow.400" />
-              }
+              icon={isOpen ? <CloseIcon color="pink.900" /> : <HamburgerIcon color="pink.900" />}
               aria-label="Open Menu"
               display={{ lg: 'none' }}
               onClick={isOpen ? onClose : onOpen}
@@ -151,17 +156,19 @@ const LandingPageHeader = () => {
                       ? 'MetaMask needs to be installed in order to connect'
                       : ''
                   }
-                  bg="red.600"
+                  bg="pink.900"
                 >
                   <Button
-                    variant="solid"
+                    variant="ghost"
                     onClick={handleLogin}
                     size="sm"
-                    colorScheme="yellow"
                     rounded="full"
+                    color="white"
+                    rightIcon={<IoWalletOutline />}
                     isLoading={isAuthenticating}
+                    _hover={{ background: 'pink.900' }}
                   >
-                    Connect with MetaMask
+                    Connect
                   </Button>
                 </Tooltip>
               )}
@@ -192,7 +199,7 @@ const LandingPageHeader = () => {
                       margin="25px 0 10px 0"
                       paddingY="23px"
                       width="100%"
-                      colorScheme="yellow"
+                      colorScheme="pink"
                       rounded="full"
                       isLoading={isAuthenticating}
                     >

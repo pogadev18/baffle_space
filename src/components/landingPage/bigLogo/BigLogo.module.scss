@@ -1,0 +1,29 @@
+.bigLogoWrapper {
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  padding: 50px 25px 500px;
+  background: url('https://res.cloudinary.com/baffle-space/image/upload/v1665250282/my-uploads/bs_hero_landing_ld1zks.jpg') bottom center no-repeat;
+  background-size: contain;
+
+  @media screen and (max-width: 1200px) {
+    padding-bottom: 250px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding-bottom: 100px;
+  }
+
+  svg {
+    transition: all 0.3s;
+    margin: auto;
+
+    &:hover {
+      transform: rotateZ(10deg);
+    }
+  }
+
+  img {
+    margin: auto;
+  }
+}

@@ -2,13 +2,14 @@ import { extendTheme } from '@chakra-ui/react';
 
 const breakpoints = {
   custom1110: '1110px',
+  custom1100: '1100px',
 };
 
 export const theme = extendTheme({
   breakpoints,
   fonts: {
-    heading: `'Lato', sans-serif`,
-    body: `'Lato', sans-serif`,
+    heading: `'Poppins', sans-serif`,
+    body: `'Poppins', sans-serif`,
   },
   colors: {
     gray: {
@@ -39,6 +40,10 @@ export const theme = extendTheme({
     },
     green: {
       900: '#34a134',
+    },
+    pink: {
+      900: '#ef21d9',
+      800: '#bc25ab',
     },
   },
   components: {

@@ -20,10 +20,6 @@ interface IWhiteListDrawerProps {
 const WhitelistDrawer = ({ isOpen, onClose }: IWhiteListDrawerProps) => {
   const btnRef = useRef<HTMLButtonElement>(null);
 
-  // const redirect = () => {
-  //   window.location.assign('https://twitter.com/');
-  // };
-
   return (
     <Drawer size="full" isOpen={isOpen} placement="top" onClose={onClose} finalFocusRef={btnRef}>
       <DrawerOverlay />

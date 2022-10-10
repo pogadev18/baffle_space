@@ -1,6 +1,10 @@
 import Head from 'next/head';
+import BigLogo from '@/root/components/landingPage/bigLogo';
+import InfoTexts from '@/root/components/landingPage/infoTexts';
 
-import Hero from '@/root/components/landingPage/hero';
+// import HomeSlider from '@/root/components/homeSlider';
+// import HomeWhaleSection from '@/root/components/HomeWhaleSection';
+// import IncomeDistribution from '@/root/components/IncomeDistribution';
 
 const Home = () => {
   return (
@@ -8,8 +12,8 @@ const Home = () => {
       <Head>
         <title>Baffle.space</title>
       </Head>
-
-      <Hero />
+      <BigLogo />
+      <InfoTexts />
     </>
   );
 };

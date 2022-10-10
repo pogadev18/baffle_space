@@ -1,0 +1,134 @@
+.wrapper {
+  text-align: center;
+  padding: 60px 30px;
+
+  h2 {
+    font-weight: 900;
+    font-size: 35px;
+    line-height: 45px;
+    margin-bottom: 25px;
+    color: black;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 1100px) {
+      font-size: 23px;
+      line-height: 33px;
+    }
+  }
+}
+
+.title {
+  background: #ededed;
+  color: black;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.distributionColumns {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 0 15px;
+  
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+  }
+
+  > div {
+    flex-basis: calc(50% - 30px)
+  }
+}
+
+.stepWrapper {
+  text-align: left;
+  margin: 20px 0;
+
+  .step {
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+  }
+
+  .stepDescription {
+    text-align: left;
+    background: #ededed;
+    padding: 15px;
+    border-radius: 5px;
+    height: 80px;
+
+    @media screen and (max-width: 992px) {
+      height: auto;
+    }
+
+    span {
+      display: block;
+      font-weight: 900;
+    }
+  }
+
+  .stepPercentage {
+    background: #ededed;
+    border-radius: 25px;
+    margin-top: 10px;
+
+    .percentage {
+      display: inline-block;
+      background: #1c1c4d;
+      color: #f788ef;
+      font-weight: bold;
+      text-align: right;
+      border-radius: 25px;
+      padding: 5px 10px;
+    }
+
+    .percentageFull {
+      width: 100%;
+    }
+
+    .percentageSixty {
+      width: 60%;
+    }
+
+    .percentageThirty {
+      width: 30%;
+    }
+
+    .percentageEighteen {
+      width: 18%;
+
+      @media screen and (max-width: 768px) {
+        width: 20%
+      }
+    }
+
+    .percentageTwo {
+      width: 8%;
+
+      @media screen and (max-width: 768px) {
+        width: 15%
+      }
+    }
+
+    .percentageTwenty {
+      width: 20%;
+
+      @media screen and (max-width: 768px) {
+        width: 25%
+      }
+    }
+
+    .percentageThirtyFive {
+      width: 35%;
+    }
+
+    .percentageTen {
+      width: 10%;
+
+      @media screen and (max-width: 768px) {
+        width: 20%
+      }
+    }
+  }
+}

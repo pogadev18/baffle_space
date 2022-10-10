@@ -1,0 +1,27 @@
+.moreInfoText {
+  color: #bababa;
+  text-transform: lowercase;
+}
+
+.socialMediaLinks {
+  a {
+    color: #09ccdb;
+  }
+}
+
+.winCategoriesPrizes {
+  position: relative;
+
+  //> div {
+  //  border-bottom: 1px solid red;
+  //}
+
+  .dayInterval {
+    margin-top: 60px;
+  }
+}
+
+.winDescription {
+  border-bottom: 1px solid #707070;
+  padding: 15px 0;
+}
