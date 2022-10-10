@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
-import dynamic from 'next/dynamic';
+// import dynamic from 'next/dynamic';
 
-const Header = dynamic(() => import('@/root/components/landingPage/header'));
+// const Header = dynamic(() => import('@/root/components/landingPage/header'));
 
 interface AppLayoutProps {
   children: ReactNode;
@@ -10,7 +10,7 @@ interface AppLayoutProps {
 const AppLayout = ({ children }: AppLayoutProps) => {
   return (
     <div style={{ height: '100vh' }}>
-      <Header />
+      {/*<Header />*/}
       <div style={{ padding: '5px' }}>{children}</div>
     </div>
   );
