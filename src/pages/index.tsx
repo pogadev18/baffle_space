@@ -48,7 +48,7 @@ const Home = () => {
       {goToTopVisible && (
         <Text
           position="fixed"
-          top="50px"
+          bottom="50px"
           right="15px"
           fontSize={{ base: '25px', md: ' 40px' }}
           color="#00B0CA"
