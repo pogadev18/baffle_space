@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { Heading } from '@chakra-ui/react';
 
-import Roadmap from '@/root/pages/roadmap';
+// import Roadmap from '@/root/pages/roadmap';
 import CoreTeamMembers from '@/root/components/landingPage/coreTeamMembers';
 
 import { getOffset } from '@/root/utils/utilityFunctions';
@@ -120,7 +120,7 @@ const WhitepaperSections = () => {
           >
             Roadmap
           </Heading>
-          <Roadmap isOnWhitepaperPage />
+          {/* <Roadmap isOnWhitepaperPage /> */}
         </section>
         <section id="team">
           <Heading
