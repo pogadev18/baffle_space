@@ -214,6 +214,7 @@ const InfoTexts = () => {
           alignItems="center"
           justifyContent="center"
           height={{ base: 'auto', md: '100vh' }}
+          id="simulator"
           color="#fff"
         >
           <section style={{ width: '100%' }}>
