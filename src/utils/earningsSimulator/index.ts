@@ -20,7 +20,7 @@ export const gameContexts = [
     id: 1,
   },
   {
-    contextName: 'Houses',
+    contextName: 'Homes',
     timeInterval: '60 days',
     maxTicketAmount: 1000,
     minTiketAmount: 1,

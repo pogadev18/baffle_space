@@ -5,16 +5,15 @@ import NftTree from '@/root/components/nftTree';
 import LogoTwitter from '@/root/components/logoTwitter';
 import LogoTelegram from '@/root/components/logoTelegram';
 // import LogoTikTok from '@/root/components/logoTikTok';
-import Less365DaysGraph from '@/root/components/less365DaysGraph';
-import Exact365DaysGraph from '@/root/components/exact365DaysGraph';
+import WeeklyToQuartarlyGraph from '@/root/components/less365DaysGraph';
+import YearlyGraph from '@/root/components/exact365DaysGraph';
 import SimulateEarnings from '@/root/components/landingPage/simulateEarnings';
 
 import {
   genesisNFTBenefits,
-  less365DaysTexts,
-  exact365DaysTexts,
   whatYouWinTexts,
   winCategories,
+  weeklyToQuartarlyTexts,
 } from '@/root/utils/texts';
 
 import styles from './InfoTexts.module.scss';
@@ -334,7 +333,7 @@ const InfoTexts = () => {
 
       <Box
         marginBottom="60px"
-        paddingTop="30px"
+        paddingTop={{ base: '30px', md: '60px' }}
         textAlign="center"
         borderTop={`1px solid ${borderBlue}`}
       >
@@ -342,6 +341,10 @@ const InfoTexts = () => {
           How is the income from Baffle Space <br />
           Games distributed?
         </SubHeading>
+        <Text color="#fff" fontSize="16px">
+          After the validation amount of each game is reached, the subsequent amount raised <br />{' '}
+          until the accumulation period ends is distributed as follows:
+        </Text>
         <Box
           display="flex"
           borderBottom={`1px solid ${borderBlue}`}
@@ -356,15 +359,13 @@ const InfoTexts = () => {
             <SoftHeading marginBottom="20px">
               Weekly to Quarterly contests income distribution
             </SoftHeading>
-            <ol style={{ listStyle: 'decimal', paddingLeft: '15px' }}>
-              {less365DaysTexts.map((text) => (
-                <li style={{ marginBottom: '10px' }} key={text}>
-                  {text}
-                </li>
-              ))}
+            <ol className={styles.coloredList} style={{ paddingLeft: '15px' }}>
+              {weeklyToQuartarlyTexts.map((text) => {
+                return <li key={text}>{text}</li>;
+              })}
             </ol>
           </Box>
-          <Less365DaysGraph />
+          <WeeklyToQuartarlyGraph />
         </Box>
       </Box>
       <Box marginBottom="60px" textAlign="center">
@@ -378,15 +379,13 @@ const InfoTexts = () => {
         >
           <Box textAlign="left" color="#fff">
             <SoftHeading marginBottom="20px">Yearly contests income distribution</SoftHeading>
-            <ol style={{ listStyle: 'decimal', paddingLeft: '15px' }}>
-              {exact365DaysTexts.map((text) => (
-                <li style={{ marginBottom: '10px' }} key={text}>
-                  {text}
-                </li>
+            <ol className={styles.coloredList} style={{ paddingLeft: '15px' }}>
+              {weeklyToQuartarlyTexts.map((text) => (
+                <li key={text}>{text}</li>
               ))}
             </ol>
           </Box>
-          <Exact365DaysGraph />
+          <YearlyGraph />
         </Box>
       </Box>
     </Container>

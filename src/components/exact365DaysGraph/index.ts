@@ -1,3 +1,3 @@
-import Exact365DaysGraph from './Exact365DaysGraph';
+import YearlyGraph from './YearlyGraph';
 
-export default Exact365DaysGraph;
+export default YearlyGraph;

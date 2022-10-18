@@ -25,3 +25,45 @@
   border-bottom: 1px solid #707070;
   padding: 15px 0;
 }
+
+.coloredList {
+  li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    line-height: 25px;
+
+    &::before {
+      content: '';
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      left: -15px;
+      top: 0;
+    }
+
+    &:first-child {
+      &::before {
+        background: #005473
+      }
+    }
+
+    &:nth-child(2) {
+      &::before {
+        background: #0083B2
+      }
+    }
+
+    &:nth-child(3) {
+      &::before {
+        background: #00BBFF
+      }
+    }
+
+    &:nth-child(4) {
+      &::before {
+        background: #AFE2FF
+      }
+    }
+  }
+}

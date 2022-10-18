@@ -2,20 +2,11 @@ export const genesisNFTBenefits = [
   'A Baffle Space Genesis NFTs is the ‘deed’ which makes you an affiliate business owner in the Baffle Space Ecosystem and getting it at launch maximizes your earnings.\n',
 ];
 
-export const less365DaysTexts = [
-  'Minimum amount to validate the game and draw the winning tickets',
+export const weeklyToQuartarlyTexts = [
   'Earnings of participating NFT owners',
   'Prize pool for the secondary draw to be split among 3 lucky winners',
   'Development and maintenance income of Baffle Space',
-  '2% of the income is used to feed a charity fund managed through vote by NFT owners regardless of the NFT generation they own',
-];
-
-export const exact365DaysTexts = [
-  '$1.000.000 is the minimum amount to validate the game and draw the winning tickets',
-  'Prize pool for the secondary draw to be split among 3 lucky winners',
-  'Earnings of participating NFT owners',
-  'Development and maintenance income of Baffle Space',
-  '10% of the income is used to feed a charity fund managed through vote by NFT owners regardless of the NFT generation they own',
+  'Charity fund managed through vote by NFT owners regardless of the NFT generation they own',
 ];
 
 export const whatYouWinTexts = [

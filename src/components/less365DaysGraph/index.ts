@@ -1,3 +1,3 @@
-import Less365DaysGraph from './Less365DaysGraph';
+import WeeklyToQuartarlyGraph from './WeeklyToQuartarlyGraph';
 
-export default Less365DaysGraph;
+export default WeeklyToQuartarlyGraph;
