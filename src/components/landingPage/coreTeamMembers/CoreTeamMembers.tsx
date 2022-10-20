@@ -10,6 +10,7 @@ interface CoreTeamMembersProps {
 const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
   return (
     <SimpleGrid
+      marginTop="60px"
       columns={{ base: 1, lg: desktopNumberOfColumns, md: 2 }}
       spacing={10}
       textAlign="center"
