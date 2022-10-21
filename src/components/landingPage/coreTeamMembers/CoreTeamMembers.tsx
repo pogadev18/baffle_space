@@ -16,7 +16,7 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
       textAlign="center"
     >
       <TeamMember
-        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305121/my-uploads/imj0i8uywbt1kqxx5hpq.jpg"
+        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1666351780/my-uploads/Calin_go9hsk.jpg"
         fallbackUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305115/my-uploads/p6l9f5o48qknioot7i7b.jpg"
         name="Călin Susa"
         alternativeText="Călin Susa"
@@ -28,7 +28,7 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
         past 6 years.
       </TeamMember>
       <TeamMember
-        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305142/my-uploads/fribcjc3c1ngimqbribo.jpg"
+        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1666351780/my-uploads/Teddy_znm0zd.jpg"
         fallbackUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305137/my-uploads/ssoa1i7ciylmlewmjacv.jpg"
         name="Theodor Gál"
         alternativeText="Theodor Gál"
@@ -40,7 +40,7 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
         between business, tech and communities.
       </TeamMember>
       <TeamMember
-        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305106/my-uploads/jrh6hidqkebeujcl0y8m.jpg"
+        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1666351780/my-uploads/Bogdan_gx03qh.jpg"
         fallbackUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305100/my-uploads/cqhgprnd8zfytc7nptjz.jpg"
         name="Bogdan Pogăcean"
         alternativeText="Bogdan Pogăcean"
@@ -53,7 +53,7 @@ const CoreTeamMembers = ({ desktopNumberOfColumns }: CoreTeamMembersProps) => {
       </TeamMember>
       <TeamMember
         name="Cosmin Hodiș"
-        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305131/my-uploads/rpsognl0d3tdkemhqebp.jpg"
+        imageUrl="https://res.cloudinary.com/baffle-space/image/upload/v1666351780/my-uploads/Cosmin_qnawdx.jpg"
         fallbackUrl="https://res.cloudinary.com/baffle-space/image/upload/v1660305126/my-uploads/qppgn9bzv8nk2rqtmedl.jpg"
         alternativeText="Cosmin Hodiș"
         memberPosition="Visual Director"
