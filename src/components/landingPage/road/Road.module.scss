@@ -1,159 +1,67 @@
 .roadWrapper {
   width: 650px;
   margin: 0 auto 60px;
-  display: flex;
-  gap: 20px;
+  text-align: center;
 
-  @media screen and (max-width: 767px) {
-    display: none;
+  @media screen and (max-width: 768px) {
+    width: auto;
   }
 }
 
-.roadContent {
-  background: #2B2B2B;
-  padding: 0 15px;
-  width: 450px;
-}
+.roadInfo {
+  color: #fff;
+  border-bottom: 1px solid #0BC5EA;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  transition: all 0.3s ease-in-out;
 
-.roadDescriptions {
-  position: relative;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  &:hover {
+    color: #0BC5EA;
+  }
 
-  > p {
-    position: relative;
-
-    &:nth-child(1) {
-      top: 45px;
-    }
-
-    &:nth-child(2) {
-      top: 72px;
-    }
-
-    &:nth-child(3) {
-      top: 82px;
-    }
-
-    &:nth-child(4) {
-      top: 82px;
-    }
-
-    &:nth-child(5) {
-      top: 82px;
-    }
-
-    &:nth-child(6) {
-      top: 82px;
-    }
-
-    &:nth-child(7) {
-      top: 54px;
-    }
-
-    &:nth-child(8) {
-      top: 32px;
-    }
+  &:last-child {
+    border: 0;
   }
 }
 
-.roadElement {
-  display: flex;
-  height: 170px;
+.active {
+  color: #0BC5EA;
 }
 
+.pinIcon {
+  text-align: center;
+  margin-bottom: 15px;
 
-.quarterText {
-  color: #FFC000;
-  font-weight: 900;
+  svg {
+    margin: auto;
+    width: 40px;
+    height: 30px;
+  }
+}
+
+.quarterAndYear {
   font-size: 40px;
-  padding-right: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
+  font-weight: 900;
 
-  &::after {
-    content: '';
-    width: 6px;
-    height: 90px;
-    background-color: #9E9E9E;
-    position: absolute;
-    right: 0;
+  @media screen and (max-width: 768px) {
+    font-size: 35px;
   }
+}
 
-  span {
-    display: block;
-    font-weight: 400;
+.title {
+  font-size: 30px;
+  font-weight: 900;
+
+  @media screen and (max-width: 768px) {
     font-size: 25px;
   }
-
-  @media screen and (max-width: 767px) {
-    padding-right: 0;
-    font-size: 10vw;
-  }
 }
 
-.noBorder {
-  &::after {
-    display: none;
-  }
-}
+.subtitle {
+  font-size: 20px;
 
-.checkpointDescription {
-  font-size: 30px;
-  line-height: 36px;
-  font-weight: 900;
-  color: #9E9E9E;
-
-  span {
-    display: block;
-    font-weight: 400;
-    font-size: 20px;
-  }
-}
-
-.current {
-  color: #FFC000;
-}
-
-.rocketLaunch {
-  width: 650px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  position: relative;
-
-  @media screen and (max-width: 767px) {
-    width: auto;
-    flex-direction: column;
-    margin-bottom: 40px;
-    border-top: 1px solid #CCC;
-    margin-top: 40px;
-  }
-}
-
-.launchCol1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 15px;
-
-  @media screen and (max-width: 767px) {
-    position: static;
-  }
-}
-
-.launchCol2 {
-  display: flex;
-  align-items: center;
-  text-align: left;
-
-  @media screen and (max-width: 767px) {
-    flex-direction: column;
-    text-align: center;
+  @media screen and (max-width: 768px) {
+    font-size: 17px;
   }
 }
 

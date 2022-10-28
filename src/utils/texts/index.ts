@@ -69,3 +69,67 @@ export const winCategories = [
     ],
   },
 ];
+
+export const roadmapTexts = [
+  {
+    quarter: 'Q3',
+    year: '2022',
+    title: 'Landing Page Launch',
+    subtitle: 'Project Presentation',
+    isActive: true,
+  },
+  {
+    quarter: 'Q3',
+    year: '2022',
+    title: 'Community Onboarding',
+    subtitle: 'Open Communication Channels',
+  },
+  {
+    quarter: 'Q3',
+    year: '2022',
+    title: 'Community Earning Mechanism Setup',
+    subtitle: 'Initial Methods to Earn',
+  },
+  {
+    quarter: 'Q4',
+    year: '2022',
+    title: 'Baffle Space NFT Genesis Collection Launch',
+    subtitle: 'Minting Enabled',
+  },
+  {
+    quarter: 'Q4',
+    year: '2022',
+    title: 'Gaming dAPP Launch',
+    subtitle: 'Play 2 Win and Earn',
+  },
+  {
+    quarter: 'Q4',
+    year: '2022',
+    title: 'Second Layer Draw Release',
+    subtitle: 'Add More Chances to Win for Each Game',
+  },
+  {
+    quarter: 'Q4',
+    year: '2022',
+    title: 'Dream Prize Categories Expansion',
+    subtitle: 'More Dream Prizes to Choose From',
+  },
+  {
+    quarter: 'Q1',
+    year: '2023',
+    title: '"Last Chance" Layer Draw Release',
+    subtitle: 'The Final Layer of Winning Chances for Each Game',
+  },
+  {
+    quarter: 'Q1',
+    year: '2023',
+    title: 'Supercharge Genesis NFTs',
+    subtitle: 'New Perks And Powers for Genesis NFT Holders',
+  },
+  {
+    quarter: 'Q2',
+    year: '2023',
+    title: 'International Launch',
+    subtitle: 'The Option of Claiming Dream Prizes Goes International',
+  },
+];

@@ -7,8 +7,8 @@ export const getOffset = (element: HTMLElement | null) => {
 
 export const renderLinksUrl = (link: string) => {
   switch (link) {
-    case 'The gameplay':
-      return 'game';
+    case 'Home':
+      return '';
     default:
       return link.toLowerCase();
   }

@@ -1,7 +1,7 @@
 .bigLogoWrapper {
   width: 100%;
   text-align: center;
-  margin: auto;
+  margin: 100px auto 0;
   padding: 50px 25px 500px;
   background: url('https://res.cloudinary.com/baffle-space/image/upload/v1665250282/my-uploads/bs_hero_landing_ld1zks.jpg') bottom center no-repeat;
   background-size: contain;
@@ -12,6 +12,7 @@
 
   @media screen and (max-width: 767px) {
     padding-bottom: 100px;
+    margin: 0 auto 0;
   }
 
   svg {

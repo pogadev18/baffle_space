@@ -8,7 +8,6 @@ import LogoTelegram from '@/root/components/logoTelegram';
 import WeeklyToQuartarlyGraph from '@/root/components/less365DaysGraph';
 import YearlyGraph from '@/root/components/exact365DaysGraph';
 import SimulateEarnings from '@/root/components/landingPage/simulateEarnings';
-import CoreTeamMembers from '@/root/components/landingPage/coreTeamMembers';
 
 import {
   genesisNFTBenefits,
@@ -369,12 +368,7 @@ const InfoTexts = () => {
           <WeeklyToQuartarlyGraph />
         </Box>
       </Box>
-      <Box
-        paddingBottom={{ base: '30px', md: '60px' }}
-        marginBottom="60px"
-        textAlign="center"
-        borderBottom={`1px solid ${borderBlue}`}
-      >
+      <Box paddingBottom={{ base: '30px', md: '60px' }} marginBottom="60px" textAlign="center">
         <Box
           display="flex"
           flexDirection={{ base: 'column', '2xl': 'row' }}
@@ -393,11 +387,6 @@ const InfoTexts = () => {
           </Box>
           <YearlyGraph />
         </Box>
-      </Box>
-
-      <Box marginBottom="60px" textAlign="center" id="team">
-        <SubHeading>Baffle Space Team</SubHeading>
-        <CoreTeamMembers desktopNumberOfColumns={4} />
       </Box>
     </Container>
   );
