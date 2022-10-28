@@ -14,13 +14,14 @@ import {
 } from '@chakra-ui/react';
 
 import { CloseIcon } from '@chakra-ui/icons';
+import { FaGripLines } from 'react-icons/fa';
 
 import NavLink from '@/root/components/navLink';
 import Logo from '@/root/components/logo';
 
 import { renderLinksUrl } from '@/root/utils/utilityFunctions';
 
-const Links = ['Home', 'Team', 'Roadmap'];
+const Links = ['Home', 'Team'];
 
 const SoftHeader = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -52,7 +53,9 @@ const SoftHeader = () => {
             colorScheme="#00B0CA"
             borderColor="#00B0CA"
             size="md"
-            icon={isOpen ? <CloseIcon color="#00B0CA" /> : <Box color="#00B0CA">menu</Box>}
+            icon={
+              isOpen ? <CloseIcon color="#00B0CA" /> : <FaGripLines size="30px" color="#00B0CA" />
+            }
             aria-label="Open Menu"
             display={{ lg: 'none' }}
             onClick={onOpen}
