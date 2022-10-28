@@ -9,7 +9,6 @@ interface AlertComponentProps {
   memberPosition: string;
   memberRole: string;
   imageUrl: string;
-  fallbackUrl: string;
   alternativeText: string;
 }
 
@@ -19,7 +18,6 @@ const TeamMember = ({
   memberPosition,
   memberRole,
   imageUrl,
-  fallbackUrl,
   alternativeText,
 }: AlertComponentProps) => {
   return (
@@ -34,7 +32,6 @@ const TeamMember = ({
           w="100%"
           margin="auto"
           src={imageUrl}
-          fallbackSrc={fallbackUrl}
         />
       </section>
       <section className={styles.memberInfo}>

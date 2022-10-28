@@ -20,7 +20,7 @@ import Logo from '@/root/components/logo';
 
 import { renderLinksUrl } from '@/root/utils/utilityFunctions';
 
-const Links = ['Team', 'Roadmap'];
+const Links = ['Home', 'Team', 'Roadmap'];
 
 const SoftHeader = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
