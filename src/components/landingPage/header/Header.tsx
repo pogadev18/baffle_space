@@ -132,7 +132,7 @@ const LandingPageHeader = () => {
               alignItems="center"
             >
               <Box>
-                <Logo />
+                <Logo width="50" height="50" />
               </Box>
               <HStack as="nav" spacing={4} display={{ base: 'none', lg: 'flex' }}>
                 {Links.map((link) => (
