@@ -1,4 +1,6 @@
 import { FaMapMarkerAlt } from 'react-icons/fa';
+import { VscSettingsGear } from 'react-icons/vsc';
+import { GiOnTarget } from 'react-icons/gi';
 
 import { roadmapTexts } from '@/root/utils/texts';
 
@@ -9,9 +11,16 @@ const Road = () => {
     <section className={styles.roadWrapper}>
       {roadmapTexts.map((el) => {
         return (
-          <div className={`${styles.roadInfo} ${el.isActive ? styles.active : ''}`} key={el.title}>
-            <div className={styles.pinIcon}>
-              <FaMapMarkerAlt />
+          <div
+            className={`${styles.roadInfo} ${el.jobDone && styles.jobDone} ${
+              el.notStarted && styles.notStarted
+            }`}
+            key={el.title}
+          >
+            <div className={styles.iconWrapper}>
+              {el.workInProgress && <VscSettingsGear className={styles.gearIcon} />}
+              {el.jobDone && <FaMapMarkerAlt />}
+              {el.notStarted && <GiOnTarget />}
             </div>
             <p className={styles.quarterAndYear}>
               {el.quarter} <span>{el.year}</span>
