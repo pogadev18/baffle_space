@@ -9,6 +9,21 @@ import {
   Text,
 } from '@chakra-ui/react';
 
+const sliderMarks = [
+  '0',
+  '100',
+  '500',
+  '1000',
+  '2000',
+  '3000',
+  '4000',
+  '5000',
+  '6000',
+  '7000',
+  '8000',
+  '9500',
+];
+
 const NftSimulator = () => {
   const [sliderValue, setSliderValue] = useState(0);
   const [trackValue, setTrackValue] = useState(0);
@@ -48,43 +63,16 @@ const NftSimulator = () => {
           setTrackValue(val);
         }}
       >
-        <SliderMark display={{ base: 'none', md: 'block' }} value={0} {...labelStyles}>
-          0
-        </SliderMark>
-        <SliderMark display={{ base: 'none', md: 'block' }} value={100} {...labelStyles}>
-          100
-        </SliderMark>
-        <SliderMark display={{ base: 'none', md: 'block' }} value={500} {...labelStyles}>
-          500
-        </SliderMark>
-        <SliderMark display={{ base: 'none', md: 'block' }} value={1000} {...labelStyles}>
-          1000
-        </SliderMark>
-        <SliderMark display={{ base: 'none', md: 'block' }} value={2000} {...labelStyles}>
-          2000
-        </SliderMark>
-        <SliderMark value={3000} {...labelStyles} display={{ base: 'none', md: 'block' }}>
-          3000
-        </SliderMark>
-        <SliderMark value={4000} {...labelStyles} display={{ base: 'none', md: 'block' }}>
-          4000
-        </SliderMark>
-        <SliderMark value={5000} {...labelStyles} display={{ base: 'none', md: 'block' }}>
-          5000
-        </SliderMark>
-        <SliderMark value={6000} {...labelStyles} display={{ base: 'none', md: 'block' }}>
-          6000
-        </SliderMark>
-        <SliderMark value={7000} {...labelStyles} display={{ base: 'none', md: 'block' }}>
-          7000
-        </SliderMark>
-        <SliderMark value={8000} {...labelStyles} display={{ base: 'none', md: 'block' }}>
-          8000
-        </SliderMark>
+        {sliderMarks.map((markValue) => (
+          <SliderMark
+            display={{ base: 'none', md: 'block' }}
+            {...labelStyles}
+            value={Number(markValue)}
+          >
+            {markValue}
+          </SliderMark>
+        ))}
 
-        <SliderMark value={9500} {...labelStyles} display={{ base: 'none', md: 'block' }}>
-          9500
-        </SliderMark>
         <SliderMark
           value={trackValue}
           textAlign="center"
