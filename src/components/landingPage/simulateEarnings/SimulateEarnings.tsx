@@ -327,7 +327,7 @@ const SimulateEarnings = () => {
       </Box>
       <Box className="details-wrapper">
         <Heading as="h4" fontSize="28px" marginBottom="30px">
-          Earnings Simulator
+          Tickets Simulator
         </Heading>
         <Box color="#a9a9a9">
           <Text fontWeight="bold" fontSize="18px" color="#a9a9a9" marginBottom="15px">

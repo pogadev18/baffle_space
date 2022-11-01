@@ -1,5 +1,16 @@
 import { ReactNode, Fragment } from 'react';
-import { Box, Container, Heading, SimpleGrid, Text } from '@chakra-ui/react';
+import {
+  Box,
+  Container,
+  Heading,
+  SimpleGrid,
+  Text,
+  Tabs,
+  TabList,
+  TabPanels,
+  Tab,
+  TabPanel,
+} from '@chakra-ui/react';
 
 import NftTree from '@/root/components/nftTree';
 import LogoTwitter from '@/root/components/logoTwitter';
@@ -8,6 +19,7 @@ import LogoTelegram from '@/root/components/logoTelegram';
 import WeeklyToQuartarlyGraph from '@/root/components/less365DaysGraph';
 import YearlyGraph from '@/root/components/exact365DaysGraph';
 import SimulateEarnings from '@/root/components/landingPage/simulateEarnings';
+import NFTSimulator from '@/root/components/landingPage/NFTSimulator';
 
 import {
   genesisNFTBenefits,
@@ -231,7 +243,24 @@ const InfoTexts = () => {
           color="#fff"
         >
           <section style={{ width: '100%' }}>
-            <SimulateEarnings />
+            <Box textAlign="center" marginBottom="100px">
+              <SubHeading>Earnings simulator</SubHeading>
+            </Box>
+            <Tabs variant="unstyled">
+              <TabList>
+                <Tab _selected={{ color: 'white', bg: 'blue.800' }}>NFTs Simulator</Tab>
+                <Tab _selected={{ color: 'white', bg: 'blue.800' }}>Tickets Simulator</Tab>
+              </TabList>
+
+              <TabPanels>
+                <TabPanel>
+                  <NFTSimulator />
+                </TabPanel>
+                <TabPanel>
+                  <SimulateEarnings />
+                </TabPanel>
+              </TabPanels>
+            </Tabs>
           </section>
         </Box>
       </Box>
