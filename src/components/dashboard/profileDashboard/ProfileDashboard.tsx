@@ -14,7 +14,7 @@ const ProfileDashboard = ({ user }: { user: Moralis.User<Moralis.Attributes> | n
         </Text>
       </Box>
       <Box mt="45" display={{ base: 'none', custom1110: 'block' }}>
-        <DisconnectButton fontSize="20px" size="xl" variant="ghost" />
+        <DisconnectButton color="black" fontSize="20px" size="xl" variant="ghost" />
       </Box>
     </TabsWrapper>
   );
