@@ -11,13 +11,21 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
+  Button,
+  Tooltip,
 } from '@chakra-ui/react';
+import { useState, useEffect } from 'react';
+
+import detectEthereumProvider from '@metamask/detect-provider';
+import { useMoralis } from 'react-moralis';
 
 import { CloseIcon } from '@chakra-ui/icons';
 import { FaGripLines } from 'react-icons/fa';
+import { IoWalletOutline } from 'react-icons/io5';
 
 import NavLink from '@/root/components/navLink';
 import Logo from '@/root/components/logo';
+import DisconnectButton from '@/root/components/disconnectButton';
 
 import { renderLinksUrl } from '@/root/utils/utilityFunctions';
 
@@ -25,6 +33,31 @@ const Links = ['Home', 'Team', 'Roadmap'];
 
 const SoftHeader = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isAuthenticated, authenticate, isAuthenticating } = useMoralis();
+  const [metamaskAvailable, setMetamaskAvailable] = useState(false);
+
+  useEffect(() => {
+    const checkMetamaskAvailability = async () => {
+      try {
+        const provider = await detectEthereumProvider();
+
+        if (provider) setMetamaskAvailable(true);
+        if (!provider) setMetamaskAvailable(false);
+      } catch (e) {
+        setMetamaskAvailable(false);
+      }
+    };
+
+    checkMetamaskAvailability();
+  }, []);
+
+  const handleLogin = async () => {
+    if (!isAuthenticated) {
+      await authenticate({
+        signingMessage: 'Auth required by Baffle.space',
+      });
+    }
+  };
 
   return (
     <Box
@@ -69,13 +102,37 @@ const SoftHeader = () => {
             <Box>
               <Logo width="60" height="60" />
             </Box>
-            <HStack as="nav" spacing={4} display={{ base: 'none', lg: 'flex' }}>
+            <HStack flex="1" as="nav" spacing={4} display={{ base: 'none', lg: 'flex' }}>
               {Links.map((link) => (
                 <NavLink url={renderLinksUrl(link)} key={link}>
                   {link}
                 </NavLink>
               ))}
             </HStack>
+            <Box display={{ base: 'none', lg: 'block' }}>
+              {isAuthenticated ? (
+                <DisconnectButton color="white" fontSize="14px" size="xl" variant="ghost" />
+              ) : (
+                <Tooltip
+                  hasArrow
+                  label={!metamaskAvailable ? 'Install MetaMask to connect' : ''}
+                  bg="red.600"
+                >
+                  <Button
+                    variant="ghost"
+                    onClick={handleLogin}
+                    size="sm"
+                    rounded="xl"
+                    color="white"
+                    rightIcon={<IoWalletOutline />}
+                    isLoading={isAuthenticating}
+                    _hover={{ background: '#00B0CA' }}
+                  >
+                    Connect
+                  </Button>
+                </Tooltip>
+              )}
+            </Box>
           </HStack>
         </Flex>
         {isOpen && (
@@ -90,6 +147,31 @@ const SoftHeader = () => {
                       {link}
                     </NavLink>
                   ))}
+                  <hr />
+                  <Box>
+                    {isAuthenticated ? (
+                      <DisconnectButton color="white" fontSize="14px" size="xl" variant="ghost" />
+                    ) : (
+                      <Tooltip
+                        hasArrow
+                        label={!metamaskAvailable ? 'Install MetaMask to connect' : ''}
+                        bg="red.600"
+                      >
+                        <Button
+                          variant="ghost"
+                          onClick={handleLogin}
+                          size="sm"
+                          rounded="xl"
+                          color="white"
+                          rightIcon={<IoWalletOutline />}
+                          isLoading={isAuthenticating}
+                          _hover={{ background: '#00B0CA' }}
+                        >
+                          Connect
+                        </Button>
+                      </Tooltip>
+                    )}
+                  </Box>
                 </Stack>
               </DrawerBody>
             </DrawerContent>

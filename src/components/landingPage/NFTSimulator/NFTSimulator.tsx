@@ -65,6 +65,7 @@ const NftSimulator = () => {
       >
         {sliderMarks.map((markValue) => (
           <SliderMark
+            key={markValue}
             display={{ base: 'none', md: 'block' }}
             {...labelStyles}
             value={Number(markValue)}
