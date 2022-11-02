@@ -246,8 +246,8 @@ const InfoTexts = () => {
             <Box textAlign="center" marginBottom="100px">
               <SubHeading>Earnings simulator</SubHeading>
             </Box>
-            <Tabs variant="unstyled">
-              <TabList>
+            <Tabs textAlign="center" variant="unstyled">
+              <TabList display="flex" justifyContent="center" textAlign="center">
                 <Tab _selected={{ color: 'white', bg: 'blue.800' }}>NFTs Simulator</Tab>
                 <Tab _selected={{ color: 'white', bg: 'blue.800' }}>Tickets Simulator</Tab>
               </TabList>

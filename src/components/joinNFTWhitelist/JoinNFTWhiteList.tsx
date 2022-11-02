@@ -1,11 +1,14 @@
 import { useEffect, useState } from 'react';
 
-import { Button, Text } from '@chakra-ui/react';
+import { Button, Text, Tooltip } from '@chakra-ui/react';
 import { useMoralis } from 'react-moralis';
 
-const whitelistWinners = ['0xac9867c66a6088651ce01edda608cadc0f2273eb333'];
+import useMetamaskAvailability from '@/root/hooks/useMetamaskAvailability';
+
+const whitelistWinners = ['0xac9867c66a6088651ce01edda608cadc0f2273eb'];
 
 const JoinNftWhiteList = () => {
+  const { metamaskAvailable } = useMetamaskAvailability();
   const { isAuthenticated, authenticate, user, isInitialized } = useMoralis();
   const [isWhiteListed, setIsWhiteListed] = useState(false);
   const [addedWithSuccess, setAddedWithSuccess] = useState(false);
@@ -47,17 +50,23 @@ const JoinNftWhiteList = () => {
 
   if (!isAuthenticated)
     return (
-      <Button
-        size="md"
-        rounded="xl"
-        marginRight="20px"
-        backgroundColor="#00B0CA"
-        color="white"
-        onClick={() => authenticate()}
-        _hover={{ background: '#047687' }}
+      <Tooltip
+        hasArrow
+        label={!metamaskAvailable ? 'Install MetaMask to connect' : ''}
+        bg="red.600"
       >
-        Connect to Join the NFTs Whitelist
-      </Button>
+        <Button
+          size="md"
+          rounded="xl"
+          paddingY="30px"
+          backgroundColor="#00B0CA"
+          color="white"
+          onClick={() => authenticate()}
+          _hover={{ background: '#047687' }}
+        >
+          Connect to Join the NFTs Whitelist
+        </Button>
+      </Tooltip>
     );
 
   return (
@@ -67,16 +76,27 @@ const JoinNftWhiteList = () => {
           disabled={isWhiteListed || addedWithSuccess}
           size="md"
           rounded="xl"
-          marginRight="20px"
+          paddingY="30px"
           backgroundColor="#00B0CA"
           color="white"
+          _disabled={{ opacity: '0.7', cursor: 'not-allowed' }}
           onClick={handleWhiteList}
           _hover={{ background: '#047687' }}
         >
           {buttonText()}
         </Button>
       ) : (
-        <p>whitelist not open to the public yet!</p>
+        <Text
+          color="white"
+          border="1px solid white"
+          padding="5px"
+          width="400px"
+          paddingY="30px"
+          margin="auto"
+          rounded="5px"
+        >
+          Whitelist Not Open for Public, Yet!
+        </Text>
       )}
     </div>
   );

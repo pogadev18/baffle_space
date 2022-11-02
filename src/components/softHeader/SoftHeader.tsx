@@ -14,9 +14,7 @@ import {
   Button,
   Tooltip,
 } from '@chakra-ui/react';
-import { useState, useEffect } from 'react';
 
-import detectEthereumProvider from '@metamask/detect-provider';
 import { useMoralis } from 'react-moralis';
 
 import { CloseIcon } from '@chakra-ui/icons';
@@ -26,6 +24,7 @@ import { IoWalletOutline } from 'react-icons/io5';
 import NavLink from '@/root/components/navLink';
 import Logo from '@/root/components/logo';
 import DisconnectButton from '@/root/components/disconnectButton';
+import useMetamaskAvailability from '@/root/hooks/useMetamaskAvailability';
 
 import { renderLinksUrl } from '@/root/utils/utilityFunctions';
 
@@ -34,22 +33,7 @@ const Links = ['Home', 'Team', 'Roadmap'];
 const SoftHeader = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const { isAuthenticated, authenticate, isAuthenticating } = useMoralis();
-  const [metamaskAvailable, setMetamaskAvailable] = useState(false);
-
-  useEffect(() => {
-    const checkMetamaskAvailability = async () => {
-      try {
-        const provider = await detectEthereumProvider();
-
-        if (provider) setMetamaskAvailable(true);
-        if (!provider) setMetamaskAvailable(false);
-      } catch (e) {
-        setMetamaskAvailable(false);
-      }
-    };
-
-    checkMetamaskAvailability();
-  }, []);
+  const { metamaskAvailable } = useMetamaskAvailability();
 
   const handleLogin = async () => {
     if (!isAuthenticated) {
