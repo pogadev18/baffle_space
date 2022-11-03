@@ -94,9 +94,11 @@ const InfoTexts = () => {
       <Box
         marginBottom="60px"
         textAlign="center"
-        height={{ base: 'auto', md: '100vh' }}
+        height={{ base: 'auto', xl: '100vh' }}
         display="flex"
         alignItems="center"
+        paddingBottom={{ base: '30px', xl: 0 }}
+        borderBottom={`1px solid ${borderBlue}`}
         justifyContent="center"
       >
         <Box width="100%" paddingX={{ base: '15px', lg: '0' }}>
@@ -127,76 +129,75 @@ const InfoTexts = () => {
       </Box>
 
       <Box
-        display="flex"
-        borderTop={`1px solid ${borderBlue}`}
-        borderBottom={`1px solid ${borderBlue}`}
         marginBottom={{ base: '20px', md: '30px' }}
-        flexDirection={{ base: 'column', xl: 'row' }}
-        justifyContent="space-between"
-        alignItems="center"
-        gap={{ base: '10px', xl: '60px' }}
-        paddingX={{ base: '15px', lg: '0' }}
-        paddingTop={{ base: '30px', md: 0 }}
+        paddingX={{ base: '15px', xl: 0 }}
+        height={{ base: 'auto', xl: '100vh' }}
+        display={{ base: 'block', xl: 'flex' }}
       >
         <Box
-          width={{ base: '100%', xl: '50%' }}
-          marginTop={{ base: '0px', '2xl': '0px' }}
-          color="#fff"
+          display="flex"
+          flexDirection={{ base: 'column', xl: 'row' }}
+          justifyContent="space-between"
+          alignItems="center"
+          gap={{ base: '10px', xl: '60px' }}
         >
-          <SubHeading>What do you win?</SubHeading>
-          <ul>
-            {whatYouWinTexts.map((benefit) => (
-              <li style={{ marginBottom: '10px' }} key={benefit}>
-                {benefit}
-              </li>
-            ))}
-          </ul>
-        </Box>
+          <Box
+            width={{ base: '100%', xl: '50%' }}
+            marginTop={{ base: '0px', '2xl': '0px' }}
+            color="#fff"
+          >
+            <SubHeading>What do you win?</SubHeading>
+            <ul>
+              {whatYouWinTexts.map((benefit) => (
+                <li style={{ marginBottom: '10px' }} key={benefit}>
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+          </Box>
 
-        <Box width={{ base: '100%', xl: '50%' }} paddingY="60px">
-          <Box className={styles.winCategoriesPrizes}>
-            {winCategories.map((category) => {
-              const { dayInterval, info } = category;
+          <Box width={{ base: '100%', xl: '50%' }} paddingY="60px">
+            <Box className={styles.winCategoriesPrizes}>
+              {winCategories.map((category) => {
+                const { dayInterval, info } = category;
 
-              return (
-                <Fragment key={dayInterval}>
-                  <Text
-                    className={styles.dayInterval}
-                    borderBottom={`1px solid ${intervalColor}`}
-                    textTransform="uppercase"
-                    fontSize="14px"
-                    color={intervalColor}
-                  >
-                    {dayInterval}
-                  </Text>
-                  {info.map((text) => (
-                    <Box className={styles.winDescription} key={text.subtitle}>
-                      <SoftHeading marginBottom="0px">{text.title}</SoftHeading>
-                      <Text fontSize="14px" color="#fff">
-                        {text.subtitle}
-                      </Text>
-                    </Box>
-                  ))}
-                </Fragment>
-              );
-            })}
+                return (
+                  <Fragment key={dayInterval}>
+                    <Text
+                      className={styles.dayInterval}
+                      borderBottom={`1px solid ${intervalColor}`}
+                      textTransform="uppercase"
+                      fontSize="14px"
+                      color={intervalColor}
+                    >
+                      {dayInterval}
+                    </Text>
+                    {info.map((text) => (
+                      <Box className={styles.winDescription} key={text.subtitle}>
+                        <SoftHeading marginBottom="0px">{text.title}</SoftHeading>
+                        <Text fontSize="14px" color="#fff">
+                          {text.subtitle}
+                        </Text>
+                      </Box>
+                    ))}
+                  </Fragment>
+                );
+              })}
+            </Box>
           </Box>
         </Box>
       </Box>
 
       <Box
-        paddingY={{ base: '30px', md: '60px' }}
-        marginBottom={{ base: '20px', md: '60px' }}
-        paddingBottom={{ base: '60px', md: '30px' }}
+        borderTop={`1px solid ${borderBlue}`}
+        marginTop={{ base: 0, xl: '100px' }}
+        marginBottom={{ base: '20px', xl: '60px' }}
+        paddingY={{ base: '40px', xl: '60px' }}
         paddingX={{ base: '15px', '2xl': '80px' }}
       >
-        <Box
-          textAlign="center"
-          // paddingTop={{ base: '50px', md: '0px' }}
-          paddingBottom={{ base: '30px', md: '0px' }}
-        >
+        <Box textAlign="center">
           <Box
-            height={{ base: 'auto', md: '100vh' }}
+            height={{ base: 'auto', xl: '100vh' }}
             display="flex"
             alignItems="center"
             justifyContent="center"
@@ -227,7 +228,7 @@ const InfoTexts = () => {
                 You can check your earnings from ticket sales for the games using the earnings
                 simulator.
               </Text>
-              <Box color="#fff" marginY="40px">
+              <Box color="#fff" marginTop="30px" marginBottom="50px">
                 <FollowUs alignX="center" />
               </Box>
             </section>
@@ -238,8 +239,9 @@ const InfoTexts = () => {
           display="flex"
           alignItems="center"
           justifyContent="center"
-          height={{ base: 'auto', md: '100vh' }}
+          height={{ base: 'auto', xl: '100vh' }}
           id="simulator"
+          paddingY={{ base: '60px', xl: 0 }}
           color="#fff"
         >
           <section style={{ width: '100%' }}>
@@ -248,8 +250,8 @@ const InfoTexts = () => {
             </Box>
             <Tabs textAlign="center" variant="unstyled">
               <TabList display="flex" justifyContent="center" textAlign="center">
-                <Tab _selected={{ color: 'white', bg: 'blue.800' }}>NFTs Simulator</Tab>
-                <Tab _selected={{ color: 'white', bg: 'blue.800' }}>Tickets Simulator</Tab>
+                <Tab _selected={{ color: 'white', bg: 'blue.800' }}>NFT Sale Earnings</Tab>
+                <Tab _selected={{ color: 'white', bg: 'blue.800' }}>Tickets Sale Earnings</Tab>
               </TabList>
 
               <TabPanels>
@@ -270,17 +272,23 @@ const InfoTexts = () => {
         borderBottom={`1px solid ${borderBlue}`}
         marginBottom={{ base: '20px', md: '60px' }}
         display="flex"
-        flexDirection={{ base: 'column', '2xl': 'row' }}
-        justifyContent="space-between"
-        paddingY={{ base: '30px', md: '60px' }}
+        flexDirection={{ base: 'column', xl: 'row' }}
+        justifyContent={{ base: 'center', xl: 'space-between' }}
+        paddingY={{ base: '30px', xl: '60px' }}
         paddingX={{ base: '15px', '2xl': '130px' }}
         gap={{ base: '20px', md: '50px' }}
         alignItems="center"
         height={{ base: 'auto', md: '100vh' }}
       >
-        <NftTree />
+        <Box>
+          <NftTree />
+        </Box>
 
-        <Box marginTop={{ base: '50px', '2xl': '0px' }} color="#fff">
+        <Box
+          order={{ base: '-1', xl: 'auto' }}
+          color="#fff"
+          textAlign={{ base: 'center', xl: 'left' }}
+        >
           <SubHeading>
             How to build your <br />
             earning system?
@@ -290,21 +298,21 @@ const InfoTexts = () => {
               <li key={benefit}>{benefit}</li>
             ))}
           </ul>
-          <Box marginTop="20px">
-            <FollowUs alignX="flextStart" />
+          <Box margin="30px auto" width={{ base: '400px', xl: 'auto' }}>
+            <FollowUs alignX="flexStart" />
           </Box>
         </Box>
       </Box>
 
       <Box
         marginBottom={{ base: '20px', md: '20px' }}
-        paddingY={{ base: '30px', md: '0px' }}
-        height={{ base: 'auto', md: '100vh' }}
+        height={{ base: 'auto', xl: '100vh' }}
         display="flex"
         alignItems="center"
       >
         <SimpleGrid
           paddingX={{ base: '15px', md: 0 }}
+          paddingBottom={{ base: '60px', xl: 0 }}
           columns={{ base: 1, lg: 2, md: 2 }}
           gap={{ base: '20px', md: '50px' }}
         >
@@ -376,7 +384,8 @@ const InfoTexts = () => {
         <Box
           display="flex"
           alignItems="center"
-          height={{ base: 'auto', md: '100vh' }}
+          height={{ base: 'auto', xl: '100vh' }}
+          paddingY={{ base: '60px', xl: 0 }}
           paddingX={{ base: '15px', md: 0 }}
         >
           <section style={{ width: '100%' }}>
@@ -390,10 +399,10 @@ const InfoTexts = () => {
             </Text>
             <Box
               display="flex"
-              flexDirection={{ base: 'column', '2xl': 'row' }}
+              flexDirection={{ base: 'column', xl: 'row' }}
               justifyContent="space-between"
               paddingY="30px"
-              paddingX={{ base: '0px', '2xl': '80px' }}
+              paddingX={{ base: '0px', xl: '80px' }}
               gap="25px"
               alignItems="center"
             >
@@ -414,19 +423,20 @@ const InfoTexts = () => {
       </Box>
 
       <Box
-        height={{ base: 'auto', md: '100vh' }}
+        height={{ base: 'auto', xl: '100vh' }}
         display="flex"
         alignItems="center"
-        paddingY={{ base: '30px', md: 0 }}
+        paddingY={{ base: '30px', xl: 0 }}
         textAlign="center"
       >
         <Box
           display="flex"
-          flexDirection={{ base: 'column', '2xl': 'row' }}
+          flexDirection={{ base: 'column', xl: 'row' }}
           justifyContent="space-between"
-          paddingX={{ base: '15px', '2xl': '80px' }}
+          paddingX={{ base: '15px', xl: '80px' }}
           gap="25px"
           alignItems="center"
+          width="100%"
         >
           <Box textAlign="left" color="#fff">
             <SoftHeading marginBottom="20px">Yearly contests income distribution</SoftHeading>
