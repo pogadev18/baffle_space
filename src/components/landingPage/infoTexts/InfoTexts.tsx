@@ -136,7 +136,7 @@ const InfoTexts = () => {
         marginBottom={{ base: '20px', md: '30px' }}
         paddingTop={{ base: '0', xl: '20px' }}
         paddingX={{ base: '15px', xl: 0 }}
-        height={{ base: 'auto', xl: '100vh' }}
+        height={{ base: 'auto', '2xl': '100vh' }}
         display={{ base: 'block', xl: 'flex' }}
       >
         <Box
@@ -283,9 +283,9 @@ const InfoTexts = () => {
         justifyContent={{ base: 'center', xl: 'space-between' }}
         paddingY={{ base: '30px', xl: '60px' }}
         paddingX={{ base: '15px', '2xl': '130px' }}
-        gap={{ base: '20px', md: '50px' }}
+        gap={{ base: '20px', xl: '50px' }}
         alignItems="center"
-        height={{ base: 'auto', md: '100vh' }}
+        height={{ base: 'auto', xl: '100vh' }}
       >
         <Box>
           <NftTree />
