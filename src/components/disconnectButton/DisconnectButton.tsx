@@ -5,15 +5,17 @@ import { useMoralis } from 'react-moralis';
 
 interface IDisconnectButtonProps {
   fontSize: string;
+  color: string;
   size: string;
   [x: string]: any;
 }
 
-const DisconnectButton = ({ fontSize, size, variant, ...other }: IDisconnectButtonProps) => {
+const DisconnectButton = ({ fontSize, size, variant, color, ...other }: IDisconnectButtonProps) => {
   const { logout } = useMoralis();
 
   const handleLogout = async () => {
     await logout();
+    localStorage.removeItem('isUserAWinner');
   };
 
   return (
@@ -22,10 +24,9 @@ const DisconnectButton = ({ fontSize, size, variant, ...other }: IDisconnectButt
       onClick={handleLogout}
       variant={variant}
       size={size}
-      color="black"
+      color={color}
       fontWeight="900"
       fontSize={fontSize}
-      textTransform="uppercase"
       _hover={{ background: '0' }}
       rightIcon={<HiLogout />}
     >

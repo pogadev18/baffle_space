@@ -12,6 +12,9 @@ export const theme = extendTheme({
     body: `'Poppins', sans-serif`,
   },
   colors: {
+    blue: {
+      800: '#00B0CA',
+    },
     gray: {
       100: '#F5f5f5',
       200: '#EEEEEE',

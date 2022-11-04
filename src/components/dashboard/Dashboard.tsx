@@ -107,6 +107,7 @@ const DashboardDrawer = () => {
                 <Box mt="20px" display={{ base: 'block', custom1110: 'none' }}>
                   <DisconnectButton
                     borderColor="black"
+                    color="black"
                     size="sm"
                     variant="outline"
                     fontSize="15px"

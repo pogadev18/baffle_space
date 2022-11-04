@@ -1,6 +1,8 @@
 import { Heading, Text, Box } from '@chakra-ui/react';
 
 import Logo from '@/root/components/logo';
+import MetamaskConnectionHandling from '@/root/components/metamaskConnectionHandling';
+import JoinNftWhiteList from '@/root/components/joinNFTWhitelist';
 
 import styles from './BigLogo.module.scss';
 
@@ -23,6 +25,10 @@ const BigLogo = () => (
         <br />
         Hybrid web3 lotteries owned by the people.
       </Text>
+      <Box marginY="30px">
+        <JoinNftWhiteList />
+      </Box>
+      <MetamaskConnectionHandling />
     </Box>
   </div>
 );

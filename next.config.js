@@ -11,15 +11,6 @@ const nextConfig = {
     MORALIS_SERVER_URL: process.env.MORALIS_SERVER_URL,
     GOOGLE_ANALYTICS_ID: process.env.GOOGLE_ANALYTICS_ID,
   },
-  async redirects() {
-    return [
-      {
-        source: '/roadmap',
-        destination: '/',
-        permanent: true,
-      },
-    ];
-  },
 };
 
 module.exports = withPlugins([bundleAnalyzer], nextConfig);

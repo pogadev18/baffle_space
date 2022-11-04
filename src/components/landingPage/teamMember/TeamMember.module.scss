@@ -14,6 +14,19 @@
   span {
     display: block;
   }
+
+  .nameAndSocialWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    svg {
+      width: 30px;
+      margin-bottom: 10px;
+      height: 30px;
+    }
+  }
 }
 
 .name {

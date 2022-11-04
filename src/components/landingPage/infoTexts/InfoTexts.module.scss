@@ -12,12 +12,12 @@
 .winCategoriesPrizes {
   position: relative;
 
-  //> div {
-  //  border-bottom: 1px solid red;
-  //}
-
   .dayInterval {
     margin-top: 60px;
+
+    &:first-child {
+      margin-top: 0;
+    }
   }
 }
 
