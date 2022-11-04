@@ -1,4 +1,4 @@
-import { FaMapMarkerAlt } from 'react-icons/fa';
+import { FaCheck } from 'react-icons/fa';
 import { VscSettingsGear } from 'react-icons/vsc';
 import { GiOnTarget } from 'react-icons/gi';
 
@@ -19,7 +19,7 @@ const Road = () => {
           >
             <div className={styles.iconWrapper}>
               {el.workInProgress && <VscSettingsGear className={styles.gearIcon} />}
-              {el.jobDone && <FaMapMarkerAlt />}
+              {el.jobDone && <FaCheck />}
               {el.notStarted && <GiOnTarget />}
             </div>
             <p className={styles.quarterAndYear}>

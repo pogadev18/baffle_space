@@ -134,6 +134,7 @@ const InfoTexts = () => {
       <Box
         id="win"
         marginBottom={{ base: '20px', md: '30px' }}
+        paddingTop={{ base: '0', xl: '20px' }}
         paddingX={{ base: '15px', xl: 0 }}
         height={{ base: 'auto', xl: '100vh' }}
         display={{ base: 'block', xl: 'flex' }}
