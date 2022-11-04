@@ -222,64 +222,64 @@ const SimulateEarnings = () => {
       >
         <Text fontSize={{ base: '80px', md: '125px' }} fontWeight="700">
           {!userIncome ? 0 : userIncome}
-          <span
-            style={{
-              fontSize: '40px',
-              color: 'grey',
-            }}
-          >
-            $
-          </span>
+          <Box fontSize="40px" color="grey" display={{ base: 'block', md: 'inline-block' }}>
+            $ earned
+          </Box>
         </Text>
-        <Slider
-          isDisabled={sliderState}
-          // step={10}
-          color="primary"
-          defaultValue={sliderDefaultValue}
-          max={maxUserTiketAnount}
-          // valueLabelDisplay="auto"
-          value={numberOfTiketsSetByUser}
-          aria-label="slider"
-          onChange={(val) => setNumberOfTiketsSetByUser(val)}
-        >
-          <SliderMark value={0} {...labelStyles}>
-            0
-          </SliderMark>
-          <SliderMark value={200} {...labelStyles}>
-            200
-          </SliderMark>
-          <SliderMark value={400} {...labelStyles}>
-            400
-          </SliderMark>
-          <SliderMark value={600} {...labelStyles}>
-            600
-          </SliderMark>
-          <SliderMark value={800} {...labelStyles}>
-            800
-          </SliderMark>
-          <SliderMark value={1000} {...labelStyles}>
-            1000
-          </SliderMark>
-          <SliderMark
+        <Box position="relative">
+          <Slider
+            position="relative"
+            isDisabled={sliderState}
+            // step={10}
+            color="primary"
+            defaultValue={sliderDefaultValue}
+            max={maxUserTiketAnount}
+            // valueLabelDisplay="auto"
             value={numberOfTiketsSetByUser}
-            textAlign="center"
-            bg="#00B0CA"
-            color="white"
-            mt="-10"
-            ml="-5"
-            w="12"
+            aria-label="slider"
+            onChange={(val) => setNumberOfTiketsSetByUser(val)}
           >
-            {numberOfTiketsSetByUser}
-          </SliderMark>
-          <SliderTrack bg="#333333">
-            <SliderFilledTrack bg="#00B0CA" />
-          </SliderTrack>
-          <SliderThumb boxSize={6}>
-            <Box color="#00B0CA" />
-          </SliderThumb>
-        </Slider>
-
-        <Box marginTop="50px">
+            <SliderMark value={0} {...labelStyles}>
+              0
+            </SliderMark>
+            <SliderMark value={200} {...labelStyles}>
+              200
+            </SliderMark>
+            <SliderMark value={400} {...labelStyles}>
+              400
+            </SliderMark>
+            <SliderMark value={600} {...labelStyles}>
+              600
+            </SliderMark>
+            <SliderMark value={800} {...labelStyles}>
+              800
+            </SliderMark>
+            <SliderMark value={1000} {...labelStyles}>
+              1000
+            </SliderMark>
+            <SliderMark
+              value={numberOfTiketsSetByUser}
+              textAlign="center"
+              bg="#00B0CA"
+              color="white"
+              mt="-10"
+              ml="-5"
+              w="12"
+            >
+              {numberOfTiketsSetByUser}
+            </SliderMark>
+            <SliderTrack bg="#333333">
+              <SliderFilledTrack bg="#00B0CA" />
+            </SliderTrack>
+            <SliderThumb boxSize={6}>
+              <Box color="#00B0CA" />
+            </SliderThumb>
+          </Slider>
+          <Text position="absolute" right="0" width="100%" top="50px" fontSize="14px">
+            Number of tickets
+          </Text>
+        </Box>
+        <Box marginTop="80px">
           <Buttons
             disabledContext={disabledContext}
             gameContext={gameContexts}

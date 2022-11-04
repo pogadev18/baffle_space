@@ -38,21 +38,16 @@ const NftSimulator = () => {
     <Box pt={6} pb={2}>
       <Text fontSize={{ base: '70px', md: '125px' }} fontWeight="700">
         {sliderValue.toFixed(2)}
-        <span
-          style={{
-            fontSize: '40px',
-            color: 'grey',
-          }}
-        >
-          $ETH
-        </span>
+        <Box fontSize="40px" color="grey" display={{ base: 'block', md: 'inline-block' }}>
+          $ETH earned
+        </Box>
       </Text>
       <Text
         marginBottom={{ base: '50px', md: '30px' }}
         fontSize={{ base: '40px' }}
         fontWeight="700"
       >
-        {trackValue}
+        NFTs sold: {trackValue}
       </Text>
       <Slider
         color="primary"
