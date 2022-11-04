@@ -96,7 +96,7 @@ const JoinNftWhiteList = () => {
           margin="auto"
           rounded="5px"
         >
-          Whitelist Not Open for Public, Yet!
+          Whitelist not open for public yet.
         </Text>
       )}
     </div>
