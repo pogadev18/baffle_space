@@ -5,7 +5,7 @@ import { useMoralis } from 'react-moralis';
 
 import useMetamaskAvailability from '@/root/hooks/useMetamaskAvailability';
 
-const whitelistWinners = [process.env.NEXT_PUBLIC_WINNER_1];
+const whitelistWinners = [process.env.WINNER_1];
 
 const JoinNftWhiteList = () => {
   const { metamaskAvailable } = useMetamaskAvailability();
