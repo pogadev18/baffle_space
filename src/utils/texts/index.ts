@@ -162,3 +162,52 @@ export const roadmapTexts = [
     notStarted: true,
   },
 ];
+
+export const teamMembers = [
+  {
+    name: 'Călin Susa',
+    position: 'Co-Founder',
+    twitterProfile: 'https://twitter.com/SusaCalin',
+    profileImage:
+      'https://res.cloudinary.com/baffle-space/image/upload/v1666351780/my-uploads/Calin_go9hsk.jpg',
+    role: 'Developer & Designer',
+    description:
+      'Established artist with a keen eye for technology. Combining creativity and logic programming became the means of bringing forth and expressing my imaginative core for the past 6 years.',
+  },
+  {
+    name: 'Theodor Gál',
+    position: 'Co-Founder',
+    twitterProfile: 'https://twitter.com/TeddyEGal',
+    profileImage:
+      'https://res.cloudinary.com/baffle-space/image/upload/v1666351780/my-uploads/Teddy_znm0zd.jpg',
+    role: 'Business & Community Strategist',
+    description:
+      ' Entrepreneur driven by a strong need of independence, becoming enthusiastic about blockchain\n' +
+      '        technologies came easily. Passionate about teaching, I share my insights to bridge the space\n' +
+      '        between business, tech and communities.',
+  },
+  {
+    name: 'Bogdan Pogăcean',
+    position: 'Co-Founder',
+    twitterProfile: 'https://twitter.com/pogadev',
+    profileImage:
+      'https://res.cloudinary.com/baffle-space/image/upload/v1666351780/my-uploads/Bogdan_gx03qh.jpg',
+    role: 'Developer',
+    description:
+      '  Full stack developer by repurposing the discipline acquired during 12 years of playing\n' +
+      '        pro-basketball. Broadening the interest spectrum toward emerging technologies I deliver the\n' +
+      '        same kind of top tier "dunks".',
+  },
+  {
+    name: 'Cosmin Hodiș',
+    position: 'Visual Director',
+    twitterProfile: '',
+    profileImage:
+      'https://res.cloudinary.com/baffle-space/image/upload/v1666351780/my-uploads/Cosmin_qnawdx.jpg',
+    role: 'Videographer & Designer',
+    description:
+      '     Professional by all accounts, an in-depth analyst of his trades. Recognized by world\n' +
+      '        renowned companies like HBO, Cosmin is devoted to elevate your understanding of Baffle\n' +
+      '        Space.',
+  },
+];

@@ -385,7 +385,7 @@ const InfoTexts = () => {
           display="flex"
           alignItems="center"
           height={{ base: 'auto', xl: '100vh' }}
-          paddingY={{ base: '60px', xl: 0 }}
+          paddingY={{ base: '30px', xl: 0 }}
           paddingX={{ base: '15px', md: 0 }}
         >
           <section style={{ width: '100%' }}>

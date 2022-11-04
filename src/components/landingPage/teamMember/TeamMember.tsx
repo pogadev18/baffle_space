@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { Image } from '@chakra-ui/react';
+import { TwitterSvg } from '@/root/components/logoTwitter/LogoTwitter';
 
 import styles from './TeamMember.module.scss';
 
@@ -9,6 +10,7 @@ interface AlertComponentProps {
   memberPosition: string;
   memberRole: string;
   imageUrl: string;
+  twitter: string;
   alternativeText: string;
 }
 
@@ -18,6 +20,7 @@ const TeamMember = ({
   memberPosition,
   memberRole,
   imageUrl,
+  twitter,
   alternativeText,
 }: AlertComponentProps) => {
   return (
@@ -35,7 +38,17 @@ const TeamMember = ({
         />
       </section>
       <section className={styles.memberInfo}>
-        <span className={styles.name}>{name}</span>
+        <div className={styles.nameAndSocialWrapper}>
+          <span className={styles.name}>{name}</span>
+          {twitter && (
+            <span>
+              <a rel="noreferrer" href={twitter} target="_blank">
+                <TwitterSvg />
+              </a>
+            </span>
+          )}
+        </div>
+
         <span className={styles.position}>{memberPosition}</span>
         <span className={styles.role}>{memberRole}</span>
         <span className={styles.description}>{children}</span>
