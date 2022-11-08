@@ -95,7 +95,7 @@ export const roadmapTexts = [
     title: 'Community Earning Mechanism Setup',
     subtitle: 'Initial Methods to Earn',
     title2: 'Baffle Space NFT Genesis Collection Launch',
-    subtitle2: 'Minting Enabled',
+    subtitle2: '',
     jobDone: false,
     workInProgress: true,
     notStarted: false,

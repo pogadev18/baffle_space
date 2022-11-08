@@ -26,7 +26,7 @@ const Road = () => {
               {el.quarter} <span>{el.year}</span>
             </p>
             <p className={styles.title}>{el.title}</p>
-            <p className={styles.subtitle}>{el.subtitle}</p>
+            {el.subtitle && <p className={styles.subtitle}>{el.subtitle}</p>}
             {el.title2 && <br />}
             {el.title2 && <p className={styles.title}>{el.title2}</p>}
             {el.subtitle2 && <p className={styles.subtitle}>{el.subtitle2}</p>}
